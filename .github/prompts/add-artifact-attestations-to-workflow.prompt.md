@@ -78,21 +78,18 @@ Here's a step-by-step checklist for adding SLSA build-provenance attestations to
      with:
        subject-name: ghcr.io/${{ github.repository }}       # no tag!
        subject-digest: ${{ steps.build_push.outputs.digest }} 
-       push-to-registry: true
 
    - name: Attest Docker Hub image
      uses: actions/attest-build-provenance@v2
      with:
        subject-name: index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/your-repo
        subject-digest: ${{ steps.build_push.outputs.digest }}
-       push-to-registry: true
 
    - name: Attest Quay image
      uses: actions/attest-build-provenance@v2
      with:
        subject-name: quay.io/${{ github.repository_owner }}/your-repo
        subject-digest: ${{ steps.build_push.outputs.digest }}
-       push-to-registry: true
    ```
 
 5. **Commit your changes**
