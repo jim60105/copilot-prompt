@@ -1,8 +1,6 @@
 ---
 mode: 'agent'
 description: "Creating a .gitignore file for your project."
-tools:
-  - fetch
 ---
 # Creating a .gitignore file for your project
 

@@ -1,10 +1,6 @@
 ---
 mode: 'agent'
 description: "Create a C# project and set up the development environment."
-tools:
-  - codebase
-  - fetch
-  - changes
 ---
 請遵循以下流程檢查並設定開發環境。
 

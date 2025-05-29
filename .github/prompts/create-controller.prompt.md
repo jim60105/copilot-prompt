@@ -1,8 +1,6 @@
 ---
 mode: 'agent'
 description: "Create a controller for the given entity in ASP.NET Core Web API project."
-tools:
-  - codebase
 ---
 # How to create a API Controller?
 

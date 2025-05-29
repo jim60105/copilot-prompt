@@ -1,9 +1,6 @@
 ---
 mode: 'agent'
 description: "Initialize EF Core DbContext for the project."
-tools:
-  - codebase
-  - changes
 ---
 ## Pre-requisite
 

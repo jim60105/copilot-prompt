@@ -1,9 +1,6 @@
 ---
 mode: 'agent'
 description: "Add SLSA build-provenance attestations to existing GitHub Actions workflows."
-tools:
-  - codebase
-  - changes
 ---
 Here's a step-by-step checklist for adding SLSA build-provenance attestations to your existing GitHub Actions workflows (e.g. `.github/workflows/docker_publish.yml`):
 
@@ -16,8 +13,8 @@ Here's a step-by-step checklist for adding SLSA build-provenance attestations to
 
    ```yaml
    permissions:
-     id-token: write      # needed to mint a Sigstore signing cert
-     attestations: write  # needed to upload the attestation
+     id-token: write
+     attestations: write
      contents: read       # (existing)
      packages: write      # (existing)
    ```
