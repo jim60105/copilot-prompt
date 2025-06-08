@@ -2,7 +2,7 @@
 
 這是我的 GitHub Copilot 提示詞儲存庫，用於儲存我自己的個人用提示詞，方便複製貼上使用。
 
-使用者資料位置在 `~/.config/Code - Insiders/User/prompts/`。
+我將它做為 [jim60105/dotfiles](https://github.com/jim60105/dotfiles) 的子模組，透過 chezmoi 管理跨系統同步。
 
 ## 參考資料
 
