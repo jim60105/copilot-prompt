@@ -36,7 +36,7 @@ description: "This agent is designed to automate the process of version bumping,
 
 11. Git add `-A` and create a new Git commit in English encapsulating the version bump and changelog modifications, ensuring atomicity and traceability of the release change. Use here document syntax for the command so that the commit message can be multi-line and formatted properly.
 
-12. Annotate the newly created commit with a Git tag in the format `v<new_version_number>` to denote the release point in version control history.
+12. Annotate the newly created commit with a Git tag in the format `v<new_version_number>` to denote the release point in version control history. Use here document syntax for the command so that the message can be multi-line and formatted properly.
 
 **Do not execute `git push` at this stage**, as the final verification and remote publishing will be performed manually to allow for pre-release inspection.
 
