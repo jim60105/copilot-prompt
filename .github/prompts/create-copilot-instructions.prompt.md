@@ -1,12 +1,11 @@
 ---
 mode: 'agent'
 description: "Create a `.github/copilot-instructions.md` file for the project."
-tools:
-  - fetch_webpage
+tools: ['codebase', 'editFiles', 'fetch']
 ---
 To facilitate more effective collaboration moving forward, please adhere to the following protocol to establish a `.github/copilot-instructions.md` file:
 
-1. Carefully review the following documentation to gain a comprehensive understanding of what constitutes a well-crafted `copilot-instructions.md`:
+1. Carefully review the following documentation to gain a comprehensive understanding of what constitutes a well-crafted `copilot-instructions.md` with #fetch tool:
    https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot
 
 2. Conduct a thorough examination of the #codebase to familiarize yourself with the overarching architecture and stylistic conventions of our codebase.

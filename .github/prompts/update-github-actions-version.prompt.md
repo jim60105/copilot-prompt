@@ -1,10 +1,7 @@
 ---
 mode: 'agent'
 description: "Add SLSA build-provenance attestations to existing GitHub Actions workflows."
-tools:
-  - fetch_webpage
-  - github_repo
-  - replace_string_in_file
+tools: ['codebase', 'editFiles', 'fetch', 'githubRepo', 'runCommands']
 ---
 # GitHub Actions Version Update Prompt
 
@@ -33,7 +30,7 @@ Analyze the action versions used in the GitHub Actions workflow files.
 
 ### 2. Query Latest Versions
 
-Use tools such as `fetch_webpage` or `github_repo` to query each action's latest version:
+Use tools #fetch #githubRepo to query each action's latest version:
 
 ```
 https://github.com/{owner}/{repo}/releases/latest
@@ -58,14 +55,14 @@ Use the tool 'replace_string_in_file' to update necessary version numbers and ma
 
 ### 6. Commit Your Changes 
 
-Execute the following git command at your terminal; using terminal commands here is permitted:
+Execute the following #runCommands git commands; using terminal commands here is permitted:
 
 ```bash  
 git add .github/workflows/docker_publish.yml # or whatever files you modified  
 codegpt commit --no_confirm  
 ```
 
-> **Note:** Ensure to call `codegpt`, which is a tool optimized for git commit, do not write the commit message on your own.
+> **Note:** Ensure to call #runCommands `codegpt`, which is a tool optimized for git commit, do not write the commit message on your own.
 
 ## Example Illustration 
 
