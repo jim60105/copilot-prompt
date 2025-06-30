@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.ts,**/*.tsx,**/*.js,**/*.html,**/*.css,**/*.scss,**/*.vue"
+<!-- applyTo: "**/*.ts,**/*.tsx,**/*.js,**/*.html,**/*.css,**/*.scss,**/*.vue" -->
 ---
 # Web Design Guidelines
 
