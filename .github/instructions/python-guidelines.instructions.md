@@ -1,5 +1,5 @@
 ---
-<!-- applyTo: '**/*.py' -->
+# applyTo: '**/*.py'
 ---
 ## Python Code Guidelines
 * All code comments must be written in **English**.
