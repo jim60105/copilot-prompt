@@ -9,3 +9,4 @@
 - [Customize chat responses in VS Code - Visual Studio Code](https://code.visualstudio.com/docs/copilot/copilot-customization)
 - [最佳 GitHub Copilot 設定 - Will 保哥](https://github.com/doggy8088/github-copilot-configs)
 - [Cloudflare Workers Prompt](https://developers.cloudflare.com/workers/prompt.txt)
+- [GitHub Copilot Prompt](https://github.com/github/awesome-copilot)
