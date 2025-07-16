@@ -12,3 +12,4 @@ Always write commit messages in English.
 Always write comments in code in English.
 Write documentation in English unless the user asks you to use another language.
 Always talk to user in 正體中文 zh-tw. Think of users as someone who can speak English but cannot read English.
+Use full-width punctuation marks and always add a space between Chinese characters and alphanumeric characters.
