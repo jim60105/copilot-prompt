@@ -14,7 +14,7 @@
 * Unless the requirements or user asks you to implement in phases, using TODO is prohibited. TODO means there is still unfinished work. You are required to complete your work.
 * Use `pytest` for running tests and makesure this project is testable.
 * Place tests in the `tests` folder; any test files located in the project root directory are considered temporary and should be deleted.
-* Follow the testing principles and practices outlined in [Test Guidelines](docs/testing_guidelines.md)` if there is one.
+* Follow the testing principles and practices outlined in [Test Guidelines](../../docs/python-testing-guidelines.md)` if there is one.
 * Always use Python's standard `logging` module for all log output.
 * Always `black --line-length=100 --skip-string-normalization` and `flake8` the submitting files and fix any warnings before submitting any code. Do not lint the whole project, only the files you are submitting. Use the `.flake8` configuration file in the root directory for linting. Fix not only the errors but also styling warnings.
 
