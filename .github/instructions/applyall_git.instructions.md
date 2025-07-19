@@ -36,14 +36,23 @@ These are the standardized Git workflow instructions extracted from project prom
 - **Language**: Always write commits in English
 - **Signing**: Always use `--signoff` flag
 - **Author**: Explicitly specify author as `GitHub Copilot <bot@ChenJ.im>`
-- **Newline**: Use literal newlines in commit message, not \n escapes.
+- **Newline**: Use real newlines in commit message, not \n.
+
+**IMPORTANT**: Don't use `\n` that's not working, use real newlines!!!
+**IMPORTANT**: Don't use `\n` that's not working, use real newlines!!!
+**IMPORTANT**: Don't use `\n` that's not working, use real newlines!!!
 
 #### Commit Command Template
 
 ```bash
-git commit --signoff --author="GitHub Copilot <bot@ChenJ.im>" -m "feat: add user authentication
+git commit --signoff --author="GitHub Copilot <bot@ChenJ.im>" -m "chore: standardize linting, centralize guides, pin Python
 
-Implement OAuth2 integration for user login system.
+- Introduce a root .flake8 config enforcing a 100-character line limit and ignoring specific style checks
+- Remove inlined Python and Zsh guideline sections from copilot-instructions.md in favor of dedicated files
+- Pin project Python version to 3.12 via a new .python-version file
+- Rename docs/testing-guideline.md to docs/zsh-testing-guideline.md
+- Refactor fetch_tags.py for consistent double-quoted strings, streamlined pattern definitions, logging calls, and URL assignment
+
 Resolves issue #42"
 ```
 
