@@ -1,5 +1,5 @@
 ---
-applyTo: '**/*.Dockerfile,**/*.Containerfile'
+applyTo: '**/*Dockerfile,**/*Containerfile'
 ---
 # Dockerfile/Containerfile Authoring Guide
 
