@@ -15,7 +15,7 @@ I use it as a submodule of [jim60105/dotfiles](https://github.com/jim60105/dotfi
 - [Will 保哥: 最佳 GitHub Copilot 設定 - doggy8088/github-copilot-configs](https://github.com/doggy8088/github-copilot-configs)
 - [Cloudflare Workers Prompt](https://developers.cloudflare.com/workers/prompt.txt)
 - [GitHub Official Copilot Prompt - github/awesome-copilot](https://github.com/github/awesome-copilot)
-- [burkeholland: 4.1 Beast Mode v3](https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf)
+- [burkeholland: Beast Mode](https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf)
 
 ## License
 
