@@ -1,6 +1,6 @@
 ---
 mode: 'agent'
-description: "Add SLSA build-provenance attestations to existing GitHub Actions workflows."
+description: "Updating GitHub Actions versions in workflow files."
 tools: ['codebase', 'editFiles', 'fetch', 'githubRepo', 'runCommands']
 ---
 # GitHub Actions Version Update Prompt
