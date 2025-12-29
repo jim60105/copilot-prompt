@@ -64,26 +64,26 @@ Here's a step-by-step checklist for adding SLSA build-provenance attestations to
    ```
 
 4. **Add the attestation steps**
-   Immediately after your `build_push` step, insert one `actions/attest-build-provenance@v2` invocation *per* registry.  
+   Immediately after your `build_push` step, insert one `actions/attest-build-provenance@v3` invocation *per* registry.  
    The `subject-name` is the full name of the image, without a tag.  
    The `subject-digest` is the digest of the image you just built, which you can get from the `build_push` step's output. It should match the id of the built step.
    You should judge which registries to use based on the implemented content, rather than always adding these three registries!
 
    ```yaml
    - name: Attest GHCR image
-     uses: actions/attest-build-provenance@v2
+     uses: actions/attest-build-provenance@v3
      with:
        subject-name: ghcr.io/${{ github.repository }}       # no tag!
        subject-digest: ${{ steps.build_push.outputs.digest }} 
 
    - name: Attest Docker Hub image
-     uses: actions/attest-build-provenance@v2
+     uses: actions/attest-build-provenance@v3
      with:
        subject-name: index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/your-repo
        subject-digest: ${{ steps.build_push.outputs.digest }}
 
    - name: Attest Quay image
-     uses: actions/attest-build-provenance@v2
+     uses: actions/attest-build-provenance@v3
      with:
        subject-name: quay.io/${{ github.repository_owner }}/your-repo
        subject-digest: ${{ steps.build_push.outputs.digest }}
