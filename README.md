@@ -9,6 +9,29 @@ I use it as a submodule of [jim60105/dotfiles](https://github.com/jim60105/dotfi
 > Please fork it first and make your changes before applying them.  
 > And replace `ChenJ.im` and `jim60105` in those files!!!
 
+## VSCode Settings
+
+My Linux workstation uses chezmoi to set up this project at `~/copilot-prompt`, while my Windows machine cloned it to `~/repos/copilot-prompt`.
+
+```jsonc
+    "chat.promptFilesLocations": {
+        "~/copilot-prompt/.github/prompts": true,
+        "~/repos/copilot-prompt/prompts": true
+    },
+    "chat.instructionsFilesLocations": {
+        "~/repos/copilot-prompt/.github/instructions": true,
+        "~/copilot-prompt/instructions": true
+    },
+    "chat.agentSkillsLocations": {
+        "~/copilot-prompt/skills": true,
+        "~/repos/copilot-prompt/skills": true,
+    },
+    "chat.agentFilesLocations": {
+        "~/copilot-prompts/agents": true,
+        "~/repos/copilot-prompt/agents": true,
+    },
+```
+
 ## References
 
 - [Customize chat responses in VS Code - Visual Studio Code](https://code.visualstudio.com/docs/copilot/copilot-customization)
