@@ -17,7 +17,7 @@ This skill guides the full workflow of creating a new tech blog post on **聆.tw
 
 - `git` CLI available
 - `gh` CLI authenticated with GitHub
-- Write access to `jim60105/ai-talks-content`
+- Write access to `bot0419/ai-talks-content`
 
 ## Workflow
 
@@ -176,7 +176,19 @@ mv 聆.tw/content/<Section>/old-slug.md 聆.tw/content/<Section>/new-better-slug
 
 The slug should reflect the final title content in English.
 
-### Step 12: Create Branch, Commit, and PR
+### Step 12: Zola Build Check
+
+Before committing, run a local build to catch any formatting or shortcode errors:
+
+```bash
+zola build
+```
+
+> Get the latest Zola binary from GitHub releases if you don't have it installed. <https://github.com/getzola/zola/releases/latest>  
+> Read the release to get the correct binary name with version number.  
+> Download the `*-x86_64-unknown-linux-musl.tar.gz` for Linux, extract it, and use the `zola` binary.
+
+### Step 13: Create Branch, Commit, and PR
 
 All git operations happen **inside the submodule** (`聆.tw/content/`):
 
@@ -192,11 +204,11 @@ Co-authored-by: GitHub Copilot <bot@ChenJ.im>"
 git push origin post/<slug-name>
 ```
 
-Then create the PR targeting `master` on `jim60105/ai-talks-content`:
+Then create the PR targeting `master` on `bot0419/ai-talks-content`:
 
 ```bash
 gh pr create \
-  --repo jim60105/ai-talks-content \
+  --repo bot0419/ai-talks-content \
   --base master \
   --head post/<slug-name> \
   --title "feat: add post <descriptive-title>" \
@@ -208,12 +220,12 @@ gh pr create \
 Written with AI assistance."
 ```
 
-### Step 13: Request Review
+### Step 14: Request Review
 
 ```bash
-gh pr edit --repo jim60105/ai-talks-content <PR_NUMBER> --add-reviewer jim60105
+gh pr edit --repo bot0419/ai-talks-content <PR_NUMBER> --add-reviewer jim60105
 ```
 
 ## Terminology Mappings
 
-When writing content, apply these Traditional Chinese mappings: create = 建立, object = 物件, queue = 佇列, stack = 堆疊, information = 資訊, code = 程式碼, running = 執行, library = 函式庫, building = 建構, package = 套件, video = 影片, class = 類別, function = 函式, memory = 記憶體, document = 文件, example = 範例, tutorial = 指南.
+When writing content, apply these Traditional Chinese mappings: create = 建立, object = 物件, queue = 佇列, stack = 堆疊, information = 資訊, invocation = 呼叫, code = 程式碼, running = 執行, library = 函式庫, schematics = 原理圖, building = 建構, Setting up = 設定, package = 套件, video = 影片, for loop = for 迴圈, class = 類別, Concurrency = 平行處理, Transaction = 交易, Transactional = 交易式, Code Snippet = 程式碼片段, Code Generation = 程式碼產生器, Any Class = 任意類別, Scalability = 延展性, Dependency Package = 相依套件, Dependency Injection = 相依性注入, Reserved Keywords = 保留字, Metadata =  Metadata, Clone = 複製, Memory = 記憶體, Built-in = 內建, Global = 全域, Compatibility = 相容性, Function = 函式, Refresh = 重新整理, document = 文件, example = 範例, demo = 展示, quality = 品質, tutorial = 指南, recipes = 秘訣, byte = 位元組, bit = 位元
