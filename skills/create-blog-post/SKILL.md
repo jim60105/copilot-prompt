@@ -1,5 +1,5 @@
 ---
-name: create-blog-post-聆tw
+name: create-blog-post
 description: >
   Create a new tech blog post on 聆.tw (琳聽智者漫談), a Traditional Chinese AI-assisted tech blog.
   Use when the user wants to write a new blog post, create an article, draft a tech article,
