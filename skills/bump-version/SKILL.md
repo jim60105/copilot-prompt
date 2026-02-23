@@ -39,15 +39,17 @@ Automate version bumping with semantic versioning and structured changelog manag
    - **MINOR** for backward-compatible functionality additions
    - **PATCH** for backward-compatible bug fixes
 
-8. Update the manifest's `version` field with the new version number.
+8. Update the manifest's `version` field with the new version number. If there is a Helm chart, update the appVersion in `Chart.yaml` with new version as well.
 
-9. Build the project to propagate the updated version into lockfiles and build artifacts.
+9. If there are changes in the Helm chart, bump the version field in `Chart.yaml`. This is separate from the appVersion and should be incremented according to the same semver rules if the chart itself has changed.
 
-10. Run `git diff CHANGELOG.md` and verify no old entries were removed. Recover any entries if necessary.
+10. Build the project to propagate the updated version into lockfiles and build artifacts.
 
-11. Stage all changes and create a Git commit in English. Use here document syntax for multi-line commit messages.
+11. Run `git diff CHANGELOG.md` and verify no old entries were removed. Recover any entries if necessary.
 
-12. Annotate the commit with a Git tag in the format `v<new_version_number>`. Use here document syntax for multi-line tag messages.
+12. Stage all changes and create a Git commit in English. Use here document syntax for multi-line commit messages.
+
+13. Annotate the commit with a Git tag in the format `v<new_version_number>`. Use here document syntax for multi-line tag messages.
 
 **Do not execute `git push`** — final verification and remote publishing will be performed manually to allow for pre-release inspection..
 
