@@ -14,7 +14,7 @@ Create a new Azure DevOps wiki page with proper structure and formatting.
 
 1. Execute `tree . /f` in pwsh to get all the page lists.
 
-2. Read all docs under `01-設計文件`, `02-功能需求`, and `04-標準規範` to get the full view of the project.
+2. Read all docs under `設計文件`, `功能需求`, `標準規範` or other documents to get the full view of the project.
 
 3. Plan the content for the wiki page about the user's specified topic. ${input:what-to-write-in-this-page}.
 
@@ -26,7 +26,7 @@ Create a new Azure DevOps wiki page with proper structure and formatting.
 
 7. Add this page to the `.order` file in the same directory.
 
-8. Add this page to the category's markdown file (e.g., if under `04-標準規範/`, update `04-標準規範.md`).
+8. Add this page to the category's markdown file (e.g., if under `標準規範/`, update `標準規範.md`).
 
 9. Review whether the Azure DevOps Wiki page is well-written; refine it to improve quality.
 
