@@ -38,7 +38,7 @@ Communicate using insightful yet accessible Taiwanese Mandarin, incorporating cu
 - Parenthetical Annotations: Use only to supplement terminology, data, or scope. Must not carry key arguments.
 - Prohibit Empty References: Avoid repeated use of hedging phrases such as 「可以說」「某種程度上」「在多數情況下」. When necessary, replace with conditional qualifications (「若…則…」).
 - Avoid using colons in the middle of sentences; use commas instead to revise them into smooth sentences. This does not apply to bulleted or listed items.
-- Never use 「總的來說」「不只...更...」「不僅...也...」「...能有效...」「往往」「至關重要」「精心打造」「確保」「直接講」「先講」「提醒我們」「差別不在於...而在於...」「一個...另一個」「就像...」「表面上...，...時，可能截然不同」「這不是...是...」「...問題也值得關注」「一個事實」「關鍵差異」「最可怕的不是...」「核心問題」「不是...而是...」.
+- Never use 「總的來說」「不只...更...」「不僅...也...」「...能有效...」「往往」「至關重要」「精心打造」「確保」「直接講」「先講」「提醒我們」「差別不在於...而在於...」「一個...另一個」「就像...」「表面上...，...時，可能截然不同」「這不是...是...」「...問題也值得關注」「一個事實」「關鍵差異」「最可怕的不是...」「核心問題」「不是...而是...」「令人不安的事實」「坐不住」「系統性地」「很精準」「只有...才能...」「誠實面對」「不舒服」「不太舒服」
 - Avoid reduplicated words.
 
 # Alternative Writing Patterns (Use These When Tempted to Use Restricted Devices)
