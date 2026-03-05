@@ -28,15 +28,17 @@ This guidelines focuses on building high-quality, secure, and performance-optimi
 
 ### 1. ARG Definition Block
 
-Define all ARGs at the top of the file, using standard variables:
+Define all ARGs at the top of the file, using standard variables. **Only `UID`, `VERSION`, and `RELEASE` go at the top level** — architecture ARGs (`TARGETARCH`, `TARGETVARIANT`) should be declared inside the stage that needs them, not globally:
 
 ```dockerfile
 # syntax=docker/dockerfile:1
 ARG UID=1001
 ARG VERSION=EDGE
 ARG RELEASE=0
-ARG NAME=app  # For Rust projects
 ```
+
+> [!NOTE]  
+> `TARGETARCH` and `TARGETVARIANT` are automatically set by BuildKit but must be explicitly declared with `ARG` inside each stage that references them (e.g., in cache mount IDs). Declare them at the top of the build stage, not at the file level.
 
 ### 2. Multi-stage Build Structure
 
@@ -44,23 +46,21 @@ Use clear stage naming and comment separation:
 
 ```dockerfile
 ########################################
-# Base stage
-########################################
-FROM alpine:3 AS base
-
-########################################
 # Build stage
 ########################################
-FROM base AS build
+FROM python:3.13-alpine AS build
 
 ########################################
 # Final stage
 ########################################
-FROM base AS final
+FROM python:3.13-alpine AS final
 ```
 
 > [!NOTE]  
 > Always name the last stage as `final`, even if there is only one stage. This ensures consistency and clarity in multi-stage builds and CI usage.
+
+> [!IMPORTANT]  
+> **Only use a separate `base` stage when it requires non-trivial setup** (e.g., installing system packages, configuring interpreters on UBI/Debian). For Alpine-based images where both build and final share the same unmodified base image, have each stage `FROM` the base image directly — this avoids an unnecessary indirection layer.
 
 ### 3. Stage Comment Guidelines
 
@@ -192,17 +192,25 @@ ENV VIRTUAL_ENV=/venv
 ENV UV_LINK_MODE=copy
 ENV UV_PYTHON_DOWNLOADS=0
 
-# Create virtual environment and install dependencies
-RUN --mount=type=cache,id=uv-$TARGETARCH$TARGETVARIANT,sharing=locked,target=/root/.cache/uv \
-    uv venv /venv && \
-    uv pip install package-name
-
-# For projects with pyproject.toml and uv.lock
+# Step 1: Install dependencies ONLY (cached — deps change less often than source)
 RUN --mount=type=cache,id=uv-$TARGETARCH$TARGETVARIANT,sharing=locked,target=/root/.cache/uv \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
     --mount=type=bind,source=uv.lock,target=uv.lock \
-    uv sync --frozen --no-dev
+    uv sync --frozen --no-dev --no-install-project --no-editable
+
+# Step 2: Copy source, then install the project itself
+COPY --link src/ src/
+RUN --mount=type=cache,id=uv-$TARGETARCH$TARGETVARIANT,sharing=locked,target=/root/.cache/uv \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    uv sync --frozen --no-dev --no-editable
 ```
+
+> [!IMPORTANT]  
+> **The two-step uv sync pattern is critical for cache efficiency:**
+> - Step 1 (`--no-install-project`): Installs only third-party dependencies. This layer is cached and reused as long as `pyproject.toml` and `uv.lock` don't change.
+> - Step 2 (after `COPY src/`): Installs the project package itself. This layer is rebuilt when source code changes, but the expensive dependency installation is already cached.
+> - **Do NOT combine these into a single step** — it would invalidate the dependency cache on every source code change.
 
 #### Option B: Using pip (For compatibility/legacy projects)
 
@@ -327,6 +335,57 @@ RUN upx --best --lzma /go/bin/binary || true
 
 ## Runtime Environment Settings
 
+### Final Stage Instruction Ordering (CRITICAL)
+
+The order of instructions in the final stage is **deliberate and significant** for cache efficiency, security, and correctness. Follow this exact order:
+
+1. **System cleanup** — Remove pip/setuptools/wheel (they're not needed at runtime, reduces attack surface)
+2. **Create user** — Non-root user via `adduser` (must exist before `COPY --chown`)
+3. **Create directories** — `install -d` with proper ownership (must happen before COPYing into them)
+4. **COPY from build** — Copy built artifacts with `--link --chown=$UID:0 --chmod=775` (OpenShift compatibility)
+5. **ENV** — Set PATH and other environment variables (depends on copied artifacts location)
+6. **WORKDIR** — Set working directory
+7. **VOLUME** — Declare volumes (if applicable)
+8. **EXPOSE** — Declare ports
+9. **USER** — Switch to non-root (as late as possible, after all root-requiring operations)
+10. **STOPSIGNAL** — Signal handling configuration
+11. **ENTRYPOINT / CMD** — Runtime command
+12. **ARG VERSION + ARG RELEASE + LABEL** — **Always last** (see below)
+
+> [!IMPORTANT]  
+> **LABEL MUST be the very last instruction.** Place `ARG VERSION` and `ARG RELEASE` immediately before LABEL. This is critical because:
+> - ARG values bust the build cache for all subsequent instructions
+> - VERSION/RELEASE change on every build — placing them early would invalidate all layers after them
+> - LABEL itself doesn't create a filesystem layer, so putting it last has zero cost
+> - This pattern ensures maximum cache reuse across builds with different version tags
+
+```dockerfile
+# ✅ Correct: LABEL at the very end
+USER $UID
+STOPSIGNAL SIGINT
+ENTRYPOINT [ "dumb-init", "--", "command" ]
+CMD [ "--help" ]
+
+ARG VERSION
+ARG RELEASE
+LABEL name="project-name" \
+    vendor="original-author" \
+    maintainer="jim60105" \
+    url="https://github.com/jim60105/project" \
+    version=${VERSION} \
+    release=${RELEASE} \
+    ...
+
+# ❌ Wrong: LABEL before USER/CMD — VERSION ARG busts cache for all instructions after it
+ARG VERSION
+ARG RELEASE
+LABEL name="project-name" \
+    version=${VERSION} \
+    release=${RELEASE}
+USER $UID
+CMD [ "command" ]  # This layer is rebuilt on every version change!
+```
+
 ### Required Runtime Settings
 
 ```dockerfile
@@ -365,6 +424,9 @@ HEALTHCHECK --interval=30s --timeout=2s --start-period=30s \
 ## LABEL Standards
 
 ### Required Labels
+
+> [!IMPORTANT]  
+> LABEL MUST be the **very last instruction** in the Containerfile. Place `ARG VERSION` and `ARG RELEASE` immediately before it. See "Final Stage Instruction Ordering" above for the rationale.
 
 ```dockerfile
 ARG VERSION
