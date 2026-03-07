@@ -1,6 +1,6 @@
 ---
 name: commit
-  description: Create a git commit with clear, conventional commit messages. You MUST read this when the user wants to commit staged changes, write a commit message, or finalize code changes with proper conventional commit format since it describes how to follow the user's specific requirements.
+description: Create a git commit with clear, conventional commit messages. You MUST read this when the user wants to commit staged changes, write a commit message, or finalize code changes with proper conventional commit format since it describes how to follow the user's specific requirements.
 metadata:
   original-prompt: commit.prompt.md
   suggested-model: fast
