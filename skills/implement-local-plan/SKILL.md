@@ -1,8 +1,6 @@
 ---
 name: implement-local-plan
 description: Implement a development plan from local plan files with work report tracking. Use when the user wants to execute a local development plan from `.github/plans/` or `.github/reports/`, implement backlog items step by step, or create work reports for completed tasks.
-metadata:
-  original-prompt: implement-local-plan.prompt.md
 ---
 
 # Implement Local Plan

@@ -1,8 +1,6 @@
 ---
 name: rewrite-rustdoc
 description: Rewrite Rust documentation comments to ensure all documentation and comments are in English, following rustdoc guidelines. Use when the user wants to clean up Rust documentation, translate Chinese comments to English, fix missing documentation, or ensure rustdoc compliance in a Rust codebase.
-metadata:
-  original-prompt: rewrite-rustdoc.prompt.md
 ---
 
 # Rewrite Rustdoc

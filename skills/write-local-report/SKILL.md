@@ -1,9 +1,6 @@
 ---
 name: write-local-report
 description: Write a comprehensive work report in Traditional Chinese following project report templates. Use when the user wants to create a development progress report, document completed work, or generate a work report from `.github/reports/` templates.
-metadata:
-  original-prompt: write-local-report.prompt.md
-  report-language: 正體中文
 ---
 
 # Write Local Report

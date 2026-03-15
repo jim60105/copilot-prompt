@@ -1,8 +1,6 @@
 ---
 name: bump-version
 description: Automate version bumping following semantic versioning and changelog management. Use when the user wants to bump a version, create a release, update the changelog, or tag a new version in a project using semver conventions and Keep a Changelog format.
-metadata:
-  original-prompt: bump-version.prompt.md
 ---
 
 # Bump Version

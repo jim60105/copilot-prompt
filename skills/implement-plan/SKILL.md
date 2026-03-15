@@ -1,10 +1,6 @@
 ---
 name: implement-plan
 description: Implement a development plan from GitHub Issues with full DevOps workflow including branching, testing, and pull request creation. Use when the user wants to implement a GitHub issue, work on a backlog item or bug fix using the GitHub DevOps workflow with issue tracking, branch management, and PR submission.
-metadata:
-  original-prompt: implement-plan.prompt.md
-  report-language: 正體中文
-  restriction: All issue and PR operations are limited to repositories owned by jim60105 only.
 ---
 
 # Implement Plan

@@ -1,9 +1,6 @@
 ---
 name: create-new-wiki-page
 description: Create a new Azure DevOps wiki page. Use when the user wants to add a new wiki page, write project documentation in Azure DevOps wiki format, or update wiki page structure with mermaid diagrams in Traditional Chinese.
-metadata:
-  original-prompt: create-new-wiki-page.prompt.md
-  wiki-language: 正體中文
 ---
 
 # Create New Wiki Page

@@ -1,8 +1,6 @@
 ---
 name: create-copilot-instructions
 description: Create `AGENTS.md` file for a project. Use when the user wants to set up custom instructions, configure AI coding assistant behavior, or create project-specific coding guidelines for AI agents.
-metadata:
-  original-prompt: create-copilot-instructions.prompt.md
 ---
 
 # Create Copilot Instructions

@@ -1,8 +1,6 @@
 ---
 name: create-controller
 description: Create an API controller for a given entity in an ASP.NET Core Web API project. Use when the user wants to scaffold a new controller, create REST API endpoints, or set up CRUD operations with Entity Framework Core and OpenAPI annotations.
-metadata:
-  original-prompt: create-controller.prompt.md
 ---
 
 # Create API Controller

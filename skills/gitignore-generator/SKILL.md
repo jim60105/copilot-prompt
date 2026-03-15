@@ -1,8 +1,6 @@
 ---
 name: gitignore-generator
 description: Generate a .gitignore file for a project using gitignore.io templates. Use when the user wants to create or update a .gitignore file, set up ignore rules for a new project, or generate language/framework-specific gitignore content.
-metadata:
-  original-prompt: gitignore-generator.prompt.md
 ---
 
 # Gitignore Generator

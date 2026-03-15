@@ -1,10 +1,6 @@
 ---
 name: create-plan
 description: Create a detailed development plan and GitHub issues for a project. Use when the user wants to plan a new feature or fix, create GitHub issues for backlogs or bugs, or draft a comprehensive development plan with task breakdowns, dependencies, and testing strategies. Plans are written in Traditional Chinese with English code examples.
-metadata:
-  original-prompt: create-plan.prompt.md
-  plan-language: 正體中文
-  restriction: All issue and PR operations are limited to repositories owned by jim60105 only.
 ---
 
 # Create Plan

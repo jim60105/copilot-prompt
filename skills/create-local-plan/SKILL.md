@@ -1,9 +1,6 @@
 ---
 name: create-local-plan
 description: Create a detailed development plan stored locally in `.github/plans/`. Use when the user wants to plan a new feature, create a local backlog or bug plan, or draft a detailed development plan without creating GitHub issues. Plans are written in Traditional Chinese with English code examples.
-metadata:
-  original-prompt: create-local-plan.prompt.md
-  plan-language: 正體中文
 ---
 
 # Create Local Plan

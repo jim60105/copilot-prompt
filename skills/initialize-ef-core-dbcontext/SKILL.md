@@ -1,8 +1,6 @@
 ---
 name: initialize-ef-core-dbcontext
 description: Initialize EF Core DbContext for an ASP.NET Core project using EF Core Power Tools CLI. Use when the user wants to scaffold a database context, generate entity models from an existing database, or set up Entity Framework Core with connection strings and dependency injection.
-metadata:
-  original-prompt: initialize-ef-core-dbcontext.prompt.md
 ---
 
 # Initialize EF Core DbContext

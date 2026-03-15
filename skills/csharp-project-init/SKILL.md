@@ -1,8 +1,6 @@
 ---
 name: csharp-project-init
 description: Initialize a C# ASP.NET Core Web API project with Entity Framework Core, EditorConfig, gitignore, and gitattributes. Use when the user wants to create a new C# project, scaffold a .NET Web API, or set up a C# development environment with EF Core tools.
-metadata:
-  original-prompt: csharp-project-init.prmpt.md
 ---
 
 # C# Project Init
