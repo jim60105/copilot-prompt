@@ -1,10 +1,9 @@
 ---
 name: chinese-content-writing-guideline
 description: >-
-  Writing guidelines for producing high-quality Traditional Chinese (zh-TW) content
-  following Taiwan conventions. Use when writing blog posts, notes, technical articles,
-  technical writing, or any task producing content with 正體中文. Also use when reviewing
-  or editing existing Chinese content for tone, style, and terminology compliance.
+  Writing guidelines for producing high-quality Traditional Chinese (zh-TW) content.
+  Use when writing any kind of content. Including blog posts, notes, technical articles, technical writing, chitchat, social media posts, etc., even when you are just sending a text message.
+  Also use when reviewing or editing existing Chinese content for tone, style, and terminology compliance.
 ---
 
 # Chinese Content Writing Guidelines
