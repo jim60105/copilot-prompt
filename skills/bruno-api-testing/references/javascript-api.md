@@ -124,32 +124,36 @@ Available in all script contexts.
 
 ### Environment Variables
 
-Environment variables (persisted to environment file on disk):
+Environment variables are available across the active Bruno environment. `bru.setEnvVar()` is in-memory by default; pass `{ persist: true }` to write the change to disk.
 
 | Method | Description |
 |--------|-------------|
 | `bru.getEnvVar(name)` | Get an environment variable |
-| `bru.setEnvVar(name, value)` | Set an environment variable (persists to file) |
+| `bru.setEnvVar(name, value, options?)` | Set an environment variable; use `{ persist: true }` to save it to file |
 | `bru.getEnvName()` | Get the active environment name |
 | `bru.hasEnvVar(name)` | Check if an environment variable exists |
 | `bru.deleteEnvVar(name)` | Delete an environment variable |
+| `bru.getAllEnvVars()` | Get all environment variables as an object |
+| `bru.deleteAllEnvVars()` | Delete all environment variables in the active environment |
 | `bru.getGlobalEnvVar(name)` | Get a global environment variable |
 | `bru.setGlobalEnvVar(name, value)` | Set a global environment variable |
-| `bru.deleteGlobalEnvVar(name)` | Delete a global environment variable |
+| `bru.getAllGlobalEnvVars()` | Get all global environment variables as an object |
 
 ### Collection, Folder, and Request Variables
 
 | Method | Description |
 |--------|-------------|
+| `bru.getCollectionName()` | Get the current collection name |
 | `bru.getCollectionVar(name)` | Get a collection variable |
-| `bru.setCollectionVar(name, value)` | Set a collection variable |
-| `bru.deleteCollectionVar(name)` | Delete a collection variable |
+| `bru.hasCollectionVar(name)` | Check if a collection variable exists |
 | `bru.getFolderVar(name)` | Get a folder variable |
-| `bru.setFolderVar(name, value)` | Set a folder variable |
-| `bru.deleteFolderVar(name)` | Delete a folder variable |
 | `bru.getRequestVar(name)` | Get a request-level variable |
-| `bru.setRequestVar(name, value)` | Set a request-level variable |
-| `bru.deleteRequestVar(name)` | Delete a request-level variable |
+
+### Process Environment Variables
+
+| Method | Description |
+|--------|-------------|
+| `bru.getProcessEnv(name)` | Get a process environment variable exposed by the OS or CI runtime |
 
 ### Runtime Variables
 
@@ -157,17 +161,21 @@ Runtime variables exist only during the current execution and are NOT persisted:
 
 | Method | Description |
 |--------|-------------|
+| `bru.hasVar(name)` | Check whether a runtime variable exists |
 | `bru.getVar(name)` | Get a runtime variable |
 | `bru.setVar(name, value)` | Set a runtime variable |
 | `bru.deleteVar(name)` | Delete a runtime variable |
+| `bru.getAllVars()` | Get all runtime variables as an object |
+| `bru.deleteAllVars()` | Delete all runtime variables |
 
 ### Runner Control (Collection Runner Only)
 
 | Method | Description |
 |--------|-------------|
 | `bru.setNextRequest(name)` | Set the next request to execute by name |
-| `bru.skipRequest()` | Skip the current request |
-| `bru.stopExecution()` | Stop the collection run |
+| `bru.runner.setNextRequest(name)` | Set the next request to execute by name |
+| `bru.runner.skipRequest()` | Skip the current request |
+| `bru.runner.stopExecution()` | Stop the collection run |
 
 ### Utilities
 
@@ -181,11 +189,14 @@ Runtime variables exist only during the current execution and are NOT persisted:
 
 ### Cookie Management
 
-Cookies in Bruno are controlled through settings. In scripts:
+Bruno exposes a cookie jar API in scripts:
 
 ```javascript
-// Reading cookies from response headers
-const setCookie = res.getHeader("set-cookie");
+const jar = bru.cookies.jar();
+
+jar.setCookie("https://example.com", "sessionId", "abc123");
+const sessionCookie = await jar.getCookie("https://example.com", "sessionId");
+const allCookies = await jar.getCookies("https://example.com");
 ```
 
 ### sendRequest
@@ -304,17 +315,12 @@ expect(res.status).to.be.a('number').and.to.equal(200);
 
 ## Script Execution Order
 
-For each request:
+Bruno supports two script flows:
 
-1. Collection `before-request` script
-2. Folder `before-request` script (each level, top-down)
-3. Request `before-request` script
-4. **HTTP Request executes**
-5. Collection `after-response` script
-6. Folder `after-response` script (each level, top-down)
-7. Request `after-response` script
-8. Request assertions
-9. Request `tests` script
+1. **Sandwich** (default): Collection `before-request` → Folder `before-request` → Request `before-request` → **HTTP request executes** → Request `after-response` → Folder `after-response` → Collection `after-response`
+2. **Sequential**: Collection `before-request` → Folder `before-request` → Request `before-request` → **HTTP request executes** → Collection `after-response` → Folder `after-response` → Request `after-response`
+
+Request assertions and the request `tests` script run after the post-response scripts.
 
 ---
 
@@ -325,7 +331,8 @@ For each request:
 3. Folder variables (innermost first)
 4. Collection variables
 5. Environment variables
-6. Process environment variables
+
+Use `bru.getGlobalEnvVar()` for global environment variables and `bru.getProcessEnv()` for process environment variables. Bruno's docs only define the precedence chain through environment variables.
 
 ---
 

@@ -394,7 +394,7 @@ runtime:
       value: application/json
 ```
 
-Operators: `eq`, `neq`, `lt`, `lte`, `gt`, `gte`, `contains`, `startsWith`, `endsWith`, `isNumber`, `isString`, `isBoolean`, `isJson`, `isArray`, `isEmpty`, `isNull`, `isUndefined`, `isTrue`, `isFalse`.
+Operator names vary slightly by Bruno version and editor surface. Check Bruno's current Assertions docs for the exact operator names supported by your version when writing declarative assertions.
 
 ## Settings
 

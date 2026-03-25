@@ -64,14 +64,14 @@ bru run folder/ --env <environment>
 |--------|-------------|
 | `--env <name>` | Environment to use |
 | `--env-var "key=value"` | Override/set environment variables |
-| `--output <path>` | Output directory for reports |
+| `--output <path>` | Deprecated output path option; prefer reporter flags |
 | `--reporter-html [path]` | Generate HTML report |
 | `--reporter-junit [path]` | Generate JUnit XML report |
 | `--reporter-json [path]` | Generate JSON report |
-| `--reporter-html-skip-all-headers` | Omit headers from HTML report |
-| `--reporter-html-skip-all-bodies` | Omit bodies from HTML report |
-| `--reporter-json-skip-all-headers` | Omit headers from JSON report |
-| `--reporter-json-skip-all-bodies` | Omit bodies from JSON report |
+| `--reporter-skip-all-headers` | Omit headers from reports |
+| `--reporter-skip-request-body` | Omit request bodies from reports |
+| `--reporter-skip-response-body` | Omit response bodies from reports |
+| `--reporter-skip-body` | Omit both request and response bodies from reports |
 | `--sandbox <mode>` | `safe` (default) or `developer` |
 | `--bail` | Stop on first failure |
 | `--cacert <path>` | CA certificate file |
@@ -109,8 +109,8 @@ bru run --env prod --reporter-html results/report.html
 ```
 
 Options:
-- `--reporter-html-skip-all-headers` — Exclude request/response headers
-- `--reporter-html-skip-all-bodies` — Exclude request/response bodies
+- `--reporter-skip-all-headers` — Exclude request/response headers
+- `--reporter-skip-body` — Exclude request/response bodies
 
 ### JUnit XML Report
 
@@ -127,8 +127,8 @@ bru run --env prod --reporter-json results/report.json
 ```
 
 Options:
-- `--reporter-json-skip-all-headers` — Exclude headers
-- `--reporter-json-skip-all-bodies` — Exclude bodies
+- `--reporter-skip-all-headers` — Exclude headers
+- `--reporter-skip-body` — Exclude bodies
 
 ### Multiple Reporters
 

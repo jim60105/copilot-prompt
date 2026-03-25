@@ -263,7 +263,7 @@ runtime:
       value: application/json
 ```
 
-Operators: `eq`, `neq`, `lt`, `lte`, `gt`, `gte`, `contains`, `startsWith`, `endsWith`, `isNumber`, `isString`, `isBoolean`, `isJson`, `isArray`, `isEmpty`, `isNull`, `isUndefined`, `isTrue`, `isFalse`.
+Operators vary slightly by Bruno version and editor surface. Check Bruno's current Assertions docs for the exact operator names supported by your version when writing declarative assertions.
 
 ### Tests (Chai.js) — Use for Complex Validation
 
@@ -308,16 +308,12 @@ For the complete JavaScript API (`req`, `res`, `bru` objects), see [references/j
 
 ## Script Execution Order
 
-1. Collection `before-request`
-2. Folder `before-request`
-3. Request `before-request`
-4. **Request is sent**
-5. Request `after-response`
-6. Folder `after-response`
-7. Collection `after-response`
-8. Request `tests`
-9. Folder `tests`
-10. Collection `tests`
+Bruno supports two script flows:
+
+1. **Sandwich** (default): Collection `before-request` → Folder `before-request` → Request `before-request` → **Request is sent** → Request `after-response` → Folder `after-response` → Collection `after-response`
+2. **Sequential**: Collection `before-request` → Folder `before-request` → Request `before-request` → **Request is sent** → Collection `after-response` → Folder `after-response` → Request `after-response`
+
+Request assertions and request `tests` run after the post-response scripts.
 
 ## Variable Precedence (Highest to Lowest)
 
@@ -326,8 +322,8 @@ For the complete JavaScript API (`req`, `res`, `bru` objects), see [references/j
 3. Folder variables
 4. Collection variables
 5. Environment variables
-6. Global environment variables
-7. Process environment variables (`process.env.*`)
+
+Use `bru.getGlobalEnvVar()` for global environment values and `bru.getProcessEnv()` for OS process environment variables. They are not documented as part of the standard collection variable precedence chain.
 
 ## References
 
