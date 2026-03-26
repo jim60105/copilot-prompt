@@ -305,6 +305,7 @@ For the complete JavaScript API (`req`, `res`, `bru` objects), see [references/j
 6. Committing secrets — use `secret: true` in env files + CI/CD secrets
 7. Using `|-` for body data is required in YAML to preserve JSON formatting
 8. Missing `seq` number in `info:` — controls execution order
+9. **Relying on `folder.yml` script/auth inheritance in CLI** — Bruno's Sandwich execution order (Collection → Folder → Request) for `before-request` scripts may work in the Bruno GUI, but `@usebruno/cli` does NOT reliably inherit `folder.yml` scripts or auth settings to individual test files. Always add `before-request` scripts and `auth` blocks directly to each request file that needs them. The `folder.yml` is useful for documentation and GUI users, but CLI-driven tests must be self-contained.
 
 ## Script Execution Order
 
@@ -314,6 +315,33 @@ Bruno supports two script flows:
 2. **Sequential**: Collection `before-request` → Folder `before-request` → Request `before-request` → **Request is sent** → Collection `after-response` → Folder `after-response` → Request `after-response`
 
 Request assertions and request `tests` run after the post-response scripts.
+
+## ⚠️ CLI Inheritance Caveat
+
+**The Sandwich/Sequential script execution order described above applies to Bruno GUI only.** When running tests with `@usebruno/cli` (the CLI runner used in CI/CD), folder-level `before-request` scripts and `auth` settings are **NOT reliably inherited** by individual request files.
+
+**Impact**: If a `folder.yml` contains a `before-request` script (e.g., to skip requests when an environment variable is `"false"`), request files in that folder will NOT inherit this logic when run via CLI.
+
+**Workaround**: Duplicate the `before-request` logic into each individual request file that needs it:
+
+```yaml
+# In each request file that needs conditional skip:
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        const featureAvailable = bru.getEnvVar("featureAvailable");
+        if (featureAvailable === "false") {
+          bru.runner.skipRequest();
+        }
+    - type: tests
+      code: |-
+        test("returns 200", function() {
+          expect(res.status).to.equal(200);
+        });
+```
+
+**Same applies to auth**: Set `http.auth` in each request file, not just `folder.yml`.
 
 ## Variable Precedence (Highest to Lowest)
 
