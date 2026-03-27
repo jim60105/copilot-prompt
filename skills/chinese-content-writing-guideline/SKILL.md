@@ -66,6 +66,7 @@ Never use the following expressions:
 
 - Avoid reduplicated words
 - Avoid hedging phrases like 「可以說」「某種程度上」「在多數情況下」; replace with conditional qualifications
+- Avoid saying things like "I thought about it for a long time," "I gave it some thought," or "being dissected" / "reading an autopsy report."
 - Avoid using "mirror" to describe feelings or things.
 - Avoid saying that this topic makes you feel uncomfortable, uneasy, or slightly offended, especially when discussing subjects such as cybersecurity, attacks, AI, ethics, philosophy, and psychology.
 - Utilize fewer metaphors and focus more on describing the facts.
