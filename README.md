@@ -14,10 +14,6 @@ I use it as a submodule of [jim60105/dotfiles](https://github.com/jim60105/dotfi
 My Linux workstation uses chezmoi to set up this project at `~/copilot-prompt`, while my Windows machine cloned it to `~/repos/copilot-prompt`.
 
 ```jsonc
-    "chat.promptFilesLocations": {
-        "~/copilot-prompt/.github/prompts": true,
-        "~/repos/copilot-prompt/prompts": true
-    },
     "chat.instructionsFilesLocations": {
         "~/repos/copilot-prompt/.github/instructions": true,
         "~/copilot-prompt/instructions": true
@@ -36,7 +32,6 @@ My Linux workstation uses chezmoi to set up this project at `~/copilot-prompt`, 
 
 - [Customize chat responses in VS Code - Visual Studio Code](https://code.visualstudio.com/docs/copilot/copilot-customization)
 - [Will 保哥: 最佳 GitHub Copilot 設定 - doggy8088/github-copilot-configs](https://github.com/doggy8088/github-copilot-configs)
-- [Cloudflare Workers Prompt](https://developers.cloudflare.com/workers/prompt.txt)
 - [GitHub Official Copilot Prompt - github/awesome-copilot](https://github.com/github/awesome-copilot)
 - [burkeholland: Beast Mode](https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf)
 
