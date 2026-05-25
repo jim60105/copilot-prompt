@@ -33,7 +33,7 @@ spec/
 #!/bin/zsh
 
 eval "$(shellspec - -c) exit 1"
-# Copyright (C) 2025 Jim Chen <Jim@ChenJ.im>, licensed under GPL-3.0-or-later
+# Copyright (C) 2026 Jim Chen <Jim@ChenJ.im>, licensed under GPL-3.0-or-later
 #
 # Description of what this test file covers
 
