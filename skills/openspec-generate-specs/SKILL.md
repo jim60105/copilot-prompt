@@ -1,6 +1,7 @@
 ---
 name: openspec-generate-specs
 description: Generate comprehensive OpenSpec specifications directly from the current project state. Use when the user wants to create or populate main specs by analyzing existing code, documentation, AGENTS.md, GitHub issues, and pull requests — without going through the change/proposal workflow. Ideal for bootstrapping specs on a project that already has working code but no specs yet, or for refreshing specs to match the current implementation.
+license: GFDL-1.3-or-later
 ---
 
 Generate OpenSpec main specifications by analyzing the current project's code, documentation, issues, and pull requests.

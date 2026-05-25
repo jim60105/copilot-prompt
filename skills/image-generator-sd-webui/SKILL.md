@@ -1,6 +1,7 @@
 ---
 name: image-generator-sd-webui
 description: Generate images via the Stable Diffusion WebUI / Forge HTTP API (AUTOMATIC1111-compatible `/sdapi/v1/*`). Use when the user wants to (1) discover or pick a model / extra module (TE/VAE) / sampler / scheduler / style preset from a running sd-webui server, (2) generate an image with a given prompt (txt2img), (3) check generation progress, (4) cancel/interrupt an in-flight generation, (5) inspect or change a global sd-webui option (e.g. active checkpoint), or (6) test connectivity. This skill talks to a *generic* sd-webui-compatible server (AUTOMATIC1111, Forge, reForge, sd-webui-forge-classic). Do NOT trigger for requests that are purely writing the prompt itself.
+license: GFDL-1.3-or-later
 ---
 
 # Image Generator (sd-webui API)

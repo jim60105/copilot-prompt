@@ -4,6 +4,7 @@ description: >-
   Writing guidelines for producing high-quality Traditional Chinese (zh-TW) content.
   Use when writing any kind of content. Including blog posts, notes, technical articles, technical writing, chitchat, social media posts, etc., even when you are just sending a text message.
   Also use when reviewing or editing existing Chinese content for tone, style, and terminology compliance.
+license: GFDL-1.3-or-later
 ---
 
 # Chinese Content Writing Guidelines

@@ -13,6 +13,7 @@ description: >-
   Snyk), or (8) handle any TypeScript/JavaScript security concern including
   injection prevention, prototype pollution, XSS protection, SSRF prevention,
   secrets management, and secure deployment.
+license: GFDL-1.3-or-later
 ---
 
 # TypeScript / JavaScript Security Development Guide

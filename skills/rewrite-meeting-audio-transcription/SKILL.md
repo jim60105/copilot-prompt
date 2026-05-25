@@ -1,6 +1,7 @@
 ---
 name: rewrite-meeting-audio-transcription
 description: Rewrite raw meeting audio transcriptions into clean, accurate meeting minutes in Traditional Chinese. Use when the user has an unprocessed audio transcription file with recognition errors and needs it cleaned up into proper meeting minutes.
+license: GFDL-1.3-or-later
 ---
 
 # Rewrite Meeting Audio Transcription

@@ -1,6 +1,7 @@
 ---
 name: create-new-wiki-page
 description: Create a new Azure DevOps wiki page. Use when the user wants to add a new wiki page, write project documentation in Azure DevOps wiki format, or update wiki page structure with mermaid diagrams in Traditional Chinese.
+license: GFDL-1.3-or-later
 ---
 
 # Create New Wiki Page
