@@ -2,6 +2,8 @@
 name: press-release-writer
 description: "Write professional press releases in Traditional Chinese (zh-TW) following inverted pyramid structure, 5W1H framework, and Taiwan media conventions. Use when the user wants to: (1) write a press release or news announcement, (2) draft corporate communications for media dissemination, (3) craft a lede or headline for a news release, (4) review or improve press release structure and newsworthiness, (5) write any 新聞稿 or 媒體通知, or (6) format announcements following journalistic standards."
 license: GFDL-1.3-or-later
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Press Release Writer

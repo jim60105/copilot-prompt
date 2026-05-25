@@ -2,6 +2,8 @@
 name: image-prompt-builder-nl
 description: Craft high-quality natural-language image prompts for any modern text-to-image or image-edit model that accepts flowing English. Trigger when the user wants help writing, rewriting, improving, or translating an English natural-language image prompt — including "write me an image prompt", "improve this image prompt", "describe this scene for an image model", or "convert these tags into a natural language prompt". Do NOT trigger for requests that are purely about dispatching to an image API, choosing samplers/schedulers, picking LoRAs, or setting up ControlNet — those belong to a runtime skill.
 license: GFDL-1.3-or-later
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Image Prompt Builder — Natural Language

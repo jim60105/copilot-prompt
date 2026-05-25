@@ -2,6 +2,8 @@
 name: update-github-actions-version
 description: Update GitHub Actions versions in workflow files, focusing only on major version changes. Use when the user wants to update action versions, check for outdated GitHub Actions, or upgrade workflow dependencies to their latest major versions.
 license: GFDL-1.3-or-later
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Update GitHub Actions Version

@@ -2,6 +2,8 @@
 name: containerfile-creator
 license: GPL-3.0-or-later
 description: "Create high-quality, secure, and performance-optimized Containerfiles (Dockerfiles) following best practices for multi-architecture builds, OpenShift/Kubernetes compatibility, and BuildKit cache optimization. Use when the user wants to: (1) create a new Containerfile or Dockerfile for any project (Python, Rust, Go, Node.js, .NET, or any language), (2) containerize an application with multi-stage builds, (3) optimize an existing Containerfile for security, performance, or image size, (4) review or improve container image build practices, (5) set up BuildKit cache mounts for package managers, (6) create OpenShift-compatible container images with non-root users and arbitrary UID support, (7) write a .dockerignore file, or (8) apply OCI LABEL standards."
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Containerfile Creator

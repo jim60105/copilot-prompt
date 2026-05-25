@@ -2,6 +2,8 @@
 name: rubber-duck
 description: Invoke a Rubber Duck Reviewer subagent to independently critique plans and implementations before proceeding. Use when the agent is about to implement a non-trivial plan (multi-file changes, architectural decisions, security-sensitive logic, database schema changes), after completing a self-contained unit of work (module, endpoint, feature), when stuck or facing repeated failures (same test fails 2+ times, unexpected results), or when the agent wants independent validation of assumptions and design decisions. Triggers on any non-trivial implementation task where independent critique would catch blind spots before they become costly mistakes.
 license: GFDL-1.3-or-later
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Rubber Duck Reviewer

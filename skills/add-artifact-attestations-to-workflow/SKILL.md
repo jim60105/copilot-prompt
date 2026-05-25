@@ -2,6 +2,8 @@
 name: add-artifact-attestations-to-workflow
 description: Add SLSA build-provenance attestations to existing GitHub Actions workflows. Use when the user wants to add artifact attestations, build provenance, or SLSA attestations to Docker container image builds in GitHub Actions CI/CD pipelines.
 license: GFDL-1.3-or-later
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Add Artifact Attestations to Workflow

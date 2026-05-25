@@ -2,6 +2,8 @@
 name: bruno-api-testing
 description: "Create, run, and maintain API test collections using Bruno (OpenCollection YAML format and legacy Bru format). Use when the user wants to: (1) create a Bruno API test collection from scratch or from OpenAPI/Swagger specs, (2) write API request files with tests and assertions, (3) run API tests using bru CLI, (4) generate test reports (HTML, JUnit, JSON), (5) set up CI/CD pipelines (GitHub Actions) for automated API testing, (6) debug or fix failing Bruno API tests, (7) add environment configurations for API testing, (8) chain API requests with data extraction, or (9) work with any .yml/.bru Bruno collection files. Triggers on mentions of 'Bruno', 'bru CLI', 'API testing collection', 'OpenCollection', or requests to automate API testing with file-based collections."
 license: GFDL-1.3-or-later
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Bruno API Testing

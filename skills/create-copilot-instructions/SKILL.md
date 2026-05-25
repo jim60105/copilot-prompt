@@ -2,6 +2,8 @@
 name: create-copilot-instructions
 description: Create `AGENTS.md` file for a project. Use when the user wants to set up custom instructions, configure AI coding assistant behavior, or create project-specific coding guidelines for AI agents.
 license: GFDL-1.3-or-later
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Create Copilot Instructions

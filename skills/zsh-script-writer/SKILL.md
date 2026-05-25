@@ -2,6 +2,8 @@
 name: zsh-script-writer
 description: "Write and test Zsh scripts following project coding standards with ShellSpec BDD testing. Use when the user wants to: (1) create a new Zsh script, (2) write or fix ShellSpec tests for Zsh scripts, (3) review Zsh code for best practices, (4) add error handling or dependency checking to shell scripts, (5) implement API integration in Zsh, (6) achieve 85%+ test coverage for shell scripts, or (7) work with any .zsh file or spec/*_spec.sh test file."
 license: GFDL-1.3-or-later
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Zsh Script Writer
