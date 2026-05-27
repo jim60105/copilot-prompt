@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Document</title>
+    <meta name="description" content="Description" />
+
+    <!-- Core Theme (required) -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/themes/core.min.css" />
+
+    <!-- Optional: Dark mode add-on (auto-enabled by OS preference) -->
+    <!--
+    <link rel="stylesheet"
+          href="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/themes/addons/core-dark.min.css"
+          media="(prefers-color-scheme: dark)" />
+    -->
+
+    <!-- Optional: Classic Vue theme add-on (v4 look) -->
+    <!--
+    <link rel="stylesheet"
+          href="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/themes/addons/vue.min.css" />
+    -->
+
+    <!-- Optional: Custom theme overrides -->
+    <!--
+    <style>
+      :root {
+        --theme-color: #42b983;
+      }
+    </style>
+    -->
+  </head>
+  <body class="loading">
+    <div id="app">Loading…</div>
+
+    <!-- Docsify configuration -->
+    <script>
+      window.$docsify = {
+        name: 'My Docs',
+        repo: '',
+        loadSidebar: true,
+        loadNavbar: false,
+        coverpage: false,
+        subMaxLevel: 2,
+        auto2top: true,
+        // routerMode: 'hash', // switch to 'history' only if server rewrites are configured
+      };
+    </script>
+
+    <!-- Docsify core (required, must come AFTER config) -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/docsify.min.js"></script>
+
+    <!-- Optional plugins (uncomment as needed) -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/plugins/search.min.js"></script> -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/plugins/zoom-image.min.js"></script> -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/plugins/external-script.min.js"></script> -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script> -->
+
+    <!-- Optional Prism language components (must come AFTER docsify.min.js) -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script> -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script> -->
+  </body>
+</html>
