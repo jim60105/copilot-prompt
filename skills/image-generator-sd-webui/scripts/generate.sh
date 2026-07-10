@@ -26,8 +26,8 @@
 #   1. Pre-pins samples_format=png via /sdapi/v1/options (Forge validates this
 #      BEFORE applying override_settings; a persistent unsupported value like
 #      "avif" would otherwise reject the request).
-#   2. Forces override_settings.samples_format=png and override_settings_restore_afterwards=true
-#      on the request body to keep the server's persistent options unchanged.
+#   2. Forces override_settings.samples_format=png, override_settings_restore_afterwards=true,
+#      save_images=true, and send_images=true on the request body.
 #   3. POSTs to /sdapi/v1/txt2img and prints the full JSON response to stdout.
 #
 # The response shape is:
@@ -68,6 +68,8 @@ fi
 request_body="$(echo "$request_raw" | jq '
     .override_settings = ((.override_settings // {}) + {samples_format: "png"})
     | .override_settings_restore_afterwards = true
+    | .save_images = true
+    | .send_images = true
 ')"
 
 # Step 1: pre-pin samples_format=png. Tolerate failure (legacy AUTOMATIC1111
