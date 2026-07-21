@@ -13,9 +13,10 @@ Create secure, efficient, and maintainable container images following open sourc
 ## Workflow
 
 1. Determine the project language/framework
-2. Load the appropriate reference file for examples (see Language-Specific References below)
-3. Apply the core structure and patterns from this document
-4. Write the Containerfile following the Final Stage Instruction Ordering
+2. Check host environment for SELinux enforcement (e.g. `getenforce`) if using Podman/Buildah
+3. Load the appropriate reference file for examples (see Language-Specific References below)
+4. Apply the core structure and patterns from this document
+5. Write the Containerfile following the Final Stage Instruction Ordering
 
 ## File Naming
 
@@ -127,6 +128,27 @@ COPY --link --chown=$UID:0 --chmod=775 source dest
 COPY --link --chown=$UID:0 --chmod=775 LICENSE /licenses/Containerfile.LICENSE
 COPY --link --chown=$UID:0 --chmod=775 project/LICENSE /licenses/project.LICENSE
 ```
+
+### SELinux Compatibility (Rootless Podman / Bind Mounts)
+
+By default, all code examples in this skill assume standard environments without SELinux or default Docker daemon execution. However, on SELinux-enforcing systems (such as Fedora, RHEL, CentOS) when using Podman or Buildah, `--mount=type=bind` instructions will fail with `Permission denied (os error 13)` because the container process cannot access host files without explicit SELinux security context relabeling.
+
+#### SELinux Workflow & Verification Guidelines
+
+1. **Verify System Status**: Check if SELinux is active (e.g. `getenforce` outputs `Enforcing`).
+2. **Inform / Consult User**:
+   - Inform the user if an SELinux environment is detected and explain why `,relabel=shared` (or `,relabel=private`) is required on `--mount=type=bind`.
+   - Explicitly confirm with the user or state whether SELinux-compatible syntax (`relabel=shared`) or standard Docker syntax is being used.
+3. **Containerfile & Documentation Requirements**:
+   - When SELinux relabeling is adopted, clearly document it with inline comments in the `Containerfile` / `Dockerfile`:
+     ```containerfile
+     # Note: relabel=shared is required for SELinux (Podman/Fedora/RHEL) rootless bind mounts
+     RUN --mount=type=cache,id=uv-$TARGETARCH$TARGETVARIANT,sharing=locked,target=/root/.cache/uv \
+         --mount=type=bind,source=pyproject.toml,target=pyproject.toml,relabel=shared \
+         --mount=type=bind,source=uv.lock,target=uv.lock,relabel=shared \
+         uv sync --frozen --no-dev --no-install-project --no-editable
+     ```
+   - Document the SELinux build requirements in `README.md` or project documentation whenever `podman build` or `podman compose build` is a supported build workflow.
 
 ## Secure dumb-init Usage
 
