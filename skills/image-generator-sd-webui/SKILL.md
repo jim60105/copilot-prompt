@@ -87,6 +87,22 @@ If the user wants the output in a non-PNG format (WebP, AVIF, JPEG, etc.), do **
 2. If both are present, run `format-converter.sh` on the PNG — it calls `copy-info.sh` internally to carry the parameters over. Run `format-converter.sh -h` to see the current usage.
 3. If either is missing, guide the user to install the helper project once: <https://github.com/jim60105/sd-image-format-converter>. It has system dependencies that must be set up manually, so it can't be auto-installed. After install, both scripts should be on `PATH` and `-h` will show usage.
 
+### Multi-axis comparison (X/Y/Z plot)
+
+When the user wants to compare parameter variations (samplers, CFG values, prompt variants, LoRA strengths, etc.) in a single grid, use the `x/y/z plot` script instead of generating images one by one:
+
+```json
+{
+  "prompt": "1girl, blue sky",
+  "script_name": "x/y/z plot",
+  "script_args": [10, "1girl, 1boy", "", 5, "1.5, 3.0", "", 0, "", "", true, false, false, false, false, false, false, 0, 0, false]
+}
+```
+
+The request body adds `script_name` and a 19-element `script_args` array on top of the normal txt2img fields. Response is the same — `images[0]` is the grid PNG.
+
+**Always discover type indices at runtime** via `script-info` — they differ across Forge variants (classic, Neo, upstream A1111). See `references/xyz-plot.md` for the full 19-arg reference, type-index discovery workflow, Prompt S/R syntax, and common pitfalls.
+
 ### Tracking progress
 
 Call from another terminal (or background the `generate.sh` call with `&` first):
@@ -141,5 +157,6 @@ This skill **does not** generate or refine prompts. When the user asks for promp
 
 - `references/api-endpoints.md` — full sd-webui / Forge endpoint reference with request / response shapes for every endpoint this skill uses, plus useful adjacent ones (`/sdapi/v1/memory`, `/sdapi/v1/png-info`, etc.).
 - `references/txt2img-parameters.md` — every `txt2img` request field including HiRes-fix, refiner, Forge-specific extensions (`forge_additional_modules`, `forge_inference_memory`, `forge_preset`), and `override_settings` keys.
+- `references/xyz-plot.md` — X/Y/Z plot script API: 19-arg structure, axis type indices, Prompt S/R format, runtime discovery via `script-info`, and variant-specific pitfalls.
 
 Read these only when constructing a non-trivial request or hitting an error that needs deeper investigation.

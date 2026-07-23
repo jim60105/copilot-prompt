@@ -188,7 +188,7 @@ Body `{}`. Tells the server to rescan its models folder. Useful after dropping a
 | POST | `/sdapi/v1/extra-batch-images` | Same, for a batch |
 | GET | `/sdapi/v1/face-restorers` | List face restorer models |
 | GET | `/sdapi/v1/latent-upscale-modes` | List latent upscale modes (for HiRes-fix) |
-| GET | `/sdapi/v1/scripts` / `/sdapi/v1/script-info` | List Always-On / Script-tab scripts + their argument schemas |
+| GET | `/sdapi/v1/scripts` / `/sdapi/v1/script-info` | List Always-On / Script-tab scripts + their argument schemas. **Essential for X/Y/Z plot:** query `script-info` → `"x/y/z plot"` to discover axis type indices for your Forge variant — see `references/xyz-plot.md`. |
 | POST | `/sdapi/v1/unload-checkpoint` | Free VRAM by unloading the current model |
 | POST | `/sdapi/v1/refresh-loras` / `/sdapi/v1/refresh-embeddings` / `/sdapi/v1/refresh-checkpoints` | Rescan respective folders |
 
