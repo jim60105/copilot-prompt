@@ -89,19 +89,7 @@ If the user wants the output in a non-PNG format (WebP, AVIF, JPEG, etc.), do **
 
 ### Multi-axis comparison (X/Y/Z plot)
 
-When the user wants to compare parameter variations (samplers, CFG values, prompt variants, LoRA strengths, etc.) in a single grid, use the `x/y/z plot` script instead of generating images one by one:
-
-```json
-{
-  "prompt": "1girl, blue sky",
-  "script_name": "x/y/z plot",
-  "script_args": [10, "1girl, 1boy", "", 5, "1.5, 3.0", "", 0, "", "", true, false, false, false, false, false, false, 0, 0, false]
-}
-```
-
-The request body adds `script_name` and a 19-element `script_args` array on top of the normal txt2img fields. Response is the same — `images[0]` is the grid PNG.
-
-**Always discover type indices at runtime** via `script-info` — they differ across Forge variants (classic, Neo, upstream A1111). See `references/xyz-plot.md` for the full 19-arg reference, type-index discovery workflow, Prompt S/R syntax, and common pitfalls.
+For comparing parameter variations in a single grid, use the `x/y/z plot` script. **Read `references/xyz-plot.md`** for the full 19-arg API structure, axis type index discovery, Prompt S/R syntax, and variant-specific pitfalls before implementing.
 
 ### Tracking progress
 
