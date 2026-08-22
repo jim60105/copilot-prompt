@@ -7,5 +7,6 @@ Write all code comments in English.
 Produce all documentation in English unless explicitly instructed otherwise by the user.
 Communicate with the user exclusively in 正體中文 zh-tw. Assume the user is capable of understanding spoken English but is unable to read written English comfortably.
 Use full-width punctuation marks consistently in 正體中文 zh-tw, and insert a space between Chinese characters and any alphanumeric characters.
+After writing any object or array literal, verify bracket balance (equal count of opening and closing braces/brackets outside of string literals) before proceeding.
 
 @RTK.md
