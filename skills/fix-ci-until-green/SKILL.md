@@ -61,8 +61,20 @@ Given a PR instead of a run, get to the run first: `gh pr checks <pr>` or
 scripts/ci_failure_report.sh <run-url-or-id> [-R OWNER/REPO]
 ```
 
-Prints run metadata, the job outcomes, the failed steps, the error annotations, and the log window
-around each `##[error]` — a few hundred lines instead of the tens of thousands in a raw job log.
+Reports **every failure in every failed job**, which is what the batching policy needs. Per job it
+prints the failed steps, then:
+
+- **Failure blocks** — one full body per distinct failure. Repeats collapse to one representative
+  plus the complete list of their variants, so ten near-identical assertions stay readable without
+  losing any single identifier.
+- **Other error lines** — annotations and failure keywords from elsewhere in the log, filtered
+  against the blocks so nothing is printed twice.
+- **Log excerpt** — the narrative around `##[error]`, read backwards, for failures no test framework
+  reported.
+
+Every cap announces what it hid (`... N more ... hidden`). If you see such a line, the failure set is
+incomplete — raise `--block-lines`, `--max-blocks`, or `--signature-lines` and re-read before
+planning, rather than fixing a subset.
 
 | Exit | Meaning | Next |
 |---|---|---|

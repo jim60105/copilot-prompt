@@ -6,8 +6,12 @@ set -euo pipefail
 
 CONTEXT=40
 MAX_LINES=200
-SIGNATURE_LINES=30
+SIGNATURE_LINES=40
+BLOCK_LINES=30
+MAX_BLOCKS=20
 # Lines worth surfacing on their own, across ecosystems.
+# Lines that begin a distinct failure report, across ecosystems.
+HEADLINE_PATTERN='^(FAIL|FAILED|ERROR)[:[:space:]]|^--- FAIL:|^[[:space:]]*● |^_{4,}.*_{4,}$|^error(\\[E[0-9]+\\])?:|^error TS[0-9]+|^[0-9]+\\)[[:space:]]|^[[:space:]]*panic:'
 SIG_PATTERN='##\[error\]|##\[warning\]|^E +[A-Za-z]|\bFAILED\b|\bFAIL\b|\bERROR\b|error\[E[0-9]+\]|error TS[0-9]+|AssertionError|Traceback \(most recent|^ *panic:|npm ERR!|Segmentation fault|exit code [1-9]'
 REPO=""
 ATTEMPT=""
@@ -25,7 +29,14 @@ Options:
   -a, --attempt N       Run attempt number (default: latest; also parsed from /attempts/N URLs)
   -c, --context N       Log lines kept before each error marker (default: 40)
   -m, --max-lines N     Hard cap on log lines printed per failed job (default: 200)
+  -b, --block-lines N   Hard cap on lines printed per failure block (default: 30)
+  -B, --max-blocks N    Distinct failure blocks printed per job (default: 20)
+  -s, --signature-lines N
+                        Distinct error lines printed per job (default: 40)
   -h, --help            Show this help
+
+Every failure in every failed job is reported. Repeats of the same failure collapse to one
+representative plus the full list of its variants, and every cap announces what it hid.
 
 Exit codes:
   0  run completed successfully
@@ -41,6 +52,9 @@ while [[ $# -gt 0 ]]; do
         -a|--attempt)   ATTEMPT="$2"; shift 2 ;;
         -c|--context)   CONTEXT="$2"; shift 2 ;;
         -m|--max-lines) MAX_LINES="$2"; shift 2 ;;
+        -b|--block-lines) BLOCK_LINES="$2"; shift 2 ;;
+        -B|--max-blocks)  MAX_BLOCKS="$2"; shift 2 ;;
+        -s|--signature-lines) SIGNATURE_LINES="$2"; shift 2 ;;
         -h|--help)      usage; exit 0 ;;
         -*)             echo "Unknown option: $1" >&2; usage >&2; exit 3 ;;
         *)              REF="$1"; shift ;;
@@ -129,6 +143,72 @@ normalize() {
         | grep -vE '^##\[(group|endgroup)\]' || true
 }
 
+# Extract every distinct failure block, collapsing repeats into one representative plus a
+# count. Held in a variable so the awk source can use quotes freely.
+read -r -d '' AWK_BLOCKS <<'AWK' || true
+function fingerprint(s,   t) {
+    t = s
+    gsub(/'[^']*'/, "@", t)
+    gsub(/"[^"]*"/, "@", t)
+    gsub(/[0-9]+/, "#", t)
+    return t
+}
+{ line[NR] = $0 }
+END {
+    total = NR
+    n = 0
+    for (i = 1; i <= total; i++)
+        if (line[i] ~ headline_re) head[++n] = i
+    if (n == 0) exit 0
+
+    for (k = 1; k <= n; k++) {
+        fp = fingerprint(line[head[k]])
+        count[fp]++
+        variant[fp, count[fp]] = line[head[k]]
+        if (!(fp in first)) { first[fp] = k; order[++distinct] = fp }
+    }
+
+    printf "%d failure block(s), %d distinct.\n\n", n, distinct
+
+    hidden = 0
+    shown = 0
+    for (d = 1; d <= distinct; d++) {
+        if (shown >= max_blocks) { hidden = distinct - shown; break }
+        fp = order[d]
+        k = first[fp]
+        start = head[k]
+        end = (k < n ? head[k + 1] - 1 : total)
+        trunc = 0
+        if (end - start + 1 > block_lines) { end = start + block_lines - 1; trunc = 1 }
+
+        printf "#### %d/%d  (log line %d", d, distinct, start
+        if (count[fp] > 1) printf ", %d occurrences", count[fp]
+        printf ")\n"
+        print "```"
+        for (i = start; i <= end; i++) print line[i]
+        if (trunc) printf "... block truncated at %d lines (raise --block-lines)\n", block_lines
+        print "```"
+        if (count[fp] > 1) {
+            uniq = 0
+            delete seen_variant
+            for (v = 1; v <= count[fp]; v++)
+                if (!(variant[fp, v] in seen_variant)) { seen_variant[variant[fp, v]] = 1; uniq++ }
+            if (uniq > 1) {
+                printf "All %d occurrences:\n", count[fp]
+                print "```"
+                for (v = 1; v <= count[fp] && v <= 30; v++) print variant[fp, v]
+                if (count[fp] > 30) printf "... %d more occurrences hidden\n", count[fp] - 30
+                print "```"
+            }
+        }
+        print ""
+        shown++
+    }
+    if (hidden > 0)
+        printf "... %d more distinct failure block(s) hidden (raise --max-blocks)\n", hidden
+}
+AWK
+
 while read -r job_id; do
     [[ -n "$job_id" ]] || continue
 
@@ -152,37 +232,46 @@ while read -r job_id; do
         continue
     fi
 
-    # Scattered signals first: annotations and common failure keywords, deduplicated.
-    SIGNATURES="$(grep -aiE "$SIG_PATTERN" <<<"$LOG" \
-        | awk '!seen[$0]++' | head -n "$SIGNATURE_LINES" || true)"
-    if [[ -n "${SIGNATURES//[[:space:]]/}" ]]; then
-        echo "### Error signatures"
+    # Every failure gets a body, not just the first and the last. Repeats of the same failure
+    # collapse to one representative plus the full list of its variants, so 200 near-identical
+    # assertions stay readable without losing the identifier of any single one.
+    BLOCKS="$(awk -v headline_re="$HEADLINE_PATTERN" \
+                  -v block_lines="$BLOCK_LINES" \
+                  -v max_blocks="$MAX_BLOCKS" "$AWK_BLOCKS" <<<"$LOG" || true)"
+    if [[ -n "${BLOCKS//[[:space:]]/}" ]]; then
+        echo "### Failure blocks"
+        echo
+        printf '%s\n' "$BLOCKS"
+        echo
+        HAVE_BLOCKS=1
+    else
+        HAVE_BLOCKS=0
+    fi
+
+    # Whatever the blocks did not already show: annotations and failure keywords scattered
+    # elsewhere in the log. Filtered against the block output so nothing is printed twice.
+    SIG_ALL="$(grep -aiE "$SIG_PATTERN" <<<"$LOG" | awk '!seen[$0]++' \
+        | grep -vxF -f <(printf '%s\n' "$BLOCKS") || true)"
+    SIG_TOTAL="$(grep -c . <<<"$SIG_ALL" || true)"
+    if [[ -n "${SIG_ALL//[[:space:]]/}" ]]; then
+        [[ "$HAVE_BLOCKS" -eq 1 ]] && SIG_TITLE="Other error lines" || SIG_TITLE="Error signatures"
+        echo "### $SIG_TITLE ($SIG_TOTAL distinct)"
         echo '```'
-        printf '%s\n' "$SIGNATURES"
+        head -n "$SIGNATURE_LINES" <<<"$SIG_ALL"
+        if [[ "$SIG_TOTAL" -gt "$SIGNATURE_LINES" ]]; then
+            echo "... $(( SIG_TOTAL - SIGNATURE_LINES )) more distinct lines hidden (raise --signature-lines)"
+        fi
         echo '```'
         echo
     fi
 
-    # A cascade of failures has its cause at the TOP, but the ##[error] anchor is at the
-    # bottom. When the first signal sits outside the excerpt window below, show it too.
-    FIRST_SIG_LN="$(grep -aniE "$SIG_PATTERN" <<<"$LOG" | head -n1 | cut -d: -f1 || true)"
-    FIRST_ERR_LN="$(grep -an '##\[error\]' <<<"$LOG" | head -n1 | cut -d: -f1 || true)"
-    if [[ -n "$FIRST_SIG_LN" && -n "$FIRST_ERR_LN" ]] \
-        && (( FIRST_SIG_LN + 10 < FIRST_ERR_LN - CONTEXT )); then
-        WIN_START=$(( FIRST_SIG_LN > 10 ? FIRST_SIG_LN - 10 : 1 ))
-        WIN_END=$(( FIRST_SIG_LN + 40 ))
-        echo "### First failure (log line $FIRST_SIG_LN, upstream of the excerpt below)"
-        echo '```'
-        sed -n "${WIN_START},${WIN_END}p" <<<"$LOG" | head -n "$MAX_LINES"
-        echo '```'
-        echo
-    fi
-
-    # Then the surrounding narrative: what the job was doing right before it died.
+    # Then the surrounding narrative: what the job was doing right before it died. When the
+    # blocks above already carry the failures, this only needs the ending summary.
     echo "### Log excerpt"
     echo '```'
     if grep -qa '##\[error\]' <<<"$LOG"; then
-        grep -a -B "$CONTEXT" -A 5 '##\[error\]' <<<"$LOG" | tail -n "$MAX_LINES"
+        [[ "$HAVE_BLOCKS" -eq 1 ]] && EXCERPT_CONTEXT=12 || EXCERPT_CONTEXT="$CONTEXT"
+        grep -a -B "$EXCERPT_CONTEXT" -A 5 '##\[error\]' <<<"$LOG" | tail -n "$MAX_LINES"
     else
         echo "(no ##[error] annotation found — showing the tail of the log)"
         tail -n "$MAX_LINES" <<<"$LOG"
