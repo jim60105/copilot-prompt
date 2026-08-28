@@ -1,21 +1,64 @@
 #!/usr/bin/env bash
-# Emit a compact failure report for a GitHub Actions run.
-# Designed to keep a whole CI failure inside a few hundred lines of context
-# instead of the tens of thousands of lines a raw job log contains.
+# Copyright (C) 2026 Jim Chen <Jim@ChenJ.im>, licensed under GPL-3.0-or-later
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# ==================================================================
+#
+# Emit a compact failure report for a GitHub Actions run, keeping a whole CI
+# failure inside a few hundred lines instead of the tens of thousands of lines a
+# raw job log contains. Every failure in every failed job is reported.
+#
+# Usage: ci_failure_report.sh <run-url-or-id> [options]
+#
+# Reads only: every gh call is a GET. Authentication comes from the gh CLI's own
+# credential store, never from arguments or hardcoded values. When no --repo is
+# given, gh resolves the repository from $(pwd), so the script works from any
+# checkout without knowing its own location.
+
 set -euo pipefail
 
-CONTEXT=40
-MAX_LINES=200
-SIGNATURE_LINES=40
-BLOCK_LINES=30
-MAX_BLOCKS=20
-# Lines worth surfacing on their own, across ecosystems.
-# Lines that begin a distinct failure report, across ecosystems.
-HEADLINE_PATTERN='^(FAIL|FAILED|ERROR)[:[:space:]]|^--- FAIL:|^[[:space:]]*● |^_{4,}.*_{4,}$|^error(\\[E[0-9]+\\])?:|^error TS[0-9]+|^[0-9]+\\)[[:space:]]|^[[:space:]]*panic:'
-SIG_PATTERN='##\[error\]|##\[warning\]|^E +[A-Za-z]|\bFAILED\b|\bFAIL\b|\bERROR\b|error\[E[0-9]+\]|error TS[0-9]+|AssertionError|Traceback \(most recent|^ *panic:|npm ERR!|Segmentation fault|exit code [1-9]'
-REPO=""
-ATTEMPT=""
-REF=""
+# ------------------------------------------------------------------
+# Utility functions
+# ------------------------------------------------------------------
+
+# Diagnostics go to stderr in colour; the report itself goes to stdout in plain
+# text, because it is normally piped into a log, a file, or an agent's context
+# where escape sequences are noise.
+if [[ -t 2 ]]; then
+    RED=$'\033[0;31m'; YELLOW=$'\033[1;33m'; GRAY=$'\033[0;90m'; RESET=$'\033[0m'
+else
+    RED=''; YELLOW=''; GRAY=''; RESET=''
+fi
+readonly RED YELLOW GRAY RESET
+
+readonly EXIT_GREEN=0 EXIT_RED=1 EXIT_PENDING=2 EXIT_USAGE=3
+
+err()  { printf '%sERROR: %s%s\n' "$RED" "$*" "$RESET" >&2; }
+warn() { printf '%sWARNING: %s%s\n' "$YELLOW" "$*" "$RESET" >&2; }
+hint() { printf '%s  %s%s\n' "$GRAY" "$*" "$RESET" >&2; }
+
+# die <exit-code> <message> [suggested-solution ...]
+die() {
+    local code="$1" message="$2"
+    shift 2
+    err "$message"
+    local suggestion
+    for suggestion in "$@"; do
+        hint "$suggestion"
+    done
+    exit "$code"
+}
 
 usage() {
     cat <<'USAGE'
@@ -46,105 +89,55 @@ Exit codes:
 USAGE
 }
 
-while [[ $# -gt 0 ]]; do
-    case "$1" in
-        -R|--repo)      REPO="$2"; shift 2 ;;
-        -a|--attempt)   ATTEMPT="$2"; shift 2 ;;
-        -c|--context)   CONTEXT="$2"; shift 2 ;;
-        -m|--max-lines) MAX_LINES="$2"; shift 2 ;;
-        -b|--block-lines) BLOCK_LINES="$2"; shift 2 ;;
-        -B|--max-blocks)  MAX_BLOCKS="$2"; shift 2 ;;
-        -s|--signature-lines) SIGNATURE_LINES="$2"; shift 2 ;;
-        -h|--help)      usage; exit 0 ;;
-        -*)             echo "Unknown option: $1" >&2; usage >&2; exit 3 ;;
-        *)              REF="$1"; shift ;;
-    esac
-done
-
-[[ -n "$REF" ]] || { echo "Error: a run URL or run ID is required." >&2; usage >&2; exit 3; }
-command -v gh >/dev/null || { echo "Error: gh CLI is not installed." >&2; exit 3; }
-command -v jq >/dev/null || { echo "Error: jq is not installed." >&2; exit 3; }
-
-# Resolve the reference into a run ID (and a repo, when the URL carries one).
-if [[ "$REF" =~ ^https?://[^/]+/([^/]+)/([^/]+)/actions/runs/([0-9]+) ]]; then
-    [[ -n "$REPO" ]] || REPO="${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
-    RUN_ID="${BASH_REMATCH[3]}"
-    [[ "$REF" =~ /attempts/([0-9]+) ]] && [[ -z "$ATTEMPT" ]] && ATTEMPT="${BASH_REMATCH[1]}"
-elif [[ "$REF" =~ ^[0-9]+$ ]]; then
-    RUN_ID="$REF"
-else
-    echo "Error: '$REF' is neither a run URL nor a numeric run ID." >&2
-    exit 3
-fi
-
-gh_args=()
-[[ -n "$REPO" ]] && gh_args+=(-R "$REPO")
-attempt_args=()
-[[ -n "$ATTEMPT" ]] && attempt_args+=(--attempt "$ATTEMPT")
-
-RUN_JSON="$(gh run view "$RUN_ID" "${gh_args[@]}" "${attempt_args[@]}" \
-    --json databaseId,workflowName,displayTitle,status,conclusion,headBranch,headSha,event,url,attempt,createdAt,updatedAt,jobs)" || {
-    echo "Error: could not read run $RUN_ID. Check the ID, the repo, and \`gh auth status\`." >&2
-    exit 3
+# Fail fast on a value that will later be used in arithmetic or as a line count.
+require_int() {
+    local flag="$1" value="$2"
+    [[ "$value" =~ ^[0-9]+$ ]] \
+        || die "$EXIT_USAGE" "$flag expects a non-negative integer, got '$value'."
 }
 
-STATUS="$(jq -r '.status' <<<"$RUN_JSON")"
-CONCLUSION="$(jq -r 'if (.conclusion // "") == "" then "(none)" else .conclusion end' <<<"$RUN_JSON")"
+require_value() {
+    local flag="$1"
+    shift
+    [[ $# -ge 1 && -n "$1" ]] || die "$EXIT_USAGE" "$flag requires a value."
+}
 
-jq -r '
-  "# Run \(.databaseId) — \(.workflowName) [\(.status)/\(if (.conclusion // "") == "" then "pending" else .conclusion end)]",
-  "",
-  "- title:    \(.displayTitle)",
-  "- branch:   \(.headBranch)   head: \(.headSha[0:12])   event: \(.event)   attempt: \(.attempt)",
-  "- created:  \(.createdAt)   updated: \(.updatedAt)",
-  "- url:      \(.url)",
-  ""
-' <<<"$RUN_JSON"
+require_deps() {
+    local cmd missing=()
+    for cmd in gh jq awk; do
+        command -v "$cmd" >/dev/null 2>&1 || missing+=("$cmd")
+    done
+    [[ ${#missing[@]} -eq 0 ]] \
+        || die "$EXIT_USAGE" "required command(s) not installed: ${missing[*]}" \
+               "Install them and re-run."
+    gh auth status >/dev/null 2>&1 \
+        || die "$EXIT_USAGE" "gh is not authenticated." \
+               "Run: gh auth login"
+}
 
-if [[ "$STATUS" != "completed" ]]; then
-    echo "Run is still **$STATUS** — no final result yet. Wait for it to finish before triaging."
-    exit 2
-fi
-
-# Job overview. Large matrices are collapsed to a tally so the report stays readable.
-echo "## Jobs"
-echo
-JOB_COUNT="$(jq -r '.jobs | length' <<<"$RUN_JSON")"
-if [[ "$JOB_COUNT" -gt 15 ]]; then
-    jq -r '
-      "- " + ([.jobs[] | select(.conclusion == "success")] | length | tostring) + " succeeded, "
-           + ([.jobs[] | select(.conclusion == "skipped")] | length | tostring) + " skipped (collapsed)",
-      (.jobs[] | select(.conclusion != "success" and .conclusion != "skipped")
-        | "- [\(.conclusion)] \(.name)  (job \(.databaseId))")
-    ' <<<"$RUN_JSON"
-else
-    jq -r '.jobs[] | "- [\(.conclusion)] \(.name)  (job \(.databaseId))"' <<<"$RUN_JSON"
-fi
-echo
-
-FAILED_IDS="$(jq -r '.jobs[] | select(.conclusion == "failure" or .conclusion == "timed_out" or .conclusion == "cancelled" or .conclusion == "startup_failure") | .databaseId' <<<"$RUN_JSON")"
-
-if [[ -z "$FAILED_IDS" ]]; then
-    if [[ "$CONCLUSION" == "success" ]]; then
-        echo "Run concluded **success** — CI is green for this run."
-        exit 0
-    fi
-    echo "Run concluded **$CONCLUSION** but no job reported a failure."
-    echo "The cause is usually workflow-level: a bad \`if:\` expression, a missing required check,"
-    echo "an invalid workflow file, or a cancelled/skipped dependency. Inspect the workflow YAML."
-    exit 1
-fi
+# ------------------------------------------------------------------
+# Log processing
+# ------------------------------------------------------------------
 
 # Strip the "job<TAB>step<TAB>" columns gh prepends, the ISO timestamp, the BOM,
-# ANSI colour codes, and the collapsible-group markers that carry no diagnostic value.
-normalize() {
+# ANSI colour codes (real ESC and GitHub's literal "^[" caret notation alike),
+# and the collapsible-group markers that carry no diagnostic value.
+normalize_log() {
     cut -f3- \
         | sed -E $'s/^\xef\xbb\xbf//; s/\r$//; s/^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9:.]+Z //; s/(\x1b|\\^\\[)\\[[0-9;]*[a-zA-Z]//g' \
         | grep -vE '^##\[(group|endgroup)\]' || true
 }
 
-# Extract every distinct failure block, collapsing repeats into one representative plus a
-# count. Held in a variable so the awk source can use quotes freely.
+# Lines that begin a distinct failure report, across ecosystems. Backslashes are
+# doubled because awk -v assignments consume one level of escaping.
+readonly HEADLINE_PATTERN='^(FAIL|FAILED|ERROR)[:[:space:]]|^--- FAIL:|^[[:space:]]*● |^_{4,}.*_{4,}$|^error(\\[E[0-9]+\\])?:|^error TS[0-9]+|^[0-9]+\\)[[:space:]]|^[[:space:]]*panic:'
+
+# Lines worth surfacing on their own, wherever they appear in the log.
+readonly SIG_PATTERN='##\[error\]|##\[warning\]|^E +[A-Za-z]|\bFAILED\b|\bFAIL\b|\bERROR\b|error\[E[0-9]+\]|error TS[0-9]+|AssertionError|Traceback \(most recent|^ *panic:|npm ERR!|Segmentation fault|exit code [1-9]'
+
+# Extract every distinct failure block, collapsing repeats into one representative
+# plus the full list of its variants. Held in a variable so the awk source can use
+# quotes freely.
 read -r -d '' AWK_BLOCKS <<'AWK' || true
 function fingerprint(s,   t) {
     t = s
@@ -209,9 +202,106 @@ END {
 }
 AWK
 
-while read -r job_id; do
-    [[ -n "$job_id" ]] || continue
+# ------------------------------------------------------------------
+# Core logic
+# ------------------------------------------------------------------
 
+parse_args() {
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -R|--repo)
+                require_value "$1" "${2:-}"; REPO="$2"; shift 2 ;;
+            -a|--attempt)
+                require_value "$1" "${2:-}"; require_int "$1" "$2"; ATTEMPT="$2"; shift 2 ;;
+            -c|--context)
+                require_value "$1" "${2:-}"; require_int "$1" "$2"; CONTEXT="$2"; shift 2 ;;
+            -m|--max-lines)
+                require_value "$1" "${2:-}"; require_int "$1" "$2"; MAX_LINES="$2"; shift 2 ;;
+            -b|--block-lines)
+                require_value "$1" "${2:-}"; require_int "$1" "$2"; BLOCK_LINES="$2"; shift 2 ;;
+            -B|--max-blocks)
+                require_value "$1" "${2:-}"; require_int "$1" "$2"; MAX_BLOCKS="$2"; shift 2 ;;
+            -s|--signature-lines)
+                require_value "$1" "${2:-}"; require_int "$1" "$2"; SIGNATURE_LINES="$2"; shift 2 ;;
+            -h|--help)
+                usage; exit "$EXIT_GREEN" ;;
+            -*)
+                err "unknown option: $1"; usage >&2; exit "$EXIT_USAGE" ;;
+            *)
+                [[ -z "$REF" ]] \
+                    || die "$EXIT_USAGE" "unexpected extra argument: $1" \
+                           "Pass exactly one run URL or run ID."
+                REF="$1"; shift ;;
+        esac
+    done
+
+    [[ -n "$REF" ]] \
+        || die "$EXIT_USAGE" "a run URL or run ID is required." \
+               "Example: ci_failure_report.sh https://github.com/OWNER/REPO/actions/runs/123"
+}
+
+# Resolve the reference into a run ID, and a repo when the URL carries one.
+resolve_ref() {
+    if [[ "$REF" =~ ^https?://[^/]+/([^/]+)/([^/]+)/actions/runs/([0-9]+) ]]; then
+        [[ -n "$REPO" ]] || REPO="${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+        RUN_ID="${BASH_REMATCH[3]}"
+        if [[ "$REF" =~ /attempts/([0-9]+) ]] && [[ -z "$ATTEMPT" ]]; then
+            ATTEMPT="${BASH_REMATCH[1]}"
+        fi
+    elif [[ "$REF" =~ ^[0-9]+$ ]]; then
+        RUN_ID="$REF"
+    else
+        die "$EXIT_USAGE" "'$REF' is neither a run URL nor a numeric run ID." \
+            "Pass a full https://github.com/OWNER/REPO/actions/runs/ID URL, or a bare numeric ID with -R OWNER/REPO."
+    fi
+
+    GH_ARGS=()
+    [[ -n "$REPO" ]] && GH_ARGS+=(-R "$REPO")
+    ATTEMPT_ARGS=()
+    [[ -n "$ATTEMPT" ]] && ATTEMPT_ARGS+=(--attempt "$ATTEMPT")
+    return 0
+}
+
+fetch_run() {
+    RUN_JSON="$(gh run view "$RUN_ID" "${GH_ARGS[@]}" "${ATTEMPT_ARGS[@]}" \
+        --json databaseId,workflowName,displayTitle,status,conclusion,headBranch,headSha,event,url,attempt,createdAt,updatedAt,jobs 2>/dev/null)" \
+        || die "$EXIT_USAGE" "could not read run $RUN_ID${REPO:+ in $REPO}." \
+               "Check the run ID and repository, then verify access with: gh auth status"
+}
+
+emit_run_header() {
+    jq -r '
+      "# Run \(.databaseId) — \(.workflowName) [\(.status)/\(if (.conclusion // "") == "" then "pending" else .conclusion end)]",
+      "",
+      "- title:    \(.displayTitle)",
+      "- branch:   \(.headBranch)   head: \(.headSha[0:12])   event: \(.event)   attempt: \(.attempt)",
+      "- created:  \(.createdAt)   updated: \(.updatedAt)",
+      "- url:      \(.url)",
+      ""
+    ' <<<"$RUN_JSON"
+}
+
+# Job overview. Large matrices are collapsed to a tally so the report stays readable.
+emit_job_overview() {
+    local job_count
+    echo "## Jobs"
+    echo
+    job_count="$(jq -r '.jobs | length' <<<"$RUN_JSON")"
+    if [[ "$job_count" -gt 15 ]]; then
+        jq -r '
+          "- " + ([.jobs[] | select(.conclusion == "success")] | length | tostring) + " succeeded, "
+               + ([.jobs[] | select(.conclusion == "skipped")] | length | tostring) + " skipped (collapsed)",
+          (.jobs[] | select(.conclusion != "success" and .conclusion != "skipped")
+            | "- [\(.conclusion)] \(.name)  (job \(.databaseId))")
+        ' <<<"$RUN_JSON"
+    else
+        jq -r '.jobs[] | "- [\(.conclusion)] \(.name)  (job \(.databaseId))"' <<<"$RUN_JSON"
+    fi
+    echo
+}
+
+emit_job_header() {
+    local job_id="$1"
     jq -r --argjson id "$job_id" '
       .jobs[] | select(.databaseId == $id) |
       "## Job: \(.name)  [\(.conclusion)]",
@@ -220,46 +310,57 @@ while read -r job_id; do
       "- failed steps: " + ([.steps[] | select(.conclusion == "failure" or .conclusion == "timed_out" or .conclusion == "cancelled") | .name] | join(" | ") | if . == "" then "(none reported — the job itself failed to start)" else . end),
       ""
     ' <<<"$RUN_JSON"
+}
 
-    LOG="$(gh run view "${gh_args[@]}" "${attempt_args[@]}" --job "$job_id" --log-failed 2>/dev/null | normalize || true)"
-    if [[ -z "${LOG//[[:space:]]/}" ]]; then
-        LOG="$(gh run view "${gh_args[@]}" "${attempt_args[@]}" --job "$job_id" --log 2>/dev/null | normalize || true)"
+fetch_job_log() {
+    local job_id="$1" log
+    log="$(gh run view "${GH_ARGS[@]}" "${ATTEMPT_ARGS[@]}" --job "$job_id" --log-failed 2>/dev/null | normalize_log || true)"
+    if [[ -z "${log//[[:space:]]/}" ]]; then
+        log="$(gh run view "${GH_ARGS[@]}" "${ATTEMPT_ARGS[@]}" --job "$job_id" --log 2>/dev/null | normalize_log || true)"
     fi
+    printf '%s' "$log"
+}
 
-    if [[ -z "${LOG//[[:space:]]/}" ]]; then
+report_job() {
+    local job_id="$1" log blocks sig_all sig_total sig_title excerpt_context have_blocks
+
+    emit_job_header "$job_id"
+
+    log="$(fetch_job_log "$job_id")"
+    if [[ -z "${log//[[:space:]]/}" ]]; then
         echo "_No log available (logs expire after 90 days, or the job never started). Open the job url above._"
         echo
-        continue
+        return 0
     fi
 
     # Every failure gets a body, not just the first and the last. Repeats of the same failure
     # collapse to one representative plus the full list of its variants, so 200 near-identical
     # assertions stay readable without losing the identifier of any single one.
-    BLOCKS="$(awk -v headline_re="$HEADLINE_PATTERN" \
+    blocks="$(awk -v headline_re="$HEADLINE_PATTERN" \
                   -v block_lines="$BLOCK_LINES" \
-                  -v max_blocks="$MAX_BLOCKS" "$AWK_BLOCKS" <<<"$LOG" || true)"
-    if [[ -n "${BLOCKS//[[:space:]]/}" ]]; then
+                  -v max_blocks="$MAX_BLOCKS" "$AWK_BLOCKS" <<<"$log" || true)"
+    if [[ -n "${blocks//[[:space:]]/}" ]]; then
+        have_blocks=1
         echo "### Failure blocks"
         echo
-        printf '%s\n' "$BLOCKS"
+        printf '%s\n' "$blocks"
         echo
-        HAVE_BLOCKS=1
     else
-        HAVE_BLOCKS=0
+        have_blocks=0
     fi
 
     # Whatever the blocks did not already show: annotations and failure keywords scattered
     # elsewhere in the log. Filtered against the block output so nothing is printed twice.
-    SIG_ALL="$(grep -aiE "$SIG_PATTERN" <<<"$LOG" | awk '!seen[$0]++' \
-        | grep -vxF -f <(printf '%s\n' "$BLOCKS") || true)"
-    SIG_TOTAL="$(grep -c . <<<"$SIG_ALL" || true)"
-    if [[ -n "${SIG_ALL//[[:space:]]/}" ]]; then
-        [[ "$HAVE_BLOCKS" -eq 1 ]] && SIG_TITLE="Other error lines" || SIG_TITLE="Error signatures"
-        echo "### $SIG_TITLE ($SIG_TOTAL distinct)"
+    sig_all="$(grep -aiE "$SIG_PATTERN" <<<"$log" | awk '!seen[$0]++' \
+        | grep -vxF -f <(printf '%s\n' "$blocks") || true)"
+    sig_total="$(grep -c . <<<"$sig_all" || true)"
+    if [[ -n "${sig_all//[[:space:]]/}" ]]; then
+        if [[ "$have_blocks" -eq 1 ]]; then sig_title="Other error lines"; else sig_title="Error signatures"; fi
+        echo "### $sig_title ($sig_total distinct)"
         echo '```'
-        head -n "$SIGNATURE_LINES" <<<"$SIG_ALL"
-        if [[ "$SIG_TOTAL" -gt "$SIGNATURE_LINES" ]]; then
-            echo "... $(( SIG_TOTAL - SIGNATURE_LINES )) more distinct lines hidden (raise --signature-lines)"
+        head -n "$SIGNATURE_LINES" <<<"$sig_all"
+        if [[ "$sig_total" -gt "$SIGNATURE_LINES" ]]; then
+            echo "... $(( sig_total - SIGNATURE_LINES )) more distinct lines hidden (raise --signature-lines)"
         fi
         echo '```'
         echo
@@ -269,15 +370,73 @@ while read -r job_id; do
     # blocks above already carry the failures, this only needs the ending summary.
     echo "### Log excerpt"
     echo '```'
-    if grep -qa '##\[error\]' <<<"$LOG"; then
-        [[ "$HAVE_BLOCKS" -eq 1 ]] && EXCERPT_CONTEXT=12 || EXCERPT_CONTEXT="$CONTEXT"
-        grep -a -B "$EXCERPT_CONTEXT" -A 5 '##\[error\]' <<<"$LOG" | tail -n "$MAX_LINES"
+    if grep -qa '##\[error\]' <<<"$log"; then
+        if [[ "$have_blocks" -eq 1 ]]; then excerpt_context=12; else excerpt_context="$CONTEXT"; fi
+        grep -a -B "$excerpt_context" -A 5 '##\[error\]' <<<"$log" | tail -n "$MAX_LINES"
     else
         echo "(no ##[error] annotation found — showing the tail of the log)"
-        tail -n "$MAX_LINES" <<<"$LOG"
+        tail -n "$MAX_LINES" <<<"$log"
     fi
     echo '```'
     echo
-done <<<"$FAILED_IDS"
+}
 
-exit 1
+# ------------------------------------------------------------------
+# Main
+# ------------------------------------------------------------------
+
+main() {
+    parse_args "$@"
+    require_deps
+    resolve_ref
+    fetch_run
+
+    local status conclusion failed_ids job_id
+    status="$(jq -r '.status' <<<"$RUN_JSON")"
+    conclusion="$(jq -r 'if (.conclusion // "") == "" then "(none)" else .conclusion end' <<<"$RUN_JSON")"
+
+    emit_run_header
+
+    if [[ "$status" != "completed" ]]; then
+        echo "Run is still **$status** — no final result yet. Wait for it to finish before triaging."
+        return "$EXIT_PENDING"
+    fi
+
+    emit_job_overview
+
+    failed_ids="$(jq -r '.jobs[] | select(.conclusion == "failure" or .conclusion == "timed_out" or .conclusion == "cancelled" or .conclusion == "startup_failure") | .databaseId' <<<"$RUN_JSON")"
+
+    if [[ -z "$failed_ids" ]]; then
+        if [[ "$conclusion" == "success" ]]; then
+            echo "Run concluded **success** — CI is green for this run."
+            return "$EXIT_GREEN"
+        fi
+        echo "Run concluded **$conclusion** but no job reported a failure."
+        echo "The cause is usually workflow-level: a bad \`if:\` expression, a missing required check,"
+        echo "an invalid workflow file, or a cancelled/skipped dependency. Inspect the workflow YAML."
+        return "$EXIT_RED"
+    fi
+
+    while read -r job_id; do
+        [[ -n "$job_id" ]] || continue
+        report_job "$job_id"
+    done <<<"$failed_ids"
+
+    return "$EXIT_RED"
+}
+
+# Defaults, overridable by the options above.
+CONTEXT=40
+MAX_LINES=200
+SIGNATURE_LINES=40
+BLOCK_LINES=30
+MAX_BLOCKS=20
+REPO=""
+ATTEMPT=""
+REF=""
+RUN_ID=""
+RUN_JSON=""
+GH_ARGS=()
+ATTEMPT_ARGS=()
+
+main "$@"
