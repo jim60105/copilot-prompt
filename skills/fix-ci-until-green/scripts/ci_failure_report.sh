@@ -29,36 +29,16 @@
 set -euo pipefail
 
 # ------------------------------------------------------------------
-# Utility functions
+# Shared utilities
 # ------------------------------------------------------------------
 
-# Diagnostics go to stderr in colour; the report itself goes to stdout in plain
-# text, because it is normally piped into a log, a file, or an agent's context
-# where escape sequences are noise.
-if [[ -t 2 ]]; then
-    RED=$'\033[0;31m'; YELLOW=$'\033[1;33m'; GRAY=$'\033[0;90m'; RESET=$'\033[0m'
-else
-    RED=''; YELLOW=''; GRAY=''; RESET=''
+_COMMON_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+if ! source "${_COMMON_DIR}/_common.sh" 2>/dev/null; then
+    printf 'ERROR: cannot source %s/_common.sh; keep the skill scripts/ directory intact.\n' "${_COMMON_DIR}" >&2
+    exit 3
 fi
-readonly RED YELLOW GRAY RESET
 
-readonly EXIT_GREEN=0 EXIT_RED=1 EXIT_PENDING=2 EXIT_USAGE=3
-
-err()  { printf '%sERROR: %s%s\n' "$RED" "$*" "$RESET" >&2; }
-warn() { printf '%sWARNING: %s%s\n' "$YELLOW" "$*" "$RESET" >&2; }
-hint() { printf '%s  %s%s\n' "$GRAY" "$*" "$RESET" >&2; }
-
-# die <exit-code> <message> [suggested-solution ...]
-die() {
-    local code="$1" message="$2"
-    shift 2
-    err "$message"
-    local suggestion
-    for suggestion in "$@"; do
-        hint "$suggestion"
-    done
-    exit "$code"
-}
+readonly EXIT_PENDING=2
 
 usage() {
     cat <<'USAGE'
@@ -89,30 +69,20 @@ Exit codes:
 USAGE
 }
 
-# Fail fast on a value that will later be used in arithmetic or as a line count.
-require_int() {
-    local flag="$1" value="$2"
-    [[ "$value" =~ ^[0-9]+$ ]] \
-        || die "$EXIT_USAGE" "$flag expects a non-negative integer, got '$value'."
-}
-
-require_value() {
-    local flag="$1"
-    shift
-    [[ $# -ge 1 && -n "$1" ]] || die "$EXIT_USAGE" "$flag requires a value."
-}
-
-require_deps() {
-    local cmd missing=()
-    for cmd in gh jq awk; do
-        command -v "$cmd" >/dev/null 2>&1 || missing+=("$cmd")
-    done
-    [[ ${#missing[@]} -eq 0 ]] \
-        || die "$EXIT_USAGE" "required command(s) not installed: ${missing[*]}" \
-               "Install them and re-run."
-    gh auth status >/dev/null 2>&1 \
-        || die "$EXIT_USAGE" "gh is not authenticated." \
-               "Run: gh auth login"
+# The run's own URL is the authoritative repo reference, so a checkout that does not point at
+# that repo is a warning, not an error — but it is exactly the "fixing the wrong working copy"
+# case, and the agent must see it.
+check_repo_context() {
+    local run_repo slugs
+    run_repo="$(jq -r '.url // empty' <<<"$RUN_JSON" \
+        | sed -nE 's#https?://[^/]+/([^/]+/[^/]+)/actions/runs/.*#\1#p')"
+    [[ -n "$run_repo" ]] || return 0
+    slugs="$(local_repo_slugs)"
+    [[ -n "$slugs" ]] || return 0   # no checkout context to compare against
+    if ! grep -qxF "$run_repo" <<<"$slugs"; then
+        warn "the run belongs to $run_repo but this checkout's remotes point at: $(echo "$slugs" | paste -sd' ' -)."
+        hint "If you intend to fix code here too, cd into the $run_repo working copy — otherwise only the CI read is valid, not the local tree."
+    fi
 }
 
 # ------------------------------------------------------------------
@@ -390,9 +360,10 @@ report_job() {
 
 main() {
     parse_args "$@"
-    require_deps
+    require_deps gh jq awk
     resolve_ref
     fetch_run
+    check_repo_context
 
     local status conclusion failed_ids job_id
     status="$(jq -r '.status' <<<"$RUN_JSON")"

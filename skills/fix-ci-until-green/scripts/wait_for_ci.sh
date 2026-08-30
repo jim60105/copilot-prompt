@@ -31,39 +31,19 @@
 set -euo pipefail
 
 # ------------------------------------------------------------------
-# Utility functions
+# Shared utilities
 # ------------------------------------------------------------------
 
-# Diagnostics go to stderr in colour; the verdict goes to stdout in plain text,
-# because it is normally piped into a log, a file, or an agent's context where
-# escape sequences are noise.
-if [[ -t 2 ]]; then
-    RED=$'\033[0;31m'; YELLOW=$'\033[1;33m'; GRAY=$'\033[0;90m'; RESET=$'\033[0m'
-else
-    RED=''; YELLOW=''; GRAY=''; RESET=''
+_COMMON_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+if ! source "${_COMMON_DIR}/_common.sh" 2>/dev/null; then
+    printf 'ERROR: cannot source %s/_common.sh; keep the skill scripts/ directory intact.\n' "${_COMMON_DIR}" >&2
+    exit 3
 fi
-readonly RED YELLOW GRAY RESET
 
-readonly EXIT_GREEN=0 EXIT_RED=1 EXIT_TIMEOUT=2 EXIT_USAGE=3
+readonly EXIT_TIMEOUT=2
 
 # The API is polled in a loop, so refuse an interval that would hammer it.
 readonly MIN_INTERVAL=5
-
-err()  { printf '%sERROR: %s%s\n' "$RED" "$*" "$RESET" >&2; }
-warn() { printf '%sWARNING: %s%s\n' "$YELLOW" "$*" "$RESET" >&2; }
-hint() { printf '%s  %s%s\n' "$GRAY" "$*" "$RESET" >&2; }
-
-# die <exit-code> <message> [suggested-solution ...]
-die() {
-    local code="$1" message="$2"
-    shift 2
-    err "$message"
-    local suggestion
-    for suggestion in "$@"; do
-        hint "$suggestion"
-    done
-    exit "$code"
-}
 
 usage() {
     cat <<'USAGE'
@@ -85,29 +65,30 @@ Exit codes:
 USAGE
 }
 
-require_int() {
-    local flag="$1" value="$2"
-    [[ "$value" =~ ^[0-9]+$ ]] \
-        || die "$EXIT_USAGE" "$flag expects a non-negative integer, got '$value'."
-}
-
-require_value() {
-    local flag="$1"
-    shift
-    [[ $# -ge 1 && -n "$1" ]] || die "$EXIT_USAGE" "$flag requires a value."
-}
-
-require_deps() {
-    local cmd missing=()
-    for cmd in gh jq; do
-        command -v "$cmd" >/dev/null 2>&1 || missing+=("$cmd")
-    done
-    [[ ${#missing[@]} -eq 0 ]] \
-        || die "$EXIT_USAGE" "required command(s) not installed: ${missing[*]}" \
-               "Install them and re-run."
-    gh auth status >/dev/null 2>&1 \
-        || die "$EXIT_USAGE" "gh is not authenticated." \
-               "Run: gh auth login"
+# This wait only pays off for a run the checkout will actually trigger, so the pointing is
+# checked here instead of asking the agent to inspect `git remote -v` by hand.
+check_repo_context() {
+    local slugs where
+    slugs="$(local_repo_slugs)"
+    if [[ -n "$REPO" ]]; then
+        if ! grep -qxF "$REPO" <<<"$slugs"; then
+            if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+                local shown
+                shown="$(echo "$slugs" | paste -sd' ' -)"
+                where="this checkout's remotes point at: ${shown:-none}"
+            else
+                where="this is not a git working copy"
+            fi
+            warn "watching $REPO but $where."
+            hint "Pushes from here will not trigger those runs; cd into the $REPO working copy."
+        fi
+    elif ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        die "$EXIT_USAGE" "cannot resolve a target repository: not a git working copy and no --repo was given." \
+            "Run inside the repository whose CI is failing, or pass: -R OWNER/REPO"
+    elif [[ -z "$slugs" ]]; then
+        die "$EXIT_USAGE" "cannot resolve a target repository: this checkout has no git remotes and no --repo was given." \
+            "Run inside the repository whose CI is failing, or pass: -R OWNER/REPO"
+    fi
 }
 
 # Report where the wait stopped rather than dying silently mid-poll.
@@ -235,12 +216,16 @@ emit_verdict() {
 
 main() {
     parse_args "$@"
-    require_deps
+    require_deps gh jq
     resolve_sha
+    check_repo_context
 
     trap on_interrupt INT TERM
 
-    echo "Watching runs for commit ${SHA:0:12} (timeout ${TIMEOUT}s, poll ${INTERVAL}s)..."
+    local branch target
+    branch="$(git symbolic-ref --quiet --short HEAD 2>/dev/null || true)"
+    target="${REPO:-$(local_repo_slugs | paste -sd' ' -)}"
+    echo "Watching runs for commit ${SHA:0:12} on ${target:-unknown}${branch:+, branch $branch} (timeout ${TIMEOUT}s, poll ${INTERVAL}s)..."
     START=$SECONDS
 
     local status=0

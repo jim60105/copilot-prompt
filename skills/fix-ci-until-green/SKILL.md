@@ -19,11 +19,14 @@ still hidden behind the ones CI reported.
 
 ## Prerequisites
 
-Verify before the first iteration:
+The scripts enforce the mechanical checks themselves and say what is wrong on stderr: missing
+`gh`/`jq`, an unauthenticated `gh` (keyring or `GH_TOKEN`/`GITHUB_TOKEN`), and a checkout whose
+remotes do not point at the run's repository. Exit 3 with such a message means fix the
+invocation or the working copy — do not pre-run `gh auth status`, `jq --version`, or
+`git remote -v` by hand.
 
-- `gh auth status` succeeds and `jq` is installed — both scripts depend on them.
-- The working tree is clean, or the pending changes are understood and intended to ship.
-- `git rev-parse --abbrev-ref HEAD` and `git remote -v` point at the branch and repo whose CI is failing.
+The one check left to you: the working tree is clean, or the pending changes are understood and
+intended to ship.
 
 ## Loop Invariants
 
