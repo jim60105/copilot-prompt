@@ -131,6 +131,9 @@ When no run appears for a pushed SHA, work through these in order:
   step failed; the real message is earlier in that step.
 - **Secrets are masked as `***`.** A value that renders as `***` was set; a genuinely missing secret
   renders as an empty string.
+- **`gh` consumes its stdin.** In a `while read ... done <<<"$ids"` loop, the first `gh` call inside
+  the body swallows the remaining lines, so only the first item is ever processed — silently. Feed
+  loop input on a dedicated fd (`read -u 3` / `3<<<"$ids"`) or redirect `gh`'s stdin from `/dev/null`.
 - **`gh run rerun` is out of scope for this loop.** The loop treats every failure as a real defect.
 - **`--commit` needs the full 40-character SHA.** An abbreviation matches nothing and is
   indistinguishable from "no run exists". `wait_for_ci.sh` expands short SHAs when the commit is

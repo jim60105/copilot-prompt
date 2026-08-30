@@ -262,9 +262,12 @@ resolve_ref() {
     return 0
 }
 
+# `</dev/null` on every gh call: gh consumes whatever is on its stdin, and these
+# calls run while a herestring owns fd 0 — without the redirect gh swallows the
+# remaining input and the caller silently loses data.
 fetch_run() {
     RUN_JSON="$(gh run view "$RUN_ID" "${GH_ARGS[@]}" "${ATTEMPT_ARGS[@]}" \
-        --json databaseId,workflowName,displayTitle,status,conclusion,headBranch,headSha,event,url,attempt,createdAt,updatedAt,jobs 2>/dev/null)" \
+        --json databaseId,workflowName,displayTitle,status,conclusion,headBranch,headSha,event,url,attempt,createdAt,updatedAt,jobs 2>/dev/null </dev/null)" \
         || die "$EXIT_USAGE" "could not read run $RUN_ID${REPO:+ in $REPO}." \
                "Check the run ID and repository, then verify access with: gh auth status"
 }
@@ -314,9 +317,9 @@ emit_job_header() {
 
 fetch_job_log() {
     local job_id="$1" log
-    log="$(gh run view "${GH_ARGS[@]}" "${ATTEMPT_ARGS[@]}" --job "$job_id" --log-failed 2>/dev/null | normalize_log || true)"
+    log="$(gh run view "${GH_ARGS[@]}" "${ATTEMPT_ARGS[@]}" --job "$job_id" --log-failed 2>/dev/null </dev/null | normalize_log || true)"
     if [[ -z "${log//[[:space:]]/}" ]]; then
-        log="$(gh run view "${GH_ARGS[@]}" "${ATTEMPT_ARGS[@]}" --job "$job_id" --log 2>/dev/null | normalize_log || true)"
+        log="$(gh run view "${GH_ARGS[@]}" "${ATTEMPT_ARGS[@]}" --job "$job_id" --log 2>/dev/null </dev/null | normalize_log || true)"
     fi
     printf '%s' "$log"
 }
@@ -417,10 +420,15 @@ main() {
         return "$EXIT_RED"
     fi
 
-    while read -r job_id; do
+    # The job list is read on a dedicated descriptor (fd 3), not stdin, so that
+    # nothing inside report_job can ever steal the remaining IDs. With the plain
+    # `while read ... done <<<"$failed_ids"` form, the first `gh` call consumed
+    # the herestring and only the first failed job was ever reported — every
+    # matrix leg after it vanished from the report without a trace.
+    while read -r -u 3 job_id; do
         [[ -n "$job_id" ]] || continue
         report_job "$job_id"
-    done <<<"$failed_ids"
+    done 3<<< "$failed_ids"
 
     return "$EXIT_RED"
 }
