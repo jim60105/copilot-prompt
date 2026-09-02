@@ -1,0 +1,4581 @@
+{
+ "_meta": {
+  "source": "Unicode Unihan_Variants.txt (kTraditionalVariant, kSimplifiedVariant)",
+  "source_url": "https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip",
+  "license": "Unicode License Agreement - Data Files and Software",
+  "generated_by": "scripts/build_tables.py"
+ },
+ "chars": {
+  "㳽": {
+   "candidates": [
+    "瀰"
+   ],
+   "decision": "auto",
+   "resolved": "瀰",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "䴘": {
+   "candidates": [
+    "鷈"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "万": {
+   "candidates": [
+    "万",
+    "萬"
+   ],
+   "decision": "auto",
+   "resolved": "萬",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "丑": {
+   "candidates": [
+    "丑",
+    "醜"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "丢": {
+   "candidates": [
+    "丟"
+   ],
+   "decision": "auto",
+   "resolved": "丟",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "两": {
+   "candidates": [
+    "兩"
+   ],
+   "decision": "auto",
+   "resolved": "兩",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "个": {
+   "candidates": [
+    "個"
+   ],
+   "decision": "safe",
+   "note": null,
+   "proper_noun_risk": false,
+   "resolved": "個",
+   "candidates_changed_since_decision": true
+  },
+  "丰": {
+   "candidates": [
+    "丰",
+    "豐"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "为": {
+   "candidates": [
+    "為"
+   ],
+   "decision": "auto",
+   "resolved": "為",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "么": {
+   "candidates": [
+    "么",
+    "麼"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "义": {
+   "candidates": [
+    "義"
+   ],
+   "decision": "auto",
+   "resolved": "義",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "乐": {
+   "candidates": [
+    "樂"
+   ],
+   "decision": "auto",
+   "resolved": "樂",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "乔": {
+   "candidates": [
+    "喬"
+   ],
+   "decision": "auto",
+   "resolved": "喬",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "乱": {
+   "candidates": [
+    "亂"
+   ],
+   "decision": "auto",
+   "resolved": "亂",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "了": {
+   "candidates": [
+    "了",
+    "瞭"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "争": {
+   "candidates": [
+    "爭"
+   ],
+   "decision": "auto",
+   "resolved": "爭",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "于": {
+   "candidates": [
+    "于",
+    "於"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "亏": {
+   "candidates": [
+    "虧"
+   ],
+   "decision": "auto",
+   "resolved": "虧",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "云": {
+   "candidates": [
+    "云",
+    "雲"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "产": {
+   "candidates": [
+    "產"
+   ],
+   "decision": "auto",
+   "resolved": "產",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "仅": {
+   "candidates": [
+    "僅"
+   ],
+   "decision": "auto",
+   "resolved": "僅",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "仆": {
+   "candidates": [
+    "仆",
+    "僕"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "从": {
+   "candidates": [
+    "從"
+   ],
+   "decision": "auto",
+   "resolved": "從",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "仪": {
+   "candidates": [
+    "儀"
+   ],
+   "decision": "auto",
+   "resolved": "儀",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "价": {
+   "candidates": [
+    "价",
+    "價"
+   ],
+   "decision": "auto",
+   "resolved": "價",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "众": {
+   "candidates": [
+    "眾"
+   ],
+   "decision": "auto",
+   "resolved": "眾",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "优": {
+   "candidates": [
+    "优",
+    "優"
+   ],
+   "decision": "auto",
+   "resolved": "優",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "伙": {
+   "candidates": [
+    "伙",
+    "夥"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "会": {
+   "candidates": [
+    "會"
+   ],
+   "decision": "auto",
+   "resolved": "會",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "伤": {
+   "candidates": [
+    "傷"
+   ],
+   "decision": "auto",
+   "resolved": "傷",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "伪": {
+   "candidates": [
+    "偽"
+   ],
+   "decision": "auto",
+   "resolved": "偽",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "体": {
+   "candidates": [
+    "体",
+    "體"
+   ],
+   "decision": "auto",
+   "resolved": "體",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "余": {
+   "candidates": [
+    "余",
+    "餘"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "佣": {
+   "candidates": [
+    "佣",
+    "傭"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "侠": {
+   "candidates": [
+    "俠"
+   ],
+   "decision": "auto",
+   "resolved": "俠",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "侩": {
+   "candidates": [
+    "儈"
+   ],
+   "decision": "auto",
+   "resolved": "儈",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "俦": {
+   "candidates": [
+    "儔"
+   ],
+   "decision": "auto",
+   "resolved": "儔",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "借": {
+   "candidates": [
+    "借",
+    "藉"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "偬": {
+   "candidates": [
+    "傯"
+   ],
+   "decision": "auto",
+   "resolved": "傯",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "偻": {
+   "candidates": [
+    "僂"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "儿": {
+   "candidates": [
+    "儿",
+    "兒"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "克": {
+   "candidates": [
+    "克",
+    "剋"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "兑": {
+   "candidates": [
+    "兌"
+   ],
+   "decision": "auto",
+   "resolved": "兌",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "党": {
+   "candidates": [
+    "党",
+    "黨"
+   ],
+   "decision": "auto",
+   "resolved": "黨",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "内": {
+   "candidates": [
+    "內"
+   ],
+   "decision": "safe",
+   "note": null,
+   "proper_noun_risk": false,
+   "resolved": "內",
+   "candidates_changed_since_decision": true
+  },
+  "册": {
+   "candidates": [
+    "冊"
+   ],
+   "decision": "auto",
+   "resolved": "冊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "冬": {
+   "candidates": [
+    "冬",
+    "鼕"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "冲": {
+   "candidates": [
+    "沖",
+    "衝"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "况": {
+   "candidates": [
+    "況"
+   ],
+   "decision": "auto",
+   "resolved": "況",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "准": {
+   "candidates": [
+    "准",
+    "準"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "凉": {
+   "candidates": [
+    "涼"
+   ],
+   "decision": "auto",
+   "resolved": "涼",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "减": {
+   "candidates": [
+    "減"
+   ],
+   "decision": "auto",
+   "resolved": "減",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "凑": {
+   "candidates": [
+    "湊"
+   ],
+   "decision": "auto",
+   "resolved": "湊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "几": {
+   "candidates": [
+    "几",
+    "幾"
+   ],
+   "decision": "ambiguous",
+   "note": "表數量取 幾（幾個、幾乎）；家具與成語保留 几（茶几、窗明几淨）",
+   "proper_noun_risk": false
+  },
+  "凤": {
+   "candidates": [
+    "鳳"
+   ],
+   "decision": "auto",
+   "resolved": "鳳",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "凫": {
+   "candidates": [
+    "鳧"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "凭": {
+   "candidates": [
+    "憑"
+   ],
+   "decision": "auto",
+   "resolved": "憑",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "出": {
+   "candidates": [
+    "出",
+    "齣"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "划": {
+   "candidates": [
+    "划",
+    "劃"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "刘": {
+   "candidates": [
+    "劉"
+   ],
+   "decision": "auto",
+   "resolved": "劉",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "删": {
+   "candidates": [
+    "刪"
+   ],
+   "decision": "auto",
+   "resolved": "刪",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "别": {
+   "candidates": [
+    "別",
+    "彆"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "刮": {
+   "candidates": [
+    "刮",
+    "颳"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "制": {
+   "candidates": [
+    "制",
+    "製"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "刹": {
+   "candidates": [
+    "剎"
+   ],
+   "decision": "auto",
+   "resolved": "剎",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "刾": {
+   "candidates": [
+    "㓨",
+    "刾"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "剧": {
+   "candidates": [
+    "劇"
+   ],
+   "decision": "auto",
+   "resolved": "劇",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "劝": {
+   "candidates": [
+    "勸"
+   ],
+   "decision": "auto",
+   "resolved": "勸",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "办": {
+   "candidates": [
+    "辦"
+   ],
+   "decision": "auto",
+   "resolved": "辦",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "动": {
+   "candidates": [
+    "動"
+   ],
+   "decision": "auto",
+   "resolved": "動",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "励": {
+   "candidates": [
+    "勵"
+   ],
+   "decision": "auto",
+   "resolved": "勵",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "劳": {
+   "candidates": [
+    "勞"
+   ],
+   "decision": "auto",
+   "resolved": "勞",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "势": {
+   "candidates": [
+    "勢"
+   ],
+   "decision": "auto",
+   "resolved": "勢",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "匀": {
+   "candidates": [
+    "勻"
+   ],
+   "decision": "auto",
+   "resolved": "勻",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "区": {
+   "candidates": [
+    "區"
+   ],
+   "decision": "auto",
+   "resolved": "區",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "医": {
+   "candidates": [
+    "醫"
+   ],
+   "decision": "auto",
+   "resolved": "醫",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "千": {
+   "candidates": [
+    "千",
+    "韆"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "单": {
+   "candidates": [
+    "單"
+   ],
+   "decision": "auto",
+   "resolved": "單",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "卜": {
+   "candidates": [
+    "卜",
+    "蔔"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "卤": {
+   "candidates": [
+    "滷",
+    "鹵"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "却": {
+   "candidates": [
+    "卻"
+   ],
+   "decision": "auto",
+   "resolved": "卻",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "卷": {
+   "candidates": [
+    "卷",
+    "捲"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "厂": {
+   "candidates": [
+    "厂",
+    "廠"
+   ],
+   "decision": "auto",
+   "resolved": "廠",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "历": {
+   "candidates": [
+    "曆",
+    "歷"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "厉": {
+   "candidates": [
+    "厲"
+   ],
+   "decision": "auto",
+   "resolved": "厲",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "压": {
+   "candidates": [
+    "壓"
+   ],
+   "decision": "auto",
+   "resolved": "壓",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "厕": {
+   "candidates": [
+    "廁"
+   ],
+   "decision": "auto",
+   "resolved": "廁",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "厘": {
+   "candidates": [
+    "厘",
+    "釐"
+   ],
+   "decision": "auto",
+   "resolved": "釐",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "厦": {
+   "candidates": [
+    "廈"
+   ],
+   "decision": "auto",
+   "resolved": "廈",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "厨": {
+   "candidates": [
+    "廚"
+   ],
+   "decision": "auto",
+   "resolved": "廚",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "厩": {
+   "candidates": [
+    "廄"
+   ],
+   "decision": "auto",
+   "resolved": "廄",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "厮": {
+   "candidates": [
+    "廝"
+   ],
+   "decision": "auto",
+   "resolved": "廝",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "参": {
+   "candidates": [
+    "參"
+   ],
+   "decision": "auto",
+   "resolved": "參",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "双": {
+   "candidates": [
+    "雙"
+   ],
+   "decision": "auto",
+   "resolved": "雙",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "发": {
+   "candidates": [
+    "發",
+    "髮"
+   ],
+   "decision": "ambiguous",
+   "note": "毛髮取 髮（頭髮、理髮、髮型）；其餘一律 發（發生、開發、發票）",
+   "proper_noun_risk": false
+  },
+  "叙": {
+   "candidates": [
+    "敘"
+   ],
+   "decision": "auto",
+   "resolved": "敘",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "叠": {
+   "candidates": [
+    "疊"
+   ],
+   "decision": "auto",
+   "resolved": "疊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "只": {
+   "candidates": [
+    "只",
+    "戠",
+    "衹",
+    "隻"
+   ],
+   "decision": "ambiguous",
+   "note": "量詞取 隻（一隻貓）；表僅有取 只（只有、只是）。候選中的 戠 為 Unihan 雜訊，不採用",
+   "proper_noun_risk": false
+  },
+  "台": {
+   "candidates": [
+    "台",
+    "檯",
+    "臺",
+    "颱"
+   ],
+   "decision": "ambiguous",
+   "note": "台灣、台北依作者原文慣用 台；平台一般作 平台；櫃檯、檯燈取 檯；颱風取 颱",
+   "proper_noun_risk": false
+  },
+  "叶": {
+   "candidates": [
+    "葉"
+   ],
+   "decision": "auto",
+   "resolved": "葉",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "号": {
+   "candidates": [
+    "號"
+   ],
+   "decision": "auto",
+   "resolved": "號",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "吁": {
+   "candidates": [
+    "吁",
+    "籲"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "合": {
+   "candidates": [
+    "合",
+    "閤"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "同": {
+   "candidates": [
+    "同",
+    "衕"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "后": {
+   "candidates": [
+    "后",
+    "後"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "向": {
+   "candidates": [
+    "向",
+    "嚮",
+    "曏"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "吓": {
+   "candidates": [
+    "嚇"
+   ],
+   "decision": "auto",
+   "resolved": "嚇",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "听": {
+   "candidates": [
+    "听",
+    "聽"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "启": {
+   "candidates": [
+    "啟"
+   ],
+   "decision": "auto",
+   "resolved": "啟",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "吴": {
+   "candidates": [
+    "吳"
+   ],
+   "decision": "auto",
+   "resolved": "吳",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "咏": {
+   "candidates": [
+    "詠"
+   ],
+   "decision": "auto",
+   "resolved": "詠",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "咤": {
+   "candidates": [
+    "吒"
+   ],
+   "decision": "auto",
+   "resolved": "吒",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "咸": {
+   "candidates": [
+    "咸",
+    "鹹"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "响": {
+   "candidates": [
+    "響"
+   ],
+   "decision": "auto",
+   "resolved": "響",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "啰": {
+   "candidates": [
+    "囉"
+   ],
+   "decision": "auto",
+   "resolved": "囉",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "喽": {
+   "candidates": [
+    "嘍"
+   ],
+   "decision": "auto",
+   "resolved": "嘍",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "嘱": {
+   "candidates": [
+    "囑"
+   ],
+   "decision": "auto",
+   "resolved": "囑",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "回": {
+   "candidates": [
+    "回",
+    "迴"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "团": {
+   "candidates": [
+    "團",
+    "糰"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "园": {
+   "candidates": [
+    "園"
+   ],
+   "decision": "auto",
+   "resolved": "園",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "困": {
+   "candidates": [
+    "困",
+    "睏"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "图": {
+   "candidates": [
+    "圖"
+   ],
+   "decision": "auto",
+   "resolved": "圖",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "坂": {
+   "candidates": [
+    "阪"
+   ],
+   "decision": "auto",
+   "resolved": "阪",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "坏": {
+   "candidates": [
+    "坏",
+    "壞"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "块": {
+   "candidates": [
+    "塊"
+   ],
+   "decision": "auto",
+   "resolved": "塊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "坛": {
+   "candidates": [
+    "壇",
+    "罈"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "坝": {
+   "candidates": [
+    "壩"
+   ],
+   "decision": "auto",
+   "resolved": "壩",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "堕": {
+   "candidates": [
+    "墮"
+   ],
+   "decision": "auto",
+   "resolved": "墮",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "墙": {
+   "candidates": [
+    "牆"
+   ],
+   "decision": "auto",
+   "resolved": "牆",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "壮": {
+   "candidates": [
+    "壯"
+   ],
+   "decision": "auto",
+   "resolved": "壯",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "声": {
+   "candidates": [
+    "聲"
+   ],
+   "decision": "auto",
+   "resolved": "聲",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "壳": {
+   "candidates": [
+    "殼"
+   ],
+   "decision": "auto",
+   "resolved": "殼",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "复": {
+   "candidates": [
+    "复",
+    "復",
+    "複",
+    "覆"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "够": {
+   "candidates": [
+    "夠"
+   ],
+   "decision": "auto",
+   "resolved": "夠",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "头": {
+   "candidates": [
+    "頭"
+   ],
+   "decision": "safe",
+   "note": null,
+   "proper_noun_risk": false,
+   "resolved": "頭",
+   "candidates_changed_since_decision": true
+  },
+  "夸": {
+   "candidates": [
+    "夸",
+    "誇"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "奖": {
+   "candidates": [
+    "獎"
+   ],
+   "decision": "auto",
+   "resolved": "獎",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "奸": {
+   "candidates": [
+    "奸",
+    "姦"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "妫": {
+   "candidates": [
+    "媯"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "姗": {
+   "candidates": [
+    "姍"
+   ],
+   "decision": "auto",
+   "resolved": "姍",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "姜": {
+   "candidates": [
+    "姜",
+    "薑"
+   ],
+   "decision": "ambiguous",
+   "note": "姓氏一律保留 姜；植物與調味料取 薑。無法從字面判定時只標記，不轉換",
+   "proper_noun_risk": true
+  },
+  "姹": {
+   "candidates": [
+    "奼"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "娄": {
+   "candidates": [
+    "婁"
+   ],
+   "decision": "auto",
+   "resolved": "婁",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "娇": {
+   "candidates": [
+    "嬌"
+   ],
+   "decision": "auto",
+   "resolved": "嬌",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "娈": {
+   "candidates": [
+    "孌"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "娱": {
+   "candidates": [
+    "娛"
+   ],
+   "decision": "auto",
+   "resolved": "娛",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "孙": {
+   "candidates": [
+    "孫"
+   ],
+   "decision": "auto",
+   "resolved": "孫",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "孪": {
+   "candidates": [
+    "孿"
+   ],
+   "decision": "auto",
+   "resolved": "孿",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "宁": {
+   "candidates": [
+    "宁",
+    "寧"
+   ],
+   "decision": "auto",
+   "resolved": "寧",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "宝": {
+   "candidates": [
+    "寶"
+   ],
+   "decision": "auto",
+   "resolved": "寶",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "实": {
+   "candidates": [
+    "實"
+   ],
+   "decision": "auto",
+   "resolved": "實",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "家": {
+   "candidates": [
+    "傢",
+    "家"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "宾": {
+   "candidates": [
+    "賓"
+   ],
+   "decision": "auto",
+   "resolved": "賓",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "对": {
+   "candidates": [
+    "對"
+   ],
+   "decision": "auto",
+   "resolved": "對",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "寿": {
+   "candidates": [
+    "壽"
+   ],
+   "decision": "auto",
+   "resolved": "壽",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "尔": {
+   "candidates": [
+    "爾"
+   ],
+   "decision": "auto",
+   "resolved": "爾",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "尝": {
+   "candidates": [
+    "嘗"
+   ],
+   "decision": "auto",
+   "resolved": "嘗",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "尸": {
+   "candidates": [
+    "尸",
+    "屍"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "尽": {
+   "candidates": [
+    "儘",
+    "盡"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "届": {
+   "candidates": [
+    "屆"
+   ],
+   "decision": "auto",
+   "resolved": "屆",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "属": {
+   "candidates": [
+    "屬"
+   ],
+   "decision": "auto",
+   "resolved": "屬",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "屡": {
+   "candidates": [
+    "屢"
+   ],
+   "decision": "auto",
+   "resolved": "屢",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "岁": {
+   "candidates": [
+    "歲"
+   ],
+   "decision": "auto",
+   "resolved": "歲",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "峦": {
+   "candidates": [
+    "巒"
+   ],
+   "decision": "auto",
+   "resolved": "巒",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "师": {
+   "candidates": [
+    "師"
+   ],
+   "decision": "auto",
+   "resolved": "師",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "帘": {
+   "candidates": [
+    "帘",
+    "簾"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "帮": {
+   "candidates": [
+    "幫"
+   ],
+   "decision": "auto",
+   "resolved": "幫",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "幂": {
+   "candidates": [
+    "冪"
+   ],
+   "decision": "auto",
+   "resolved": "冪",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "干": {
+   "candidates": [
+    "乾",
+    "干",
+    "幹"
+   ],
+   "decision": "ambiguous",
+   "note": "乾燥、乾淨取 乾；幹活、主幹、幹部取 幹；干擾、干涉、若干保留 干",
+   "proper_noun_risk": false
+  },
+  "并": {
+   "candidates": [
+    "並",
+    "併",
+    "并"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "广": {
+   "candidates": [
+    "廣"
+   ],
+   "decision": "auto",
+   "resolved": "廣",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "庄": {
+   "candidates": [
+    "庄",
+    "莊"
+   ],
+   "decision": "auto",
+   "resolved": "莊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "庐": {
+   "candidates": [
+    "廬"
+   ],
+   "decision": "auto",
+   "resolved": "廬",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "应": {
+   "candidates": [
+    "應"
+   ],
+   "decision": "auto",
+   "resolved": "應",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "庙": {
+   "candidates": [
+    "廟"
+   ],
+   "decision": "auto",
+   "resolved": "廟",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "开": {
+   "candidates": [
+    "開"
+   ],
+   "decision": "auto",
+   "resolved": "開",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "弃": {
+   "candidates": [
+    "棄"
+   ],
+   "decision": "auto",
+   "resolved": "棄",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "弥": {
+   "candidates": [
+    "彌",
+    "瀰"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "弯": {
+   "candidates": [
+    "彎"
+   ],
+   "decision": "auto",
+   "resolved": "彎",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "弹": {
+   "candidates": [
+    "彈"
+   ],
+   "decision": "auto",
+   "resolved": "彈",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "强": {
+   "candidates": [
+    "強"
+   ],
+   "decision": "auto",
+   "resolved": "強",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "归": {
+   "candidates": [
+    "歸"
+   ],
+   "decision": "auto",
+   "resolved": "歸",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "当": {
+   "candidates": [
+    "噹",
+    "當"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "录": {
+   "candidates": [
+    "錄"
+   ],
+   "decision": "auto",
+   "resolved": "錄",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "彦": {
+   "candidates": [
+    "彥"
+   ],
+   "decision": "auto",
+   "resolved": "彥",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "征": {
+   "candidates": [
+    "征",
+    "徵"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "御": {
+   "candidates": [
+    "御",
+    "禦"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "志": {
+   "candidates": [
+    "志",
+    "誌"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "怀": {
+   "candidates": [
+    "怀",
+    "懷"
+   ],
+   "decision": "auto",
+   "resolved": "懷",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "怜": {
+   "candidates": [
+    "怜",
+    "憐"
+   ],
+   "decision": "auto",
+   "resolved": "憐",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "恋": {
+   "candidates": [
+    "戀"
+   ],
+   "decision": "auto",
+   "resolved": "戀",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "恒": {
+   "candidates": [
+    "恆"
+   ],
+   "decision": "auto",
+   "resolved": "恆",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "恶": {
+   "candidates": [
+    "噁",
+    "惡"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "恼": {
+   "candidates": [
+    "惱"
+   ],
+   "decision": "auto",
+   "resolved": "惱",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "悫": {
+   "candidates": [
+    "愨"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "惧": {
+   "candidates": [
+    "懼"
+   ],
+   "decision": "auto",
+   "resolved": "懼",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "惩": {
+   "candidates": [
+    "懲"
+   ],
+   "decision": "auto",
+   "resolved": "懲",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "愠": {
+   "candidates": [
+    "慍"
+   ],
+   "decision": "auto",
+   "resolved": "慍",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "愿": {
+   "candidates": [
+    "愿",
+    "願"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "戏": {
+   "candidates": [
+    "戲"
+   ],
+   "decision": "auto",
+   "resolved": "戲",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "战": {
+   "candidates": [
+    "戰"
+   ],
+   "decision": "auto",
+   "resolved": "戰",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "户": {
+   "candidates": [
+    "戶"
+   ],
+   "decision": "auto",
+   "resolved": "戶",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "才": {
+   "candidates": [
+    "才",
+    "纔"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "扑": {
+   "candidates": [
+    "扑",
+    "撲"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "执": {
+   "candidates": [
+    "執"
+   ],
+   "decision": "auto",
+   "resolved": "執",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "折": {
+   "candidates": [
+    "折",
+    "摺"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "抛": {
+   "candidates": [
+    "拋"
+   ],
+   "decision": "auto",
+   "resolved": "拋",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "报": {
+   "candidates": [
+    "報"
+   ],
+   "decision": "auto",
+   "resolved": "報",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "担": {
+   "candidates": [
+    "擔"
+   ],
+   "decision": "auto",
+   "resolved": "擔",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "挂": {
+   "candidates": [
+    "挂",
+    "掛"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "挛": {
+   "candidates": [
+    "攣"
+   ],
+   "decision": "auto",
+   "resolved": "攣",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "挟": {
+   "candidates": [
+    "挾"
+   ],
+   "decision": "auto",
+   "resolved": "挾",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "挡": {
+   "candidates": [
+    "擋"
+   ],
+   "decision": "auto",
+   "resolved": "擋",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "挽": {
+   "candidates": [
+    "挽",
+    "輓"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "据": {
+   "candidates": [
+    "据",
+    "據"
+   ],
+   "decision": "auto",
+   "resolved": "據",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "掷": {
+   "candidates": [
+    "擲"
+   ],
+   "decision": "auto",
+   "resolved": "擲",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "揾": {
+   "candidates": [
+    "搵"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "携": {
+   "candidates": [
+    "攜"
+   ],
+   "decision": "auto",
+   "resolved": "攜",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "摆": {
+   "candidates": [
+    "擺",
+    "襬"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "摈": {
+   "candidates": [
+    "擯"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "摊": {
+   "candidates": [
+    "攤"
+   ],
+   "decision": "auto",
+   "resolved": "攤",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "撑": {
+   "candidates": [
+    "撐"
+   ],
+   "decision": "auto",
+   "resolved": "撐",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "数": {
+   "candidates": [
+    "數"
+   ],
+   "decision": "auto",
+   "resolved": "數",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "斋": {
+   "candidates": [
+    "齋"
+   ],
+   "decision": "auto",
+   "resolved": "齋",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "斗": {
+   "candidates": [
+    "斗",
+    "鬥"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "断": {
+   "candidates": [
+    "斷"
+   ],
+   "decision": "auto",
+   "resolved": "斷",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "旋": {
+   "candidates": [
+    "旋",
+    "鏇"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "无": {
+   "candidates": [
+    "無"
+   ],
+   "decision": "auto",
+   "resolved": "無",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "时": {
+   "candidates": [
+    "時"
+   ],
+   "decision": "auto",
+   "resolved": "時",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "旷": {
+   "candidates": [
+    "曠"
+   ],
+   "decision": "auto",
+   "resolved": "曠",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "昼": {
+   "candidates": [
+    "晝"
+   ],
+   "decision": "auto",
+   "resolved": "晝",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "晋": {
+   "candidates": [
+    "晉"
+   ],
+   "decision": "auto",
+   "resolved": "晉",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "晒": {
+   "candidates": [
+    "晒",
+    "曬"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "曲": {
+   "candidates": [
+    "曲"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "术": {
+   "candidates": [
+    "術"
+   ],
+   "decision": "safe",
+   "note": null,
+   "proper_noun_risk": false,
+   "resolved": "術",
+   "candidates_changed_since_decision": true
+  },
+  "朱": {
+   "candidates": [
+    "朱",
+    "硃"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "朴": {
+   "candidates": [
+    "朴",
+    "樸"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "机": {
+   "candidates": [
+    "机",
+    "機"
+   ],
+   "decision": "auto",
+   "resolved": "機",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "权": {
+   "candidates": [
+    "權"
+   ],
+   "decision": "auto",
+   "resolved": "權",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "杆": {
+   "candidates": [
+    "杆",
+    "桿"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "杰": {
+   "candidates": [
+    "傑",
+    "杰"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "松": {
+   "candidates": [
+    "松",
+    "鬆"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "板": {
+   "candidates": [
+    "板",
+    "闆"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "极": {
+   "candidates": [
+    "极",
+    "極"
+   ],
+   "decision": "auto",
+   "resolved": "極",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "构": {
+   "candidates": [
+    "构",
+    "構"
+   ],
+   "decision": "auto",
+   "resolved": "構",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "柜": {
+   "candidates": [
+    "柜",
+    "櫃"
+   ],
+   "decision": "auto",
+   "resolved": "櫃",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "栀": {
+   "candidates": [
+    "梔"
+   ],
+   "decision": "auto",
+   "resolved": "梔",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "栅": {
+   "candidates": [
+    "柵"
+   ],
+   "decision": "auto",
+   "resolved": "柵",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "标": {
+   "candidates": [
+    "標"
+   ],
+   "decision": "auto",
+   "resolved": "標",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "栖": {
+   "candidates": [
+    "栖",
+    "棲"
+   ],
+   "decision": "auto",
+   "resolved": "棲",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "栗": {
+   "candidates": [
+    "慄",
+    "栗"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "栾": {
+   "candidates": [
+    "欒"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "梦": {
+   "candidates": [
+    "夢"
+   ],
+   "decision": "auto",
+   "resolved": "夢",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "楼": {
+   "candidates": [
+    "樓"
+   ],
+   "decision": "auto",
+   "resolved": "樓",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "欢": {
+   "candidates": [
+    "歡"
+   ],
+   "decision": "auto",
+   "resolved": "歡",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "欤": {
+   "candidates": [
+    "歟"
+   ],
+   "decision": "auto",
+   "resolved": "歟",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "殡": {
+   "candidates": [
+    "殯"
+   ],
+   "decision": "auto",
+   "resolved": "殯",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "毡": {
+   "candidates": [
+    "氈"
+   ],
+   "decision": "auto",
+   "resolved": "氈",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "气": {
+   "candidates": [
+    "气",
+    "氣"
+   ],
+   "decision": "auto",
+   "resolved": "氣",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "汇": {
+   "candidates": [
+    "匯",
+    "彙"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "汹": {
+   "candidates": [
+    "洶"
+   ],
+   "decision": "auto",
+   "resolved": "洶",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "沄": {
+   "candidates": [
+    "沄",
+    "澐"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "沈": {
+   "candidates": [
+    "沈",
+    "瀋"
+   ],
+   "decision": "ambiguous",
+   "note": "姓氏一律保留 沈；地名瀋陽取 瀋。無法從字面判定時只標記，不轉換",
+   "proper_noun_risk": true
+  },
+  "没": {
+   "candidates": [
+    "沒"
+   ],
+   "decision": "auto",
+   "resolved": "沒",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "沩": {
+   "candidates": [
+    "溈"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "沪": {
+   "candidates": [
+    "滬"
+   ],
+   "decision": "auto",
+   "resolved": "滬",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "注": {
+   "candidates": [
+    "注",
+    "註"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "泪": {
+   "candidates": [
+    "淚"
+   ],
+   "decision": "auto",
+   "resolved": "淚",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "洒": {
+   "candidates": [
+    "洒",
+    "灑"
+   ],
+   "decision": "auto",
+   "resolved": "灑",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "洼": {
+   "candidates": [
+    "洼",
+    "窪"
+   ],
+   "decision": "auto",
+   "resolved": "窪",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "浅": {
+   "candidates": [
+    "淺"
+   ],
+   "decision": "auto",
+   "resolved": "淺",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "涂": {
+   "candidates": [
+    "塗",
+    "涂"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "涛": {
+   "candidates": [
+    "濤"
+   ],
+   "decision": "auto",
+   "resolved": "濤",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "淀": {
+   "candidates": [
+    "淀",
+    "澱"
+   ],
+   "decision": "auto",
+   "resolved": "澱",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "渊": {
+   "candidates": [
+    "淵"
+   ],
+   "decision": "auto",
+   "resolved": "淵",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "温": {
+   "candidates": [
+    "溫"
+   ],
+   "decision": "auto",
+   "resolved": "溫",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "湾": {
+   "candidates": [
+    "灣"
+   ],
+   "decision": "auto",
+   "resolved": "灣",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "滚": {
+   "candidates": [
+    "滾"
+   ],
+   "decision": "auto",
+   "resolved": "滾",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "滦": {
+   "candidates": [
+    "灤"
+   ],
+   "decision": "auto",
+   "resolved": "灤",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "滨": {
+   "candidates": [
+    "濱"
+   ],
+   "decision": "auto",
+   "resolved": "濱",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "滩": {
+   "candidates": [
+    "灘"
+   ],
+   "decision": "auto",
+   "resolved": "灘",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "漓": {
+   "candidates": [
+    "漓",
+    "灕"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "灯": {
+   "candidates": [
+    "燈"
+   ],
+   "decision": "auto",
+   "resolved": "燈",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "灶": {
+   "candidates": [
+    "灶"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "灾": {
+   "candidates": [
+    "災"
+   ],
+   "decision": "auto",
+   "resolved": "災",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "炉": {
+   "candidates": [
+    "爐"
+   ],
+   "decision": "auto",
+   "resolved": "爐",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "点": {
+   "candidates": [
+    "點"
+   ],
+   "decision": "auto",
+   "resolved": "點",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "烛": {
+   "candidates": [
+    "燭"
+   ],
+   "decision": "auto",
+   "resolved": "燭",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "烟": {
+   "candidates": [
+    "煙"
+   ],
+   "decision": "auto",
+   "resolved": "煙",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "烩": {
+   "candidates": [
+    "燴"
+   ],
+   "decision": "auto",
+   "resolved": "燴",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "烬": {
+   "candidates": [
+    "燼"
+   ],
+   "decision": "auto",
+   "resolved": "燼",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "热": {
+   "candidates": [
+    "熱"
+   ],
+   "decision": "auto",
+   "resolved": "熱",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "犹": {
+   "candidates": [
+    "猶"
+   ],
+   "decision": "auto",
+   "resolved": "猶",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "独": {
+   "candidates": [
+    "獨"
+   ],
+   "decision": "auto",
+   "resolved": "獨",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "狯": {
+   "candidates": [
+    "獪"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "猕": {
+   "candidates": [
+    "獼"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "猪": {
+   "candidates": [
+    "豬"
+   ],
+   "decision": "auto",
+   "resolved": "豬",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "猫": {
+   "candidates": [
+    "貓"
+   ],
+   "decision": "auto",
+   "resolved": "貓",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "猬": {
+   "candidates": [
+    "蝟"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "献": {
+   "candidates": [
+    "獻"
+   ],
+   "decision": "auto",
+   "resolved": "獻",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "环": {
+   "candidates": [
+    "環"
+   ],
+   "decision": "auto",
+   "resolved": "環",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "珐": {
+   "candidates": [
+    "琺"
+   ],
+   "decision": "auto",
+   "resolved": "琺",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "琼": {
+   "candidates": [
+    "瓊"
+   ],
+   "decision": "auto",
+   "resolved": "瓊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "电": {
+   "candidates": [
+    "電"
+   ],
+   "decision": "auto",
+   "resolved": "電",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "画": {
+   "candidates": [
+    "畫"
+   ],
+   "decision": "auto",
+   "resolved": "畫",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "疱": {
+   "candidates": [
+    "皰"
+   ],
+   "decision": "auto",
+   "resolved": "皰",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "疴": {
+   "candidates": [
+    "痾"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "症": {
+   "candidates": [
+    "症",
+    "癥"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "痒": {
+   "candidates": [
+    "痒",
+    "癢"
+   ],
+   "decision": "auto",
+   "resolved": "癢",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "瘘": {
+   "candidates": [
+    "瘺"
+   ],
+   "decision": "auto",
+   "resolved": "瘺",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "皱": {
+   "candidates": [
+    "皺"
+   ],
+   "decision": "auto",
+   "resolved": "皺",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "盖": {
+   "candidates": [
+    "蓋"
+   ],
+   "decision": "auto",
+   "resolved": "蓋",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "眦": {
+   "candidates": [
+    "眥"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "着": {
+   "candidates": [
+    "著"
+   ],
+   "decision": "auto",
+   "resolved": "著",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "矫": {
+   "candidates": [
+    "矯"
+   ],
+   "decision": "auto",
+   "resolved": "矯",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "确": {
+   "candidates": [
+    "确",
+    "確"
+   ],
+   "decision": "auto",
+   "resolved": "確",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "硷": {
+   "candidates": [
+    "鹼"
+   ],
+   "decision": "auto",
+   "resolved": "鹼",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "碍": {
+   "candidates": [
+    "礙"
+   ],
+   "decision": "auto",
+   "resolved": "礙",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "礼": {
+   "candidates": [
+    "禮"
+   ],
+   "decision": "auto",
+   "resolved": "禮",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "祢": {
+   "candidates": [
+    "禰"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "祷": {
+   "candidates": [
+    "禱"
+   ],
+   "decision": "auto",
+   "resolved": "禱",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "禀": {
+   "candidates": [
+    "稟"
+   ],
+   "decision": "auto",
+   "resolved": "稟",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "秃": {
+   "candidates": [
+    "禿"
+   ],
+   "decision": "auto",
+   "resolved": "禿",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "秆": {
+   "candidates": [
+    "稈"
+   ],
+   "decision": "auto",
+   "resolved": "稈",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "秋": {
+   "candidates": [
+    "秋",
+    "鞦"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "种": {
+   "candidates": [
+    "种",
+    "種"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "称": {
+   "candidates": [
+    "稱"
+   ],
+   "decision": "auto",
+   "resolved": "稱",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "稳": {
+   "candidates": [
+    "穩"
+   ],
+   "decision": "auto",
+   "resolved": "穩",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "穷": {
+   "candidates": [
+    "窮"
+   ],
+   "decision": "auto",
+   "resolved": "窮",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "窃": {
+   "candidates": [
+    "竊"
+   ],
+   "decision": "auto",
+   "resolved": "竊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "竖": {
+   "candidates": [
+    "豎"
+   ],
+   "decision": "auto",
+   "resolved": "豎",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "笋": {
+   "candidates": [
+    "筍"
+   ],
+   "decision": "auto",
+   "resolved": "筍",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "笔": {
+   "candidates": [
+    "筆"
+   ],
+   "decision": "auto",
+   "resolved": "筆",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "筑": {
+   "candidates": [
+    "筑",
+    "築"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "签": {
+   "candidates": [
+    "簽",
+    "籤"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "箩": {
+   "candidates": [
+    "籮"
+   ],
+   "decision": "auto",
+   "resolved": "籮",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "篓": {
+   "candidates": [
+    "簍"
+   ],
+   "decision": "auto",
+   "resolved": "簍",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "篱": {
+   "candidates": [
+    "篱",
+    "籬"
+   ],
+   "decision": "auto",
+   "resolved": "籬",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "籴": {
+   "candidates": [
+    "糴"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "粜": {
+   "candidates": [
+    "糶"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "粮": {
+   "candidates": [
+    "糧"
+   ],
+   "decision": "auto",
+   "resolved": "糧",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "糇": {
+   "candidates": [
+    "餱"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "系": {
+   "candidates": [
+    "係",
+    "系",
+    "繫"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "累": {
+   "candidates": [
+    "累",
+    "纍"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "纤": {
+   "candidates": [
+    "縴",
+    "纖"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "线": {
+   "candidates": [
+    "線"
+   ],
+   "decision": "auto",
+   "resolved": "線",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "绝": {
+   "candidates": [
+    "絕"
+   ],
+   "decision": "auto",
+   "resolved": "絕",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "绣": {
+   "candidates": [
+    "繡"
+   ],
+   "decision": "auto",
+   "resolved": "繡",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "绦": {
+   "candidates": [
+    "絛"
+   ],
+   "decision": "auto",
+   "resolved": "絛",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "绱": {
+   "candidates": [
+    "鞝"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "绷": {
+   "candidates": [
+    "繃"
+   ],
+   "decision": "auto",
+   "resolved": "繃",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "绿": {
+   "candidates": [
+    "綠"
+   ],
+   "decision": "auto",
+   "resolved": "綠",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "缊": {
+   "candidates": [
+    "縕"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "缰": {
+   "candidates": [
+    "韁"
+   ],
+   "decision": "auto",
+   "resolved": "韁",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "网": {
+   "candidates": [
+    "網",
+    "网"
+   ],
+   "decision": "safe",
+   "note": null,
+   "proper_noun_risk": false,
+   "resolved": "網"
+  },
+  "罗": {
+   "candidates": [
+    "羅"
+   ],
+   "decision": "auto",
+   "resolved": "羅",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "罢": {
+   "candidates": [
+    "罷"
+   ],
+   "decision": "auto",
+   "resolved": "罷",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "耻": {
+   "candidates": [
+    "恥"
+   ],
+   "decision": "auto",
+   "resolved": "恥",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "职": {
+   "candidates": [
+    "職"
+   ],
+   "decision": "auto",
+   "resolved": "職",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "联": {
+   "candidates": [
+    "聯"
+   ],
+   "decision": "auto",
+   "resolved": "聯",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "肮": {
+   "candidates": [
+    "肮",
+    "骯"
+   ],
+   "decision": "auto",
+   "resolved": "骯",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "肴": {
+   "candidates": [
+    "肴",
+    "餚"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "胆": {
+   "candidates": [
+    "膽"
+   ],
+   "decision": "auto",
+   "resolved": "膽",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "胜": {
+   "candidates": [
+    "勝",
+    "胜"
+   ],
+   "decision": "auto",
+   "resolved": "勝",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "胡": {
+   "candidates": [
+    "胡",
+    "衚",
+    "鬍"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "脉": {
+   "candidates": [
+    "脈"
+   ],
+   "decision": "auto",
+   "resolved": "脈",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "脍": {
+   "candidates": [
+    "膾"
+   ],
+   "decision": "auto",
+   "resolved": "膾",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "脏": {
+   "candidates": [
+    "臟",
+    "髒"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "脔": {
+   "candidates": [
+    "臠"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "脚": {
+   "candidates": [
+    "腳"
+   ],
+   "decision": "auto",
+   "resolved": "腳",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "腊": {
+   "candidates": [
+    "腊",
+    "臘"
+   ],
+   "decision": "auto",
+   "resolved": "臘",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "腭": {
+   "candidates": [
+    "齶"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "膑": {
+   "candidates": [
+    "臏"
+   ],
+   "decision": "auto",
+   "resolved": "臏",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "致": {
+   "candidates": [
+    "緻",
+    "致"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "舍": {
+   "candidates": [
+    "捨",
+    "舍"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "艳": {
+   "candidates": [
+    "艷"
+   ],
+   "decision": "auto",
+   "resolved": "艷",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "芦": {
+   "candidates": [
+    "蘆"
+   ],
+   "decision": "auto",
+   "resolved": "蘆",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "芸": {
+   "candidates": [
+    "芸",
+    "蕓"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "苏": {
+   "candidates": [
+    "囌",
+    "蘇"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "苹": {
+   "candidates": [
+    "苹",
+    "蘋"
+   ],
+   "decision": "auto",
+   "resolved": "蘋",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "范": {
+   "candidates": [
+    "範",
+    "范"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "荆": {
+   "candidates": [
+    "荊"
+   ],
+   "decision": "auto",
+   "resolved": "荊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "荐": {
+   "candidates": [
+    "荐",
+    "薦"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "荡": {
+   "candidates": [
+    "盪",
+    "蕩"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "荣": {
+   "candidates": [
+    "榮"
+   ],
+   "decision": "auto",
+   "resolved": "榮",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "药": {
+   "candidates": [
+    "葯",
+    "藥"
+   ],
+   "decision": "auto",
+   "resolved": "藥",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "莅": {
+   "candidates": [
+    "蒞"
+   ],
+   "decision": "auto",
+   "resolved": "蒞",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "获": {
+   "candidates": [
+    "獲",
+    "穫"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "莼": {
+   "candidates": [
+    "蓴"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "萝": {
+   "candidates": [
+    "蘿"
+   ],
+   "decision": "auto",
+   "resolved": "蘿",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "葱": {
+   "candidates": [
+    "蔥"
+   ],
+   "decision": "auto",
+   "resolved": "蔥",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蒙": {
+   "candidates": [
+    "懞",
+    "濛",
+    "矇",
+    "蒙"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蔂": {
+   "candidates": [
+    "蔂",
+    "虆"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蔑": {
+   "candidates": [
+    "蔑",
+    "衊"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蕴": {
+   "candidates": [
+    "蘊"
+   ],
+   "decision": "auto",
+   "resolved": "蘊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蘖": {
+   "candidates": [
+    "櫱"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "虫": {
+   "candidates": [
+    "虫",
+    "蟲"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "虬": {
+   "candidates": [
+    "虯"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "虾": {
+   "candidates": [
+    "蝦"
+   ],
+   "decision": "auto",
+   "resolved": "蝦",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蚁": {
+   "candidates": [
+    "蟻"
+   ],
+   "decision": "auto",
+   "resolved": "蟻",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蚕": {
+   "candidates": [
+    "蚕",
+    "蠶"
+   ],
+   "decision": "auto",
+   "resolved": "蠶",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蛮": {
+   "candidates": [
+    "蠻"
+   ],
+   "decision": "auto",
+   "resolved": "蠻",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蛰": {
+   "candidates": [
+    "蟄"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蜡": {
+   "candidates": [
+    "蜡",
+    "蠟"
+   ],
+   "decision": "auto",
+   "resolved": "蠟",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蝼": {
+   "candidates": [
+    "螻"
+   ],
+   "decision": "auto",
+   "resolved": "螻",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "衅": {
+   "candidates": [
+    "釁"
+   ],
+   "decision": "auto",
+   "resolved": "釁",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "补": {
+   "candidates": [
+    "補"
+   ],
+   "decision": "auto",
+   "resolved": "補",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "表": {
+   "candidates": [
+    "表",
+    "錶"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "衮": {
+   "candidates": [
+    "袞"
+   ],
+   "decision": "auto",
+   "resolved": "袞",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "袄": {
+   "candidates": [
+    "襖"
+   ],
+   "decision": "auto",
+   "resolved": "襖",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "袜": {
+   "candidates": [
+    "襪"
+   ],
+   "decision": "auto",
+   "resolved": "襪",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "誉": {
+   "candidates": [
+    "譽"
+   ],
+   "decision": "auto",
+   "resolved": "譽",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "说": {
+   "candidates": [
+    "說"
+   ],
+   "decision": "auto",
+   "resolved": "說",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "谣": {
+   "candidates": [
+    "謠"
+   ],
+   "decision": "auto",
+   "resolved": "謠",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "谫": {
+   "candidates": [
+    "譾"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "谷": {
+   "candidates": [
+    "穀",
+    "谷"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "赃": {
+   "candidates": [
+    "贓"
+   ],
+   "decision": "auto",
+   "resolved": "贓",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "赍": {
+   "candidates": [
+    "齎"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "赝": {
+   "candidates": [
+    "贗"
+   ],
+   "decision": "auto",
+   "resolved": "贗",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "赶": {
+   "candidates": [
+    "赶",
+    "趕"
+   ],
+   "decision": "auto",
+   "resolved": "趕",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "趋": {
+   "candidates": [
+    "趨"
+   ],
+   "decision": "auto",
+   "resolved": "趨",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "踊": {
+   "candidates": [
+    "踊",
+    "踴"
+   ],
+   "decision": "auto",
+   "resolved": "踴",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "踪": {
+   "candidates": [
+    "蹤"
+   ],
+   "decision": "auto",
+   "resolved": "蹤",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "蹰": {
+   "candidates": [
+    "躕"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "躯": {
+   "candidates": [
+    "軀"
+   ],
+   "decision": "auto",
+   "resolved": "軀",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "辒": {
+   "candidates": [
+    "轀"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "辞": {
+   "candidates": [
+    "辭"
+   ],
+   "decision": "auto",
+   "resolved": "辭",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "辟": {
+   "candidates": [
+    "辟",
+    "闢"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "边": {
+   "candidates": [
+    "邊"
+   ],
+   "decision": "auto",
+   "resolved": "邊",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "迁": {
+   "candidates": [
+    "遷"
+   ],
+   "decision": "auto",
+   "resolved": "遷",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "过": {
+   "candidates": [
+    "過"
+   ],
+   "decision": "safe",
+   "note": null,
+   "proper_noun_risk": false,
+   "resolved": "過",
+   "candidates_changed_since_decision": true
+  },
+  "还": {
+   "candidates": [
+    "還"
+   ],
+   "decision": "safe",
+   "note": null,
+   "proper_noun_risk": false,
+   "resolved": "還",
+   "candidates_changed_since_decision": true
+  },
+  "这": {
+   "candidates": [
+    "這"
+   ],
+   "decision": "safe",
+   "note": null,
+   "proper_noun_risk": false,
+   "resolved": "這",
+   "candidates_changed_since_decision": true
+  },
+  "远": {
+   "candidates": [
+    "遠"
+   ],
+   "decision": "auto",
+   "resolved": "遠",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "迩": {
+   "candidates": [
+    "邇"
+   ],
+   "decision": "auto",
+   "resolved": "邇",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "迹": {
+   "candidates": [
+    "跡"
+   ],
+   "decision": "auto",
+   "resolved": "跡",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "适": {
+   "candidates": [
+    "适",
+    "適"
+   ],
+   "decision": "auto",
+   "resolved": "適",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "选": {
+   "candidates": [
+    "選"
+   ],
+   "decision": "auto",
+   "resolved": "選",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "逊": {
+   "candidates": [
+    "遜"
+   ],
+   "decision": "auto",
+   "resolved": "遜",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "递": {
+   "candidates": [
+    "遞"
+   ],
+   "decision": "auto",
+   "resolved": "遞",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "逻": {
+   "candidates": [
+    "邏"
+   ],
+   "decision": "auto",
+   "resolved": "邏",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "郁": {
+   "candidates": [
+    "郁",
+    "鬱"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "郑": {
+   "candidates": [
+    "鄭"
+   ],
+   "decision": "auto",
+   "resolved": "鄭",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "酝": {
+   "candidates": [
+    "醞"
+   ],
+   "decision": "auto",
+   "resolved": "醞",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "采": {
+   "candidates": [
+    "埰",
+    "採",
+    "采"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "里": {
+   "candidates": [
+    "裡",
+    "里"
+   ],
+   "decision": "ambiguous",
+   "note": "表內部或處所取 裡（這裡、心裡）；長度單位、行政區、姓氏保留 里（公里、里長）",
+   "proper_noun_risk": false,
+   "candidates_changed_since_decision": true
+  },
+  "銮": {
+   "candidates": [
+    "鑾"
+   ],
+   "decision": "auto",
+   "resolved": "鑾",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "钟": {
+   "candidates": [
+    "鍾",
+    "鐘"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "钩": {
+   "candidates": [
+    "鉤"
+   ],
+   "decision": "auto",
+   "resolved": "鉤",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "钵": {
+   "candidates": [
+    "缽"
+   ],
+   "decision": "auto",
+   "resolved": "缽",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "锈": {
+   "candidates": [
+    "鏽"
+   ],
+   "decision": "auto",
+   "resolved": "鏽",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "锐": {
+   "candidates": [
+    "銳"
+   ],
+   "decision": "auto",
+   "resolved": "銳",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "镋": {
+   "candidates": [
+    "鎲",
+    "钂"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "镌": {
+   "candidates": [
+    "鐫"
+   ],
+   "decision": "auto",
+   "resolved": "鐫",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "闲": {
+   "candidates": [
+    "閑",
+    "閒"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "阅": {
+   "candidates": [
+    "閱"
+   ],
+   "decision": "auto",
+   "resolved": "閱",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "际": {
+   "candidates": [
+    "際"
+   ],
+   "decision": "auto",
+   "resolved": "際",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "随": {
+   "candidates": [
+    "隨"
+   ],
+   "decision": "auto",
+   "resolved": "隨",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "隐": {
+   "candidates": [
+    "隱"
+   ],
+   "decision": "auto",
+   "resolved": "隱",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "隶": {
+   "candidates": [
+    "隸"
+   ],
+   "decision": "auto",
+   "resolved": "隸",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "隽": {
+   "candidates": [
+    "雋"
+   ],
+   "decision": "auto",
+   "resolved": "雋",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "难": {
+   "candidates": [
+    "難"
+   ],
+   "decision": "auto",
+   "resolved": "難",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "霉": {
+   "candidates": [
+    "霉",
+    "黴"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "霡": {
+   "candidates": [
+    "霢"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "静": {
+   "candidates": [
+    "靜"
+   ],
+   "decision": "auto",
+   "resolved": "靜",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "面": {
+   "candidates": [
+    "面",
+    "麵"
+   ],
+   "decision": "ambiguous",
+   "note": "麵食取 麵（麵包、泡麵、麵條）；其餘保留 面（面向、介面、方面）",
+   "proper_noun_risk": false
+  },
+  "韵": {
+   "candidates": [
+    "韻"
+   ],
+   "decision": "auto",
+   "resolved": "韻",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "须": {
+   "candidates": [
+    "須",
+    "鬚"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "颓": {
+   "candidates": [
+    "頹"
+   ],
+   "decision": "auto",
+   "resolved": "頹",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "颜": {
+   "candidates": [
+    "顏"
+   ],
+   "decision": "auto",
+   "resolved": "顏",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "风": {
+   "candidates": [
+    "風"
+   ],
+   "decision": "auto",
+   "resolved": "風",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "饥": {
+   "candidates": [
+    "飢",
+    "饑"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "骂": {
+   "candidates": [
+    "罵"
+   ],
+   "decision": "auto",
+   "resolved": "罵",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "鲞": {
+   "candidates": [
+    "鯗"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "鳁": {
+   "candidates": [
+    "鰛",
+    "鰮"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "鳄": {
+   "candidates": [
+    "鱷"
+   ],
+   "decision": "auto",
+   "resolved": "鱷",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "鸡": {
+   "candidates": [
+    "雞"
+   ],
+   "decision": "auto",
+   "resolved": "雞",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "麦": {
+   "candidates": [
+    "麥"
+   ],
+   "decision": "auto",
+   "resolved": "麥",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "黄": {
+   "candidates": [
+    "黃"
+   ],
+   "decision": "auto",
+   "resolved": "黃",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "黾": {
+   "candidates": [
+    "黽"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "鼗": {
+   "candidates": [
+    "鞀"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "鼹": {
+   "candidates": [
+    "鼴"
+   ],
+   "decision": "auto",
+   "resolved": "鼴",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "龟": {
+   "candidates": [
+    "龜"
+   ],
+   "decision": "auto",
+   "resolved": "龜",
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "鿭": {
+   "candidates": [
+    "鑈"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "𩙧": {
+   "candidates": [
+    "䬞",
+    "𩗡"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "𫇭": {
+   "candidates": [
+    "蒍"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "𮲸": {
+   "candidates": [
+    "𣝡",
+    "𣞼"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "𮷷": {
+   "candidates": [
+    "𨰘",
+    "𫒊"
+   ],
+   "decision": "todo",
+   "resolved": null,
+   "note": null,
+   "proper_noun_risk": false
+  },
+  "𰷭": {
+   "candidates": [
+    "贓"
+   ],
+   "decision": "auto",
+   "resolved": "贓",
+   "note": null,
+   "proper_noun_risk": false
+  }
+ }
+}
