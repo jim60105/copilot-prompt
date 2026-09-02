@@ -438,7 +438,7 @@ def _mainland_variants(reading: str) -> set[str]:
     return {reading, reading.replace("[", "").replace("]", ""), OPTIONAL_PART.sub("", reading)}
 
 
-def build_naer_table(datasets: list[dict], char_map: dict[str, str]) -> dict:
+def build_naer_table(datasets: list[dict], char_map: dict[str, str], allow_partial: bool) -> dict:
     """Fold every mainland rendering onto its Taiwan counterpart, minus the traps.
 
     Two guards decide what is safe to surface. A mainland form that is itself a
@@ -455,6 +455,7 @@ def build_naer_table(datasets: list[dict], char_map: dict[str, str]) -> dict:
     english: dict[str, str] = {}
     domains: dict[str, set[str]] = {}
     taiwan_forms: set[str] = set()
+    failed: list[str] = []
     rows = 0
 
     for dataset in datasets:
@@ -474,10 +475,11 @@ def build_naer_table(datasets: list[dict], char_map: dict[str, str]) -> dict:
                 except (OSError, UnicodeDecodeError) as exc:
                     if attempt == 2:
                         print(
-                            f"warning: cannot read {dataset['title']}: {exc}",
+                            f"error: cannot read {dataset['title']}: {exc}",
                             file=sys.stderr,
                         )
             if text is None:
+                failed.append(dataset["title"])
                 continue
             for row in csv.DictReader(text.splitlines()):
                 rows += 1
@@ -501,6 +503,14 @@ def build_naer_table(datasets: list[dict], char_map: dict[str, str]) -> dict:
     for key in dropped:
         del pairs[key]
 
+    # A dataset that failed to download would silently shrink the table and rewrite
+    # the whole 3 MB asset. Refuse rather than commit a quietly degraded build.
+    if failed and not allow_partial:
+        die(
+            f"{len(failed)} dataset(s) could not be read: {', '.join(failed)}. "
+            "Re-run, or pass --naer-allow-partial to accept an incomplete table."
+        )
+
     terms = {
         key: {
             "tw": sorted(targets),
@@ -521,6 +531,7 @@ def build_naer_table(datasets: list[dict], char_map: dict[str, str]) -> dict:
             "attribution": NAER_ATTRIBUTION,
             "generated_by": "scripts/build_tables.py --naer",
             "usage": "Advisory only. convert.py reports these, never substitutes them.",
+            "partial": bool(failed),
             "datasets": [
                 {"id": d["id"], "title": d["title"], "urls": d["urls"]} for d in datasets
             ],
@@ -529,7 +540,7 @@ def build_naer_table(datasets: list[dict], char_map: dict[str, str]) -> dict:
     }
 
 
-def import_naer(rescan: bool) -> int:
+def import_naer(rescan: bool, allow_partial: bool) -> int:
     existing = load_json(NAER_TERMS)
     datasets = None if rescan else (existing or {}).get("_meta", {}).get("datasets")
     if datasets:
@@ -546,7 +557,7 @@ def import_naer(rescan: bool) -> int:
     char_map = load_json(CHAR_MAP)
     if not char_map:
         die(f"{CHAR_MAP} is missing; rebuild the character tables first")
-    table = build_naer_table(datasets, char_map["map"])
+    table = build_naer_table(datasets, char_map["map"], allow_partial)
     NAER_TERMS.write_text(
         json.dumps(table, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8"
     )
@@ -563,12 +574,17 @@ def main() -> int:
     parser.add_argument("--lint-terms", action="store_true", help="check term_map.json and exit")
     parser.add_argument("--naer", action="store_true", help="rebuild assets/naer_terms.json")
     parser.add_argument("--naer-rescan", action="store_true", help="re-discover the dataset list")
+    parser.add_argument(
+        "--naer-allow-partial",
+        action="store_true",
+        help="write the table even if some datasets failed to download",
+    )
     args = parser.parse_args()
 
     if args.lint_terms:
         return lint_terms()
     if args.naer or args.naer_rescan:
-        return import_naer(args.naer_rescan)
+        return import_naer(args.naer_rescan, args.naer_allow_partial)
     if args.list_todo or args.list_auto:
         return list_decisions("todo" if args.list_todo else "auto", args.basic_cjk)
 

@@ -133,6 +133,8 @@ recorded. `--lint-terms` checks `term_map.json` for entries that contradict each
 data.gov.tw. It verifies each dataset carries licence `1` (政府資料開放授權條款第1版) before
 using it, and drops any mainland form that is also a Taiwan rendering elsewhere in the corpus,
 because no table can tell `訪問` the noun from `訪問` the verb. Add `--naer-rescan` to
-re-discover the dataset list.
+re-discover the dataset list. A download that fails aborts the rebuild and leaves the existing
+table in place, so a flaky connection cannot quietly ship a shrunken one; `--naer-allow-partial`
+overrides that and records `partial: true` in the file.
 
 資料來源：國家教育研究院，依政府資料開放授權條款第1版釋出。
