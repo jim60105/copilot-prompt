@@ -37,6 +37,7 @@ EXIT_USAGE = 3
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
+CONTEXT_RADIUS = 18  # characters of context shown either side of a hit
 MARKDOWN_SUFFIXES = {".md", ".markdown", ".mdx"}
 SKIP_DIRS = {".git", ".svn", ".hg", "node_modules", "__pycache__", ".venv", "venv", "dist", "build"}
 
@@ -174,7 +175,7 @@ class Finding:
         self.context = context
 
 
-def convert_text(text: str, tables: Tables, markdown: bool) -> tuple[str, list[Finding], int]:
+def convert_text(text: str, tables: Tables, markdown: bool, naer_all: bool = False):
     """Single left-to-right pass. Output is never rescanned, so rules cannot chain.
 
     Longest vocabulary match wins over single-character mapping, which is what
@@ -187,9 +188,23 @@ def convert_text(text: str, tables: Tables, markdown: bool) -> tuple[str, list[F
     line_starts = [0] + [m.end() for m in re.finditer(r"\n", text)]
     lines = text.split("\n")
 
-    def position(index: int) -> tuple[int, int, str]:
+    def position(index: int, span: int = 1) -> tuple[int, int, str]:
+        """Locate a hit and quote just enough of its line to judge it by.
+
+        A markdown table row or a long paragraph can run to hundreds of characters;
+        reprinting all of it per finding buries the report.
+        """
         line = bisect.bisect_right(line_starts, index) - 1
-        return line + 1, index - line_starts[line] + 1, lines[line].strip()
+        column = index - line_starts[line]
+        body = lines[line]
+        start = max(0, column - CONTEXT_RADIUS)
+        end = min(len(body), column + span + CONTEXT_RADIUS)
+        window = body[start:end].strip()
+        if start > 0:
+            window = "…" + window
+        if end < len(body):
+            window += "…"
+        return line + 1, column + 1, window
 
     out: list[str] = []
     findings: list[Finding] = []
@@ -228,7 +243,7 @@ def convert_text(text: str, tables: Tables, markdown: bool) -> tuple[str, list[F
             entry = tables.terms_review.get(candidate)
             if entry:
                 out.append(text[i : i + length])
-                line, col, context = position(i)
+                line, col, context = position(i, length)
                 findings.append(
                     Finding("review", line, col, candidate, entry["candidates"], entry.get("note"), context)
                 )
@@ -259,15 +274,21 @@ def convert_text(text: str, tables: Tables, markdown: bool) -> tuple[str, list[F
             out.append(char)
         i += 1
 
-    findings += scan_naer(text, folded, spans, consumed, tables, position)
+    findings += scan_naer(text, folded, spans, consumed, tables, position, naer_all)
     return "".join(out), findings, converted
 
 
-def scan_naer(text, folded, spans, consumed, tables, position) -> list[Finding]:
+def scan_naer(text, folded, spans, consumed, tables, position, include_all=False) -> list[Finding]:
     """Cite the official Taiwan rendering for terminology, without touching the text.
 
     這批資料記錄的是學術偏好譯名，不是對錯：除臭 並沒有錯，只是名詞審定取 去臭。所以一律只
     回報、不替換，由模型看著上下文決定。
+
+    A hit is only raised where the span actually held simplified characters. These
+    glossaries are specialist and their mainland column collides constantly with
+    ordinary words -- 日期 is listed as `data` in the electrical engineering set, a
+    typo for 数据 -- so scanning text already written in Traditional produces pure
+    noise. If the author wrote 日期 in Traditional, nothing here needs localising.
     """
     if not tables.naer:
         return []
@@ -283,7 +304,9 @@ def scan_naer(text, folded, spans, consumed, tables, position) -> list[Finding]:
             entry = tables.naer.get(folded[i : i + length])
             if not entry:
                 continue
-            line, col, context = position(i)
+            if not include_all and text[i : i + length] == folded[i : i + length]:
+                continue
+            line, col, context = position(i, length)
             english = entry["en"]
             note = f"國教院審定：{english}" if english else "國教院審定名詞"
             if entry.get("domains"):
@@ -319,12 +342,20 @@ def report(label: str, findings: list[Finding], converted: int, stream=sys.stdou
         if not group:
             continue
         emit(f"  {SEVERITY_LABEL[severity]} ({len(group)})")
+        # One rule, however long, explains every occurrence of the same character.
+        # Printing it per hit turned a 75-item report into 300 lines.
+        buckets: dict[tuple, list[Finding]] = {}
         for finding in group:
-            candidates = "｜".join(finding.candidates) if finding.candidates else "-"
-            emit(f"    L{finding.line}:{finding.col}  {finding.source}  →  {candidates}")
-            if finding.note:
-                emit(f"           規則：{finding.note}")
-            emit(f"           內文：{finding.context}")
+            key = (finding.source, tuple(finding.candidates), finding.note)
+            buckets.setdefault(key, []).append(finding)
+        for (source, candidates, note), hits in buckets.items():
+            shown = "｜".join(candidates) if candidates else "-"
+            count = f" ×{len(hits)}" if len(hits) > 1 else ""
+            emit(f"    {source}{count}  →  {shown}")
+            if note:
+                emit(f"           規則：{note}")
+            for hit in hits:
+                emit(f"           L{hit.line}:{hit.col}  {hit.context}")
     emit("")
 
 
@@ -351,6 +382,11 @@ def main() -> int:
         "--include-code", action="store_true", help="convert protected regions too"
     )
     parser.add_argument("--no-naer", action="store_true", help="skip the NAER advisories")
+    parser.add_argument(
+        "--naer-all",
+        action="store_true",
+        help="advise on terminology even where the text was already traditional",
+    )
     args = parser.parse_args()
 
     if args.stdin and args.paths:
@@ -368,7 +404,7 @@ def main() -> int:
     if args.stdin:
         text = sys.stdin.read()
         markdown = args.markdown and not args.include_code
-        result, findings, converted = convert_text(text, tables, markdown)
+        result, findings, converted = convert_text(text, tables, markdown, args.naer_all)
         report("<stdin>", findings, converted, stream=sys.stderr)
         sys.stdout.write(result)
         sys.stdout.flush()
@@ -380,7 +416,7 @@ def main() -> int:
             except (UnicodeDecodeError, OSError):
                 continue
             markdown = is_markdown(path) and not args.include_code
-            result, findings, converted = convert_text(text, tables, markdown)
+            result, findings, converted = convert_text(text, tables, markdown, args.naer_all)
             if not findings and not converted:
                 continue
             files_touched += 1

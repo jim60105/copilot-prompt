@@ -70,7 +70,8 @@ echo "文字" | scripts/convert.py --stdin   # result on stdout, report on stder
 Add `--markdown` to apply markdown protection rules to `--stdin` input. Add `--include-code` to
 convert protected regions too, which is almost never right.
 
-Add `--no-naer` to suppress the terminology advisories described below.
+Add `--no-naer` to suppress the terminology advisories described below, or `--naer-all` to
+widen them to text that was already traditional.
 
 Exit codes: `0` clean, `1` review items only, `2` must-fix items present, `3` usage error.
 NAER advisories never change the exit code.
@@ -95,8 +96,14 @@ purpose. A simplified string literal is often deliberate. Change these only when
 text uses. The advisory prints the official rendering, the English headword, and the subject
 domain. Nothing was substituted, and nothing has to be: this corpus records the *preferred*
 academic rendering, not a correction. 除臭 is not wrong because a glossary prefers 去臭. Apply
-one when the domain matches the document and the rendering is clearly better — `服务器` really
-should be `伺服器`, `纳米` really should be `奈米` — and ignore it otherwise.
+one when the domain matches the document and the rendering is clearly better — `纳米` really
+should be `奈米` — and ignore it otherwise.
+
+Advisories are raised only where the text actually held simplified characters. These glossaries
+are specialist and their mainland column collides constantly with ordinary words: the
+electrical-engineering set lists `日期` as `data`, a typo for `数据`, which would otherwise flag
+every date in a document. Text already written in Traditional needs no localising, so it is
+left alone unless `--naer-all` says otherwise.
 
 An entry with no rule printed is one the character table has not been curated for yet. Decide it
 from context as usual, and prefer the form used elsewhere in the same document.
