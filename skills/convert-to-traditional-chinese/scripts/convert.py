@@ -81,6 +81,16 @@ class Tables:
             [len(k) for k in self.terms_safe] + [len(k) for k in self.terms_review] + [0]
         )
 
+        # Characters that cannot stand in Traditional text: every deterministic
+        # mapping, plus the ambiguous ones absent from their own candidate list.
+        # Folding leaves ambiguous characters alone, so comparing text against its
+        # folded form would call 世界发展報告 traditional merely because 发 survived.
+        self.simplified: set[str] = set(self.chars) | {
+            char
+            for char, entry in self.ambiguous.items()
+            if char not in entry["candidates"]
+        }
+
         self.naer: dict[str, dict] = (naer or {}).get("terms", {})
         self.naer_attribution = (naer or {}).get("_meta", {}).get("attribution", "")
         self.max_naer = max([len(k) for k in self.naer] + [0])
@@ -304,7 +314,9 @@ def scan_naer(text, folded, spans, consumed, tables, position, include_all=False
             entry = tables.naer.get(folded[i : i + length])
             if not entry:
                 continue
-            if not include_all and text[i : i + length] == folded[i : i + length]:
+            if not include_all and not any(
+                char in tables.simplified for char in text[i : i + length]
+            ):
                 continue
             line, col, context = position(i, length)
             english = entry["en"]

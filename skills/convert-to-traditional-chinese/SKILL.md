@@ -99,11 +99,14 @@ academic rendering, not a correction. 除臭 is not wrong because a glossary pre
 one when the domain matches the document and the rendering is clearly better — `纳米` really
 should be `奈米` — and ignore it otherwise.
 
-Advisories are raised only where the text actually held simplified characters. These glossaries
-are specialist and their mainland column collides constantly with ordinary words: the
-electrical-engineering set lists `日期` as `data`, a typo for `数据`, which would otherwise flag
-every date in a document. Text already written in Traditional needs no localising, so it is
-left alone unless `--naer-all` says otherwise.
+Advisories are raised only where the span actually held a character that cannot stand in zh-TW.
+These glossaries are specialist and their mainland column collides constantly with ordinary
+words: the electrical-engineering set lists `日期` as `data`, a typo for `数据`, which would
+otherwise flag every date in a document. Text already written in Traditional needs no
+localising. This is narrower than the other tiers on purpose — vocabulary that matters for
+ordinary writing lives in `term_map.json` and is converted regardless of how it is spelt, so
+`軟件` still becomes `軟體` even with no simplified character in sight. Pass `--naer-all` when
+reviewing Hong Kong or mainland material that is already written in Traditional.
 
 An entry with no rule printed is one the character table has not been curated for yet. Decide it
 from context as usual, and prefer the form used elsewhere in the same document.
