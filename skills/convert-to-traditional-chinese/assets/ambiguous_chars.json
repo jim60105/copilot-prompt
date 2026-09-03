@@ -2,7 +2,10 @@
  "_meta": {
   "source": "Unicode Unihan_Variants.txt (kTraditionalVariant, kSimplifiedVariant)",
   "source_url": "https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip",
-  "license": "Unicode License Agreement - Data Files and Software",
+  "unicode_version": "17.0.0",
+  "license": "Unicode-3.0",
+  "license_name": "UNICODE LICENSE V3 (https://www.unicode.org/license.txt)",
+  "notice": "© 1991-2026 Unicode, Inc. All rights reserved.",
   "generated_by": "scripts/build_tables.py"
  },
  "chars": {

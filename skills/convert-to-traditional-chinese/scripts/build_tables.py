@@ -40,6 +40,9 @@ EXIT_USAGE = 3
 
 UNIHAN_URL = "https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip"
 VARIANTS_MEMBER = "Unihan_Variants.txt"
+UNIHAN_LICENSE = "Unicode-3.0"
+UNIHAN_LICENSE_NAME = "UNICODE LICENSE V3 (https://www.unicode.org/license.txt)"
+UNIHAN_NOTICE = "© 1991-2026 Unicode, Inc. All rights reserved."
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 CHAR_MAP = ASSETS / "char_map.json"
@@ -132,18 +135,22 @@ def fetch_unihan(dest: Path) -> Path:
     return dest
 
 
-def parse_variants(zip_path: Path) -> tuple[dict[str, list[str]], dict[str, list[str]]]:
-    """Return (kTraditionalVariant, kSimplifiedVariant) keyed by character."""
+def parse_variants(zip_path: Path):
+    """Return (kTraditionalVariant, kSimplifiedVariant, unicode_version)."""
     try:
         with zipfile.ZipFile(zip_path) as archive:
             raw = archive.read(VARIANTS_MEMBER).decode("utf-8")
     except (OSError, KeyError, zipfile.BadZipFile) as exc:
         die(f"cannot read {VARIANTS_MEMBER} from {zip_path}: {exc}")
 
+    version = ""
     traditional: dict[str, list[str]] = {}
     simplified: dict[str, list[str]] = {}
     for line in raw.splitlines():
         if not line or line.startswith("#"):
+            match = re.match(r"#\s*Unicode Version\s+(\S+)", line)
+            if match:
+                version = match.group(1)
             continue
         parts = line.split("\t")
         if len(parts) < 3:
@@ -158,7 +165,7 @@ def parse_variants(zip_path: Path) -> tuple[dict[str, list[str]], dict[str, list
             traditional[char] = targets
         else:
             simplified[char] = targets
-    return traditional, simplified
+    return traditional, simplified, version
 
 
 def partition(traditional, simplified):
@@ -271,11 +278,14 @@ def build_char_map(safe: dict[str, str], decisions: dict[str, dict]) -> dict[str
     return dict(sorted(table.items()))
 
 
-def write_tables(char_map: dict[str, str], decisions: dict[str, dict]) -> None:
+def write_tables(char_map: dict[str, str], decisions: dict[str, dict], version: str) -> None:
     meta = {
         "source": "Unicode Unihan_Variants.txt (kTraditionalVariant, kSimplifiedVariant)",
         "source_url": UNIHAN_URL,
-        "license": "Unicode License Agreement - Data Files and Software",
+        "unicode_version": version,
+        "license": UNIHAN_LICENSE,
+        "license_name": UNIHAN_LICENSE_NAME,
+        "notice": UNIHAN_NOTICE,
         "generated_by": "scripts/build_tables.py",
     }
     CHAR_MAP.write_text(
@@ -527,7 +537,8 @@ def build_naer_table(datasets: list[dict], char_map: dict[str, str], allow_parti
     return {
         "_meta": {
             "source": "國家教育研究院 兩岸對照名詞 (data.gov.tw)",
-            "license": "政府資料開放授權條款-第1版 (Open Government Data License v1)",
+            "license": "OGDL-Taiwan-1.0",
+            "license_name": "政府資料開放授權條款-第1版 (https://data.gov.tw/license)",
             "attribution": NAER_ATTRIBUTION,
             "generated_by": "scripts/build_tables.py --naer",
             "usage": "Advisory only. convert.py reports these, never substitutes them.",
@@ -596,10 +607,10 @@ def main() -> int:
         ASSETS.mkdir(parents=True, exist_ok=True)
         zip_path = fetch_unihan(ASSETS / ".Unihan.zip")
 
-    traditional, simplified = parse_variants(zip_path)
+    traditional, simplified, version = parse_variants(zip_path)
     safe, ambiguous = partition(traditional, simplified)
     decisions = merge_decisions(ambiguous, load_json(AMBIGUOUS))
-    write_tables(build_char_map(safe, decisions), decisions)
+    write_tables(build_char_map(safe, decisions), decisions, version)
 
     if not args.unihan_zip and zip_path.exists():
         zip_path.unlink()

@@ -4,6 +4,32 @@ description: Convert simplified Chinese to Traditional Chinese (zh-TW), covering
 license: GFDL-1.3-or-later
 metadata:
   author: Jim@ChenJ.im
+  code-license: GPL-3.0-or-later
+  code-license-covers: scripts/
+  data-sources:
+    - name: Unicode Character Database (Unihan) 17.0.0
+      license: Unicode-3.0
+      license-name: UNICODE LICENSE V3
+      license-url: https://www.unicode.org/license.txt
+      source-url: https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip
+      covers: assets/char_map.json, assets/ambiguous_chars.json
+      notice: "© 1991-2026 Unicode, Inc. All rights reserved."
+    - name: 國家教育研究院 兩岸對照名詞
+      license: OGDL-Taiwan-1.0
+      license-name: 政府資料開放授權條款-第1版
+      license-url: https://data.gov.tw/license
+      source-url: https://opendata.naer.edu.tw/
+      catalogue-url: https://data.gov.tw/
+      covers: assets/naer_terms.json
+      notice: "資料來源：國家教育研究院，依政府資料開放授權條款第1版釋出。"
+  referenced-services:
+    - name: 樂詞網（雙語詞彙、學術名詞暨辭書資訊網）
+      url: https://terms.naer.edu.tw/
+      role: >-
+        Queried at runtime as the arbiter for terminology the bundled tables do not
+        settle. No content is bundled or redistributed; the site publishes no open
+        licence and offers no API.
+      notice: "Copyright © 國家教育研究院 版權所有"
 ---
 
 # Convert to Traditional Chinese
