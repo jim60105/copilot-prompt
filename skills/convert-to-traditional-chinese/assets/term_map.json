@@ -2,7 +2,7 @@
  "_meta": {
   "note": "陸式中文 → 臺式中文。鍵以簡體書寫；convert.py 載入時會自動用 char_map 折出正體變體一併索引，因此「軟件」這種正體書寫的陸式詞彙同樣命中。",
   "en_field": "對應 skills/chinese-content-writing-guideline 的術語表，用於日後同步，convert.py 不讀取。",
-  "status": "TEMPLATE — 僅含格式範例與高信心種子詞條。專業術語已由 assets/naer_terms.json 涵蓋（只回報、不替換），本檔只負責可安全自動替換的日常與一般技術用語，目標 150-250 筆。完整詞條見交接文件。",
+  "status": "已完成高信心詞條擴充，覆蓋日常與一般技術用語（共 225 筆）。專業術語由 assets/naer_terms.json 涵蓋（只回報、不替換）。",
   "sections": {
    "safe": "臺式對應唯一且無同形異義風險，直接替換。",
    "review": "原詞在臺灣中文亦成立，或有兩個以上臺式對應。只標記，附 note 說明判準。"
@@ -185,6 +185,662 @@
   "子类": {
    "to": "子類別",
    "en": "subclass"
+  },
+  "激光": {
+   "to": "雷射",
+   "en": "laser"
+  },
+  "缓存": {
+   "to": "快取",
+   "en": "cache"
+  },
+  "链接": {
+   "to": "連結",
+   "en": "link"
+  },
+  "进程": {
+   "to": "行程",
+   "en": "process"
+  },
+  "服务器": {
+   "to": "伺服器",
+   "en": "server"
+  },
+  "回车": {
+   "to": "Enter",
+   "en": "carriage return"
+  },
+  "剪贴板": {
+   "to": "剪貼簿",
+   "en": "clipboard"
+  },
+  "快捷键": {
+   "to": "快速鍵",
+   "en": "shortcut key"
+  },
+  "带宽": {
+   "to": "頻寬",
+   "en": "bandwidth"
+  },
+  "面向对象": {
+   "to": "物件導向",
+   "en": "object-oriented"
+  },
+  "面向切面": {
+   "to": "剖面導向",
+   "en": "aspect-oriented"
+  },
+  "主板": {
+   "to": "主機板",
+   "en": "motherboard"
+  },
+  "显卡": {
+   "to": "顯示卡",
+   "en": "graphics card"
+  },
+  "声卡": {
+   "to": "音效卡",
+   "en": "sound card"
+  },
+  "网卡": {
+   "to": "網路卡",
+   "en": "network interface card"
+  },
+  "光驱": {
+   "to": "光碟機",
+   "en": "optical drive"
+  },
+  "光盘": {
+   "to": "光碟",
+   "en": "compact disc"
+  },
+  "软盘": {
+   "to": "磁碟片",
+   "en": "floppy disk"
+  },
+  "晶体管": {
+   "to": "電晶體",
+   "en": "transistor"
+  },
+  "集成电路": {
+   "to": "積體電路",
+   "en": "integrated circuit"
+  },
+  "芯片": {
+   "to": "晶片",
+   "en": "chip"
+  },
+  "单片机": {
+   "to": "單晶片微電腦",
+   "en": "microcontroller"
+  },
+  "数码相机": {
+   "to": "數位相機",
+   "en": "digital camera"
+  },
+  "移动端": {
+   "to": "行動端",
+   "en": "mobile side"
+  },
+  "移动设备": {
+   "to": "行動裝置",
+   "en": "mobile device"
+  },
+  "智能手机": {
+   "to": "智慧型手機",
+   "en": "smartphone"
+  },
+  "智能设备": {
+   "to": "智慧裝置",
+   "en": "smart device"
+  },
+  "人工智能": {
+   "to": "人工智慧",
+   "en": "artificial intelligence"
+  },
+  "宏定义": {
+   "to": "巨集定義",
+   "en": "macro definition"
+  },
+  "滚动条": {
+   "to": "捲軸",
+   "en": "scroll bar"
+  },
+  "下拉框": {
+   "to": "下拉式選單",
+   "en": "drop-down menu"
+  },
+  "复选框": {
+   "to": "核取方塊",
+   "en": "checkbox"
+  },
+  "单选框": {
+   "to": "單選按鈕",
+   "en": "radio button"
+  },
+  "文本框": {
+   "to": "文字方塊",
+   "en": "text box"
+  },
+  "弹出框": {
+   "to": "彈出式視窗",
+   "en": "pop-up dialog"
+  },
+  "对话框": {
+   "to": "對話方塊",
+   "en": "dialog box"
+  },
+  "状态栏": {
+   "to": "狀態列",
+   "en": "status bar"
+  },
+  "工具栏": {
+   "to": "工具列",
+   "en": "toolbar"
+  },
+  "菜单栏": {
+   "to": "功能表列",
+   "en": "menu bar"
+  },
+  "标签页": {
+   "to": "分頁",
+   "en": "tab"
+  },
+  "选项卡": {
+   "to": "分頁標籤",
+   "en": "tab"
+  },
+  "通配符": {
+   "to": "萬用字元",
+   "en": "wildcard"
+  },
+  "字节码": {
+   "to": "位元組碼",
+   "en": "bytecode"
+  },
+  "位图": {
+   "to": "點陣圖",
+   "en": "bitmap"
+  },
+  "矢量图": {
+   "to": "向量圖",
+   "en": "vector graphic"
+  },
+  "缺省": {
+   "to": "預設",
+   "en": "default"
+  },
+  "缺省值": {
+   "to": "預設值",
+   "en": "default value"
+  },
+  "超链接": {
+   "to": "超連結",
+   "en": "hyperlink"
+  },
+  "宽带": {
+   "to": "寬頻",
+   "en": "broadband"
+  },
+  "局域网": {
+   "to": "區域網路",
+   "en": "LAN"
+  },
+  "广域网": {
+   "to": "廣域網路",
+   "en": "WAN"
+  },
+  "以太网": {
+   "to": "乙太網路",
+   "en": "Ethernet"
+  },
+  "物联网": {
+   "to": "物聯網",
+   "en": "Internet of Things"
+  },
+  "互联网": {
+   "to": "網際網路",
+   "en": "Internet"
+  },
+  "公网": {
+   "to": "外部網路",
+   "en": "public network"
+  },
+  "内网": {
+   "to": "內部網路",
+   "en": "intranet"
+  },
+  "外网": {
+   "to": "外部網路",
+   "en": "extranet"
+  },
+  "网关": {
+   "to": "閘道器",
+   "en": "gateway"
+  },
+  "套接字": {
+   "to": "Socket",
+   "en": "socket"
+  },
+  "端口": {
+   "to": "連接埠",
+   "en": "port"
+  },
+  "接口": {
+   "to": "介面",
+   "en": "interface"
+  },
+  "适配器": {
+   "to": "介面卡",
+   "en": "adapter"
+  },
+  "电源适配器": {
+   "to": "電源供應器",
+   "en": "power adapter"
+  },
+  "扩展坞": {
+   "to": "擴充基座",
+   "en": "docking station"
+  },
+  "热拔插": {
+   "to": "熱插拔",
+   "en": "hot swap"
+  },
+  "热插拔": {
+   "to": "熱插拔",
+   "en": "hot swap"
+  },
+  "硬编码": {
+   "to": "寫死",
+   "en": "hard code"
+  },
+  "伪代码": {
+   "to": "虛擬碼",
+   "en": "pseudocode"
+  },
+  "源代码": {
+   "to": "原始碼",
+   "en": "source code"
+  },
+  "源码": {
+   "to": "原始碼",
+   "en": "source code"
+  },
+  "字节流": {
+   "to": "位元組串流",
+   "en": "byte stream"
+  },
+  "字符集": {
+   "to": "字元集",
+   "en": "character set"
+  },
+  "截屏": {
+   "to": "螢幕截圖",
+   "en": "screenshot"
+  },
+  "截图": {
+   "to": "螢幕截圖",
+   "en": "screenshot"
+  },
+  "分辨率": {
+   "to": "解析度",
+   "en": "resolution"
+  },
+  "插件": {
+   "to": "外掛",
+   "en": "plugin"
+  },
+  "模块": {
+   "to": "模組",
+   "en": "module"
+  },
+  "组件": {
+   "to": "元件",
+   "en": "component"
+  },
+  "控件": {
+   "to": "控制項",
+   "en": "control"
+  },
+  "占位符": {
+   "to": "預留位置",
+   "en": "placeholder"
+  },
+  "静态方法": {
+   "to": "靜態方法",
+   "en": "static method"
+  },
+  "实例方法": {
+   "to": "執行個體方法",
+   "en": "instance method"
+  },
+  "实例化": {
+   "to": "實例化",
+   "en": "instantiation"
+  },
+  "实例": {
+   "to": "執行個體",
+   "en": "instance"
+  },
+  "构造函数": {
+   "to": "建構函式",
+   "en": "constructor"
+  },
+  "析构函数": {
+   "to": "解構函式",
+   "en": "destructor"
+  },
+  "重载": {
+   "to": "多載",
+   "en": "overload"
+  },
+  "覆盖": {
+   "to": "覆寫",
+   "en": "override"
+  },
+  "覆写": {
+   "to": "覆寫",
+   "en": "override"
+  },
+  "抛出异常": {
+   "to": "擲出例外",
+   "en": "throw exception"
+  },
+  "捕获异常": {
+   "to": "捕捉例外",
+   "en": "catch exception"
+  },
+  "异常处理": {
+   "to": "例外處理",
+   "en": "exception handling"
+  },
+  "指针": {
+   "to": "指標",
+   "en": "pointer"
+  },
+  "引用传递": {
+   "to": "傳址呼叫",
+   "en": "pass by reference"
+  },
+  "值传递": {
+   "to": "傳值呼叫",
+   "en": "pass by value"
+  },
+  "二叉树": {
+   "to": "二元樹",
+   "en": "binary tree"
+  },
+  "哈希表": {
+   "to": "雜湊表",
+   "en": "hash table"
+  },
+  "哈希": {
+   "to": "雜湊",
+   "en": "hash"
+  },
+  "散列": {
+   "to": "雜湊",
+   "en": "hash"
+  },
+  "堆栈": {
+   "to": "堆疊",
+   "en": "stack"
+  },
+  "链表": {
+   "to": "鏈結串列",
+   "en": "linked list"
+  },
+  "数组": {
+   "to": "陣列",
+   "en": "array"
+  },
+  "动态规划": {
+   "to": "動態規劃",
+   "en": "dynamic programming"
+  },
+  "贪心算法": {
+   "to": "貪婪演算法",
+   "en": "greedy algorithm"
+  },
+  "逻辑与": {
+   "to": "邏輯 AND",
+   "en": "logical AND"
+  },
+  "逻辑或": {
+   "to": "邏輯 OR",
+   "en": "logical OR"
+  },
+  "逻辑非": {
+   "to": "邏輯 NOT",
+   "en": "logical NOT"
+  },
+  "方便面": {
+   "to": "泡麵",
+   "en": "instant noodles"
+  },
+  "方便米饭": {
+   "to": "即食米飯",
+   "en": "instant rice"
+  },
+  "出租车": {
+   "to": "計程車",
+   "en": "taxi"
+  },
+  "出租汽车": {
+   "to": "計程車",
+   "en": "taxi"
+  },
+  "公交车": {
+   "to": "公車",
+   "en": "bus"
+  },
+  "地铁": {
+   "to": "捷運",
+   "en": "metro / MRT"
+  },
+  "立交桥": {
+   "to": "高架橋",
+   "en": "overpass / flyover"
+  },
+  "人行横道": {
+   "to": "斑馬線",
+   "en": "crosswalk"
+  },
+  "创可贴": {
+   "to": "OK 繃",
+   "en": "adhesive bandage"
+  },
+  "创口贴": {
+   "to": "OK 繃",
+   "en": "band-aid"
+  },
+  "黄油": {
+   "to": "奶油",
+   "en": "butter"
+  },
+  "牛油果": {
+   "to": "酪梨",
+   "en": "avocado"
+  },
+  "猕猴桃": {
+   "to": "奇異果",
+   "en": "kiwifruit"
+  },
+  "车厘子": {
+   "to": "櫻桃",
+   "en": "cherry"
+  },
+  "三文鱼": {
+   "to": "鮭魚",
+   "en": "salmon"
+  },
+  "金枪鱼": {
+   "to": "鮪魚",
+   "en": "tuna"
+  },
+  "酸奶": {
+   "to": "優格",
+   "en": "yogurt"
+  },
+  "洗洁精": {
+   "to": "洗碗精",
+   "en": "dishwashing liquid"
+  },
+  "圆珠笔": {
+   "to": "原子筆",
+   "en": "ballpoint pen"
+  },
+  "订书机": {
+   "to": "釘書機",
+   "en": "stapler"
+  },
+  "透明胶": {
+   "to": "透明膠帶",
+   "en": "transparent tape"
+  },
+  "充电宝": {
+   "to": "行動電源",
+   "en": "power bank"
+  },
+  "数据线": {
+   "to": "傳輸線",
+   "en": "data cable"
+  },
+  "台式机": {
+   "to": "桌上型電腦",
+   "en": "desktop computer"
+  },
+  "笔记本电脑": {
+   "to": "筆記型電腦",
+   "en": "laptop"
+  },
+  "饭盒": {
+   "to": "便當盒",
+   "en": "lunchbox"
+  },
+  "盒饭": {
+   "to": "便當",
+   "en": "bento / boxed meal"
+  },
+  "快餐": {
+   "to": "速食",
+   "en": "fast food"
+  },
+  "曲奇": {
+   "to": "手工餅乾",
+   "en": "cookie"
+  },
+  "色拉": {
+   "to": "沙拉",
+   "en": "salad"
+  },
+  "芝士": {
+   "to": "起司",
+   "en": "cheese"
+  },
+  "冰激凌": {
+   "to": "冰淇淋",
+   "en": "ice cream"
+  },
+  "保鲜膜": {
+   "to": "保鮮膜",
+   "en": "plastic wrap"
+  },
+  "微波炉": {
+   "to": "微波爐",
+   "en": "microwave"
+  },
+  "电吹风": {
+   "to": "吹風機",
+   "en": "hair dryer"
+  },
+  "抽油烟机": {
+   "to": "抽油煙機",
+   "en": "range hood"
+  },
+  "吸尘器": {
+   "to": "吸塵器",
+   "en": "vacuum cleaner"
+  },
+  "空调": {
+   "to": "冷氣",
+   "en": "air conditioner"
+  },
+  "洗衣液": {
+   "to": "洗衣精",
+   "en": "laundry detergent"
+  },
+  "沐浴露": {
+   "to": "沐浴乳",
+   "en": "body wash"
+  },
+  "洗发水": {
+   "to": "洗髮精",
+   "en": "shampoo"
+  },
+  "防晒霜": {
+   "to": "防曬乳",
+   "en": "sunscreen"
+  },
+  "行车记录仪": {
+   "to": "行車記錄器",
+   "en": "dashcam"
+  },
+  "圆规": {
+   "to": "圓規",
+   "en": "compass"
+  },
+  "橡皮": {
+   "to": "橡皮擦",
+   "en": "eraser"
+  },
+  "修正带": {
+   "to": "立可帶",
+   "en": "correction tape"
+  },
+  "涂改液": {
+   "to": "立可白",
+   "en": "correction fluid"
+  },
+  "消字灵": {
+   "to": "立可白",
+   "en": "correction fluid"
+  },
+  "保温杯": {
+   "to": "保溫杯",
+   "en": "vacuum cup"
+  },
+  "充电桩": {
+   "to": "充電樁",
+   "en": "charging pile / station"
+  },
+  "公交卡": {
+   "to": "悠遊卡/一卡通",
+   "en": "transit card"
+  },
+  "身份证": {
+   "to": "身分證",
+   "en": "identity card"
+  },
+  "大头贴": {
+   "to": "拍貼",
+   "en": "photo booth sticker"
+  },
+  "自拍杆": {
+   "to": "自拍棒",
+   "en": "selfie stick"
+  },
+  "遥控器": {
+   "to": "遙控器",
+   "en": "remote control"
+  },
+  "创客": {
+   "to": "創客",
+   "en": "maker"
+  },
+  "数码产品": {
+   "to": "數位產品",
+   "en": "digital product"
   }
  },
  "review": {
@@ -273,6 +929,41 @@
     "包"
    ],
    "note": "軟體發布單位取 套件；實體包裹、封裝動作保留 包。單字詞誤判率高，務必看上下文。"
+  },
+  "项目": {
+   "candidates": [
+    "專案",
+    "項目"
+   ],
+   "note": "軟體開發與工程任務取 專案；清單細項或運動賽事取 項目。"
+  },
+  "登录": {
+   "candidates": [
+    "登入",
+    "登錄"
+   ],
+   "note": "系統驗證身分取 登入；登記記載（如土地登錄、登錄證）保留 登錄。"
+  },
+  "账号": {
+   "candidates": [
+    "帳號",
+    "帳戶"
+   ],
+   "note": "使用者名稱識別碼取 帳號；金融帳戶取 帳戶。"
+  },
+  "应用": {
+   "candidates": [
+    "應用程式",
+    "應用"
+   ],
+   "note": "指 Application 軟體實體時常作 App/應用程式；泛指應用方法或領域保留 應用。"
+  },
+  "操作": {
+   "candidates": [
+    "操作",
+    "作業"
+   ],
+   "note": "手動使用、點擊互動取 操作；作業系統或特定業務流程取 作業。"
   }
  }
 }
