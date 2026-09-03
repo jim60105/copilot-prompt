@@ -1,5 +1,5 @@
 ---
-name: convert-to-traditional-chinese
+name: chinese-traditional-conversion
 description: Convert simplified Chinese to Traditional Chinese (zh-TW), covering characters, Taiwan vocabulary, and phrasing. Use when the user asks to convert 簡體 to 正體/繁體, localise mainland Chinese text for Taiwan, fix simplified characters left in a document or repository, check whether content is written in proper zh-TW, or normalise variant forms such as 着/裏/爲 to the Taiwan standard. Handles both files edited in place and text pasted into the conversation. Runs on Python 3 standard library alone, with no OpenCC and no installed packages.
 license: GFDL-1.3-or-later
 metadata:
@@ -186,7 +186,7 @@ overrides that and records `partial: true` in the file.
 
 Conversion itself never touches the network. Only `build_tables.py` does, and it treats the
 upstreams as someone else's infrastructure: responses are revalidated against a disk cache in
-`~/.cache/convert-to-traditional-chinese`, so a rebuild that changes nothing transfers nothing
+`~/.cache/chinese-traditional-conversion`, so a rebuild that changes nothing transfers nothing
 instead of re-fetching 15 MB; retries back off rather than hammering a struggling host, and a
 permanent answer such as 404 is not retried at all. The dataset scan runs at four concurrent
 requests and its result is cached, so it should rarely need re-running.

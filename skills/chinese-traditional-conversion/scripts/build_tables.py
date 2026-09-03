@@ -65,12 +65,12 @@ NAER_ATTRIBUTION = "資料來源：國家教育研究院，依政府資料開放
 
 # Upstream is public infrastructure paid for by someone else. Keep concurrency low,
 # back off instead of hammering, and never re-download what has not changed.
-USER_AGENT = "convert-to-traditional-chinese (skill build script)"
+USER_AGENT = "chinese-traditional-conversion (skill build script)"
 SCAN_WORKERS = 4
 RETRY_BACKOFF = (2, 8)  # seconds before the 2nd and 3rd attempt
 CACHE_DIR = (
     Path(os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache")
-    / "convert-to-traditional-chinese"
+    / "chinese-traditional-conversion"
 )
 
 BASIC_CJK = ("一", "鿿")
