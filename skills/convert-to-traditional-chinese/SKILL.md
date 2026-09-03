@@ -163,4 +163,11 @@ re-discover the dataset list. A download that fails aborts the rebuild and leave
 table in place, so a flaky connection cannot quietly ship a shrunken one; `--naer-allow-partial`
 overrides that and records `partial: true` in the file.
 
+Conversion itself never touches the network. Only `build_tables.py` does, and it treats the
+upstreams as someone else's infrastructure: responses are revalidated against a disk cache in
+`~/.cache/convert-to-traditional-chinese`, so a rebuild that changes nothing transfers nothing
+instead of re-fetching 15 MB; retries back off rather than hammering a struggling host, and a
+permanent answer such as 404 is not retried at all. The dataset scan runs at four concurrent
+requests and its result is cached, so it should rarely need re-running.
+
 資料來源：國家教育研究院，依政府資料開放授權條款第1版釋出。

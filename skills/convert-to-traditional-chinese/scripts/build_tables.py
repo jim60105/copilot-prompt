@@ -28,8 +28,11 @@ from __future__ import annotations
 import argparse
 import collections
 import csv
+import hashlib
 import json
+import os
 import re
+import time
 import sys
 import zipfile
 from pathlib import Path
@@ -59,6 +62,16 @@ NAER_ID_RANGE = range(14800, 15520)
 NAER_TITLE_MARKERS = ("國家教育研究院", "兩岸")
 NAER_LICENCE = "1"
 NAER_ATTRIBUTION = "資料來源：國家教育研究院，依政府資料開放授權條款第1版釋出。"
+
+# Upstream is public infrastructure paid for by someone else. Keep concurrency low,
+# back off instead of hammering, and never re-download what has not changed.
+USER_AGENT = "convert-to-traditional-chinese (skill build script)"
+SCAN_WORKERS = 4
+RETRY_BACKOFF = (2, 8)  # seconds before the 2nd and 3rd attempt
+CACHE_DIR = (
+    Path(os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache")
+    / "convert-to-traditional-chinese"
+)
 
 BASIC_CJK = ("一", "鿿")
 
@@ -121,17 +134,75 @@ def die(message: str) -> None:
     raise SystemExit(EXIT_USAGE)
 
 
-def fetch_unihan(dest: Path) -> Path:
-    """Download Unihan.zip next to the given path. Only used without --unihan-zip."""
+def fetch(url: str, timeout: int) -> tuple[bytes, bool]:
+    """Fetch a URL through a revalidating disk cache. Returns (body, unchanged).
+
+    Both upstreams send ETag and Last-Modified, so a rebuild that changes nothing
+    costs a few hundred bytes of 304 responses instead of 15 MB of redundant
+    transfer. Retries back off rather than hammering a host that is already
+    struggling.
+    """
     import urllib.error
     import urllib.request
 
-    print(f"downloading {UNIHAN_URL}", file=sys.stderr)
+    key = hashlib.sha256(url.encode("utf-8")).hexdigest()[:32]
+    body_path, meta_path = CACHE_DIR / key, CACHE_DIR / f"{key}.json"
+    validators = {}
+    if body_path.exists() and meta_path.exists():
+        try:
+            validators = json.loads(meta_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            validators = {}
+
+    headers = {"User-Agent": USER_AGENT}
+    if validators.get("etag"):
+        headers["If-None-Match"] = validators["etag"]
+    if validators.get("last_modified"):
+        headers["If-Modified-Since"] = validators["last_modified"]
+    request = urllib.request.Request(_encode_url(url), headers=headers)
+
+    last_error: Exception | None = None
+    for attempt in range(3):
+        if attempt:
+            time.sleep(RETRY_BACKOFF[attempt - 1])
+        try:
+            with urllib.request.urlopen(request, timeout=timeout, context=_tls_context()) as r:
+                data = r.read()
+                CACHE_DIR.mkdir(parents=True, exist_ok=True)
+                body_path.write_bytes(data)
+                meta_path.write_text(
+                    json.dumps(
+                        {
+                            "url": url,
+                            "etag": r.headers.get("ETag"),
+                            "last_modified": r.headers.get("Last-Modified"),
+                        }
+                    ),
+                    encoding="utf-8",
+                )
+                return data, False
+        except urllib.error.HTTPError as exc:
+            if exc.code == 304 and body_path.exists():
+                return body_path.read_bytes(), True
+            if exc.code in (400, 401, 403, 404, 410):
+                raise  # a permanent answer; retrying only adds load
+            last_error = exc
+        except (urllib.error.URLError, TimeoutError, OSError) as exc:
+            last_error = exc
+    raise last_error if last_error else OSError(f"could not fetch {url}")
+
+
+def fetch_unihan(dest: Path) -> Path:
+    """Download Unihan.zip next to the given path. Only used without --unihan-zip."""
     try:
-        with urllib.request.urlopen(UNIHAN_URL, timeout=120) as response:
-            dest.write_bytes(response.read())
-    except (urllib.error.URLError, TimeoutError) as exc:
+        data, unchanged = fetch(UNIHAN_URL, timeout=120)
+    except OSError as exc:
         die(f"cannot download Unihan.zip ({exc}); pass --unihan-zip PATH instead")
+    print(
+        f"Unihan.zip {'unchanged (served from cache)' if unchanged else 'downloaded'}",
+        file=sys.stderr,
+    )
+    dest.write_bytes(data)
     return dest
 
 
@@ -390,7 +461,7 @@ def _fetch_json(url: str):
     import urllib.error
     import urllib.request
 
-    request = urllib.request.Request(url, headers={"User-Agent": "convert-to-traditional-chinese"})
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
         with urllib.request.urlopen(request, timeout=20, context=_tls_context()) as response:
             return json.load(response)
@@ -426,8 +497,13 @@ def discover_naer_datasets() -> list[dict]:
         ]
         return {"id": dataset_id, "title": title, "urls": urls} if urls else None
 
-    print(f"scanning {len(NAER_ID_RANGE)} dataset ids on data.gov.tw", file=sys.stderr)
-    with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+    print(
+        f"scanning {len(NAER_ID_RANGE)} dataset ids on data.gov.tw "
+        f"at {SCAN_WORKERS} concurrent requests; the result is cached, so this "
+        "should rarely need re-running",
+        file=sys.stderr,
+    )
+    with concurrent.futures.ThreadPoolExecutor(max_workers=SCAN_WORKERS) as pool:
         found = [row for row in pool.map(probe, NAER_ID_RANGE) if row]
     print(f"found {len(found)} openly licensed cross-strait datasets", file=sys.stderr)
     return found
@@ -458,39 +534,28 @@ def build_naer_table(datasets: list[dict], char_map: dict[str, str], allow_parti
     corpus records the preferred academic rendering, not a correction, and 除臭 is
     not wrong merely because a glossary prefers 去臭.
     """
-    import urllib.request
-
     fold = lambda text: "".join(char_map.get(c, c) for c in text)
     pairs: dict[str, set[str]] = {}
     english: dict[str, str] = {}
     domains: dict[str, set[str]] = {}
     taiwan_forms: set[str] = set()
     failed: list[str] = []
+    revalidated = 0
+    transferred = 0
     rows = 0
 
     for dataset in datasets:
         domain = dataset["title"].split("-")[-1].replace("學術名詞", "").replace("名詞", "") or "通用"
         for url in dataset["urls"]:
-            request = urllib.request.Request(
-                _encode_url(url), headers={"User-Agent": "convert-to-traditional-chinese"}
-            )
-            text = None
-            for attempt in range(3):  # the host drops the odd TLS handshake
-                try:
-                    with urllib.request.urlopen(
-                        request, timeout=90, context=_tls_context()
-                    ) as response:
-                        text = response.read().decode("utf-8-sig")
-                    break
-                except (OSError, UnicodeDecodeError) as exc:
-                    if attempt == 2:
-                        print(
-                            f"error: cannot read {dataset['title']}: {exc}",
-                            file=sys.stderr,
-                        )
-            if text is None:
+            try:
+                data, unchanged = fetch(url, timeout=90)
+                text = data.decode("utf-8-sig")
+            except (OSError, UnicodeDecodeError) as exc:
+                print(f"error: cannot read {dataset['title']}: {exc}", file=sys.stderr)
                 failed.append(dataset["title"])
                 continue
+            revalidated += unchanged
+            transferred += 0 if unchanged else len(data)
             for row in csv.DictReader(text.splitlines()):
                 rows += 1
                 taiwan = [t for t in _readings(row.get("中文名稱", "")) if CJK_ONLY.match(t)]
@@ -532,6 +597,11 @@ def build_naer_table(datasets: list[dict], char_map: dict[str, str], allow_parti
     print(
         f"naer_terms: {rows} rows -> {len(terms)} entries "
         f"({len(dropped)} dropped as also-Taiwanese)",
+        file=sys.stderr,
+    )
+    print(
+        f"upstream: {revalidated} file(s) unchanged, "
+        f"{transferred // 1024} KB transferred",
         file=sys.stderr,
     )
     return {
