@@ -81,6 +81,10 @@ BASIC_CJK = ("一", "鿿")
 #   恶  噁心 uses 噁, which sits in the less-used Big5 zone and loses to 惡
 AUTO_EXCLUDE = {"涂", "种", "恶"}
 
+# Candidates Unihan offers that no one would ever write, kept out of the report so
+# the reader is not asked to weigh a character the rule itself dismisses.
+NOISE_CANDIDATES = {"只": {"戠"}}
+
 # Traditional-to-traditional folding onto the form standardised in Taiwan. This
 # layer also applies to text that is already traditional, which is intentional:
 # a document written with 着 or 裏 is not zh-TW conformant.
@@ -276,8 +280,12 @@ def merge_decisions(ambiguous: dict[str, list[str]], existing) -> dict[str, dict
     previous = (existing or {}).get("chars", {})
     merged: dict[str, dict] = {}
     for char in sorted(ambiguous):
-        # Unihan lists forms no one writes (只 offers 戠); Big5 membership drops them.
-        candidates = [c for c in ambiguous[char] if big5_level(c)] or ambiguous[char]
+        # Unihan lists forms no one writes; Big5 membership drops most of them and
+        # NOISE_CANDIDATES handles the few that slip through the encoding test.
+        noise = NOISE_CANDIDATES.get(char, set())
+        candidates = [
+            c for c in ambiguous[char] if big5_level(c) and c not in noise
+        ] or ambiguous[char]
         old = previous.get(char, {})
         if old.get("decision") in ("safe", "ambiguous"):
             entry = dict(old)
@@ -405,6 +413,35 @@ def lint_terms() -> int:
         die(f"{TERM_MAP} does not exist")
     safe = data.get("safe", {})
     findings = 0
+
+    # convert.py folds a key through char_map before matching, so a key whose folded
+    # form is an ordinary Taiwanese word hijacks that word: 覆盖 folds to 覆蓋 and
+    # turned 測試覆蓋率 into 測試覆寫率. The NAER corpus doubles as a zh-TW lexicon
+    # for detecting this; it is a proxy, not a dictionary, so it will not catch every
+    # case (重載 is a real word absent from it).
+    char_map = (load_json(CHAR_MAP) or {}).get("map", {})
+    naer = (load_json(NAER_TERMS) or {}).get("terms", {})
+    lexicon: set[str] = set()
+    for entry in naer.values():
+        lexicon.update(entry["tw"])
+    for source in safe:
+        folded = "".join(char_map.get(c, c) for c in source)
+        if folded == source:
+            continue
+        if safe[source].get("hijack_reviewed"):
+            continue  # a human weighed this one; the reason is recorded in the entry
+        # A substring match is weak evidence on its own -- 鏈接 appears inside four
+        # terms without being a word anyone writes. Being a rendering in its own
+        # right, or a component of many, is what matters.
+        containing = sum(1 for term in lexicon if folded in term)
+        if folded in lexicon or containing >= 10:
+            where = (
+                "a Taiwan rendering"
+                if folded in lexicon
+                else f"a component of {containing} Taiwan terms"
+            )
+            print(f"error: {source} folds to {folded}, which is {where}; move it to `review`")
+            findings += 1
     for source, entry in safe.items():
         target = entry["to"] if isinstance(entry, dict) else entry
         for other in safe:
@@ -420,7 +457,11 @@ def lint_terms() -> int:
     for term in sorted(overlap):
         print(f"error: {term} appears in both `safe` and `review`")
         findings += 1
-    print(f"# {len(safe)} safe terms, {findings} findings", file=sys.stderr)
+    exempt = sum(1 for e in safe.values() if e.get("hijack_reviewed"))
+    print(
+        f"# {len(safe)} safe terms, {findings} findings, {exempt} hijack exemptions",
+        file=sys.stderr,
+    )
     return EXIT_FINDINGS if findings else EXIT_OK
 
 

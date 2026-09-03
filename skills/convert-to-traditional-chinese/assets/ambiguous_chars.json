@@ -6,7 +6,8 @@
   "license": "Unicode-3.0",
   "license_name": "UNICODE LICENSE V3 (https://www.unicode.org/license.txt)",
   "notice": "© 1991-2026 Unicode, Inc. All rights reserved.",
-  "generated_by": "scripts/build_tables.py"
+  "generated_by": "scripts/build_tables.py",
+  "keep_field": "keep 列出該字在此語境下維持原樣的詞。convert.py 仍會偵測每一處，但命中 keep 的歸入摘要行，不佔逐條清單，--review-all 可展開。清單不完整不影響正確性，只影響報告長度。"
  },
  "chars": {
   "㳽": {
@@ -45,7 +46,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "地支、丑角、姓氏保留 丑（丑時、丑角、丑年）；美醜、醜陋取 醜（醜陋、醜聞、醜態）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "丑年",
+    "丑時",
+    "丑角"
+   ]
   },
   "丢": {
    "candidates": [
@@ -102,7 +108,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "疑問詞、助詞取 麼（甚麼、怎麼、多麼）；排行最小、點數一保留 么（老么、么妹、么二三）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "么二三",
+    "么妹",
+    "老么"
+   ]
   },
   "义": {
    "candidates": [
@@ -148,7 +159,18 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "明晰、遠望取 瞭（明瞭、瞭解、瞭望）；其餘動態助詞、常規語境取 了（走了、了解、完了、不得了）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "到了",
+    "好了",
+    "完了",
+    "成了",
+    "有了",
+    "沒了",
+    "為了",
+    "算了",
+    "除了"
+   ]
   },
   "争": {
    "candidates": [
@@ -167,7 +189,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "介係詞取 於（對於、關於、由於、在於）；姓氏、古文人名保留 于（于右任、于歸）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "于右任",
+    "于歸"
+   ]
   },
   "亏": {
    "candidates": [
@@ -186,7 +212,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "雲彩、雲端運算取 雲（白雲、雲端、風雲）；說話、引述保留 云（人云亦云、不知所云、子曰詩云）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "不知所云",
+    "人云亦云",
+    "子曰詩云"
+   ]
   },
   "产": {
    "candidates": [
@@ -271,7 +302,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "團體、結伴取 夥（合夥、大夥、夥同、夥伴）；飲食、器物保留 伙（伙食、搭伙、傢伙）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "伙食",
+    "傢伙",
+    "搭伙"
+   ]
   },
   "会": {
    "candidates": [
@@ -318,7 +354,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "剩餘、多餘、業餘取 餘（剩餘、餘額、業餘）；第一人稱我、姓氏保留 余（余等、余氏）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "余氏",
+    "余等"
+   ]
   },
   "佣": {
    "candidates": [
@@ -403,7 +443,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "戰勝、能力、公克保留 克（克服、克勤克儉、公克）；克服壓制、剋扣取 剋（相剋、剋期、剋扣）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "克勤克儉",
+    "克服",
+    "公克"
+   ]
   },
   "兑": {
    "candidates": [
@@ -451,7 +496,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "季節保留 冬（冬天、冬季、冬眠）；鼓聲取 鼕（鼕鼕、雷鼕）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "冬天",
+    "冬季",
+    "冬眠"
+   ]
   },
   "冲": {
    "candidates": [
@@ -516,7 +566,11 @@
    ],
    "decision": "ambiguous",
    "note": "表數量取 幾（幾個、幾乎）；家具與成語保留 几（茶几、窗明几淨）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "窗明几淨",
+    "茶几"
+   ]
   },
   "凤": {
    "candidates": [
@@ -553,7 +607,31 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "戲劇量詞取 齣（一齣戲、折子齣）；其餘動作、出現保留 出（出現、出發、出版、出去）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "做出",
+    "傳出",
+    "出去",
+    "出版",
+    "出現",
+    "出發",
+    "列出",
+    "匯出",
+    "取出",
+    "導出",
+    "找出",
+    "拋出",
+    "指出",
+    "推出",
+    "提出",
+    "支出",
+    "產出",
+    "登出",
+    "跳出",
+    "輸出",
+    "輸出入",
+    "退出"
+   ]
   },
   "划": {
    "candidates": [
@@ -601,7 +679,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "風吹取 颳（颳風、大風颳起）；削去、摩擦保留 刮（刮鬍子、刮目相看、搜刮、刮除）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "刮目相看",
+    "刮除",
+    "刮鬍子",
+    "搜刮"
+   ]
   },
   "制": {
    "candidates": [
@@ -611,7 +695,22 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "製造、生產取 製（製作、製造、製品、訂製）；規章、約束保留 制（制度、控制、限制、制服）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "制定",
+    "制度",
+    "制服",
+    "制約",
+    "強制",
+    "抑制",
+    "控制",
+    "機制",
+    "牽制",
+    "節制",
+    "編制",
+    "限制",
+    "體制"
+   ]
   },
   "刹": {
    "candidates": [
@@ -730,7 +829,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "遊戲鞦韆取 韆（鞦韆）；數目字保留 千（千萬、千克、千里）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "千克",
+    "千萬",
+    "千里"
+   ]
   },
   "单": {
    "candidates": [
@@ -749,7 +853,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "植物蘿蔔取 蔔（蘿蔔、胡蘿蔔）；占筮、姓氏保留 卜（占卜、預卜、卜派、卜氏）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "卜氏",
+    "卜派",
+    "占卜",
+    "預卜"
+   ]
   },
   "卤": {
    "candidates": [
@@ -921,13 +1031,23 @@
   "只": {
    "candidates": [
     "只",
-    "戠",
     "衹",
     "隻"
    ],
    "decision": "ambiguous",
    "note": "量詞取 隻（一隻貓）；表僅有取 只（只有、只是）。候選中的 戠 為 Unihan 雜訊，不採用",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "candidates_changed_since_decision": true,
+   "keep": [
+    "不只",
+    "只剩",
+    "只好",
+    "只是",
+    "只有",
+    "只能",
+    "只要",
+    "只需"
+   ]
   },
   "台": {
    "candidates": [
@@ -938,7 +1058,19 @@
    ],
    "decision": "ambiguous",
    "note": "台灣、台北依作者原文慣用 台；平台一般作 平台；櫃檯、檯燈取 檯；颱風取 颱",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "前台",
+    "台中",
+    "台北",
+    "台南",
+    "台灣",
+    "台階",
+    "平台",
+    "後台",
+    "舞台",
+    "電台"
+   ]
   },
   "叶": {
    "candidates": [
@@ -966,7 +1098,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "呼求、陳請取 籲（呼籲、祈籲、懇籲）；嘆氣、象聲保留 吁（長吁短嘆、氣喘吁吁）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "氣喘吁吁",
+    "長吁短嘆"
+   ]
   },
   "合": {
    "candidates": [
@@ -976,7 +1112,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "全家敬稱取 閤（閤家光臨、閤府平安）；其餘聚合、相符保留 合（合作、集合、合適、合同）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "合作",
+    "合同",
+    "合適",
+    "集合"
+   ]
   },
   "同": {
    "candidates": [
@@ -986,7 +1128,23 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "街巷胡同取 衕（衚衕）；其餘相同、共同保留 同（同學、共同、同意、同胞）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "不同",
+    "共同",
+    "同一",
+    "同事",
+    "同儕",
+    "同學",
+    "同意",
+    "同時",
+    "同樣",
+    "同步",
+    "同義",
+    "同胞",
+    "如同",
+    "相同"
+   ]
   },
   "后": {
    "candidates": [
@@ -996,7 +1154,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "帝王正妻、君主保留 后（皇后、太后、王后、后土）；空間時間在後取 後（前後、之後、後來、後退、落後）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "后土",
+    "太后",
+    "王后",
+    "皇后"
+   ]
   },
   "向": {
    "candidates": [
@@ -1007,7 +1171,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "引導、憧憬取 嚮（嚮導、嚮往）；從前取 曏（曏日）；方位、介係詞保留 向（方向、向左、向來、面向）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "向來",
+    "向左",
+    "方向",
+    "面向"
+   ]
   },
   "吓": {
    "candidates": [
@@ -1026,7 +1196,10 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "聆聽、服從取 聽（聽覺、聽力、聽話、打聽）；英制容量單位或罐保留 听（一听飲料）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "一听飲料"
+   ]
   },
   "启": {
    "candidates": [
@@ -1072,7 +1245,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "味道鹹味取 鹹（鹹度、鹹魚、鹹菜）；全部、年號、姓氏保留 咸（老少咸宜、咸豐、咸寧）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "咸寧",
+    "咸豐",
+    "老少咸宜"
+   ]
   },
   "响": {
    "candidates": [
@@ -1118,7 +1296,23 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "曲折、旋轉、避開取 迴（迴圈、迴避、迴響、巡迴）；返回、答覆保留 回（回答、回家、回憶、這一次）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "回來",
+    "回傳",
+    "回到",
+    "回去",
+    "回報",
+    "回家",
+    "回憶",
+    "回應",
+    "回收",
+    "回滾",
+    "回答",
+    "回覆",
+    "撤回",
+    "返回"
+   ]
   },
   "团": {
    "candidates": [
@@ -1147,7 +1341,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "疲倦欲睡取 睏（睏倦、打睏、發睏）；艱難、阻礙保留 困（困難、困擾、困境、貧困）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "困境",
+    "困擾",
+    "困難",
+    "貧困"
+   ]
   },
   "图": {
    "candidates": [
@@ -1175,7 +1375,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "損毀、不良取 壞（壞人、破壞、損壞、變壞）；土坏、陶胚保留 坏（泥坏、胚坏）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "泥坏",
+    "胚坏"
+   ]
   },
   "块": {
    "candidates": [
@@ -1289,7 +1493,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "神話名、古姓氏保留 夸（夸父、夸克）；言詞炫耀、誇大取 誇（誇獎、誇張、自誇、浮誇）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "夸克",
+    "夸父"
+   ]
   },
   "奖": {
    "candidates": [
@@ -1308,7 +1516,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "不正當性關係、淫亂取 姦（強姦、通姦、姦淫、作姦犯科）；奸詐、險惡保留 奸（奸詐、奸商、漢奸、奸計）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "奸商",
+    "奸計",
+    "奸詐",
+    "漢奸"
+   ]
   },
   "妫": {
    "candidates": [
@@ -1436,7 +1650,24 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "傢具、器物取 傢（傢俱、傢具、傢伙）；家庭、學術派別保留 家（家庭、專家、科學家、國家）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "作家",
+    "商家",
+    "回家",
+    "國家",
+    "大家",
+    "家人",
+    "家庭",
+    "家族",
+    "家族樹",
+    "家長",
+    "專家",
+    "店家",
+    "獨家",
+    "玩家",
+    "科學家"
+   ]
   },
   "宾": {
    "candidates": [
@@ -1491,7 +1722,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "死人軀體取 屍（屍體、殭屍、屍首）；祭祀主持、成語保留 尸（尸位素餐、尸祝）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "尸位素餐",
+    "尸祝"
+   ]
   },
   "尽": {
    "candidates": [
@@ -1565,7 +1800,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "遮蔽用布帷取 簾（窗簾、布簾、簾幕、眼簾）；酒館招旗保留 帘（酒帘、青帘）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "酒帘",
+    "青帘"
+   ]
   },
   "帮": {
    "candidates": [
@@ -1604,7 +1843,10 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "合在一起、兼納取 併（合併、吞併、兼併、併發症）；副詞連詞、平列取 並（並且、並非、並列、並重）；古地名保留 并（并州）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "并州"
+   ]
   },
   "广": {
    "candidates": [
@@ -1752,7 +1994,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "表象、召集、求取取 徵（特徵、徵兆、徵求、徵稅、徵婚）；遠行、討伐保留 征（征戰、出征、征服、長征）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "出征",
+    "征戰",
+    "征服",
+    "長征"
+   ]
   },
   "御": {
    "candidates": [
@@ -1762,7 +2010,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "抵擋、防備取 禦（防禦、禦寒、禦敵、抵禦）；統治、帝王尊稱保留 御（御用、御駕、統御、御賜）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "御用",
+    "御賜",
+    "御駕",
+    "統御"
+   ]
   },
   "志": {
    "candidates": [
@@ -1772,7 +2026,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "記載、刊物、記號取 誌（雜誌、標誌、日誌、墓誌銘）；意向、志氣保留 志（志願、志向、意志、同志）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "同志",
+    "志向",
+    "志願",
+    "意志"
+   ]
   },
   "怀": {
    "candidates": [
@@ -1875,7 +2135,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "期望、希望、祈求取 願（願望、願意、心願、祈願）；老實謹慎、鄉愿保留 愿（鄉愿、誠愿）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "誠愿",
+    "鄉愿"
+   ]
   },
   "戏": {
    "candidates": [
@@ -1912,7 +2176,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "時間剛剛、方始取 纔（方纔、剛纔，亦多通用 才）；能力、資質保留 才（人才、才能、天才、才華）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "人才",
+    "天才",
+    "才能",
+    "才華"
+   ]
   },
   "扑": {
    "candidates": [
@@ -1922,7 +2192,10 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "向前猛衝、拍打取 撲（撲滅、撲空、撲克牌、飛撲）；古刑杖打擊保留 扑（扑作教刑）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "扑作教刑"
+   ]
   },
   "执": {
    "candidates": [
@@ -1941,7 +2214,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "摺疊、重疊取 摺（摺疊、摺紙、摺扇、百摺裙）；折斷、折扣、屈曲保留 折（折價、折扣、折斷、折磨）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "折價",
+    "折扣",
+    "折斷",
+    "折磨"
+   ]
   },
   "抛": {
    "candidates": [
@@ -2015,7 +2294,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "哀悼死者取 輓（輓聯、輓歌、輓詞）；拉拔、牽引、挽救保留 挽（挽救、挽留、力挽狂瀾）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "力挽狂瀾",
+    "挽救",
+    "挽留"
+   ]
   },
   "据": {
    "candidates": [
@@ -2117,7 +2401,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "競賽、爭鬥、戰鬥取 鬥（戰鬥、格鬥、爭鬥、奮鬥）；星宿、容量、器物保留 斗（北斗、斗笠、漏斗、煙斗）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "北斗",
+    "斗笠",
+    "漏斗",
+    "煙斗"
+   ]
   },
   "断": {
    "candidates": [
@@ -2136,7 +2426,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "車削金屬器械取 鏇（鏇床、鏇削）；轉動、迴繞保留 旋（旋轉、旋律、凱旋、旋風）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "凱旋",
+    "旋律",
+    "旋轉",
+    "旋風"
+   ]
   },
   "无": {
    "candidates": [
@@ -2220,7 +2516,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "礦物硃砂、批改墨印取 硃（硃砂、硃筆、硃批）；紅色、姓氏保留 朱（朱門、朱雀、朱先生）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "朱先生",
+    "朱門",
+    "朱雀"
+   ]
   },
   "朴": {
    "candidates": [
@@ -2230,7 +2531,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "質樸、純真取 樸（樸素、樸實、純樸、簡樸）；韓姓、植物、地名保留 朴（朴先生、朴樹、朴子市）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "朴先生",
+    "朴子市",
+    "朴樹"
+   ]
   },
   "机": {
    "candidates": [
@@ -2259,7 +2565,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "細長器物把手或柄部取 桿（槍桿、筆桿、操縱桿、秤桿）；豎立之柱狀物保留 杆（旗杆、電線杆、欄杆）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "旗杆",
+    "欄杆",
+    "電線杆"
+   ]
   },
   "杰": {
    "candidates": [
@@ -2269,7 +2580,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "才能超群、傑出取 傑（傑出、傑作、俊傑）；專有人名人名用字保留 杰（周杰倫、張杰）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "周杰倫",
+    "張杰"
+   ]
   },
   "松": {
    "candidates": [
@@ -2279,7 +2594,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "不緊、散開、食品酥鬆取 鬆（放鬆、輕鬆、肉鬆、鬆散）；松樹植物、姓氏保留 松（松樹、松柏、松花江）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "松柏",
+    "松樹",
+    "松花江"
+   ]
   },
   "板": {
    "candidates": [
@@ -2289,7 +2609,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "店主取 闆（老闆、闆娘）；木片、硬片、工具保留 板（木板、黑板、面板、電路板）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "木板",
+    "電路板",
+    "面板",
+    "黑板"
+   ]
   },
   "极": {
    "candidates": [
@@ -2366,7 +2692,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "恐懼發抖取 慄（不寒而慄、顫慄、恐慄）；植物果實、苗栗地名保留 栗（栗子、板栗、苗栗）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "板栗",
+    "栗子",
+    "苗栗"
+   ]
   },
   "栾": {
    "candidates": [
@@ -2514,7 +2845,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "記載、解釋、登記取 註（註冊、註釋、附註、備註）；灌入、集中保留 注（注意、注射、注入、投注）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "投注",
+    "注入",
+    "注射",
+    "注意"
+   ]
   },
   "泪": {
    "candidates": [
@@ -2562,7 +2899,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "抹抹擦拭、敷抹取 塗（塗抹、油漆塗料、糊塗、塗鴉）；姓氏、水名保留 涂（涂先生、涂水）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "涂先生",
+    "涂水"
+   ]
   },
   "涛": {
    "candidates": [
@@ -2654,7 +2995,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "廣西地名水名取 灕（灕江）；形容水濕痛快保留 漓（淋漓盡致、淋漓）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "淋漓",
+    "淋漓盡致"
+   ]
   },
   "灯": {
    "candidates": [
@@ -2889,7 +3234,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "隱伏的關鍵問題、腹中硬塊取 癥（癥結、癥兆）；疾病症狀保留 症（症狀、癌症、重症、急症）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "急症",
+    "症狀",
+    "癌症",
+    "重症"
+   ]
   },
   "痒": {
    "candidates": [
@@ -3045,7 +3396,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "遊樂鞦韆取 鞦（鞦韆）；季節、年月保留 秋（秋天、秋季、千秋萬世）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "千秋萬世",
+    "秋天",
+    "秋季"
+   ]
   },
   "种": {
    "candidates": [
@@ -3055,7 +3411,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "物種、播種、種類取 種（品種、種類、種植、種子）；罕見姓氏保留 种（种師道、种氏）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "种師道",
+    "种氏"
+   ]
   },
   "称": {
    "candidates": [
@@ -3128,7 +3488,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "建造、土石工程取 築（建築、構築、構築物、修築）；古擊弦樂器、貴陽簡稱保留 筑（擊筑、筑室）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "擊筑",
+    "筑室"
+   ]
   },
   "签": {
    "candidates": [
@@ -3213,7 +3577,15 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "涉及、關係取 係（關係、確係、幹係）；牽綁、掛念、聯絡取 繫（聯繫、維繫、繫鞋帶、心繫）；體系、學系保留 系（系統、系列、中文系、太陽系）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "中文系",
+    "太陽系",
+    "科系",
+    "系列",
+    "系統",
+    "體系"
+   ]
   },
   "累": {
    "candidates": [
@@ -3223,7 +3595,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "堆積眾多、重疊取 纍（果實纍纍、罪行纍纍）；疲倦、積聚保留 累（疲累、累積、勞累、連累）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "勞累",
+    "疲累",
+    "累積",
+    "連累"
+   ]
   },
   "纤": {
    "candidates": [
@@ -3389,7 +3767,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "菜餚熟食取 餚（佳餚、菜餚、酒餚）；古文珍肴保留 肴（珍肴、肴饌）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "珍肴",
+    "肴饌"
+   ]
   },
   "胆": {
    "candidates": [
@@ -3419,7 +3801,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "面部毛髮取 鬍（鬍子、鬍鬚、落腮鬍）；巷弄街坊取 衚（衚衕）；胡亂、外族、姓氏保留 胡（胡椒、胡說、胡亂、胡先生）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "胡亂",
+    "胡先生",
+    "胡椒",
+    "胡說"
+   ]
   },
   "脉": {
    "candidates": [
@@ -3503,7 +3891,16 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "精細、周密取 緻（精緻、細緻、別緻、精緻度）；送達、引發、志趣保留 致（導致、致力、致敬、一致）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "一致",
+    "以致",
+    "大致",
+    "導致",
+    "致使",
+    "致力",
+    "致敬"
+   ]
   },
   "舍": {
    "candidates": [
@@ -3513,7 +3910,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "放棄、施給取 捨（捨棄、捨得、施捨、取捨）；房屋住處保留 舍（宿舍、校舍、退避三舍、舍下）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "宿舍",
+    "校舍",
+    "舍下",
+    "退避三舍"
+   ]
   },
   "艳": {
    "candidates": [
@@ -3541,7 +3944,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "十字花科植物取 蕓（蕓薹）；芸芸眾生、香草保留 芸（芸芸眾生、芸香）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "芸芸眾生",
+    "芸香"
+   ]
   },
   "苏": {
    "candidates": [
@@ -3571,7 +3978,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "界限、模範、規章取 範（範圍、模範、規範、範疇）；姓氏、古地名保留 范（范仲淹、范先生）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "范仲淹",
+    "范先生"
+   ]
   },
   "荆": {
    "candidates": [
@@ -3590,7 +4001,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "介紹進用、進獻取 薦（推薦、引薦、自薦、舉薦）；墊草、頻繁保留 荐（荐席、荐食）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "荐席",
+    "荐食"
+   ]
   },
   "荡": {
    "candidates": [
@@ -3677,7 +4092,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "細雨水霧取 濛（濛濛、煙雨濛濛）；欺騙隱瞞取 矇（矇騙、矇蔽、矇混）；糊塗無知取 懞（懞懂）；遭受、地名、承接保留 蒙（蒙受、蒙古、啟蒙、承蒙）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "啟蒙",
+    "承蒙",
+    "蒙受",
+    "蒙古"
+   ]
   },
   "蔂": {
    "candidates": [
@@ -3697,7 +4118,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "侮辱造謠取 衊（誣衊、污衊）；輕視、無保留 蔑（輕蔑、蔑視、蔑以復加）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "蔑以復加",
+    "蔑視",
+    "輕蔑"
+   ]
   },
   "蕴": {
    "candidates": [
@@ -3725,7 +4151,10 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "昆蟲、蟲類生物取 蟲（昆蟲、蟲子、寄生蟲、益蟲）；古字虺虫保留 虫（虫部）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "虫部"
+   ]
   },
   "虬": {
    "candidates": [
@@ -3827,7 +4256,20 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "計時器物取 錶（手錶、鐘錶、懷錶、秒錶）；外觀、名冊、表達保留 表（表格、表面、表現、代表）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "代表",
+    "列表",
+    "報表",
+    "外表",
+    "發表",
+    "表格",
+    "表現",
+    "表示",
+    "表達",
+    "表面",
+    "資料表"
+   ]
   },
   "衮": {
    "candidates": [
@@ -3900,7 +4342,13 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "糧食農作物取 穀（五穀、穀物、稻穀、穀倉）；兩山之間地形、姓氏保留 谷（山谷、峽谷、矽谷、谷先生）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "山谷",
+    "峽谷",
+    "矽谷",
+    "谷先生"
+   ]
   },
   "赃": {
    "candidates": [
@@ -4011,7 +4459,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "開拓、駁斥、透徹取 闢（開闢、闢謠、精闢、開天闢地）；君主、徵召、免除保留 辟（復辟、辟邪、徵辟）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "復辟",
+    "徵辟",
+    "辟邪"
+   ]
   },
   "边": {
    "candidates": [
@@ -4142,7 +4595,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "草木茂盛、愁悶阻滯、鬱金香取 鬱（憂鬱、抑鬱、鬱鬱蔥蔥、鬱金香）；香氣濃烈、姓氏保留 郁（濃郁、馥郁、郁先生）",
-   "proper_noun_risk": true
+   "proper_noun_risk": true,
+   "keep": [
+    "濃郁",
+    "郁先生",
+    "馥郁"
+   ]
   },
   "郑": {
    "candidates": [
@@ -4171,7 +4629,12 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "摘取、搜集、選用取 採（採取、採用、採訪、採購）；神態風度保留 采（風采、神采、文采）；古代封地取 埰（埰邑）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "文采",
+    "神采",
+    "風采"
+   ]
   },
   "里": {
    "candidates": [
@@ -4181,7 +4644,11 @@
    "decision": "ambiguous",
    "note": "表內部或處所取 裡（這裡、心裡）；長度單位、行政區、姓氏保留 里（公里、里長）",
    "proper_noun_risk": false,
-   "candidates_changed_since_decision": true
+   "candidates_changed_since_decision": true,
+   "keep": [
+    "公里",
+    "里長"
+   ]
   },
   "銮": {
    "candidates": [
@@ -4338,7 +4805,11 @@
    "decision": "ambiguous",
    "resolved": null,
    "note": "真菌生長、發黴取 黴（黴菌、發黴、黴素）；倒楣運氣保留 霉（倒霉、霉運，亦作倒楣）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "倒霉",
+    "霉運"
+   ]
   },
   "霡": {
    "candidates": [
@@ -4365,7 +4836,29 @@
    ],
    "decision": "ambiguous",
    "note": "麵食取 麵（麵包、泡麵、麵條）；其餘保留 面（面向、介面、方面）",
-   "proper_noun_risk": false
+   "proper_noun_risk": false,
+   "keep": [
+    "上面",
+    "下面",
+    "介面",
+    "側面",
+    "全面",
+    "前面",
+    "反面",
+    "外面",
+    "層面",
+    "後面",
+    "方面",
+    "正面",
+    "版面",
+    "畫面",
+    "表面",
+    "裡面",
+    "面向",
+    "面板",
+    "面積",
+    "頁面"
+   ]
   },
   "韵": {
    "candidates": [

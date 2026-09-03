@@ -64,8 +64,12 @@ of a file back into the chat.
 scripts/convert.py PATH...          # convert in place, print the review report
 scripts/convert.py --check PATH...  # report only, write nothing
 scripts/convert.py --diff PATH...   # unified diff, write nothing
+scripts/convert.py --json PATH...   # structured findings, for triage without parsing prose
 echo "文字" | scripts/convert.py --stdin   # result on stdout, report on stderr
 ```
+
+On a directory of any size, run `--check` first. It tells you the scale of the job and which
+files are affected before anything is written.
 
 Add `--markdown` to apply markdown protection rules to `--stdin` input. Add `--include-code` to
 convert protected regions too, which is almost never right.
@@ -88,6 +92,10 @@ the file.
 
 **REVIEW** — the script applied a form that is valid zh-TW, which may still be the wrong one
 here. `面` stays `面` unless it is `麵條`. Confirm or correct each one.
+
+Occurrences a curated keep-rule already answers are detected but collapsed into a `✓` summary
+line, because a report that lists `同` four hundred times cannot honestly be worked through. The
+detection behind them is unchanged; `--review-all` lists them individually.
 
 **PROTECTED** — simplified text inside code blocks, inline code, or URLs. Left untouched on
 purpose. A simplified string literal is often deliberate. Change these only when the user asks.
@@ -135,6 +143,9 @@ Name any proper noun you were unsure about.
 
 ## Rules
 
+- **The document's own usage wins.** Before accepting a vocabulary change, check what the author
+  already does: `grep -c 函式 FILE` against `grep -c 函數 FILE`. A document that consistently says
+  `基類` has a convention, and imposing `基底類別` on it is rewriting, not converting.
 - **Conversion is not rewriting.** Preserve the author's voice, structure, and argument. Do not
   apply writing-style guidance. When the user wants the prose improved as well, that is
   `chinese-content-writing-guideline`, invoked separately and said out loud.

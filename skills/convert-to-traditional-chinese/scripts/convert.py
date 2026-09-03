@@ -9,6 +9,7 @@
 #     convert.py --stdin           stdin -> stdout, report on stderr
 #     convert.py --check PATH...   report only, write nothing
 #     convert.py --diff PATH...    print a unified diff, write nothing
+#     convert.py --json PATH...    machine-readable findings on stdout
 #
 # Exit codes:
 #     0  clean: nothing converted needs a second look (NAER advisories do not count)
@@ -173,9 +174,11 @@ def protected_spans(text: str, markdown: bool) -> list[tuple[int, int]]:
 
 
 class Finding:
-    __slots__ = ("severity", "line", "col", "source", "candidates", "note", "context")
+    __slots__ = (
+        "severity", "line", "col", "source", "candidates", "note", "context", "settled",
+    )
 
-    def __init__(self, severity, line, col, source, candidates, note, context):
+    def __init__(self, severity, line, col, source, candidates, note, context, settled=None):
         self.severity = severity
         self.line = line
         self.col = col
@@ -183,6 +186,7 @@ class Finding:
         self.candidates = candidates
         self.note = note
         self.context = context
+        self.settled = settled  # the keep-rule context that already answers this hit
 
 
 def convert_text(text: str, tables: Tables, markdown: bool, naer_all: bool = False):
@@ -278,7 +282,17 @@ def convert_text(text: str, tables: Tables, markdown: bool, naer_all: bool = Fal
             # on its own, so leaving it as-is is not an acceptable outcome.
             severity = "review" if char in candidates else "must-fix"
             line, col, context = position(i)
-            findings.append(Finding(severity, line, col, char, candidates, note, context))
+            settled = None
+            if severity == "review":
+                # Detection stays exhaustive; this only decides where it is reported.
+                for word in entry.get("keep", ()):
+                    offset = word.index(char)
+                    if text[i - offset : i - offset + len(word)] == word:
+                        settled = word
+                        break
+            findings.append(
+                Finding(severity, line, col, char, candidates, note, context, settled)
+            )
             out.append(char)
         else:
             out.append(char)
@@ -341,7 +355,7 @@ SEVERITY_LABEL = {
 }
 
 
-def report(label: str, findings: list[Finding], converted: int, stream=sys.stdout) -> None:
+def report(label, findings, converted, stream=sys.stdout, review_all=False) -> None:
     if not findings and not converted:
         return
     def emit(line: str) -> None:
@@ -353,7 +367,20 @@ def report(label: str, findings: list[Finding], converted: int, stream=sys.stdou
         group = [f for f in findings if f.severity == severity]
         if not group:
             continue
-        emit(f"  {SEVERITY_LABEL[severity]} ({len(group)})")
+        settled = [f for f in group if f.settled and not review_all]
+        group = [f for f in group if f not in settled]
+        header = f"  {SEVERITY_LABEL[severity]} ({len(group)}"
+        header += f" + {len(settled)} settled by rule)" if settled else ")"
+        emit(header)
+        if settled:
+            by_char: dict[str, list[str]] = {}
+            for finding in settled:
+                by_char.setdefault(finding.source, []).append(finding.settled)
+            for char, words in by_char.items():
+                shown = "、".join(sorted(set(words))[:6])
+                emit(f"    ✓ {char} ×{len(words)}  {shown}")
+        if not group:
+            continue
         # One rule, however long, explains every occurrence of the same character.
         # Printing it per hit turned a 75-item report into 300 lines.
         buckets: dict[tuple, list[Finding]] = {}
@@ -369,6 +396,37 @@ def report(label: str, findings: list[Finding], converted: int, stream=sys.stdou
             for hit in hits:
                 emit(f"           L{hit.line}:{hit.col}  {hit.context}")
     emit("")
+
+
+def as_json(entries: list[dict], must_fix, review, settled, protected, advisory) -> str:
+    """Structured findings, so an agent can triage without parsing the report."""
+    return json.dumps(
+        {
+            "files": entries,
+            "summary": {
+                "must_fix": must_fix,
+                "review": review,
+                "settled_by_rule": settled,
+                "protected": protected,
+                "naer_advisories": advisory,
+            },
+        },
+        ensure_ascii=False,
+        indent=1,
+    )
+
+
+def finding_json(finding: Finding) -> dict:
+    return {
+        "severity": finding.severity,
+        "line": finding.line,
+        "column": finding.col,
+        "source": finding.source,
+        "candidates": list(finding.candidates),
+        "rule": finding.note,
+        "context": finding.context,
+        "settled_by": finding.settled,
+    }
 
 
 def iter_files(paths: list[Path]):
@@ -389,9 +447,15 @@ def main() -> int:
     parser.add_argument("--stdin", action="store_true", help="read stdin, write result to stdout")
     parser.add_argument("--check", action="store_true", help="report only, write nothing")
     parser.add_argument("--diff", action="store_true", help="print a unified diff, write nothing")
+    parser.add_argument("--json", action="store_true", help="machine-readable findings on stdout")
     parser.add_argument("--markdown", action="store_true", help="force markdown rules on --stdin")
     parser.add_argument(
         "--include-code", action="store_true", help="convert protected regions too"
+    )
+    parser.add_argument(
+        "--review-all",
+        action="store_true",
+        help="list every review hit, including ones a keep-rule already settles",
     )
     parser.add_argument("--no-naer", action="store_true", help="skip the NAER advisories")
     parser.add_argument(
@@ -406,6 +470,10 @@ def main() -> int:
     if not args.stdin and not args.paths:
         die("nothing to do; pass a path or --stdin")
 
+    if args.json and args.diff:
+        die("--json and --diff are different output formats; pick one")
+
+    entries: list[dict] = []
     tables = Tables(ASSETS)
     if args.no_naer:
         tables.naer = {}
@@ -417,9 +485,13 @@ def main() -> int:
         text = sys.stdin.read()
         markdown = args.markdown and not args.include_code
         result, findings, converted = convert_text(text, tables, markdown, args.naer_all)
-        report("<stdin>", findings, converted, stream=sys.stderr)
-        sys.stdout.write(result)
-        sys.stdout.flush()
+        if args.json:
+            entries.append({"path": "<stdin>", "converted": converted,
+                            "findings": [finding_json(f) for f in findings]})
+        else:
+            report("<stdin>", findings, converted, sys.stderr, args.review_all)
+            sys.stdout.write(result)
+            sys.stdout.flush()
         all_findings, total_converted = findings, converted
     else:
         for path in iter_files(args.paths):
@@ -445,16 +517,25 @@ def main() -> int:
                 )
             elif not args.check and result != text:
                 path.write_text(result, encoding="utf-8")
-            report(str(path), findings, converted)
+            if args.json:
+                entries.append({"path": str(path), "converted": converted,
+                                "findings": [finding_json(f) for f in findings]})
+            else:
+                report(str(path), findings, converted, review_all=args.review_all)
 
     must_fix = sum(1 for f in all_findings if f.severity == "must-fix")
-    review = sum(1 for f in all_findings if f.severity == "review")
+    review = sum(1 for f in all_findings if f.severity == "review" and not f.settled)
+    settled = sum(1 for f in all_findings if f.severity == "review" and f.settled)
     protected = sum(1 for f in all_findings if f.severity == "protected")
     advisory = sum(1 for f in all_findings if f.severity == "naer")
+    if args.json:
+        print(as_json(entries, must_fix, review, settled, protected, advisory))
+
     scope = "<stdin>" if args.stdin else f"{files_touched} files"
     print(
         f"summary: {scope}, {total_converted} converted, {must_fix} must-fix, "
-        f"{review} review, {protected} in protected regions, {advisory} NAER advisories",
+        f"{review} review ({settled} settled by rule), "
+        f"{protected} in protected regions, {advisory} NAER advisories",
         file=sys.stderr,
     )
 
