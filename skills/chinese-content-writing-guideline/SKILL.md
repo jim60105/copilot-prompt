@@ -53,7 +53,7 @@ This skill provides comprehensive writing guidelines for producing high-quality 
 - **Contrastive Construction** (「不是…是」): max once per post
 - **Parallelism/Tricolons**: max once per post, max 3 sub-items, no semantic redundancy
 - **Rhetorical Questions**: max once per post, must not chain >2, concrete answer must follow
-- **Em-dash** (——): max twice per post, only for essential qualification. Never use it twice per section. Must not be used to stack adjectives or emotional content.
+- **Em-dash** (——): never use. Rewrite with a comma, a period, or a conditional qualification instead.
 
 ### Punctuation Constraint
 
@@ -92,7 +92,7 @@ Apply these transformations when a restricted pattern appears:
 - 「不是…是」 → 「核心重點在於…；次要面向為…」
 - Tricolon parallelism with redundant items → consolidate into one prose paragraph
 - Rhetorical question → declarative problem-and-answer format
-- Consecutive em-dashes → extract into independent sentence or conditional qualification
+- Em-dash → extract into independent sentence or conditional qualification
 - When an English term appears multiple times, check for a common zh-TW translation or abbreviation. If found, present the original term with its Chinese equivalent the first time, then use only the Chinese version thereafter. This rule does not apply to proper nouns, including personal names.
 
 ## Review Checklist
