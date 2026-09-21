@@ -54,6 +54,7 @@ This skill provides comprehensive writing guidelines for producing high-quality 
 - **Parallelism/Tricolons**: never use
 - **Rhetorical Questions**: max once per post, must not chain >2, concrete answer must follow
 - **Em-dash** (——): never use. Rewrite with a comma, a period, or a conditional qualification instead.
+- **Sentence-final 的**: never end a clause with 「的」 immediately before 「，」 or 「。」 (the 「是…的」 emphatic tail). Rewrite as a plain declarative, drop the 的, or fold the 的-phrase into the clause so it no longer lands on the boundary.
 
 ### Punctuation Constraint
 
