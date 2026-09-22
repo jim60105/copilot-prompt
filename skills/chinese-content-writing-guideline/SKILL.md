@@ -72,7 +72,7 @@ Never use the following expressions:
 - Avoid hedging phrases like 「可以說」「某種程度上」「在多數情況下」; replace with conditional qualifications
 - Avoid saying things like 「我想了很久」 「我停下來想了一下」 「停下來很久」, or "being dissected" / "reading an autopsy report."
 - Avoid using 「鏡子」 or related concepts to describe feelings or things. Only use 鏡子 when referring to an actual mirror.
-- 「攤開」 「接住」 and similar terms can only be used to describe laying out physical objects or, figuratively, presenting arguments. They should not be used to mean "discussing" or "talking about" something, nor to refer to non-physical things.
+- **Never use physical-action verbs with abstract objects.** Test: if the verb's everyday object is a concrete thing (hands, a tabletop, paper, food, feet) but the sentence's object is abstract, it violates this rule; rewrite with a verb that states the mechanism. Examples: 攤開缺口→列出缺口；接住錯誤→捕捉錯誤；抹平速度→速度算出接近 0；吃記憶體→佔用記憶體；塞進 JSON→寫進 JSON；餵給 block→傳給 block；踩過的坑→發生過的問題；假裝有→宣稱有。
 - Avoid saying that this topic makes you feel uncomfortable, uneasy, or slightly offended, especially when discussing subjects such as cybersecurity, attacks, AI, ethics, philosophy, and psychology.
 - Avoid using 「先講結論」 「先說清楚」 「先說背景」 「先說結論」 or similar phrases that indicate a "start with..." structured explanation.
 - Utilize fewer metaphors and focus more on describing the facts.
@@ -107,6 +107,7 @@ Before finalizing, verify every item:
 5. Are sentences overlong? Split into short sentences with clear subject-verb-object structure.
 6. Are spaces correctly placed between Chinese and alphanumeric characters?
 7. Is there English term appears multiple times?
+8. For every verb, is its object concrete or abstract? A physical-action verb with an abstract object must be rewritten as a literal statement.
 
 ## Reference: Terminology Mappings
 
