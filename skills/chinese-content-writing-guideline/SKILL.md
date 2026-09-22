@@ -50,10 +50,10 @@ This skill provides comprehensive writing guidelines for producing high-quality 
 
 ### Rhetorical Device Quotas
 
-- **Contrastive Construction** (「不是…是」): never use
+- **Contrastive Construction** (「不是…是」「不是…而是」「這不是…，是」「差別不在於…而在於…」): never use. Zero instances allowed; grep the literal strings 不是…而是 / 這不是…是 / 差別不在 to verify. Rewrite each as a direct statement of the fact.
 - **Parallelism/Tricolons**: never use
 - **Rhetorical Questions**: max once per post, must not chain >2, concrete answer must follow
-- **Em-dash** (——): never use. Rewrite with a comma, a period, or a conditional qualification instead.
+- **Em-dash** (——): never use. Zero instances allowed; grep the literal glyph —— to verify. Rewrite with a comma, a semicolon, or a standalone sentence instead.
 - **Sentence-final 的**: never end a clause with 「的」 immediately before 「，」 or 「。」 (the 「是…的」 emphatic tail). Rewrite as a plain declarative, drop the 的, or fold the 的-phrase into the clause so it no longer lands on the boundary.
 
 ### Punctuation Constraint
@@ -90,7 +90,7 @@ When tempted to use restricted devices, use instead:
 
 Apply these transformations when a restricted pattern appears:
 
-- 「不是…是」 → 「核心重點在於…；次要面向為…」
+- Contrastive Construction (any variant) → direct statement. e.g. 「這不是建議，是正確性要求」→「這是正確性要求」；「預測不是 X，而是 Y」→「預測直接以 Y 承載」
 - Tricolon parallelism → consolidate into one prose paragraph
 - Rhetorical question → declarative problem-and-answer format
 - Em-dash → extract into independent sentence or conditional qualification
