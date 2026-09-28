@@ -2,6 +2,7 @@
 name: skill-creator
 description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends your capabilities with specialized knowledge, workflows, or tool integrations.
 license: Complete terms in LICENSE.txt
+disable-model-invocation: true
 metadata:
   author: https://github.com/anthropics/skills/tree/main/skills/skill-creator
   modified: Change `Claude` references to `you` to reflect that the skill is being created for any type of AI agent.

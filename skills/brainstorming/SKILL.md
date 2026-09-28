@@ -2,6 +2,7 @@
 name: brainstorming
 description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
 license: MIT
+disable-model-invocation: true
 metadata:
   author: https://github.com/obra/superpowers/tree/main/skills/brainstorming
 ---

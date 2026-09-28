@@ -12,6 +12,7 @@ description: >-
   concern including injection prevention, secure deserialization, SSRF protection,
   secrets management, and secure deployment.
 license: GFDL-1.3-or-later
+disable-model-invocation: true
 metadata:
   author: Jim@ChenJ.im
 ---

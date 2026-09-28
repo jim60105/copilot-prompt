@@ -14,6 +14,7 @@ description: >-
   injection prevention, prototype pollution, XSS protection, SSRF prevention,
   secrets management, and secure deployment.
 license: GFDL-1.3-or-later
+disable-model-invocation: true
 metadata:
   author: Jim@ChenJ.im
 ---

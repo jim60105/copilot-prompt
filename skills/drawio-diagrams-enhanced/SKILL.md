@@ -1,6 +1,7 @@
 ---
 name: drawio-diagrams-enhanced
 description: This skill should be used when the user asks to "create a diagram", "draw a flowchart", "make a swimlane diagram", "create WBS", "generate RACI matrix", "build network diagram", "create org chart", or mentions draw.io, diagrams.net, BPMN, UML, Gantt, PERT, or project management diagrams. Integrates with next-ai-draw-io MCP server for real-time diagram creation and editing.
+disable-model-invocation: true
 metadata:
   author: https://github.com/WingsZeng/dotfiles/tree/master/dot_config/goose/skills/drawio-diagrams-enhanced
 ---

@@ -14,6 +14,7 @@ description: >-
   consumption limits, business flow protection, API inventory management, and
   secure third-party API consumption.
 license: GFDL-1.3-or-later
+disable-model-invocation: true
 metadata:
   author: Jim@ChenJ.im
 ---
