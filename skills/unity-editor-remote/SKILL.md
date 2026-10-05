@@ -8,6 +8,9 @@ description: >-
   (5) select objects or aim the Scene camera, (6) query editor window layout.
   Injects a file-polling command bridge (UnityRemote.cs) — prefer this over
   batchmode (fights the Library lock) or GUI automation.
+license: GFDL-1.3-or-later
+metadata:
+  author: Jim@ChenJ.im
 ---
 
 # Unity Editor Remote
