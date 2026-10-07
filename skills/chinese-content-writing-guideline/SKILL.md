@@ -18,6 +18,8 @@ This skill provides the language-specific rules for producing high-quality 正�
 
 ## Language and Formatting
 
+Taiwan readers parse full-width punctuation, CJK–Latin spacing, and Taiwan terminology as native; half-width commas, cramped `使用Docker`, or mainland terms such as 代碼 and 函數 mark the text as converted or careless.
+
 - Write in **Traditional Chinese 正體中文** (zh-TW) with full-width punctuation（，。、；：「」『』（）！？）
 - Always insert a single space between Chinese characters and alphanumeric characters (e.g., `使用 Docker 建立`)
 - Use standard Taiwan Traditional Chinese terminology for technical terms
@@ -26,16 +28,30 @@ This skill provides the language-specific rules for producing high-quality 正�
 
 ## Grammar Constraints
 
+The 「是…的」 tail and reduplicated words soften a statement into speech-like filler; a plain declarative carries the same fact with less noise.
+
 - **Sentence-final 的**: never end a clause with 「的」 immediately before 「，」 or 「。」 (the 「是…的」 emphatic tail). Rewrite as a plain declarative, drop the 的, or fold the 的-phrase into the clause so it no longer lands on the boundary.
 - Avoid reduplicated words (疊字)
 
 ## English Terms
 
+Switching between an English term and its translation makes readers wonder whether they are two different things; introducing the pairing once and then sticking to the Chinese keeps one name per concept.
+
 When an English term appears multiple times, check for a common zh-TW translation or abbreviation. If found, present the original term with its Chinese equivalent the first time, then use only the Chinese version thereafter. This rule does not apply to proper nouns, including personal names.
 
 ## Review Checklist
 
-Run the review checklist of `writing-style-guideline` first, then verify every item below:
+Run the review checklist and linter of `writing-style-guideline` first. Then run this skill's linter:
+
+```bash
+# Path is relative to this skill's directory; call it by absolute path from the project.
+<skill-dir>/scripts/lint.sh draft.md
+some-command | <skill-dir>/scripts/lint.sh -
+```
+
+It reports 「您」, sentence-final 「的，」「的。」, missing CJK–alphanumeric spacing, half-width punctuation next to Chinese characters as `ERROR`; reduplicated words, mainland terminology (with the Taiwan replacement in the rule name), and lowercase English terms that appear more than once as `WARN`. Code blocks, inline code, URLs, and link definitions are skipped. Legitimate reduplication such as 謝謝 and terms in other senses (對象 as a partner) are expected warnings. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`.
+
+Then verify every item below:
 
 1. Is all text in Traditional Chinese with full-width punctuation?
 2. Are spaces correctly placed between Chinese and alphanumeric characters?

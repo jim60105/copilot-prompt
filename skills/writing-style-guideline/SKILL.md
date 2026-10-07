@@ -14,14 +14,20 @@ metadata:
 
 This skill defines the writing style for all content regardless of language: structure, tone, rhetorical constraints, banned phrases, and the review checklist. Language-specific rules (script, punctuation width, spacing, grammar particles, and terminology) live in separate skills. For Traditional Chinese (zh-TW), apply `chinese-content-writing-guideline` together with this skill.
 
+Most rules here target the patterns that make text read as machine-generated or padded: templated rhetoric, stock phrases, and vague authority. Readers spot these quickly and stop trusting the content, so each rule states what to avoid and why. When a sentence breaks the letter of a rule for a good reason, keep the reason in mind; when a sentence avoids the letter but keeps the pattern, it still violates the rule.
+
 Some rules below quote zh-TW literals because they were first written for Chinese content. When writing in another language, apply the same rule to the direct equivalent expressions in that language.
 
 ## Voice
+
+A single named author with a direct line to the reader reads as accountable; a corporate 「我們」 or "we" hides who is making the claim.
 
 - Refer to the author in the first-person singular (「我」, "I"), never the first-person plural (「我們」, "we").
 - Address readers directly and informally (「你」, "you"); avoid overly formal or distant forms of address.
 
 ## Structure
+
+Readers decide within the first paragraph whether to keep reading, so the conclusion goes first and the evidence follows.
 
 - Use inverted pyramid structure: core conclusion and scope first, supporting evidence second
 - Opening paragraph states the core conclusion and scope directly
@@ -41,6 +47,8 @@ Some rules below quote zh-TW literals because they were first written for Chines
 
 ## Output Principles
 
+These principles keep every claim checkable by the reader.
+
 1. **Facts First**: All judgments must rest on verifiable data, case studies, or explicit logic. No vague attributions like 「研究指出」 or 「資料顯示」 ("studies show", "data suggests")
 2. **Direct Statement**: Prefer neutral, verifiable declarative and conditional sentences
 3. **De-templated Rhythm**: Avoid mechanical three-point structures and symmetrical parallelism
@@ -50,6 +58,8 @@ Some rules below quote zh-TW literals because they were first written for Chines
 
 ### Rhetorical Device Quotas
 
+These devices are the most recognisable fingerprints of templated writing. A contrastive construction invents a wrong view only to knock it down; a tricolon pads one point into three; a chain of rhetorical questions delays the answer; an em-dash bolts an afterthought onto a sentence instead of giving it its own. Each one adds rhythm without adding information.
+
 - **Contrastive Construction** (「不是…是」「不是…而是」「這不是…，是」「差別不在於…而在於…」; in English "not X, but Y", "It's not X, it's Y", "The difference isn't X, it's Y"): never use. Zero instances allowed; grep the literal strings 不是…而是 / 這不是…是 / 差別不在 (or `not .*, but`, `isn't .*, it's` in English) to verify. Rewrite each as a direct statement of the fact.
 - **Parallelism/Tricolons**: never use
 - **Rhetorical Questions**: max once per post, must not chain >2, concrete answer must follow
@@ -57,15 +67,21 @@ Some rules below quote zh-TW literals because they were first written for Chines
 
 ### Punctuation Constraint
 
+A mid-sentence colon splits one thought into a label and a payoff, which is the same staged-reveal rhythm as the devices above.
+
 Avoid using colons in the middle of sentences: Use commas instead to revise them into smooth sentences. This does not apply to bulleted or listed items.
 
 ### Banned Phrases
+
+These phrases are stock filler: they announce importance (「至關重要」), certainty (「很清楚」), or a reveal (「一個事實」) instead of demonstrating it. Delete the phrase and state the fact; if nothing is left, the sentence had nothing to say.
 
 Never use the following expressions. When writing in another language, the ban extends to their direct equivalents (for example "in summary", "not only… but also…", "effectively", "often", "crucial", "meticulously crafted", "ensure", "reminds us", "it's not… it's…", "the key difference", "the core issue", "an uncomfortable truth", "systematically", "precisely", "only… can…", "honestly face", "very clear", "structural").
 
 「總的來說」 「不只...更...」 「不僅...也...」 「...能有效...」 「往往」 「至關重要」 「精心打造」 「確保」 「直接講」 「先講」 「提醒我們」 「差別不在於...而在於...」 「一個...另一個」 「就像...」 「表面上...，...時，可能截然不同」 「這不是...是...」 「...問題也值得關注」 「一個事實」 「關鍵差異」 「最可怕的不是...」 「核心問題」 「不是...而是...」 「令人不安的事實」 「坐不住」 「系統性地」 「很精準」 「只有...才能...」 「誠實面對」 「不舒服」 「不太舒服」 「很清楚」 「講清楚」 「非常清楚」 「清晰」 「精準地」 「把這件事算得很死」 「認出了自己」 「結構性的」 「守得住」 「守不住」 「收在這裡」
 
 ### Additional Prohibitions
+
+Hedges, staged pondering, mirror metaphors, and claims of discomfort perform an emotion or a thought process instead of reporting the result. Physical-action verbs on abstract objects create a vivid picture that misstates the actual mechanism.
 
 - Avoid hedging phrases like 「可以說」「某種程度上」「在多數情況下」 ("arguably", "to some extent", "in most cases"); replace with conditional qualifications
 - Avoid saying things like 「我想了很久」 「我停下來想了一下」 「停下來很久」 ("I thought about this for a long time", "I paused to think"), or "being dissected" / "reading an autopsy report."
@@ -95,7 +111,17 @@ Apply these transformations when a restricted pattern appears:
 
 ## Review Checklist
 
-Before finalizing, verify every item:
+Before finalizing, run the linter on the draft. It catches the literal patterns (em-dash, contrastive constructions in zh-TW and English, banned phrases, hedging, 「先說…」 openers, staged pondering, first-person plural, mirror metaphors, mid-sentence colons, and the question-mark count) so the manual pass can focus on judgment:
+
+```bash
+# Path is relative to this skill's directory; call it by absolute path from the project.
+<skill-dir>/scripts/lint.sh draft.md
+some-command | <skill-dir>/scripts/lint.sh -
+```
+
+`ERROR` lines are hard-constraint violations; rewrite each one. `WARN` lines need a judgment call in context (a literal mirror, a quoted "we", a colon inside a label). Exit status 1 means at least one error remains. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`. A clean run does not prove compliance: paraphrased banned phrases, tricolons, and metaphors are not machine-detectable.
+
+Then verify every item:
 
 1. Do consecutive paragraph openings use the same rhetorical device? Rewrite if yes.
 2. Do any restricted devices exceed their quota? Retain only the most necessary instance.
@@ -103,4 +129,5 @@ Before finalizing, verify every item:
 4. Are there unsourced strong assertions? Rewrite to conditional qualifications.
 5. Are sentences overlong? Split into short sentences with clear subject-verb-object structure.
 6. For every verb, is its object concrete or abstract? A physical-action verb with an abstract object must be rewritten as a literal statement.
-7. Did you also run the review checklist of the language-specific skill (e.g. `chinese-content-writing-guideline`)?
+7. Does any paragraph pad one point into three parallel items, or lean on a metaphor where the fact would do? The linter cannot see these.
+8. Did you also run the review checklist and linter of the language-specific skill (e.g. `chinese-content-writing-guideline`)?
