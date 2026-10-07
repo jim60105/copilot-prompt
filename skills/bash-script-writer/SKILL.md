@@ -29,7 +29,7 @@ Write Bash (default) or Zsh scripts following project standards, and decide whet
 
 ### Otherwise — prefer Bash, suggest Zsh only when it clearly pays off
 
-Bash is the default: it is installed nearly everywhere, most contributors read it fluently, and ShellCheck fully supports it (ShellCheck does **not** lint Zsh).
+Bash is the default: it is installed nearly everywhere and ShellCheck fully supports it (ShellCheck does **not** lint Zsh).
 
 Suggest Zsh only when the script would make **substantial** use of one or more of these advantages:
 
@@ -46,7 +46,7 @@ Suggest Zsh only when the script would make **substantial** use of one or more o
 Weigh against the costs:
 
 - Zsh may not be installed on servers, containers, CI runners, or teammates' machines.
-- No ShellCheck support; fewer reviewers are fluent in Zsh idioms.
+- No ShellCheck support.
 - Mixed shells in one project add cognitive load.
 
 **Decision rule:**
@@ -59,7 +59,7 @@ Weigh against the costs:
 When recommending Zsh, stop before writing code and ask the user. Present:
 
 1. The specific Zsh features the script would use and what they simplify (concrete, not generic).
-2. The costs that apply in this context (runtime availability, ShellCheck, team familiarity).
+2. The costs that apply in this context (runtime availability, ShellCheck).
 3. A clear default: "I will write it in Bash unless you confirm Zsh."
 
 Only proceed with Zsh after explicit confirmation. If the user declines or does not answer clearly, use Bash.
