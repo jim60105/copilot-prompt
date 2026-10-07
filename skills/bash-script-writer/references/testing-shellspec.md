@@ -1,12 +1,17 @@
-# Testing Guideline for Zsh Scripts
+# Testing Guideline for Shell Scripts
 
-This document provides comprehensive guidelines for writing effective BDD (Behavior-Driven Development) tests using ShellSpec in our image dataset preparation tools project.
+This document provides comprehensive guidelines for writing effective BDD (Behavior-Driven Development) tests for Bash and Zsh scripts using ShellSpec.
+
+> [!NOTE]
+> ShellSpec is **optional**. Use it only when the project is mainly a Bash/Zsh script project, or when the user explicitly asks for tests. Do not introduce ShellSpec for a small helper script inside a project mainly written in another language. See the testing decision in `SKILL.md`.
+>
+> Examples below use Bash (`.sh`). For Zsh scripts, apply the adjustments in `zsh.md` (run with `shellspec --shell zsh`, `.zsh` script paths, `zsh -n` syntax checks).
 
 ## Overview
 
 We use [ShellSpec](https://shellspec.info/) as our testing framework with a focus on:
 
-- **85%+ coverage** requirement for all zsh scripts
+- **85%+ coverage** requirement for all shell scripts under test
 - **Behavior-Driven Development** (BDD) approach
 - **Command-based mocking** for external dependencies
 - **Comprehensive test scenarios** covering normal, edge, and error cases
@@ -30,7 +35,7 @@ spec/
 ### Basic Template
 
 ```bash
-#!/bin/zsh
+#!/usr/bin/env bash
 
 eval "$(shellspec - -c) exit 1"
 # Copyright (C) 2026 Jim Chen <Jim@ChenJ.im>, licensed under GPL-3.0-or-later
@@ -40,7 +45,7 @@ eval "$(shellspec - -c) exit 1"
 # Include spec helper for common utilities
 Include spec/spec_helper.sh
 
-Describe 'script_name.zsh'
+Describe 'script_name.sh'
   setup() {
     setup_test_env
   }
@@ -64,7 +69,7 @@ End
 
 ### Essential Elements
 
-1. **Shebang**: Always use `#!/bin/zsh`
+1. **Shebang**: Match the shell under test (`#!/usr/bin/env bash`, or `#!/usr/bin/env zsh` for Zsh)
 2. **ShellSpec initialization**: `eval "$(shellspec - -c) exit 1"`
 3. **GPL-3.0-or-later license header**
 4. **Include spec_helper**: `Include spec/spec_helper.sh`
@@ -77,7 +82,7 @@ End
 Use `Describe` to group related tests:
 
 ```bash
-Describe 'resize_images.zsh'
+Describe 'resize_images.sh'
   Describe 'Image processing'
     # Tests for image processing functionality
   End
@@ -104,13 +109,13 @@ Use `When` to execute the code being tested:
 
 ```bash
 # For direct script execution
-When run script "$SHELLSPEC_PROJECT_ROOT/script_name.zsh"
+When run script "$SHELLSPEC_PROJECT_ROOT/script_name.sh"
 
 # For function calls
 When call function_name arg1 arg2
 
 # For script execution with arguments
-When run script "$SHELLSPEC_PROJECT_ROOT/script_name.zsh" "arg1"
+When run script "$SHELLSPEC_PROJECT_ROOT/script_name.sh" "arg1"
 ```
 
 > [!IMPORTANT]
@@ -119,18 +124,18 @@ When run script "$SHELLSPEC_PROJECT_ROOT/script_name.zsh" "arg1"
 > ShellSpec only measures coverage for shell scripts executed in specific ways:
 >
 > - Only scripts executed with `When run script` or `When run source` are included in coverage measurement.
-> - Scripts executed with `When run zsh`, `When call zsh` or `When run command` (i.e., directly invoking zsh or another shell to run the script) are **not** included in coverage measurement.
+> - Scripts executed with `When run bash`, `When run zsh`, `When call bash`, `When call zsh` or `When run command` (i.e., directly invoking bash, zsh, or another shell to run the script) are **not** included in coverage measurement.
 > - Only `When run script`/`When run source` will execute in the same shell and allow correct coverage tracking.
 >
 > ```bash
 > # Bad Practice, NEVER do this:
-> When run zsh "$SHELLSPEC_PROJECT_ROOT/script_name.zsh"
+> When run bash "$SHELLSPEC_PROJECT_ROOT/script_name.sh"
 > ```
 >
 > **Practical advice:**
 >
-> - For behavior/functional tests, always use `When run script "$SHELLSPEC_PROJECT_ROOT/script_name.zsh"` to ensure coverage is measured.
-> - Use `When call zsh` only for syntax checking (e.g., `When call zsh -n`) or special cases (e.g., shebang behavior).
+> - For behavior/functional tests, always use `When run script "$SHELLSPEC_PROJECT_ROOT/script_name.sh"` to ensure coverage is measured.
+> - Use `When call bash` / `When call zsh` only for syntax checking (e.g., `When call bash -n`) or special cases (e.g., shebang behavior).
 > - This ensures the coverage report accurately reflects the code exercised by your tests.
 
 > [!TIP]
@@ -193,7 +198,7 @@ mock_user_input() {
 # Use in tests:
 It 'should handle user input'
   # The script will receive "test_input" when it reads from stdin
-  When run script "$SHELLSPEC_PROJECT_ROOT/script.zsh" <<< "test_input"
+  When run script "$SHELLSPEC_PROJECT_ROOT/script.sh" <<< "test_input"
 End
 ```
 
@@ -230,8 +235,8 @@ create_test_dataset "mixed_issues" # Various issues
 ### 1. Syntax Validation
 
 > [!IMPORTANT]
-> **All zsh syntax validation tests are centralized in `spec/framework_integration_spec.sh`.**
-> Do **not** write syntax validation (`zsh -n ...`) in individual test files. This avoids duplication and ensures a single source of truth for syntax checks.
+> **All syntax validation tests are centralized in `spec/framework_integration_spec.sh`.**
+> Do **not** write syntax validation (`bash -n ...` / `zsh -n ...`) in individual test files. This avoids duplication and ensures a single source of truth for syntax checks.
 
 If you need to add or update syntax validation, only modify `spec/framework_integration_spec.sh`.
 
@@ -239,7 +244,7 @@ If you need to add or update syntax validation, only modify `spec/framework_inte
 
 ```bash
 It 'should handle empty directory gracefully'
-  When run script "$SHELLSPEC_PROJECT_ROOT/script_name.zsh"
+  When run script "$SHELLSPEC_PROJECT_ROOT/script_name.sh"
   The status should be success
   The output should include "No files found"
 End
@@ -254,7 +259,7 @@ It 'should process existing files'
     echo "800 600"
   End
   
-  When run script "$SHELLSPEC_PROJECT_ROOT/resize_images.zsh"
+  When run script "$SHELLSPEC_PROJECT_ROOT/resize_images.sh"
   The status should be success
   The output should include "Processing: test.jpg"
 End
@@ -267,7 +272,7 @@ It 'should handle missing dependencies'
   export OLD_PATH="$PATH"
   export PATH="/nonexistent"
   
-  When run script "$SHELLSPEC_PROJECT_ROOT/script_name.zsh"
+  When run script "$SHELLSPEC_PROJECT_ROOT/script_name.sh"
   The status should be failure
   The stderr should include "command not found"
   
@@ -281,7 +286,7 @@ End
 It 'should modify file contents correctly'
   echo "original content" > test.txt
   
-  When run script "$SHELLSPEC_PROJECT_ROOT/process_txt_files.zsh" "trigger"
+  When run script "$SHELLSPEC_PROJECT_ROOT/process_txt_files.sh" "trigger"
   The contents of file test.txt should equal "trigger, original content"
 End
 ```
@@ -335,7 +340,7 @@ Describe 'Multiple scenarios'
   Example "should process $1 files with $2 dimensions"
     create_test_image "test.$1" "${2%x*}" "${2#*x}"
     
-    When run script "$SHELLSPEC_PROJECT_ROOT/script.zsh"
+    When run script "$SHELLSPEC_PROJECT_ROOT/script.sh"
     The status should be success
   End
 End
@@ -360,7 +365,7 @@ End
 
 ```bash
 It 'should output progress information'
-  When run script "$SHELLSPEC_PROJECT_ROOT/script.zsh"
+  When run script "$SHELLSPEC_PROJECT_ROOT/script.sh"
   The output should match pattern "Processing: * files"
   The stderr should match pattern "*Loaded * active tag aliases*"
 End
