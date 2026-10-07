@@ -2,7 +2,7 @@
 
 字元與詞彙都換對之後，文字仍可能讀起來不像臺灣習慣的自然寫法。本檔處理字典表達不了的部分：介係詞的選擇、動賓結構的鬆緊、副詞的分佈與量詞習慣。
 
-適用時機是 `convert.py` 跑完、MUST FIX 與 REVIEW 都處理完之後。**只調整語言在地化，不改寫論點、結構與語氣**；整體寫作規範與風格引導屬於 `chinese-content-writing-guideline` 的職責，兩者不重疊。
+適用時機是 `convert.py` 跑完、MUST FIX 與 REVIEW 都處理完之後。**只調整語言在地化，不改寫論點、結構與語氣**；整體寫作規範與風格引導屬於 `writing-style-guideline` 與 `chinese-content-writing-guideline` 的職責，彼此不重疊。
 
 ## 目錄
 

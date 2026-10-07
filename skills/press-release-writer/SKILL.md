@@ -9,7 +9,7 @@ metadata:
 
 # Press Release Writer
 
-> **Prerequisite**: Always apply `chinese-content-writing-guideline` skill alongside this skill for language, formatting, tone, rhetorical constraints, and banned phrases.
+> **Prerequisite**: Always apply `writing-style-guideline` skill alongside this skill for structure, tone, rhetorical constraints, and banned phrases, and `chinese-content-writing-guideline` skill for zh-TW language, formatting, and terminology.
 
 ## Step 1: Load Persona
 
