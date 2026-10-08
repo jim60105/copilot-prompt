@@ -1,0 +1,1087 @@
+{
+ "id": "fantasy-human",
+ "region": "奇幻",
+ "era": "人類",
+ "label": "奇幻‧人類",
+ "note": "適用於高奇幻／低奇幻／TRPG 場景的人類角色命名，走喬治．馬丁式擬真中世紀命名風格。名字為原創，非收錄自既有奇幻作品之專有名字。",
+ "corpus_note": "命名風格參考喬治．馬丁（George R.R. Martin）常見手法：取讀者熟悉的真實英語人名，改動一兩個字母造出既熟悉又陌生的變體（如 Edward→Edvard、Peter→Petyn、Catherine→Catryn），營造擬真中世紀氛圍而非奇語感。姓氏採中世紀英式命名法，涵蓋地景、職業，以及私生子慣用姓（Snow／Stone／Rivers／Hill／Waters／Sand／Flowers／Storm／Pyke 一類，私生子常以地景命名以別於婚生子嗣）。所有給名和姓氏均為本資料包依上述風格自建之原創組合，已比對知名角色名清單確認未照抄。",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "license_note": "語料整理自公開統計和文獻，本站的涵義標注、時代分包和編輯著作採 CC BY 4.0 授權，引用請註明出處。",
+ "rules": {
+  "naming": {
+   "note": "人類重視世襲姓氏和家族傳承，貴族冠家名，私生子則依出生地取地景私生子姓（如北境的 Snow、河灣的 Rivers）以別於婚生子嗣。"
+  }
+ },
+ "surnames": [
+  {
+   "s": "Snow",
+   "meaning": "雪，私生子常以地景命名，冷寒意象"
+  },
+  {
+   "s": "Stone",
+   "meaning": "石，私生子常以地景命名，堅硬意象"
+  },
+  {
+   "s": "Rivers",
+   "meaning": "河諸流，私生子常以地景命名，水系意象"
+  },
+  {
+   "s": "Hill",
+   "meaning": "丘，私生子常以地景命名，坡地意象"
+  },
+  {
+   "s": "Waters",
+   "meaning": "水澤，私生子常以地景命名，海濱意象"
+  },
+  {
+   "s": "Pyke",
+   "meaning": "梭魚／尖峰，私生子常以地景命名，兼指魚和尖岩"
+  },
+  {
+   "s": "Sand",
+   "meaning": "沙，私生子常以地景命名，乾旱沙地意象"
+  },
+  {
+   "s": "Flowers",
+   "meaning": "繁花，私生子常以地景命名，花田意象"
+  },
+  {
+   "s": "Storm",
+   "meaning": "風暴，私生子常以地景命名，雷雨意象"
+  },
+  {
+   "s": "Greymoor",
+   "meaning": "灰荒原，色彩和曠野意象的地景姓"
+  },
+  {
+   "s": "Thornbury",
+   "meaning": "荊棘堡壘，thorn 和 bury 合成的家族姓"
+  },
+  {
+   "s": "Oldoak",
+   "meaning": "古橡，年歲和橡樹意象的老家族姓"
+  },
+  {
+   "s": "Whitfield",
+   "meaning": "白野，開闊白地的地景取姓"
+  },
+  {
+   "s": "Ashdown",
+   "meaning": "白蠟樹丘，樹木和坡地合成的地景姓"
+  },
+  {
+   "s": "Longwater",
+   "meaning": "長水，蜿蜒水系的地景取姓"
+  },
+  {
+   "s": "Coldbrook",
+   "meaning": "寒溪，冷冽溪流的地景取姓"
+  },
+  {
+   "s": "Fenwick",
+   "meaning": "沼村，fen（沼澤）加 wick（村）的地景姓"
+  },
+  {
+   "s": "Hollowmere",
+   "meaning": "窪地湖，凹地和湖泊意象的家族姓"
+  },
+  {
+   "s": "Ravenshill",
+   "meaning": "烏鴉之丘，飛鳥和坡地意象的家族姓"
+  },
+  {
+   "s": "Wyndhall",
+   "meaning": "風之廳堂，天候和宅邸意象的家族姓"
+  },
+  {
+   "s": "Blackmere",
+   "meaning": "黑湖，色彩和湖泊意象的古老家族姓"
+  },
+  {
+   "s": "Stormbray",
+   "meaning": "風暴陡坡，天候和地景合成的家族姓"
+  },
+  {
+   "s": "Duncastle",
+   "meaning": "褐堡，dun（灰褐）和城堡意象的家族姓"
+  },
+  {
+   "s": "Marshton",
+   "meaning": "沼鎮，marsh 和 town 合成的地景姓"
+  },
+  {
+   "s": "Elderwood",
+   "meaning": "接骨木林，樹木地景意象的家族姓"
+  },
+  {
+   "s": "Foxbourne",
+   "meaning": "狐溪，野獸和小河意象的地景姓"
+  },
+  {
+   "s": "Harrowdale",
+   "meaning": "耙田之谷，農地和谷地意象的家族姓"
+  },
+  {
+   "s": "Nettlewood",
+   "meaning": "蕁麻林，野草林地意象的地景姓"
+  },
+  {
+   "s": "Reedmoor",
+   "meaning": "蘆葦荒原，濕地植被意象的地景姓"
+  },
+  {
+   "s": "Hawksworth",
+   "meaning": "鷹之領地，猛禽和封地意象的家族姓"
+  },
+  {
+   "s": "Coldwater",
+   "meaning": "寒水，冷冽水源的地景取姓"
+  },
+  {
+   "s": "Oakenford",
+   "meaning": "橡木渡口，樹木和河渡合成的地景姓"
+  },
+  {
+   "s": "Highmark",
+   "meaning": "高界，制高點和邊界意象的家族姓"
+  },
+  {
+   "s": "Fletcher",
+   "meaning": "製箭匠，職業取姓，古法語 flèche（箭）"
+  },
+  {
+   "s": "Mason",
+   "meaning": "石匠，職業取姓，中世紀工匠家族氣質"
+  },
+  {
+   "s": "Tanner",
+   "meaning": "鞣皮匠，職業取姓，皮革工坊意象"
+  },
+  {
+   "s": "Cooper",
+   "meaning": "製桶匠，職業取姓，桶匠世家氣質"
+  },
+  {
+   "s": "Thatcher",
+   "meaning": "蓋茅匠，職業取姓，鋪屋頂的工匠意象"
+  },
+  {
+   "s": "Chandler",
+   "meaning": "製燭匠，職業取姓，蠟燭和油商意象"
+  },
+  {
+   "s": "Cordwyn",
+   "meaning": "製鞋匠，cordwainer（皮鞋匠）縮改的職業姓"
+  }
+ ],
+ "given": {
+  "m": [
+   {
+    "g": "Edvard",
+    "meaning": "Edward 改一字母，古英語「富裕的守護者」"
+   },
+   {
+    "g": "Edwold",
+    "meaning": "Edward 和 old 混成，古英語「富裕、年長」意象"
+   },
+   {
+    "g": "Edwyth",
+    "meaning": "Edward 的柔化尾音變體，「富裕守護」意象"
+   },
+   {
+    "g": "Petyn",
+    "meaning": "Peter 改拼，希臘語「磐石」"
+   },
+   {
+    "g": "Peder",
+    "meaning": "Peter 的北歐式拼法，「磐石」意象"
+   },
+   {
+    "g": "Roban",
+    "meaning": "Robert 改拼，日耳曼語「光耀的名聲」"
+   },
+   {
+    "g": "Rubert",
+    "meaning": "Robert 換母音變體，「光耀名聲」意象"
+   },
+   {
+    "g": "Brandel",
+    "meaning": "Brandon 加柔綴，古英語「金雀花丘」"
+   },
+   {
+    "g": "Brannoc",
+    "meaning": "Brendan 改拼，蓋爾語「王子、渡鴉」"
+   },
+   {
+    "g": "Jonel",
+    "meaning": "John 加尾綴，希伯來語「上主仁慈」"
+   },
+   {
+    "g": "Johard",
+    "meaning": "John 和 -hard 混成，「上主仁慈、剛強」意象"
+   },
+   {
+    "g": "Samvel",
+    "meaning": "Samuel 換子音，希伯來語「上主已垂聽」"
+   },
+   {
+    "g": "Samkin",
+    "meaning": "Samuel 的暱稱式變體，「上主垂聽」意象"
+   },
+   {
+    "g": "Richyn",
+    "meaning": "Richard 加尾綴，日耳曼語「剛強的統治者」"
+   },
+   {
+    "g": "Ricard",
+    "meaning": "Richard 去 h 變體，「剛強統治」意象"
+   },
+   {
+    "g": "Wilhem",
+    "meaning": "William 換序變體，「堅定的守護」"
+   },
+   {
+    "g": "Wilmar",
+    "meaning": "William 和 -mar 混成，「堅定、聲名」意象"
+   },
+   {
+    "g": "Tomas",
+    "meaning": "Thomas 去 h，亞拉姆語「孿生子」"
+   },
+   {
+    "g": "Tomkin",
+    "meaning": "Thomas 的暱稱式變體，「孿生子」意象"
+   },
+   {
+    "g": "Danyel",
+    "meaning": "Daniel 改拼，希伯來語「上主是我的審判」"
+   },
+   {
+    "g": "Danvor",
+    "meaning": "Daniel 換尾音變體，「上主審判」意象"
+   },
+   {
+    "g": "Aldous",
+    "meaning": "Aldous 古名，古英語「年長睿智」"
+   },
+   {
+    "g": "Aldwin",
+    "meaning": "Aldwin 古名，古英語「年長之友」"
+   },
+   {
+    "g": "Godwyn",
+    "meaning": "Godwin 古名，古英語「神的朋友」"
+   },
+   {
+    "g": "Godfry",
+    "meaning": "Godfrey 去 e，日耳曼語「神的和平」"
+   },
+   {
+    "g": "Godard",
+    "meaning": "Goddard 改拼，日耳曼語「神般剛強」"
+   },
+   {
+    "g": "Hobard",
+    "meaning": "Hubert 改拼，日耳曼語「心智明亮」"
+   },
+   {
+    "g": "Humfrey",
+    "meaning": "Humphrey 去 p，古英語「和平的巨人」"
+   },
+   {
+    "g": "Edmon",
+    "meaning": "Edmund 縮改，古英語「富裕的守護」"
+   },
+   {
+    "g": "Edmar",
+    "meaning": "Edmund 和 -mar 混成，「富裕、聲名」意象"
+   },
+   {
+    "g": "Marlyn",
+    "meaning": "Merlin 換母音，威爾斯語「海丘、隼」"
+   },
+   {
+    "g": "Marlow",
+    "meaning": "Marlowe 古姓轉名，古英語「殘湖旁」"
+   },
+   {
+    "g": "Alard",
+    "meaning": "Alard 古名，日耳曼語「高貴而剛強」"
+   },
+   {
+    "g": "Alwyn",
+    "meaning": "Alwin 古名，古英語「高貴之友」"
+   },
+   {
+    "g": "Bertram",
+    "meaning": "Bertram 古名，日耳曼語「明亮的渡鴉」"
+   },
+   {
+    "g": "Bertwald",
+    "meaning": "Berthold 改拼，日耳曼語「明亮的統御」"
+   },
+   {
+    "g": "Dominyc",
+    "meaning": "Dominic 改拼，拉丁語「屬於主」"
+   },
+   {
+    "g": "Roderyk",
+    "meaning": "Roderick 改拼，日耳曼語「聲名顯赫的王」"
+   },
+   {
+    "g": "Gawrin",
+    "meaning": "Gawain 換尾音，威爾斯語「白鷹」"
+   },
+   {
+    "g": "Gauvard",
+    "meaning": "Gawain 和 -vard 混成，「白鷹、守護」意象"
+   },
+   {
+    "g": "Lukyn",
+    "meaning": "Lucas 的暱稱式變體，拉丁語「光」"
+   },
+   {
+    "g": "Lucar",
+    "meaning": "Lucas 換尾音變體，「光」意象"
+   },
+   {
+    "g": "Torvald",
+    "meaning": "Torvald 古諾斯名，「雷神的統御」意象"
+   },
+   {
+    "g": "Torgan",
+    "meaning": "Thor 和 -gan 混成，古諾斯語「雷神」意象"
+   },
+   {
+    "g": "Harmond",
+    "meaning": "Herman 換母音，日耳曼語「軍中之人」"
+   },
+   {
+    "g": "Hectyr",
+    "meaning": "Hector 改拼，希臘語「堅守者」"
+   },
+   {
+    "g": "Quintus",
+    "meaning": "Quentin 復古拉丁式，拉丁語「第五個」"
+   },
+   {
+    "g": "Reymar",
+    "meaning": "Raymond 縮改，日耳曼語「明智的守護者」"
+   },
+   {
+    "g": "Reginar",
+    "meaning": "Reginald 縮改，日耳曼語「智慧的統御」"
+   },
+   {
+    "g": "Sigmar",
+    "meaning": "Sigmund 換尾音，日耳曼語「勝利的守護」"
+   },
+   {
+    "g": "Symar",
+    "meaning": "Simon 換尾音，希伯來語「傾聽者」"
+   },
+   {
+    "g": "Denyc",
+    "meaning": "Denis 改拼，源自酒神狄俄倪索斯"
+   },
+   {
+    "g": "Waltyr",
+    "meaning": "Walter 改一字母，日耳曼語「統軍者」"
+   },
+   {
+    "g": "Marek",
+    "meaning": "Mark 的斯拉夫式變體，拉丁語「戰神所屬」"
+   },
+   {
+    "g": "Persyval",
+    "meaning": "Percival 改拼，古法語「刺穿山谷」"
+   },
+   {
+    "g": "Colman",
+    "meaning": "Colman 古名，蓋爾語「小鴿子」"
+   },
+   {
+    "g": "Colvyn",
+    "meaning": "Colin 換尾音，蓋爾語「幼犬、青年」"
+   },
+   {
+    "g": "Elryc",
+    "meaning": "Eric／Alaric 意象，古英語「古老的統治者」"
+   },
+   {
+    "g": "Ryel",
+    "meaning": "Ryan 換序變體，蓋爾語「小王」"
+   },
+   {
+    "g": "Stevan",
+    "meaning": "Stephen 換母音，希臘語「花冠」"
+   },
+   {
+    "g": "Stephar",
+    "meaning": "Stephen 換尾音變體，「花冠、王冠」意象"
+   },
+   {
+    "g": "Kennoth",
+    "meaning": "Kenneth 換母音，蓋爾語「俊美出生」"
+   },
+   {
+    "g": "Adomar",
+    "meaning": "Adam 和 -mar 混成，希伯來語「大地之人」"
+   },
+   {
+    "g": "Mervyl",
+    "meaning": "Mervyn 換尾音，威爾斯語「海丘」"
+   },
+   {
+    "g": "Justan",
+    "meaning": "Justin 換母音，拉丁語「公正」"
+   },
+   {
+    "g": "Rolvan",
+    "meaning": "Roland 換序變體，日耳曼語「聲名之地」"
+   },
+   {
+    "g": "Ormeric",
+    "meaning": "Ormond 和 -ric 混成，古諾斯語「巨蟒的統御」"
+   },
+   {
+    "g": "Byram",
+    "meaning": "Byron 換尾音，古英語「牛棚旁」"
+   },
+   {
+    "g": "Cornys",
+    "meaning": "Cornelius 縮改，拉丁語「號角」"
+   },
+   {
+    "g": "Gilon",
+    "meaning": "Giles 換尾音，希臘語「小山羊、盾」"
+   },
+   {
+    "g": "Hollys",
+    "meaning": "Hollis 改拼，古英語「冬青樹旁」"
+   },
+   {
+    "g": "Elyot",
+    "meaning": "Elliot 改拼，希伯來語「耶和華是神」"
+   },
+   {
+    "g": "Jaremy",
+    "meaning": "Jeremy 換母音，希伯來語「上主提拔」"
+   },
+   {
+    "g": "Karus",
+    "meaning": "Cyril／Carus 意象，拉丁語「親愛的」"
+   },
+   {
+    "g": "Lorent",
+    "meaning": "Lawrence 縮改，拉丁語「桂冠之地」"
+   },
+   {
+    "g": "Mychon",
+    "meaning": "Michael 換尾音，希伯來語「誰能和神相比」"
+   },
+   {
+    "g": "Norbrand",
+    "meaning": "Norbert 和 brand 混成，日耳曼語「北方的火光」"
+   },
+   {
+    "g": "Osgar",
+    "meaning": "Oscar 換母音，古英語「神的矛」"
+   },
+   {
+    "g": "Paulyn",
+    "meaning": "Paul 加尾綴，拉丁語「謙卑、微小」"
+   },
+   {
+    "g": "Reynart",
+    "meaning": "Reynard 換尾音，日耳曼語「剛強的忠告」"
+   },
+   {
+    "g": "Sedwyck",
+    "meaning": "Sedgwick 改拼，古英語「莎草村」"
+   },
+   {
+    "g": "Theomar",
+    "meaning": "Theodore 和 -mar 混成，希臘語「神賜」意象"
+   },
+   {
+    "g": "Utheryn",
+    "meaning": "Uther 加尾綴，凱爾特語「可怕的、卓越」"
+   },
+   {
+    "g": "Verdon",
+    "meaning": "Verdon 古姓轉名，古法語「綠色山丘」"
+   },
+   {
+    "g": "Wystan",
+    "meaning": "Wystan 古名，古英語「戰石」"
+   },
+   {
+    "g": "Yorick",
+    "meaning": "Yorick 古名（源自 George），古希臘語「農夫」"
+   },
+   {
+    "g": "Alistar",
+    "meaning": "Alistair 去 i，希臘語「人類的守護者」"
+   },
+   {
+    "g": "Bonamy",
+    "meaning": "Bonamy 古名，古法語「好朋友」"
+   },
+   {
+    "g": "Courtnar",
+    "meaning": "Courtenay 改尾音，古法語「短鼻、宮廷之地」"
+   },
+   {
+    "g": "Eustyn",
+    "meaning": "Eustace 縮改，希臘語「豐產、穩健」"
+   },
+   {
+    "g": "Ferdyn",
+    "meaning": "Ferdinand 縮改，日耳曼語「勇敢的旅程」"
+   },
+   {
+    "g": "Gulian",
+    "meaning": "Julian 換首音，拉丁語「屬於朱庇特」"
+   },
+   {
+    "g": "Hewett",
+    "meaning": "Hewitt 改拼，日耳曼語「小小的智慧心」"
+   },
+   {
+    "g": "Ivor",
+    "meaning": "Ivor 古名，古諾斯語「弓箭手、紫杉」"
+   },
+   {
+    "g": "Denyn",
+    "meaning": "Dean／Denis 意象，古英語「山谷之人」"
+   },
+   {
+    "g": "Osmar",
+    "meaning": "Osmund 換尾音，古英語「神的守護」"
+   },
+   {
+    "g": "Willart",
+    "meaning": "Willard 換尾音，古英語「意志堅硬」"
+   },
+   {
+    "g": "Meryck",
+    "meaning": "Merrick 改拼，威爾斯語「海洋般顯赫」"
+   },
+   {
+    "g": "Cregar",
+    "meaning": "Craig 加尾綴，蓋爾語「岩石」意象"
+   },
+   {
+    "g": "Berold",
+    "meaning": "Berold 古名，日耳曼語「熊般剛強的統御」"
+   }
+  ],
+  "f": [
+   {
+    "g": "Catherey",
+    "meaning": "Catherine 換尾音，希臘語「純潔」"
+   },
+   {
+    "g": "Catryn",
+    "meaning": "Catherine 縮改，「純潔」意象"
+   },
+   {
+    "g": "Susanne",
+    "meaning": "Susanna 縮改，希伯來語「百合」"
+   },
+   {
+    "g": "Suzette",
+    "meaning": "Susanna 的柔化暱稱，「百合、優雅」意象"
+   },
+   {
+    "g": "Elysa",
+    "meaning": "Elizabeth 縮改，希伯來語「上主的誓約」"
+   },
+   {
+    "g": "Elspet",
+    "meaning": "Elspeth 去 h，「上主的誓約」蘇格蘭式"
+   },
+   {
+    "g": "Margose",
+    "meaning": "Margaret 換尾音，希臘語「珍珠」"
+   },
+   {
+    "g": "Marabel",
+    "meaning": "Mirabel 換母音，拉丁語「可讚嘆的美」"
+   },
+   {
+    "g": "Rosamund",
+    "meaning": "Rosamund 古名，日耳曼語「馬的守護／玫瑰之世」"
+   },
+   {
+    "g": "Rosanne",
+    "meaning": "Roseanne 縮改，拉丁語「柔美的玫瑰」"
+   },
+   {
+    "g": "Aline",
+    "meaning": "Adeline 縮改，日耳曼語「高貴」"
+   },
+   {
+    "g": "Alienor",
+    "meaning": "Eleanor 中世紀拼法，「明亮、外邦之光」"
+   },
+   {
+    "g": "Elyana",
+    "meaning": "Eliana 改拼，希伯來語「上主已回應」"
+   },
+   {
+    "g": "Eleyna",
+    "meaning": "Elena 改拼，希臘語「明亮的火炬」"
+   },
+   {
+    "g": "Helwys",
+    "meaning": "Heloise 中世紀拼法，日耳曼語「健壯、廣博」"
+   },
+   {
+    "g": "Ysolde",
+    "meaning": "Isolde 改拼，凱爾特語「凝望的美人」"
+   },
+   {
+    "g": "Ysabel",
+    "meaning": "Isabel 改拼，希伯來語「上主的誓約」"
+   },
+   {
+    "g": "Isabet",
+    "meaning": "Isabel／Elizabeth 縮改，「上主的誓約」意象"
+   },
+   {
+    "g": "Johanne",
+    "meaning": "Johanna 縮改，希伯來語「上主仁慈」"
+   },
+   {
+    "g": "Yohanna",
+    "meaning": "Johanna 另式改拼，「上主仁慈」意象"
+   },
+   {
+    "g": "Bethan",
+    "meaning": "Bethany 縮改，希伯來語「無花果之屋」"
+   },
+   {
+    "g": "Bethony",
+    "meaning": "Bethany 換母音變體，「無花果之屋」意象"
+   },
+   {
+    "g": "Meredyth",
+    "meaning": "Meredith 改拼，威爾斯語「偉大的君主」"
+   },
+   {
+    "g": "Merewen",
+    "meaning": "Merewen 古英語名，「著名的朋友、海之少女」意象"
+   },
+   {
+    "g": "Gwynesse",
+    "meaning": "Gwyneth 延伸，威爾斯語「幸福、潔白」"
+   },
+   {
+    "g": "Gwenda",
+    "meaning": "Gwendolyn 縮改，威爾斯語「潔白的環」"
+   },
+   {
+    "g": "Winifryd",
+    "meaning": "Winifred 改拼，威爾斯語「幸福的和平」"
+   },
+   {
+    "g": "Wynflaed",
+    "meaning": "Wynflaed 古英語名，「歡愉的美麗」意象"
+   },
+   {
+    "g": "Edwyna",
+    "meaning": "Edwina 改拼，古英語「富裕之友」"
+   },
+   {
+    "g": "Edeva",
+    "meaning": "Eadgifu 古英語名，「富裕的贈禮」意象"
+   },
+   {
+    "g": "Emlyn",
+    "meaning": "Emeline 縮改，日耳曼語「勤勉」"
+   },
+   {
+    "g": "Emeria",
+    "meaning": "Amelia／Emery 意象，日耳曼語「勤勉、勞作」"
+   },
+   {
+    "g": "Aveline",
+    "meaning": "Aveline 古名，日耳曼語「渴望的、堅果」"
+   },
+   {
+    "g": "Avice",
+    "meaning": "Avice 古名，日耳曼語「戰役中的避難」"
+   },
+   {
+    "g": "Sybilla",
+    "meaning": "Sibyl 拉丁化，希臘語「女先知」"
+   },
+   {
+    "g": "Sybella",
+    "meaning": "Sibyl／Bella 意象，「女先知、美麗」意象"
+   },
+   {
+    "g": "Ceceley",
+    "meaning": "Cecily 改拼，拉丁語「盲眼的、天空」"
+   },
+   {
+    "g": "Cecilyn",
+    "meaning": "Cecilia 加尾綴，「盲眼的、天空」意象"
+   },
+   {
+    "g": "Damara",
+    "meaning": "Damaris 縮改，希臘語「溫柔的小牛」"
+   },
+   {
+    "g": "Delyth",
+    "meaning": "Delyth 古名，威爾斯語「俊美、可愛」"
+   },
+   {
+    "g": "Eilwen",
+    "meaning": "Eilwen 古名，威爾斯語「白眉、俊美」"
+   },
+   {
+    "g": "Elowen",
+    "meaning": "Elowen 古名，康瓦爾語「榆樹」"
+   },
+   {
+    "g": "Morwenn",
+    "meaning": "Morwenna 縮改，威爾斯語「海之少女」"
+   },
+   {
+    "g": "Kerra",
+    "meaning": "Kerensa／Kira 意象，康瓦爾語「愛」意象"
+   },
+   {
+    "g": "Kessa",
+    "meaning": "Tessa／Cassia 意象，「收割者、桂皮」意象"
+   },
+   {
+    "g": "Leanor",
+    "meaning": "Leonora 縮改，「明亮之光」意象"
+   },
+   {
+    "g": "Lylla",
+    "meaning": "Lily 加尾綴，拉丁語「百合」意象"
+   },
+   {
+    "g": "Marsella",
+    "meaning": "Marcella 改拼，拉丁語「屬於戰神」"
+   },
+   {
+    "g": "Neyla",
+    "meaning": "Nyla 換母音，蓋爾語「冠軍、雲」"
+   },
+   {
+    "g": "Orenna",
+    "meaning": "Orenda 改拼，「黎明、精神力」意象"
+   },
+   {
+    "g": "Perrelle",
+    "meaning": "Petronella 縮改，拉丁語「磐石」陰性化"
+   },
+   {
+    "g": "Quenelle",
+    "meaning": "Quenella 古名，日耳曼語「宮廷淑女」"
+   },
+   {
+    "g": "Rowanne",
+    "meaning": "Rowan 陰性化，蓋爾語「花楸樹、小紅」"
+   },
+   {
+    "g": "Serilda",
+    "meaning": "Serilda 古名，日耳曼語「披甲的戰女」"
+   },
+   {
+    "g": "Sarette",
+    "meaning": "Sarah 柔化暱稱，希伯來語「公主」"
+   },
+   {
+    "g": "Tallia",
+    "meaning": "Talia 加尾綴，希伯來語「上主的甘露」"
+   },
+   {
+    "g": "Ottilde",
+    "meaning": "Ottilie 改拼，日耳曼語「戰爭中的富足」"
+   },
+   {
+    "g": "Ottiline",
+    "meaning": "Otoline 改拼，「戰爭中的富足」意象"
+   },
+   {
+    "g": "Fenella",
+    "meaning": "Fenella 古名，蓋爾語「白肩」"
+   },
+   {
+    "g": "Fennora",
+    "meaning": "Fenella／Nora 意象，「白肩、榮光」意象"
+   },
+   {
+    "g": "Gysella",
+    "meaning": "Gisela 改拼，日耳曼語「誓約、抵押」"
+   },
+   {
+    "g": "Hazea",
+    "meaning": "Hazel 換尾音，古英語「榛樹」意象"
+   },
+   {
+    "g": "Halisse",
+    "meaning": "Alice／Hollis 意象，「高貴、冬青」意象"
+   },
+   {
+    "g": "Ineve",
+    "meaning": "Genevieve 縮改，「族人之女」意象"
+   },
+   {
+    "g": "Idony",
+    "meaning": "Idonea 古名，古諾斯語「重新煥發」"
+   },
+   {
+    "g": "Joyeuse",
+    "meaning": "Joyce 法式延伸，古法語「歡愉」"
+   },
+   {
+    "g": "Jocelyne",
+    "meaning": "Jocelyn 改拼，日耳曼語「歡愉的部族」"
+   },
+   {
+    "g": "Kyra",
+    "meaning": "Kira 改拼，希臘語「淑女、太陽」"
+   },
+   {
+    "g": "Katryne",
+    "meaning": "Katherine 縮改，希臘語「純潔」"
+   },
+   {
+    "g": "Leonette",
+    "meaning": "Leona 柔化，拉丁語「小母獅」"
+   },
+   {
+    "g": "Lisenn",
+    "meaning": "Lisette 縮改，「上主的誓約」暱稱"
+   },
+   {
+    "g": "Melisent",
+    "meaning": "Millicent 縮改，日耳曼語「工作剛強」"
+   },
+   {
+    "g": "Amicia",
+    "meaning": "Amicia 古名，拉丁語「摯愛的女友」"
+   },
+   {
+    "g": "Nyssa",
+    "meaning": "Nyssa 古名，希臘語「起點、目標」"
+   },
+   {
+    "g": "Nesta",
+    "meaning": "Nesta 古名，威爾斯語「純潔」意象"
+   },
+   {
+    "g": "Orabel",
+    "meaning": "Orabilis 古名，拉丁語「可祈求的、可愛」"
+   },
+   {
+    "g": "Perella",
+    "meaning": "Petronella 縮改，拉丁語「磐石」陰性化"
+   },
+   {
+    "g": "Perina",
+    "meaning": "Petrina 縮改，「磐石」意象"
+   },
+   {
+    "g": "Rohesia",
+    "meaning": "Rohesia 古名，日耳曼語「聲名、玫瑰」"
+   },
+   {
+    "g": "Roheis",
+    "meaning": "Rohese 古拼，「聲名、玫瑰」意象"
+   },
+   {
+    "g": "Sabyne",
+    "meaning": "Sabina 換尾音，拉丁語「薩賓族女子」"
+   },
+   {
+    "g": "Sabetha",
+    "meaning": "Elizabeth／Sabina 意象，「上主的誓約」"
+   },
+   {
+    "g": "Tephanie",
+    "meaning": "Stephanie 去 s，希臘語「花冠」"
+   },
+   {
+    "g": "Thomasyn",
+    "meaning": "Thomasina 縮改，亞拉姆語「孿生子」陰性化"
+   },
+   {
+    "g": "Ursella",
+    "meaning": "Ursula 改拼，拉丁語「小母熊」"
+   },
+   {
+    "g": "Ulwen",
+    "meaning": "Ulwen 古名，古英語「狼般俊美的朋友」意象"
+   },
+   {
+    "g": "Violanne",
+    "meaning": "Violet／Vivianne 意象，拉丁語「紫羅蘭、生命」"
+   },
+   {
+    "g": "Vespira",
+    "meaning": "Vesper 延伸，拉丁語「暮星」意象"
+   },
+   {
+    "g": "Wenessa",
+    "meaning": "Vanessa 換首音，「蝴蝶」意象"
+   },
+   {
+    "g": "Wilmot",
+    "meaning": "Wilhelmina 中世紀陰性小名，「堅定的守護」"
+   },
+   {
+    "g": "Aemylia",
+    "meaning": "Amelia 復古拼法，「勤勉、勞作」"
+   },
+   {
+    "g": "Berena",
+    "meaning": "Berenice 縮改，希臘語「帶來勝利者」"
+   },
+   {
+    "g": "Brangwen",
+    "meaning": "Branwen 改拼，威爾斯語「潔白的渡鴉」"
+   },
+   {
+    "g": "Clarisse",
+    "meaning": "Clarice 法式延伸，拉丁語「明亮、著名」"
+   },
+   {
+    "g": "Clemence",
+    "meaning": "Clemence 古名，拉丁語「溫和、慈悲」"
+   },
+   {
+    "g": "Dameta",
+    "meaning": "Demetria 縮改，希臘語「大地女神所屬」"
+   },
+   {
+    "g": "Elayne",
+    "meaning": "Elaine 改拼，希臘語「明亮的火炬」"
+   },
+   {
+    "g": "Elyza",
+    "meaning": "Eliza 改拼，「上主的誓約」意象"
+   },
+   {
+    "g": "Godelive",
+    "meaning": "Godelieve 古名，日耳曼語「上主所愛」"
+   },
+   {
+    "g": "Hodierne",
+    "meaning": "Hodierna 古名，拉丁語「今日、此時所生」"
+   }
+  ],
+  "u": [
+   {
+    "g": "Alyx",
+    "meaning": "Alex 改拼，希臘語「守護者」",
+    "note": "Alexander 和 Alexandra 的共同暱稱，不分性別皆適用"
+   },
+   {
+    "g": "Robyl",
+    "meaning": "Robin 柔化尾音，日耳曼語「光耀名聲」",
+    "note": "由不分性別通用的 Robin 改造，性別開放"
+   },
+   {
+    "g": "Merry",
+    "meaning": "Meredith／Merritt 縮改，「偉大君主、優點」意象",
+    "note": "短音節暱稱式，不分性別皆適用"
+   },
+   {
+    "g": "Wynn",
+    "meaning": "Wynne 改拼，威爾斯語「潔白、幸福」",
+    "note": "威爾斯語本即不分性別"
+   },
+   {
+    "g": "Aell",
+    "meaning": "Aelric／Aeled 共同字根，古英語「一切、高貴」",
+    "note": "由不同性別名字共有的前綴造成，性別開放"
+   },
+   {
+    "g": "Bryn",
+    "meaning": "Brian／Brynn 共用，威爾斯語「山丘」",
+    "note": "山丘地景意象，不分性別通用"
+   },
+   {
+    "g": "Ellery",
+    "meaning": "Ellery 古姓轉名，古英語「快樂島」",
+    "note": "姓氏轉教名，無明顯性別"
+   },
+   {
+    "g": "Jesse",
+    "meaning": "Jesse 古名，希伯來語「恩賜、財富」",
+    "note": "聖經傳統中不分性別皆用"
+   },
+   {
+    "g": "Karel",
+    "meaning": "Karl／Carol 中間拼寫，日耳曼語「自由人」",
+    "note": "男名 Karl 和女名 Carol 的交會點"
+   },
+   {
+    "g": "Lorane",
+    "meaning": "Lorraine／Lauren 共用，「洛林之地、桂冠」意象",
+    "note": "融合不同性別名字詞根，性別中立"
+   },
+   {
+    "g": "Meryth",
+    "meaning": "Mervyn／Meredith 共用，「海丘、偉大君主」意象",
+    "note": "跨各性別詞根，柔和中性"
+   },
+   {
+    "g": "Ryn",
+    "meaning": "Ryan／Ryanne 縮改，蓋爾語「小王」",
+    "note": "單音節簡化，性別開放"
+   },
+   {
+    "g": "Sary",
+    "meaning": "Sarette／Sarwyn 共用，「公主、纖柔」意象",
+    "note": "柔化詞尾，不分性別皆適用"
+   },
+   {
+    "g": "Toren",
+    "meaning": "Torvald／Tora 共用，古諾斯語「雷神、小丘」",
+    "note": "北歐地景意象，不分性別通用"
+   },
+   {
+    "g": "Vael",
+    "meaning": "Vala／Valeria 共用字根，「被選者、剛健」意象",
+    "note": "陰陽名共有詞頭，中性拼寫"
+   },
+   {
+    "g": "Wren",
+    "meaning": "Wren 自然名，古英語小鳥意象",
+    "note": "英語自然名傳統上不分性別通用"
+   },
+   {
+    "g": "Ashe",
+    "meaning": "Ashley／Ash 改拼，古英語「白蠟樹旁」",
+    "note": "樹木地景名，各性別皆宜"
+   },
+   {
+    "g": "Emry",
+    "meaning": "Emery／Emrys 縮改，日耳曼語「勤勉的統治者」",
+    "note": "由 Emery（男）和 Emrys（威爾斯）共構"
+   },
+   {
+    "g": "Lynn",
+    "meaning": "Lynden／Lyanne 縮改，威爾斯語「湖」",
+    "note": "水景意象，英語中長期不分性別通用"
+   },
+   {
+    "g": "Rowen",
+    "meaning": "Rowan 改拼，蓋爾語「花楸樹、小紅」",
+    "note": "樹木自然名，本即不分性別通用"
+   }
+  ]
+ },
+ "name_order": "gs",
+ "name_sep": null
+}

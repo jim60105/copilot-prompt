@@ -1,0 +1,1382 @@
+{
+ "id": "fantasy-halfling",
+ "region": "奇幻",
+ "era": "半身人",
+ "label": "奇幻‧半身人",
+ "note": "適用於高奇幻／TRPG 場景的半身人（Halfling）角色命名，全數為原創或借用一般英語詞彙（花草、食物、地貌）組合而成的姓名，非收錄自既有奇幻作品之專有角色名。",
+ "corpus_note": "音韻和命名風格模擬 19 世紀英國鄉間田園氣息：給名多借自尋常花卉（如金盞花、雛菊型構詞）、香草香料（如薑、迷迭香型構詞）、樹木植物（如椴樹、赤楊型構詞）等生活化詞彙直接作人名，或以「小稱後綴、暱稱詞根」（-bin、-ick、-ie 等）製造親暱感。姓氏則採「食物／器物／地貌」複合意象命名法（如「好酒桶」「綠瓶」「山丘之下」型構詞），呼應此類矮小種族重視飲食、家業和鄉里安穩的文化性格。此風格規律歸納自主流奇幻作品對「英式田園矮小種族」的一貫塑造慣例，本包所有具體給名、姓氏皆為依此規律重新組合一般英語常見詞彙而成之原創清單，未直接收錄任何既有奇幻作品角色或家族姓氏之專有名字，並已逐一核對排除巧合重複。",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "license_note": "語料整理自公開統計和文獻，本站的涵義標注、時代分包和編輯著作採 CC BY 4.0 授權，引用請註明出處。",
+ "rules": {
+  "naming": {
+   "note": "半身人重視家族與鄉里名譽，姓氏世襲且常直接反映家族傳統產業或代代相傳的體態／性格暱稱（如「釀酒世家」「腳掌寬大的家族」），家族間常以姓氏互相打趣揶揄，屬鄉里熟識文化的一部分，並非貴族頭銜。"
+  }
+ },
+ "surnames": [
+  {
+   "s": "Underhill",
+   "meaning": "「山丘之下」，田園地貌居所式姓氏",
+   "weight": 3
+  },
+  {
+   "s": "Goodbarrel",
+   "meaning": "「好酒桶」，職業／家業意象姓氏，釀酒世家",
+   "weight": 4
+  },
+  {
+   "s": "Greenbottle",
+   "meaning": "「綠瓶」，田園手工業意象姓氏",
+   "weight": 5
+  },
+  {
+   "s": "Ciderbuck",
+   "meaning": "「蘋果酒、雄鹿」複合，田園仕紳風家業姓氏",
+   "weight": 6
+  },
+  {
+   "s": "Applecheek",
+   "meaning": "「蘋果臉頰」，外貌暱稱式姓氏，形容紅潤面色",
+   "weight": 7
+  },
+  {
+   "s": "Cornerstone",
+   "meaning": "「牆角石」，工匠家業意象姓氏",
+   "weight": 3
+  },
+  {
+   "s": "Honeywell",
+   "meaning": "「蜂蜜井」，田園富庶意象姓氏",
+   "weight": 4
+  },
+  {
+   "s": "Thistlewood",
+   "meaning": "「薊林」，田園地貌姓氏",
+   "weight": 5
+  },
+  {
+   "s": "Barleyman",
+   "meaning": "「大麥人」，農作家業姓氏",
+   "weight": 6
+  },
+  {
+   "s": "Fairweather",
+   "meaning": "「好天氣」，樂天意象姓氏",
+   "weight": 7
+  },
+  {
+   "s": "Nutbrown",
+   "meaning": "「堅果棕」，外貌暱稱姓氏，形容膚色髮色",
+   "weight": 3
+  },
+  {
+   "s": "Pudding",
+   "meaning": "「布丁」，飲食暱稱姓氏，田園家族綽號",
+   "weight": 4
+  },
+  {
+   "s": "Sweetbriar",
+   "meaning": "「甜薔薇」，田園植物意象姓氏",
+   "weight": 5
+  },
+  {
+   "s": "Tumbleweed",
+   "meaning": "「風滾草」，形容性喜遊蕩的家族綽號",
+   "weight": 6
+  },
+  {
+   "s": "Willowmere",
+   "meaning": "「柳湖」，田園地貌姓氏",
+   "weight": 7
+  },
+  {
+   "s": "Cobblestone",
+   "meaning": "「鵝卵石」，工匠家業意象姓氏",
+   "weight": 3
+  },
+  {
+   "s": "Meadowsweet",
+   "meaning": "「繡線菊」，田園植物意象姓氏",
+   "weight": 4
+  },
+  {
+   "s": "Oakbarrel",
+   "meaning": "「橡木桶」，釀酒家業姓氏",
+   "weight": 5
+  },
+  {
+   "s": "Puddlefoot",
+   "meaning": "「水窪腳」，外貌暱稱姓氏，形容腳掌寬大常涉水",
+   "weight": 6
+  },
+  {
+   "s": "Rootwell",
+   "meaning": "「根井」，田園地貌姓氏",
+   "weight": 7
+  },
+  {
+   "s": "Silvertoe",
+   "meaning": "「銀趾」，外貌暱稱姓氏",
+   "weight": 3
+  },
+  {
+   "s": "Turnbuckle",
+   "meaning": "「調節扣具」，工匠家業姓氏",
+   "weight": 4
+  },
+  {
+   "s": "Wickerbee",
+   "meaning": "「柳條蜂」，手工編織家業意象姓氏",
+   "weight": 5
+  },
+  {
+   "s": "Bramblebutter",
+   "meaning": "「荊棘奶油」，田園飲食意象姓氏",
+   "weight": 6
+  },
+  {
+   "s": "Cheesewright",
+   "meaning": "「乳酪匠」，職業姓氏",
+   "weight": 7
+  },
+  {
+   "s": "Foxglove",
+   "meaning": "「毛地黃」，田園植物意象姓氏",
+   "weight": 3
+  },
+  {
+   "s": "Gardenhollow",
+   "meaning": "「園圃窪地」，田園地貌姓氏",
+   "weight": 4
+  },
+  {
+   "s": "Hayrick",
+   "meaning": "「乾草堆」，農作家業姓氏",
+   "weight": 5
+  },
+  {
+   "s": "Ironkettle",
+   "meaning": "「鐵壺」，工匠家業意象姓氏",
+   "weight": 6
+  },
+  {
+   "s": "Jollyfoot",
+   "meaning": "「歡樂腳」，性格暱稱姓氏，形容步履輕快樂天",
+   "weight": 7
+  },
+  {
+   "s": "Larder",
+   "meaning": "「食物儲藏室」，飲食富庶意象姓氏",
+   "weight": 3
+  },
+  {
+   "s": "Millbrook",
+   "meaning": "「磨坊溪」，田園產業地貌姓氏",
+   "weight": 4
+  }
+ ],
+ "given": {
+  "m": [
+   {
+    "g": "Wilbin",
+    "meaning": "意近「意志、親暱小名尾」，田園風暱稱式男名",
+    "weight": 3
+   },
+   {
+    "g": "Tobbin",
+    "meaning": "「Tobias」式詞根、暱稱尾，意近「良善的」",
+    "weight": 4
+   },
+   {
+    "g": "Marlow",
+    "meaning": "古英語地貌詞根，意近「湖畔窪地」，借地名作人名",
+    "weight": 5
+   },
+   {
+    "g": "Fennick",
+    "meaning": "「茴香（fennel）」、暱稱尾，意近「小茴香」",
+    "weight": 6
+   },
+   {
+    "g": "Bramwell",
+    "meaning": "「荊棘（bramble）、井（well）」複合，意近「荊棘井邊」",
+    "weight": 7
+   },
+   {
+    "g": "Pippen",
+    "meaning": "擬聲暱稱詞根，意近「小種子」",
+    "weight": 3
+   },
+   {
+    "g": "Wendell",
+    "meaning": "古英語「漫遊者」意，田園常見暱稱式男名",
+    "weight": 4
+   },
+   {
+    "g": "Alder",
+    "meaning": "樹名「赤楊」直接借作人名，田園命名慣例",
+    "weight": 5
+   },
+   {
+    "g": "Barleycorn",
+    "meaning": "「大麥粒」複合詞，田園農作意象姓名化",
+    "weight": 6
+   },
+   {
+    "g": "Cobbler",
+    "meaning": "職業詞「補鞋匠」暱稱化為人名",
+    "weight": 7
+   },
+   {
+    "g": "Digby",
+    "meaning": "古英語地名詞根，意近「溝渠旁聚落」，借地名作人名",
+    "weight": 3
+   },
+   {
+    "g": "Elmsworth",
+    "meaning": "「榆樹、莊園」複合，田園地名式人名",
+    "weight": 4
+   },
+   {
+    "g": "Fitzwilliam",
+    "meaning": "諾曼式「…之子」複合，田園仕紳風人名",
+    "weight": 5
+   },
+   {
+    "g": "Gubbin",
+    "meaning": "擬聲暱稱詞根，意近「小塊、瑣碎之物」，田園暱稱風",
+    "weight": 6
+   },
+   {
+    "g": "Hobbes",
+    "meaning": "古英語暱稱尾、硬子音，意近「圓潤敦厚」",
+    "weight": 7
+   },
+   {
+    "g": "Ives",
+    "meaning": "樹名／地名詞根「紫杉」，田園借用式人名",
+    "weight": 3
+   },
+   {
+    "g": "Jorrick",
+    "meaning": "暱稱化詞根、「-ick」小稱後綴，意近「開朗的」",
+    "weight": 4
+   },
+   {
+    "g": "Kettering",
+    "meaning": "地名詞根、「-ing」族裔後綴，意近「鍋匠聚居地之人」",
+    "weight": 5
+   },
+   {
+    "g": "Linden",
+    "meaning": "樹名「椴樹」直接借作人名",
+    "weight": 6
+   },
+   {
+    "g": "Merriweather",
+    "meaning": "「歡樂天氣」複合詞，田園樂天姓名化",
+    "weight": 7
+   },
+   {
+    "g": "Nettlebrook",
+    "meaning": "「蕁麻、溪流」複合，田園地貌人名",
+    "weight": 3
+   },
+   {
+    "g": "Oatfield",
+    "meaning": "「燕麥田」複合詞，田園農作意象",
+    "weight": 4
+   },
+   {
+    "g": "Pemberton",
+    "meaning": "地名詞根、「-ton」聚落後綴，意近「山丘聚落之人」",
+    "weight": 5
+   },
+   {
+    "g": "Quillby",
+    "meaning": "「羽管筆、地名尾」複合，意近「筆匠之居」",
+    "weight": 6
+   },
+   {
+    "g": "Rollo",
+    "meaning": "古北歐借入暱稱，意近「聞名者」，田園慣用小名",
+    "weight": 7
+   },
+   {
+    "g": "Sedgewick",
+    "meaning": "「莎草、聚落」複合，田園濕地地貌人名",
+    "weight": 3
+   },
+   {
+    "g": "Tolman",
+    "meaning": "古英語「收稅人」職業詞暱稱化",
+    "weight": 4
+   },
+   {
+    "g": "Underhay",
+    "meaning": "「…之下、籬笆」複合，田園地貌人名",
+    "weight": 5
+   },
+   {
+    "g": "Vernie",
+    "meaning": "「春天（vern-）」詞根、暱稱尾，意近「如春天般的」",
+    "weight": 6
+   },
+   {
+    "g": "Wickfield",
+    "meaning": "「村落、田野」複合，田園聚落人名",
+    "weight": 7
+   },
+   {
+    "g": "Tobin",
+    "meaning": "善良＋小稱後綴，意近「小…」",
+    "weight": 2
+   },
+   {
+    "g": "Wilin",
+    "meaning": "意志＋小稱後綴，意近「小…」",
+    "weight": 3
+   },
+   {
+    "g": "Benin",
+    "meaning": "祝福＋小稱後綴，意近「小…」",
+    "weight": 4
+   },
+   {
+    "g": "Hobin",
+    "meaning": "矮小敦厚＋小稱後綴，意近「小…」",
+    "weight": 5
+   },
+   {
+    "g": "Merin",
+    "meaning": "歡快＋小稱後綴，意近「小…」",
+    "weight": 6
+   },
+   {
+    "g": "Rolin",
+    "meaning": "聞名＋小稱後綴，意近「小…」",
+    "weight": 2
+   },
+   {
+    "g": "Gilin",
+    "meaning": "誓約＋小稱後綴，意近「小…」",
+    "weight": 3
+   },
+   {
+    "g": "Fenin",
+    "meaning": "茴香田＋小稱後綴，意近「小…」",
+    "weight": 4
+   },
+   {
+    "g": "Bramin",
+    "meaning": "荊棘＋小稱後綴，意近「小…」",
+    "weight": 5
+   },
+   {
+    "g": "Oldin",
+    "meaning": "年長受敬重＋小稱後綴，意近「小…」",
+    "weight": 6
+   },
+   {
+    "g": "Cobin",
+    "meaning": "補綴＋小稱後綴，意近「小…」",
+    "weight": 2
+   },
+   {
+    "g": "Digin",
+    "meaning": "溝渠旁＋小稱後綴，意近「小…」",
+    "weight": 3
+   },
+   {
+    "g": "Elmin",
+    "meaning": "榆樹＋小稱後綴，意近「小…」",
+    "weight": 4
+   },
+   {
+    "g": "Fitzin",
+    "meaning": "…之子＋小稱後綴，意近「小…」",
+    "weight": 5
+   },
+   {
+    "g": "Gubin",
+    "meaning": "瑣碎可愛＋小稱後綴，意近「小…」",
+    "weight": 6
+   },
+   {
+    "g": "Ivesin",
+    "meaning": "紫杉＋小稱後綴，意近「小…」",
+    "weight": 2
+   },
+   {
+    "g": "Jorin",
+    "meaning": "開朗＋小稱後綴，意近「小…」",
+    "weight": 3
+   },
+   {
+    "g": "Ketin",
+    "meaning": "鍋匠＋小稱後綴，意近「小…」",
+    "weight": 4
+   },
+   {
+    "g": "Pemin",
+    "meaning": "山丘聚落＋小稱後綴，意近「小…」",
+    "weight": 5
+   },
+   {
+    "g": "Quilin",
+    "meaning": "羽管筆＋小稱後綴，意近「小…」",
+    "weight": 6
+   },
+   {
+    "g": "Tobick",
+    "meaning": "善良＋小稱後綴，意近「…的」",
+    "weight": 2
+   },
+   {
+    "g": "Wilick",
+    "meaning": "意志＋小稱後綴，意近「…的」",
+    "weight": 3
+   },
+   {
+    "g": "Benick",
+    "meaning": "祝福＋小稱後綴，意近「…的」",
+    "weight": 4
+   },
+   {
+    "g": "Hobick",
+    "meaning": "矮小敦厚＋小稱後綴，意近「…的」",
+    "weight": 5
+   },
+   {
+    "g": "Merick",
+    "meaning": "歡快＋小稱後綴，意近「…的」",
+    "weight": 2
+   },
+   {
+    "g": "Rolick",
+    "meaning": "聞名＋小稱後綴，意近「…的」",
+    "weight": 3
+   },
+   {
+    "g": "Gilick",
+    "meaning": "誓約＋小稱後綴，意近「…的」",
+    "weight": 4
+   },
+   {
+    "g": "Fenick",
+    "meaning": "茴香田＋小稱後綴，意近「…的」",
+    "weight": 5
+   },
+   {
+    "g": "Bramick",
+    "meaning": "荊棘＋小稱後綴，意近「…的」",
+    "weight": 2
+   },
+   {
+    "g": "Oldick",
+    "meaning": "年長受敬重＋小稱後綴，意近「…的」",
+    "weight": 3
+   },
+   {
+    "g": "Cobick",
+    "meaning": "補綴＋小稱後綴，意近「…的」",
+    "weight": 4
+   },
+   {
+    "g": "Digick",
+    "meaning": "溝渠旁＋小稱後綴，意近「…的」",
+    "weight": 5
+   },
+   {
+    "g": "Berrin",
+    "meaning": "漿果＋小稱後綴，意近「小漿果」",
+    "note": "漿果詞根接本包慣用男性小稱尾「-in」",
+    "weight": 2
+   },
+   {
+    "g": "Hazin",
+    "meaning": "榛樹＋小稱後綴，意近「小榛子」",
+    "note": "榛樹詞根接男性小稱尾「-in」",
+    "weight": 3
+   },
+   {
+    "g": "Mossin",
+    "meaning": "苔蘚＋小稱後綴，意近「小苔兒」",
+    "note": "苔蘚詞根接男性小稱尾「-in」",
+    "weight": 4
+   },
+   {
+    "g": "Reedin",
+    "meaning": "蘆葦＋小稱後綴，意近「小蘆葦」",
+    "note": "蘆葦詞根接男性小稱尾「-in」",
+    "weight": 2
+   },
+   {
+    "g": "Thornin",
+    "meaning": "荊刺＋小稱後綴，意近「小刺兒」",
+    "note": "荊刺詞根接男性小稱尾「-in」",
+    "weight": 3
+   },
+   {
+    "g": "Dellin",
+    "meaning": "小谷＋小稱後綴，意近「谷中小子」",
+    "note": "地貌詞根接男性小稱尾「-in」",
+    "weight": 4
+   },
+   {
+    "g": "Knollin",
+    "meaning": "小丘＋小稱後綴，意近「丘上小子」",
+    "note": "地貌詞根接男性小稱尾「-in」",
+    "weight": 2
+   },
+   {
+    "g": "Cidrin",
+    "meaning": "蘋果酒＋小稱後綴，意近「小酒釀」",
+    "note": "飲食詞根接男性小稱尾「-in」",
+    "weight": 3
+   },
+   {
+    "g": "Crumbin",
+    "meaning": "麵包屑＋小稱後綴，意近「小麵包屑」",
+    "note": "飲食詞根接男性小稱尾「-in」",
+    "weight": 4
+   },
+   {
+    "g": "Dillin",
+    "meaning": "蒔蘿＋小稱後綴，意近「小蒔蘿」",
+    "note": "香草詞根接男性小稱尾「-in」",
+    "weight": 2
+   },
+   {
+    "g": "Berrick",
+    "meaning": "漿果＋小稱後綴，意近「漿果般的」",
+    "note": "漿果詞根接男性小稱尾「-ick」",
+    "weight": 3
+   },
+   {
+    "g": "Mossick",
+    "meaning": "苔蘚＋小稱後綴，意近「苔蘚般的」",
+    "note": "苔蘚詞根接男性小稱尾「-ick」",
+    "weight": 4
+   },
+   {
+    "g": "Reedick",
+    "meaning": "蘆葦＋小稱後綴，意近「蘆葦般的」",
+    "note": "蘆葦詞根接男性小稱尾「-ick」",
+    "weight": 2
+   },
+   {
+    "g": "Thornick",
+    "meaning": "荊刺＋小稱後綴，意近「帶刺卻可愛的」",
+    "note": "荊刺詞根接男性小稱尾「-ick」",
+    "weight": 3
+   },
+   {
+    "g": "Dellick",
+    "meaning": "小谷＋小稱後綴，意近「谷裡來的」",
+    "note": "地貌詞根接男性小稱尾「-ick」",
+    "weight": 4
+   },
+   {
+    "g": "Cidrick",
+    "meaning": "蘋果酒＋小稱後綴，意近「愛酒的」",
+    "note": "飲食詞根接男性小稱尾「-ick」",
+    "weight": 2
+   },
+   {
+    "g": "Crumbick",
+    "meaning": "麵包屑＋小稱後綴，意近「貪嘴的」",
+    "note": "飲食詞根接男性小稱尾「-ick」",
+    "weight": 3
+   },
+   {
+    "g": "Hazick",
+    "meaning": "榛樹＋小稱後綴，意近「榛果色的」",
+    "note": "榛樹詞根接男性小稱尾「-ick」",
+    "weight": 4
+   },
+   {
+    "g": "Hedgick",
+    "meaning": "樹籬＋小稱後綴，意近「籬邊小子」",
+    "note": "田園器物詞根接男性小稱尾「-ick」",
+    "weight": 2
+   },
+   {
+    "g": "Pipwick",
+    "meaning": "果核＋聚落尾，意近「果核之村」",
+    "note": "果核詞根接地名尾「-wick」，地名式男名",
+    "weight": 3
+   },
+   {
+    "g": "Berro",
+    "meaning": "漿果＋暱稱尾，意近「小漿果」",
+    "note": "漿果詞根接圓潤暱稱尾「-o」，田園男性小名",
+    "weight": 4
+   },
+   {
+    "g": "Cobbo",
+    "meaning": "補綴＋暱稱尾，意近「修修補補的小子」",
+    "note": "職業詞根接暱稱尾「-o」",
+    "weight": 2
+   },
+   {
+    "g": "Crumbo",
+    "meaning": "麵包屑＋暱稱尾，意近「小饞嘴」",
+    "note": "飲食詞根接暱稱尾「-o」",
+    "weight": 3
+   },
+   {
+    "g": "Wicko",
+    "meaning": "村落＋暱稱尾，意近「村裡小子」",
+    "note": "聚落詞根接暱稱尾「-o」",
+    "weight": 4
+   },
+   {
+    "g": "Dillo",
+    "meaning": "蒔蘿＋暱稱尾，意近「小蒔蘿」",
+    "note": "香草詞根接暱稱尾「-o」",
+    "weight": 2
+   },
+   {
+    "g": "Basilo",
+    "meaning": "羅勒＋暱稱尾，意近「小羅勒」",
+    "note": "香草詞根接暱稱尾「-o」",
+    "weight": 3
+   },
+   {
+    "g": "Parslo",
+    "meaning": "香芹＋暱稱尾，意近「小香芹」",
+    "note": "香草詞根縮略接暱稱尾「-o」",
+    "weight": 4
+   },
+   {
+    "g": "Fendo",
+    "meaning": "沼澤地＋暱稱尾，意近「沼邊小子」",
+    "note": "地貌詞根接暱稱尾「-o」",
+    "weight": 2
+   },
+   {
+    "g": "Applewick",
+    "meaning": "蘋果＋聚落尾複合，意近「蘋果村」",
+    "note": "果樹加地名尾「-wick」，田園地名式男名",
+    "weight": 3
+   },
+   {
+    "g": "Oakhollow",
+    "meaning": "橡樹＋窪地複合，意近「橡樹窪」",
+    "note": "樹木加地貌複合，田園地名式男名",
+    "weight": 4
+   },
+   {
+    "g": "Underbrook",
+    "meaning": "…之下＋溪流複合，意近「溪流之下」",
+    "note": "方位加地貌複合，呼應本包居所式構詞",
+    "weight": 2
+   },
+   {
+    "g": "Ryefield",
+    "meaning": "裸麥＋田野複合，意近「裸麥田」",
+    "note": "農作加田野複合，田園農作意象男名",
+    "weight": 3
+   },
+   {
+    "g": "Mossbrook",
+    "meaning": "苔蘚＋溪流複合，意近「苔溪」",
+    "note": "植物加地貌複合，田園地名式男名",
+    "weight": 4
+   },
+   {
+    "g": "Thornberry",
+    "meaning": "荊刺＋漿果複合，意近「荊棘漿果」",
+    "note": "植物複合詞直接姓名化",
+    "weight": 2
+   },
+   {
+    "g": "Hedgeworth",
+    "meaning": "樹籬＋莊園複合，意近「籬邊莊園」",
+    "note": "器物加莊園尾「-worth」，田園仕紳風男名",
+    "weight": 3
+   },
+   {
+    "g": "Dellwood",
+    "meaning": "小谷＋樹林複合，意近「谷中林」",
+    "note": "地貌複合詞，田園地名式男名",
+    "weight": 4
+   },
+   {
+    "g": "Ashdown",
+    "meaning": "梣樹＋丘陵複合，意近「梣樹丘」",
+    "note": "樹木加地貌複合，借地名作男名",
+    "weight": 2
+   },
+   {
+    "g": "Wortley",
+    "meaning": "菜蔬＋草地複合，意近「菜園草地」",
+    "note": "古英語菜蔬詞根加草地尾「-ley」，地名式男名",
+    "weight": 3
+   }
+  ],
+  "f": [
+   {
+    "g": "Rosalind",
+    "meaning": "「玫瑰」詞根、古典陰性尾，意近「溫柔的玫瑰」",
+    "weight": 3
+   },
+   {
+    "g": "Marigold",
+    "meaning": "花名「金盞花」直接借作人名",
+    "weight": 4
+   },
+   {
+    "g": "Poppy",
+    "meaning": "花名「罌粟」直接借作人名",
+    "weight": 5
+   },
+   {
+    "g": "Daisy",
+    "meaning": "花名「雛菊」直接借作人名",
+    "weight": 6
+   },
+   {
+    "g": "Primrose",
+    "meaning": "花名「櫻草」直接借作人名",
+    "weight": 7
+   },
+   {
+    "g": "Tansy",
+    "meaning": "花名「艾菊」直接借作人名",
+    "weight": 3
+   },
+   {
+    "g": "Wilhelmina",
+    "meaning": "古日耳曼「堅定意志」陰性長名，田園仕紳風",
+    "weight": 4
+   },
+   {
+    "g": "Bramblet",
+    "meaning": "「荊棘」詞根、暱稱尾，意近「小荊棘」",
+    "weight": 5
+   },
+   {
+    "g": "Clover",
+    "meaning": "植物名「幸運草」直接借作人名",
+    "weight": 6
+   },
+   {
+    "g": "Dahlia",
+    "meaning": "花名「大理花」直接借作人名",
+    "weight": 7
+   },
+   {
+    "g": "Elowyn",
+    "meaning": "「榆樹（elm）」詞根、陰性尾「-wyn」，意近「榆樹之女」",
+    "weight": 3
+   },
+   {
+    "g": "Fennela",
+    "meaning": "「茴香」詞根、陰性尾，意近「茴香女」",
+    "weight": 4
+   },
+   {
+    "g": "Ginger",
+    "meaning": "香料名「薑」直接借作人名",
+    "weight": 5
+   },
+   {
+    "g": "Hollyanne",
+    "meaning": "「冬青（holly）」、常見陰性尾複合",
+    "weight": 6
+   },
+   {
+    "g": "Ivyleaf",
+    "meaning": "「常春藤葉」複合詞，田園植物意象",
+    "weight": 7
+   },
+   {
+    "g": "Jessamy",
+    "meaning": "「茉莉（jessamine）」詞根簡化，田園花卉人名",
+    "weight": 3
+   },
+   {
+    "g": "Kestrelle",
+    "meaning": "「茶隼（kestrel）」詞根、陰性尾，田園動物意象",
+    "weight": 4
+   },
+   {
+    "g": "Larkspur",
+    "meaning": "花名「飛燕草」直接借作人名",
+    "weight": 5
+   },
+   {
+    "g": "Meadowlyn",
+    "meaning": "「草原」詞根、陰性尾，意近「草原之女」",
+    "weight": 6
+   },
+   {
+    "g": "Nutmeg",
+    "meaning": "香料名「肉荳蔻」直接借作人名",
+    "weight": 7
+   },
+   {
+    "g": "Oleander",
+    "meaning": "花名「夾竹桃」直接借作人名",
+    "weight": 3
+   },
+   {
+    "g": "Petunia",
+    "meaning": "花名「矮牽牛」直接借作人名",
+    "weight": 4
+   },
+   {
+    "g": "Quincealy",
+    "meaning": "「榲桲（quince）」詞根、暱稱尾，田園果樹意象",
+    "weight": 5
+   },
+   {
+    "g": "Rosemary",
+    "meaning": "香草名「迷迭香」直接借作人名",
+    "weight": 6
+   },
+   {
+    "g": "Saffronia",
+    "meaning": "「番紅花」詞根、古典陰性尾",
+    "weight": 7
+   },
+   {
+    "g": "Thistlewyn",
+    "meaning": "「薊」詞根、陰性尾「-wyn」",
+    "weight": 3
+   },
+   {
+    "g": "Ursella",
+    "meaning": "古拉丁「小熊」詞根、陰性尾，田園慣用小名",
+    "weight": 4
+   },
+   {
+    "g": "Violetta",
+    "meaning": "花名「紫羅蘭」、古典陰性尾",
+    "weight": 5
+   },
+   {
+    "g": "Willowbee",
+    "meaning": "「柳樹」詞根、暱稱尾「-bee」，意近「小柳」",
+    "weight": 6
+   },
+   {
+    "g": "Zinnialee",
+    "meaning": "花名「百日草（zinnia）」、暱稱尾複合",
+    "weight": 7
+   },
+   {
+    "g": "Rosella",
+    "meaning": "玫瑰＋古典陰性尾，意近「小…女」",
+    "weight": 2
+   },
+   {
+    "g": "Lilella",
+    "meaning": "百合＋古典陰性尾，意近「小…女」",
+    "weight": 3
+   },
+   {
+    "g": "Vioella",
+    "meaning": "紫羅蘭＋古典陰性尾，意近「小…女」",
+    "weight": 4
+   },
+   {
+    "g": "Iriella",
+    "meaning": "鳶尾＋古典陰性尾，意近「小…女」",
+    "weight": 5
+   },
+   {
+    "g": "Heaella",
+    "meaning": "石楠＋古典陰性尾，意近「小…女」",
+    "weight": 6
+   },
+   {
+    "g": "Herella",
+    "meaning": "香草＋古典陰性尾，意近「小…女」",
+    "weight": 2
+   },
+   {
+    "g": "Minella",
+    "meaning": "薄荷＋古典陰性尾，意近「小…女」",
+    "weight": 3
+   },
+   {
+    "g": "Safella",
+    "meaning": "番紅花＋古典陰性尾，意近「小…女」",
+    "weight": 4
+   },
+   {
+    "g": "Laurella",
+    "meaning": "月桂＋古典陰性尾，意近「小…女」",
+    "weight": 5
+   },
+   {
+    "g": "Myrella",
+    "meaning": "香桃木＋古典陰性尾，意近「小…女」",
+    "weight": 6
+   },
+   {
+    "g": "Camella",
+    "meaning": "洋甘菊＋古典陰性尾，意近「小…女」",
+    "weight": 2
+   },
+   {
+    "g": "Gerella",
+    "meaning": "天竺葵＋古典陰性尾，意近「小…女」",
+    "weight": 3
+   },
+   {
+    "g": "Jasella",
+    "meaning": "茉莉＋古典陰性尾，意近「小…女」",
+    "weight": 4
+   },
+   {
+    "g": "Azalella",
+    "meaning": "杜鵑花＋古典陰性尾，意近「小…女」",
+    "weight": 5
+   },
+   {
+    "g": "Cressella",
+    "meaning": "水芹＋古典陰性尾，意近「小…女」",
+    "weight": 6
+   },
+   {
+    "g": "Fernella",
+    "meaning": "蕨＋古典陰性尾，意近「小…女」",
+    "weight": 2
+   },
+   {
+    "g": "Hollella",
+    "meaning": "冬青＋古典陰性尾，意近「小…女」",
+    "weight": 3
+   },
+   {
+    "g": "Ivyella",
+    "meaning": "常春藤＋古典陰性尾，意近「小…女」",
+    "weight": 4
+   },
+   {
+    "g": "Lavella",
+    "meaning": "薰衣草＋古典陰性尾，意近「小…女」",
+    "weight": 5
+   },
+   {
+    "g": "Mariella",
+    "meaning": "金盞＋古典陰性尾，意近「小…女」",
+    "weight": 6
+   },
+   {
+    "g": "Roswyn",
+    "meaning": "玫瑰＋陰性尾，意近「…之女」",
+    "weight": 2
+   },
+   {
+    "g": "Lilwyn",
+    "meaning": "百合＋陰性尾，意近「…之女」",
+    "weight": 3
+   },
+   {
+    "g": "Viowyn",
+    "meaning": "紫羅蘭＋陰性尾，意近「…之女」",
+    "weight": 4
+   },
+   {
+    "g": "Iriwyn",
+    "meaning": "鳶尾＋陰性尾，意近「…之女」",
+    "weight": 5
+   },
+   {
+    "g": "Heawyn",
+    "meaning": "石楠＋陰性尾，意近「…之女」",
+    "weight": 2
+   },
+   {
+    "g": "Herwyn",
+    "meaning": "香草＋陰性尾，意近「…之女」",
+    "weight": 3
+   },
+   {
+    "g": "Minwyn",
+    "meaning": "薄荷＋陰性尾，意近「…之女」",
+    "weight": 4
+   },
+   {
+    "g": "Safwyn",
+    "meaning": "番紅花＋陰性尾，意近「…之女」",
+    "weight": 5
+   },
+   {
+    "g": "Laurwyn",
+    "meaning": "月桂＋陰性尾，意近「…之女」",
+    "weight": 2
+   },
+   {
+    "g": "Myrwyn",
+    "meaning": "香桃木＋陰性尾，意近「…之女」",
+    "weight": 3
+   },
+   {
+    "g": "Camwyn",
+    "meaning": "洋甘菊＋陰性尾，意近「…之女」",
+    "weight": 4
+   },
+   {
+    "g": "Gerwyn",
+    "meaning": "天竺葵＋陰性尾，意近「…之女」",
+    "weight": 5
+   },
+   {
+    "g": "Bryony",
+    "meaning": "藤蔓植物名「瀉根」直接借作人名",
+    "note": "花草直借為女名屬本包田園慣例",
+    "weight": 2
+   },
+   {
+    "g": "Verbena",
+    "meaning": "香草名「馬鞭草」直接借作人名",
+    "note": "香草直借，拉丁語尾「-a」帶陰性感",
+    "weight": 3
+   },
+   {
+    "g": "Peony",
+    "meaning": "花名「牡丹」直接借作人名",
+    "note": "花卉直借為女名",
+    "weight": 4
+   },
+   {
+    "g": "Marjoram",
+    "meaning": "香草名「墨角蘭」直接借作人名",
+    "note": "香草直借為女名",
+    "weight": 2
+   },
+   {
+    "g": "Betony",
+    "meaning": "草藥名「水蘇」直接借作人名",
+    "note": "草藥直借為女名",
+    "weight": 3
+   },
+   {
+    "g": "Feverfew",
+    "meaning": "草藥名「小白菊」直接借作人名",
+    "note": "草藥直借為女名",
+    "weight": 4
+   },
+   {
+    "g": "Cowslip",
+    "meaning": "花名「黃花九輪草」直接借作人名",
+    "note": "野花直借為女名",
+    "weight": 2
+   },
+   {
+    "g": "Honeysuckle",
+    "meaning": "花名「忍冬」直接借作人名",
+    "note": "甜香花卉直借為女名",
+    "weight": 3
+   },
+   {
+    "g": "Damson",
+    "meaning": "果名「洋李」直接借作人名",
+    "note": "果樹直借為女名",
+    "weight": 4
+   },
+   {
+    "g": "Mallow",
+    "meaning": "花名「錦葵」直接借作人名",
+    "note": "野花直借為女名",
+    "weight": 2
+   },
+   {
+    "g": "Pansy",
+    "meaning": "花名「三色堇」直接借作人名",
+    "note": "花卉直借為女名",
+    "weight": 3
+   },
+   {
+    "g": "Tulip",
+    "meaning": "花名「鬱金香」直接借作人名",
+    "note": "花卉直借為女名",
+    "weight": 4
+   },
+   {
+    "g": "Popella",
+    "meaning": "罌粟＋古典陰性尾，意近「小罌粟女」",
+    "note": "花卉詞根接本包慣用陰性尾「-ella」",
+    "weight": 2
+   },
+   {
+    "g": "Tansella",
+    "meaning": "艾菊＋古典陰性尾，意近「小艾菊女」",
+    "note": "花卉詞根接陰性尾「-ella」",
+    "weight": 3
+   },
+   {
+    "g": "Clovella",
+    "meaning": "幸運草＋古典陰性尾，意近「小幸運草女」",
+    "note": "植物詞根接陰性尾「-ella」",
+    "weight": 4
+   },
+   {
+    "g": "Primella",
+    "meaning": "櫻草＋古典陰性尾，意近「小櫻草女」",
+    "note": "花卉詞根接陰性尾「-ella」",
+    "weight": 2
+   },
+   {
+    "g": "Daisella",
+    "meaning": "雛菊＋古典陰性尾，意近「小雛菊女」",
+    "note": "花卉詞根接陰性尾「-ella」",
+    "weight": 3
+   },
+   {
+    "g": "Ginella",
+    "meaning": "薑＋古典陰性尾，意近「小薑女」",
+    "note": "香料詞根接陰性尾「-ella」",
+    "weight": 4
+   },
+   {
+    "g": "Ruella",
+    "meaning": "芸香＋古典陰性尾，意近「小芸香女」",
+    "note": "香草詞根接陰性尾「-ella」",
+    "weight": 2
+   },
+   {
+    "g": "Sagella",
+    "meaning": "鼠尾草＋古典陰性尾，意近「小鼠尾草女」",
+    "note": "香草詞根接陰性尾「-ella」",
+    "weight": 3
+   },
+   {
+    "g": "Willella",
+    "meaning": "柳樹＋古典陰性尾，意近「小柳女」",
+    "note": "樹木詞根接陰性尾「-ella」",
+    "weight": 4
+   },
+   {
+    "g": "Berrella",
+    "meaning": "漿果＋古典陰性尾，意近「小漿果女」",
+    "note": "漿果詞根接陰性尾「-ella」",
+    "weight": 2
+   },
+   {
+    "g": "Primwyn",
+    "meaning": "櫻草＋陰性尾，意近「櫻草之女」",
+    "note": "花卉詞根接陰性尾「-wyn」",
+    "weight": 3
+   },
+   {
+    "g": "Tanswyn",
+    "meaning": "艾菊＋陰性尾，意近「艾菊之女」",
+    "note": "花卉詞根接陰性尾「-wyn」",
+    "weight": 4
+   },
+   {
+    "g": "Ginwyn",
+    "meaning": "薑＋陰性尾，意近「薑之女」",
+    "note": "香料詞根接陰性尾「-wyn」",
+    "weight": 2
+   },
+   {
+    "g": "Sagwyn",
+    "meaning": "鼠尾草＋陰性尾，意近「鼠尾草之女」",
+    "note": "香草詞根接陰性尾「-wyn」",
+    "weight": 3
+   },
+   {
+    "g": "Ruewyn",
+    "meaning": "芸香＋陰性尾，意近「芸香之女」",
+    "note": "香草詞根接陰性尾「-wyn」",
+    "weight": 4
+   },
+   {
+    "g": "Berwyn",
+    "meaning": "漿果＋陰性尾，意近「漿果之女」",
+    "note": "漿果詞根接陰性尾「-wyn」",
+    "weight": 2
+   },
+   {
+    "g": "Elderwyn",
+    "meaning": "接骨木＋陰性尾，意近「接骨木之女」",
+    "note": "樹木詞根接陰性尾「-wyn」",
+    "weight": 3
+   },
+   {
+    "g": "Popwyn",
+    "meaning": "罌粟＋陰性尾，意近「罌粟之女」",
+    "note": "花卉詞根接陰性尾「-wyn」",
+    "weight": 4
+   },
+   {
+    "g": "Cherrylee",
+    "meaning": "櫻桃＋暱稱尾，意近「小櫻桃」",
+    "note": "果樹詞根接暱稱尾「-lee」，呼應本包「-lee」構詞",
+    "weight": 2
+   },
+   {
+    "g": "Berrylee",
+    "meaning": "漿果＋暱稱尾，意近「小漿果」",
+    "note": "漿果詞根接暱稱尾「-lee」",
+    "weight": 3
+   },
+   {
+    "g": "Appleblossom",
+    "meaning": "「蘋果花」複合詞直接借作人名",
+    "note": "花卉複合詞直借為女名",
+    "weight": 4
+   },
+   {
+    "g": "Buttercup",
+    "meaning": "花名「毛茛」直接借作人名",
+    "note": "野花直借為女名，田園甜美意象",
+    "weight": 2
+   },
+   {
+    "g": "Sweetpea",
+    "meaning": "花名「香豌豆」複合詞直接借作人名",
+    "note": "花卉複合詞直借為女名",
+    "weight": 3
+   },
+   {
+    "g": "Bluebell",
+    "meaning": "花名「藍鈴花」複合詞直接借作人名",
+    "note": "花卉複合詞直借為女名",
+    "weight": 4
+   },
+   {
+    "g": "Snowdrop",
+    "meaning": "花名「雪花蓮」複合詞直接借作人名",
+    "note": "花卉複合詞直借為女名",
+    "weight": 2
+   },
+   {
+    "g": "Columbine",
+    "meaning": "花名「耬斗菜」直接借作人名",
+    "note": "花卉直借為女名",
+    "weight": 3
+   }
+  ],
+  "u": [
+   {
+    "g": "Rowan",
+    "meaning": "樹名「花楸」直接借作人名",
+    "note": "自然詞直借，不接陰性尾或小稱尾，男女皆可用",
+    "weight": 5
+   },
+   {
+    "g": "Sorrel",
+    "meaning": "草名「酸模」直接借作人名",
+    "note": "植物詞直借，無性別後綴",
+    "weight": 4
+   },
+   {
+    "g": "Bracken",
+    "meaning": "植物名「蕨叢」直接借作人名",
+    "note": "自然詞直借，收尾非本包陰陽任一後綴",
+    "weight": 5
+   },
+   {
+    "g": "Perry",
+    "meaning": "飲食詞「梨酒」直接借作人名",
+    "note": "田園飲食詞直借，無性別標記",
+    "weight": 6
+   },
+   {
+    "g": "Quince",
+    "meaning": "果名「榲桲」直接借作人名",
+    "note": "果樹詞直借，不接陰性尾，男女皆可用",
+    "weight": 3
+   },
+   {
+    "g": "Meadow",
+    "meaning": "地貌詞「草原」直接借作人名",
+    "note": "地貌詞直借，未加陰性尾「-lyn」，屬中性用法",
+    "weight": 4
+   },
+   {
+    "g": "Hazelby",
+    "meaning": "「榛樹」＋聚落尾「-by」，意近「榛樹之居」",
+    "note": "聚落尾「-by」為地名後綴而非性別後綴，故為中性",
+    "weight": 5
+   },
+   {
+    "g": "Thistledown",
+    "meaning": "「薊絨」複合詞，田園植物意象",
+    "note": "自然複合詞直借，無性別後綴",
+    "weight": 4
+   },
+   {
+    "g": "Puddleby",
+    "meaning": "「水窪」＋聚落尾「-by」，意近「水窪之居」",
+    "note": "地名式構詞，聚落尾不帶性別標記",
+    "weight": 3
+   },
+   {
+    "g": "Bumble",
+    "meaning": "擬聲詞「蜂鳴」暱稱化為人名",
+    "note": "擬聲暱稱直借，不接陰陽任一後綴，男女皆可用",
+    "weight": 5
+   },
+   {
+    "g": "Cricket",
+    "meaning": "動物名「蟋蟀」直接借作人名",
+    "note": "田園動物詞直借，無性別後綴",
+    "weight": 4
+   },
+   {
+    "g": "Fernsby",
+    "meaning": "「蕨」＋聚落尾「-by」，意近「蕨叢之居」",
+    "note": "聚落尾為地名後綴而非性別後綴，故為中性",
+    "weight": 3
+   },
+   {
+    "g": "Wren",
+    "meaning": "鳥名「鷦鷯」直接借作人名",
+    "note": "田園動物詞直借，無性別後綴，男女皆可用",
+    "weight": 3
+   },
+   {
+    "g": "Robin",
+    "meaning": "鳥名「知更鳥」直接借作人名",
+    "note": "動物詞直借，不接陰陽任一後綴，屬中性用法",
+    "weight": 4
+   },
+   {
+    "g": "Juniper",
+    "meaning": "樹名「杜松」直接借作人名",
+    "note": "樹木詞直借，無性別標記",
+    "weight": 3
+   },
+   {
+    "g": "Aspen",
+    "meaning": "樹名「白楊」直接借作人名",
+    "note": "樹木詞直借，收尾非本包陰陽任一後綴",
+    "weight": 2
+   },
+   {
+    "g": "Birch",
+    "meaning": "樹名「樺樹」直接借作人名",
+    "note": "樹木詞直借，無性別後綴，男女皆可用",
+    "weight": 3
+   },
+   {
+    "g": "Moss",
+    "meaning": "植物名「苔蘚」直接借作人名",
+    "note": "自然詞直借，未加小稱尾或陰性尾，屬中性",
+    "weight": 2
+   },
+   {
+    "g": "Acorn",
+    "meaning": "果實名「橡實」直接借作人名",
+    "note": "自然詞直借，無性別後綴",
+    "weight": 4
+   },
+   {
+    "g": "Barley",
+    "meaning": "農作名「大麥」直接借作人名",
+    "note": "農作詞直借，未接任何性別後綴，男女皆可用",
+    "weight": 3
+   }
+  ]
+ },
+ "name_order": "gs"
+}

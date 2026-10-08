@@ -1,0 +1,1397 @@
+{
+ "id": "fantasy-elf",
+ "region": "奇幻",
+ "era": "精靈",
+ "label": "奇幻‧精靈",
+ "note": "適用於高奇幻／TRPG 場景的精靈角色命名。名字為原創構詞組合，非收錄自既有奇幻作品之專有名字。",
+ "corpus_note": "音韻風格參考托爾金精靈語（昆雅語／辛達林語）及主流奇幻作品慣見的精靈語感規律進行歸納：流音（l、r）和鼻音（n、m）密集、母音開放（多見 a、e、i 結尾或雙母音 ae／ai／ei／ui）、避免爆裂音叢集、詞尾常帶陰性 -iel／-wen／-eth、陽性 -ion／-dir／-las 等語法性後綴模擬「氏族／血裔」之意。所有給名皆為本資料包依上述風格規律自建詞根、後綴原創組合而成，詞根和最終名字均未取自任何受版權保護之角色姓名（如《魔戒》系列、D&D 官方設定角色），亦已逐一核對常見精靈角色名稱清單以排除巧合重複。姓氏採西式奇幻常見的複合意象命名法（自然物、自然物，如「銀葉」「月語」），同樣為原創組合，非直接沿用任何作品內既有氏族名。",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "license_note": "語料整理自公開統計和文獻，本站的涵義標注、時代分包和編輯著作採 CC BY 4.0 授權，引用請註明出處。",
+ "rules": {
+  "naming": {
+   "note": "精靈壽命長、氏族觀念淡薄，正式場合常用「本名、家族／棲居地複合詞」而非世襲姓氏；氏族名多取自祖居之自然地貌或家族象徵意象，隨遷居或成年儀式可能更換，不若人類姓氏固定。"
+  }
+ },
+ "surnames": [
+  {
+   "s": "Silverleaf",
+   "meaning": "銀葉",
+   "weight": 3
+  },
+  {
+   "s": "Moonwhisper",
+   "meaning": "月語",
+   "weight": 4
+  },
+  {
+   "s": "Starweaver",
+   "meaning": "織星",
+   "weight": 5
+  },
+  {
+   "s": "Dawnstrider",
+   "meaning": "踏曉",
+   "weight": 6
+  },
+  {
+   "s": "Windsong",
+   "meaning": "風歌",
+   "weight": 7
+  },
+  {
+   "s": "Shadowvale",
+   "meaning": "影谷",
+   "weight": 3
+  },
+  {
+   "s": "Brightwater",
+   "meaning": "亮水",
+   "weight": 4
+  },
+  {
+   "s": "Nightbloom",
+   "meaning": "夜綻",
+   "weight": 5
+  },
+  {
+   "s": "Frostwillow",
+   "meaning": "霜柳",
+   "weight": 6
+  },
+  {
+   "s": "Goldleaf",
+   "meaning": "金葉",
+   "weight": 7
+  },
+  {
+   "s": "Swiftarrow",
+   "meaning": "疾矢",
+   "weight": 3
+  },
+  {
+   "s": "Evenstar",
+   "meaning": "昏星",
+   "weight": 4
+  },
+  {
+   "s": "Thornwood",
+   "meaning": "荊林",
+   "weight": 5
+  },
+  {
+   "s": "Mistvale",
+   "meaning": "霧谷",
+   "weight": 6
+  },
+  {
+   "s": "Silentbrook",
+   "meaning": "靜溪",
+   "weight": 7
+  },
+  {
+   "s": "Truesong",
+   "meaning": "真歌",
+   "weight": 3
+  },
+  {
+   "s": "Hawkfeather",
+   "meaning": "鷹羽",
+   "weight": 4
+  },
+  {
+   "s": "Dewmeadow",
+   "meaning": "露原",
+   "weight": 5
+  },
+  {
+   "s": "Wildbriar",
+   "meaning": "野薔薇",
+   "weight": 6
+  },
+  {
+   "s": "Faewind",
+   "meaning": "精風",
+   "weight": 7
+  },
+  {
+   "s": "Emberleaf",
+   "meaning": "焰葉",
+   "weight": 3
+  },
+  {
+   "s": "Clearwater",
+   "meaning": "清水",
+   "weight": 4
+  },
+  {
+   "s": "Nightingale",
+   "meaning": "夜鶯",
+   "weight": 5
+  },
+  {
+   "s": "Starfall",
+   "meaning": "星墜",
+   "weight": 6
+  },
+  {
+   "s": "Greenglade",
+   "meaning": "翠林間地",
+   "weight": 7
+  },
+  {
+   "s": "Silverbrook",
+   "meaning": "銀溪",
+   "weight": 3
+  },
+  {
+   "s": "Wintersong",
+   "meaning": "冬歌",
+   "weight": 4
+  },
+  {
+   "s": "Sunwhisper",
+   "meaning": "日語",
+   "weight": 5
+  },
+  {
+   "s": "Velvetleaf",
+   "meaning": "絨葉",
+   "weight": 6
+  },
+  {
+   "s": "Duskwalker",
+   "meaning": "踏昏",
+   "weight": 7
+  },
+  {
+   "s": "Lightfoot",
+   "meaning": "輕足",
+   "weight": 3
+  },
+  {
+   "s": "Ravenwood",
+   "meaning": "鴉林",
+   "weight": 4
+  },
+  {
+   "s": "Brightleaf",
+   "meaning": "亮葉",
+   "weight": 5
+  },
+  {
+   "s": "Moonshade",
+   "meaning": "月影",
+   "weight": 6
+  },
+  {
+   "s": "Stillwater",
+   "meaning": "止水",
+   "weight": 7
+  }
+ ],
+ "given": {
+  "m": [
+   {
+    "g": "Aelion",
+    "meaning": "晨曦＋之裔／…者",
+    "weight": 3
+   },
+   {
+    "g": "Firdir",
+    "meaning": "星光＋守望者",
+    "weight": 4
+   },
+   {
+    "g": "Lumlas",
+    "meaning": "輝光＋如葉般輕盈者",
+    "weight": 5
+   },
+   {
+    "g": "Sereth",
+    "meaning": "微風＋誓約者",
+    "weight": 6
+   },
+   {
+    "g": "Thalric",
+    "meaning": "海潮＋統御者",
+    "weight": 7
+   },
+   {
+    "g": "Valwyn",
+    "meaning": "幽谷＋榮光之子",
+    "weight": 3
+   },
+   {
+    "g": "Ithrdor",
+    "meaning": "月華＋行者",
+    "weight": 4
+   },
+   {
+    "g": "Naernor",
+    "meaning": "溪流＋歌者",
+    "weight": 5
+   },
+   {
+    "g": "Corion",
+    "meaning": "林間＋之裔／…者",
+    "weight": 6
+   },
+   {
+    "g": "Syldir",
+    "meaning": "木靈＋守望者",
+    "weight": 7
+   },
+   {
+    "g": "Ondlas",
+    "meaning": "磐石＋如葉般輕盈者",
+    "weight": 3
+   },
+   {
+    "g": "Raeleth",
+    "meaning": "晨露＋誓約者",
+    "weight": 4
+   },
+   {
+    "g": "Gwynric",
+    "meaning": "皎白＋統御者",
+    "weight": 5
+   },
+   {
+    "g": "Erynwyn",
+    "meaning": "荒野＋榮光之子",
+    "weight": 6
+   },
+   {
+    "g": "Faeldor",
+    "meaning": "隼羽＋行者",
+    "weight": 7
+   },
+   {
+    "g": "Lornnor",
+    "meaning": "暮色＋歌者",
+    "weight": 3
+   },
+   {
+    "g": "Maethion",
+    "meaning": "劍鋒＋之裔／…者",
+    "weight": 4
+   },
+   {
+    "g": "Sireldir",
+    "meaning": "銀輝＋守望者",
+    "weight": 5
+   },
+   {
+    "g": "Caellas",
+    "meaning": "詠歌＋如葉般輕盈者",
+    "weight": 6
+   },
+   {
+    "g": "Araneth",
+    "meaning": "王者＋誓約者",
+    "weight": 7
+   },
+   {
+    "g": "Mirric",
+    "meaning": "奇珍＋統御者",
+    "weight": 3
+   },
+   {
+    "g": "Vethwyn",
+    "meaning": "誓言＋榮光之子",
+    "weight": 4
+   },
+   {
+    "g": "Orindor",
+    "meaning": "晨光＋行者",
+    "weight": 5
+   },
+   {
+    "g": "Iselnor",
+    "meaning": "冰霜＋歌者",
+    "weight": 6
+   },
+   {
+    "g": "Liathion",
+    "meaning": "灰影＋之裔／…者",
+    "weight": 7
+   },
+   {
+    "g": "Nymdir",
+    "meaning": "水澤＋守望者",
+    "weight": 3
+   },
+   {
+    "g": "Threnlas",
+    "meaning": "荊棘＋如葉般輕盈者",
+    "weight": 4
+   },
+   {
+    "g": "Aelineth",
+    "meaning": "星野＋誓約者",
+    "weight": 5
+   },
+   {
+    "g": "Berenric",
+    "meaning": "堅毅＋統御者",
+    "weight": 6
+   },
+   {
+    "g": "Caladhwyn",
+    "meaning": "港灣＋榮光之子",
+    "weight": 7
+   },
+   {
+    "g": "Fendor",
+    "meaning": "沼澤＋行者",
+    "weight": 3
+   },
+   {
+    "g": "Gilnor",
+    "meaning": "閃爍＋歌者",
+    "weight": 4
+   },
+   {
+    "g": "Haelion",
+    "meaning": "療癒＋之裔／…者",
+    "weight": 5
+   },
+   {
+    "g": "Iolodir",
+    "meaning": "夜鶯＋守望者",
+    "weight": 6
+   },
+   {
+    "g": "Larenlas",
+    "meaning": "歌謠＋如葉般輕盈者",
+    "weight": 7
+   },
+   {
+    "g": "Merileth",
+    "meaning": "蜜露＋誓約者",
+    "weight": 3
+   },
+   {
+    "g": "Naelric",
+    "meaning": "夜霧＋統御者",
+    "weight": 4
+   },
+   {
+    "g": "Orielwyn",
+    "meaning": "晨曦之光＋榮光之子",
+    "weight": 5
+   },
+   {
+    "g": "Perendor",
+    "meaning": "梨花＋行者",
+    "weight": 6
+   },
+   {
+    "g": "Quennor",
+    "meaning": "低語＋歌者",
+    "weight": 7
+   },
+   {
+    "g": "Aeleth",
+    "meaning": "晨曦＋誓約者",
+    "weight": 2
+   },
+   {
+    "g": "Firric",
+    "meaning": "星光＋統御者",
+    "weight": 3
+   },
+   {
+    "g": "Lumwyn",
+    "meaning": "輝光＋榮光之子",
+    "weight": 4
+   },
+   {
+    "g": "Serdor",
+    "meaning": "微風＋行者",
+    "weight": 5
+   },
+   {
+    "g": "Thalnor",
+    "meaning": "海潮＋歌者",
+    "weight": 2
+   },
+   {
+    "g": "Valion",
+    "meaning": "幽谷＋之裔／…者",
+    "weight": 3
+   },
+   {
+    "g": "Ithrdir",
+    "meaning": "月華＋守望者",
+    "weight": 4
+   },
+   {
+    "g": "Naerlas",
+    "meaning": "溪流＋如葉般輕盈者",
+    "weight": 5
+   },
+   {
+    "g": "Coreth",
+    "meaning": "林間＋誓約者",
+    "weight": 2
+   },
+   {
+    "g": "Sylric",
+    "meaning": "木靈＋統御者",
+    "weight": 3
+   },
+   {
+    "g": "Ondwyn",
+    "meaning": "磐石＋榮光之子",
+    "weight": 4
+   },
+   {
+    "g": "Raeldor",
+    "meaning": "晨露＋行者",
+    "weight": 5
+   },
+   {
+    "g": "Gwynnor",
+    "meaning": "皎白＋歌者",
+    "weight": 2
+   },
+   {
+    "g": "Erynion",
+    "meaning": "荒野＋之裔／…者",
+    "weight": 3
+   },
+   {
+    "g": "Faeldir",
+    "meaning": "隼羽＋守望者",
+    "weight": 4
+   },
+   {
+    "g": "Lornlas",
+    "meaning": "暮色＋如葉般輕盈者",
+    "weight": 5
+   },
+   {
+    "g": "Maetheth",
+    "meaning": "劍鋒＋誓約者",
+    "weight": 2
+   },
+   {
+    "g": "Sirelric",
+    "meaning": "銀輝＋統御者",
+    "weight": 3
+   },
+   {
+    "g": "Caelwyn",
+    "meaning": "詠歌＋榮光之子",
+    "weight": 4
+   },
+   {
+    "g": "Arandor",
+    "meaning": "王者＋行者",
+    "weight": 5
+   },
+   {
+    "g": "Mirnor",
+    "meaning": "奇珍＋歌者",
+    "weight": 2
+   },
+   {
+    "g": "Vethion",
+    "meaning": "誓言＋之裔／…者",
+    "weight": 3
+   },
+   {
+    "g": "Taelion",
+    "meaning": "蒼穹＋之裔／…者",
+    "note": "詞根 Tael（蒼穹）接陽性後綴 -ion",
+    "weight": 2
+   },
+   {
+    "g": "Taeldir",
+    "meaning": "蒼穹＋守望者",
+    "note": "詞根 Tael（蒼穹）接陽性後綴 -dir",
+    "weight": 3
+   },
+   {
+    "g": "Taellas",
+    "meaning": "蒼穹＋如葉般輕盈者",
+    "note": "詞根 Tael（蒼穹）接陽性後綴 -las",
+    "weight": 4
+   },
+   {
+    "g": "Taelnor",
+    "meaning": "蒼穹＋歌者",
+    "note": "詞根 Tael（蒼穹）接陽性後綴 -nor",
+    "weight": 2
+   },
+   {
+    "g": "Nimdir",
+    "meaning": "雪光＋守望者",
+    "note": "詞根 Nim（雪光）接陽性後綴 -dir",
+    "weight": 3
+   },
+   {
+    "g": "Nimric",
+    "meaning": "雪光＋統御者",
+    "note": "詞根 Nim（雪光）接陽性後綴 -ric",
+    "weight": 4
+   },
+   {
+    "g": "Nimdor",
+    "meaning": "雪光＋行者",
+    "note": "詞根 Nim（雪光）接陽性後綴 -dor",
+    "weight": 2
+   },
+   {
+    "g": "Alarion",
+    "meaning": "金曦＋之裔／…者",
+    "note": "詞根 Alar（金曦）接陽性後綴 -ion",
+    "weight": 3
+   },
+   {
+    "g": "Alardor",
+    "meaning": "金曦＋行者",
+    "note": "詞根 Alar（金曦）接陽性後綴 -dor",
+    "weight": 4
+   },
+   {
+    "g": "Alarnor",
+    "meaning": "金曦＋歌者",
+    "note": "詞根 Alar（金曦）接陽性後綴 -nor",
+    "weight": 2
+   },
+   {
+    "g": "Elundir",
+    "meaning": "星穹＋守望者",
+    "note": "詞根 Elun（星穹）接陽性後綴 -dir",
+    "weight": 3
+   },
+   {
+    "g": "Elunlas",
+    "meaning": "星穹＋如葉般輕盈者",
+    "note": "詞根 Elun（星穹）接陽性後綴 -las",
+    "weight": 4
+   },
+   {
+    "g": "Elunric",
+    "meaning": "星穹＋統御者",
+    "note": "詞根 Elun（星穹）接陽性後綴 -ric",
+    "weight": 2
+   },
+   {
+    "g": "Bremion",
+    "meaning": "山嵐＋之裔／…者",
+    "note": "詞根 Brem（山嵐）接陽性後綴 -ion",
+    "weight": 3
+   },
+   {
+    "g": "Bremdor",
+    "meaning": "山嵐＋行者",
+    "note": "詞根 Brem（山嵐）接陽性後綴 -dor",
+    "weight": 4
+   },
+   {
+    "g": "Bremnor",
+    "meaning": "山嵐＋歌者",
+    "note": "詞根 Brem（山嵐）接陽性後綴 -nor",
+    "weight": 2
+   },
+   {
+    "g": "Cyrdir",
+    "meaning": "環光＋守望者",
+    "note": "詞根 Cyr（環光）接陽性後綴 -dir",
+    "weight": 3
+   },
+   {
+    "g": "Cyrlas",
+    "meaning": "環光＋如葉般輕盈者",
+    "note": "詞根 Cyr（環光）接陽性後綴 -las",
+    "weight": 4
+   },
+   {
+    "g": "Cyrric",
+    "meaning": "環光＋統御者",
+    "note": "詞根 Cyr（環光）接陽性後綴 -ric",
+    "weight": 2
+   },
+   {
+    "g": "Daelion",
+    "meaning": "霞光＋之裔／…者",
+    "note": "詞根 Dael（霞光）接陽性後綴 -ion",
+    "weight": 3
+   },
+   {
+    "g": "Daeldor",
+    "meaning": "霞光＋行者",
+    "note": "詞根 Dael（霞光）接陽性後綴 -dor",
+    "weight": 4
+   },
+   {
+    "g": "Daelnor",
+    "meaning": "霞光＋歌者",
+    "note": "詞根 Dael（霞光）接陽性後綴 -nor",
+    "weight": 2
+   },
+   {
+    "g": "Vaeldir",
+    "meaning": "帆影＋守望者",
+    "note": "詞根 Vael（帆影）接陽性後綴 -dir",
+    "weight": 3
+   },
+   {
+    "g": "Vaellas",
+    "meaning": "帆影＋如葉般輕盈者",
+    "note": "詞根 Vael（帆影）接陽性後綴 -las",
+    "weight": 4
+   },
+   {
+    "g": "Vaelric",
+    "meaning": "帆影＋統御者",
+    "note": "詞根 Vael（帆影）接陽性後綴 -ric",
+    "weight": 2
+   },
+   {
+    "g": "Nirion",
+    "meaning": "清泉＋之裔／…者",
+    "note": "詞根 Nir（清泉）接陽性後綴 -ion",
+    "weight": 3
+   },
+   {
+    "g": "Nirdor",
+    "meaning": "清泉＋行者",
+    "note": "詞根 Nir（清泉）接陽性後綴 -dor",
+    "weight": 4
+   },
+   {
+    "g": "Nirnor",
+    "meaning": "清泉＋歌者",
+    "note": "詞根 Nir（清泉）接陽性後綴 -nor",
+    "weight": 2
+   },
+   {
+    "g": "Relldir",
+    "meaning": "雨簾＋守望者",
+    "note": "詞根 Rell（雨簾）接陽性後綴 -dir",
+    "weight": 3
+   },
+   {
+    "g": "Relllas",
+    "meaning": "雨簾＋如葉般輕盈者",
+    "note": "詞根 Rell（雨簾）接陽性後綴 -las",
+    "weight": 4
+   },
+   {
+    "g": "Rellric",
+    "meaning": "雨簾＋統御者",
+    "note": "詞根 Rell（雨簾）接陽性後綴 -ric",
+    "weight": 2
+   },
+   {
+    "g": "Saelion",
+    "meaning": "智泉＋之裔／…者",
+    "note": "詞根 Sael（智泉）接陽性後綴 -ion",
+    "weight": 3
+   },
+   {
+    "g": "Saeldor",
+    "meaning": "智泉＋行者",
+    "note": "詞根 Sael（智泉）接陽性後綴 -dor",
+    "weight": 4
+   },
+   {
+    "g": "Saelnor",
+    "meaning": "智泉＋歌者",
+    "note": "詞根 Sael（智泉）接陽性後綴 -nor",
+    "weight": 2
+   },
+   {
+    "g": "Yrendir",
+    "meaning": "碧湖＋守望者",
+    "note": "詞根 Yren（碧湖）接陽性後綴 -dir",
+    "weight": 3
+   },
+   {
+    "g": "Yrenlas",
+    "meaning": "碧湖＋如葉般輕盈者",
+    "note": "詞根 Yren（碧湖）接陽性後綴 -las",
+    "weight": 4
+   },
+   {
+    "g": "Yrenric",
+    "meaning": "碧湖＋統御者",
+    "note": "詞根 Yren（碧湖）接陽性後綴 -ric",
+    "weight": 2
+   },
+   {
+    "g": "Yrenion",
+    "meaning": "碧湖＋之裔／…者",
+    "note": "詞根 Yren（碧湖）接陽性後綴 -ion",
+    "weight": 3
+   }
+  ],
+  "f": [
+   {
+    "g": "Aeliel",
+    "meaning": "晨曦＋…之女",
+    "weight": 3
+   },
+   {
+    "g": "Firwen",
+    "meaning": "星光＋皎白之女",
+    "weight": 4
+   },
+   {
+    "g": "Lumeth",
+    "meaning": "輝光＋誓約之女",
+    "weight": 5
+   },
+   {
+    "g": "Serith",
+    "meaning": "微風＋微光之女",
+    "weight": 6
+   },
+   {
+    "g": "Thalara",
+    "meaning": "海潮＋恩澤之女",
+    "weight": 7
+   },
+   {
+    "g": "Valwyn",
+    "meaning": "幽谷＋榮光之女",
+    "weight": 3
+   },
+   {
+    "g": "Ithrlin",
+    "meaning": "月華＋歌詠之女",
+    "weight": 4
+   },
+   {
+    "g": "Naernel",
+    "meaning": "溪流＋溪畔之女",
+    "weight": 5
+   },
+   {
+    "g": "Coriel",
+    "meaning": "林間＋…之女",
+    "weight": 6
+   },
+   {
+    "g": "Sylwen",
+    "meaning": "木靈＋皎白之女",
+    "weight": 7
+   },
+   {
+    "g": "Ondeth",
+    "meaning": "磐石＋誓約之女",
+    "weight": 3
+   },
+   {
+    "g": "Raelith",
+    "meaning": "晨露＋微光之女",
+    "weight": 4
+   },
+   {
+    "g": "Gwynara",
+    "meaning": "皎白＋恩澤之女",
+    "weight": 5
+   },
+   {
+    "g": "Erynwyn",
+    "meaning": "荒野＋榮光之女",
+    "weight": 6
+   },
+   {
+    "g": "Faellin",
+    "meaning": "隼羽＋歌詠之女",
+    "weight": 7
+   },
+   {
+    "g": "Lornnel",
+    "meaning": "暮色＋溪畔之女",
+    "weight": 3
+   },
+   {
+    "g": "Maethiel",
+    "meaning": "劍鋒＋…之女",
+    "weight": 4
+   },
+   {
+    "g": "Sirelwen",
+    "meaning": "銀輝＋皎白之女",
+    "weight": 5
+   },
+   {
+    "g": "Caeleth",
+    "meaning": "詠歌＋誓約之女",
+    "weight": 6
+   },
+   {
+    "g": "Aranith",
+    "meaning": "王者＋微光之女",
+    "weight": 7
+   },
+   {
+    "g": "Mirara",
+    "meaning": "奇珍＋恩澤之女",
+    "weight": 3
+   },
+   {
+    "g": "Vethwyn",
+    "meaning": "誓言＋榮光之女",
+    "weight": 4
+   },
+   {
+    "g": "Orinlin",
+    "meaning": "晨光＋歌詠之女",
+    "weight": 5
+   },
+   {
+    "g": "Iselnel",
+    "meaning": "冰霜＋溪畔之女",
+    "weight": 6
+   },
+   {
+    "g": "Liathiel",
+    "meaning": "灰影＋…之女",
+    "weight": 7
+   },
+   {
+    "g": "Nymwen",
+    "meaning": "水澤＋皎白之女",
+    "weight": 3
+   },
+   {
+    "g": "Threneth",
+    "meaning": "荊棘＋誓約之女",
+    "weight": 4
+   },
+   {
+    "g": "Aelinith",
+    "meaning": "星野＋微光之女",
+    "weight": 5
+   },
+   {
+    "g": "Berenara",
+    "meaning": "堅毅＋恩澤之女",
+    "weight": 6
+   },
+   {
+    "g": "Caladhwyn",
+    "meaning": "港灣＋榮光之女",
+    "weight": 7
+   },
+   {
+    "g": "Fenlin",
+    "meaning": "沼澤＋歌詠之女",
+    "weight": 3
+   },
+   {
+    "g": "Gilnel",
+    "meaning": "閃爍＋溪畔之女",
+    "weight": 4
+   },
+   {
+    "g": "Haeliel",
+    "meaning": "療癒＋…之女",
+    "weight": 5
+   },
+   {
+    "g": "Iolowen",
+    "meaning": "夜鶯＋皎白之女",
+    "weight": 6
+   },
+   {
+    "g": "Lareneth",
+    "meaning": "歌謠＋誓約之女",
+    "weight": 7
+   },
+   {
+    "g": "Merilith",
+    "meaning": "蜜露＋微光之女",
+    "weight": 3
+   },
+   {
+    "g": "Naelara",
+    "meaning": "夜霧＋恩澤之女",
+    "weight": 4
+   },
+   {
+    "g": "Orielwyn",
+    "meaning": "晨曦之光＋榮光之女",
+    "weight": 5
+   },
+   {
+    "g": "Perenlin",
+    "meaning": "梨花＋歌詠之女",
+    "weight": 6
+   },
+   {
+    "g": "Quennel",
+    "meaning": "低語＋溪畔之女",
+    "weight": 7
+   },
+   {
+    "g": "Aelith",
+    "meaning": "晨曦＋微光之女",
+    "weight": 2
+   },
+   {
+    "g": "Firara",
+    "meaning": "星光＋恩澤之女",
+    "weight": 3
+   },
+   {
+    "g": "Lumwyn",
+    "meaning": "輝光＋榮光之女",
+    "weight": 4
+   },
+   {
+    "g": "Serlin",
+    "meaning": "微風＋歌詠之女",
+    "weight": 5
+   },
+   {
+    "g": "Thalnel",
+    "meaning": "海潮＋溪畔之女",
+    "weight": 2
+   },
+   {
+    "g": "Valiel",
+    "meaning": "幽谷＋…之女",
+    "weight": 3
+   },
+   {
+    "g": "Ithrwen",
+    "meaning": "月華＋皎白之女",
+    "weight": 4
+   },
+   {
+    "g": "Naereth",
+    "meaning": "溪流＋誓約之女",
+    "weight": 5
+   },
+   {
+    "g": "Corith",
+    "meaning": "林間＋微光之女",
+    "weight": 2
+   },
+   {
+    "g": "Sylara",
+    "meaning": "木靈＋恩澤之女",
+    "weight": 3
+   },
+   {
+    "g": "Ondwyn",
+    "meaning": "磐石＋榮光之女",
+    "weight": 4
+   },
+   {
+    "g": "Raellin",
+    "meaning": "晨露＋歌詠之女",
+    "weight": 5
+   },
+   {
+    "g": "Gwynnel",
+    "meaning": "皎白＋溪畔之女",
+    "weight": 2
+   },
+   {
+    "g": "Eryniel",
+    "meaning": "荒野＋…之女",
+    "weight": 3
+   },
+   {
+    "g": "Faelwen",
+    "meaning": "隼羽＋皎白之女",
+    "weight": 4
+   },
+   {
+    "g": "Lorneth",
+    "meaning": "暮色＋誓約之女",
+    "weight": 5
+   },
+   {
+    "g": "Maethith",
+    "meaning": "劍鋒＋微光之女",
+    "weight": 2
+   },
+   {
+    "g": "Sirelara",
+    "meaning": "銀輝＋恩澤之女",
+    "weight": 3
+   },
+   {
+    "g": "Caelwyn",
+    "meaning": "詠歌＋榮光之女",
+    "weight": 4
+   },
+   {
+    "g": "Aranlin",
+    "meaning": "王者＋歌詠之女",
+    "weight": 5
+   },
+   {
+    "g": "Mirnel",
+    "meaning": "奇珍＋溪畔之女",
+    "weight": 2
+   },
+   {
+    "g": "Vethiel",
+    "meaning": "誓言＋…之女",
+    "weight": 3
+   },
+   {
+    "g": "Taeliel",
+    "meaning": "蒼穹＋…之女",
+    "note": "詞根 Tael（蒼穹）接陰性後綴 -iel",
+    "weight": 4
+   },
+   {
+    "g": "Taelwen",
+    "meaning": "蒼穹＋皎白之女",
+    "note": "詞根 Tael（蒼穹）接陰性後綴 -wen",
+    "weight": 2
+   },
+   {
+    "g": "Taelith",
+    "meaning": "蒼穹＋微光之女",
+    "note": "詞根 Tael（蒼穹）接陰性後綴 -ith",
+    "weight": 3
+   },
+   {
+    "g": "Taellin",
+    "meaning": "蒼穹＋歌詠之女",
+    "note": "詞根 Tael（蒼穹）接陰性後綴 -lin",
+    "weight": 4
+   },
+   {
+    "g": "Nimara",
+    "meaning": "雪光＋恩澤之女",
+    "note": "詞根 Nim（雪光）接陰性後綴 -ara",
+    "weight": 2
+   },
+   {
+    "g": "Nimlin",
+    "meaning": "雪光＋歌詠之女",
+    "note": "詞根 Nim（雪光）接陰性後綴 -lin",
+    "weight": 3
+   },
+   {
+    "g": "Nimnel",
+    "meaning": "雪光＋溪畔之女",
+    "note": "詞根 Nim（雪光）接陰性後綴 -nel",
+    "weight": 4
+   },
+   {
+    "g": "Alariel",
+    "meaning": "金曦＋…之女",
+    "note": "詞根 Alar（金曦）接陰性後綴 -iel",
+    "weight": 2
+   },
+   {
+    "g": "Alarith",
+    "meaning": "金曦＋微光之女",
+    "note": "詞根 Alar（金曦）接陰性後綴 -ith",
+    "weight": 3
+   },
+   {
+    "g": "Alarnel",
+    "meaning": "金曦＋溪畔之女",
+    "note": "詞根 Alar（金曦）接陰性後綴 -nel",
+    "weight": 4
+   },
+   {
+    "g": "Elunwen",
+    "meaning": "星穹＋皎白之女",
+    "note": "詞根 Elun（星穹）接陰性後綴 -wen",
+    "weight": 2
+   },
+   {
+    "g": "Elunara",
+    "meaning": "星穹＋恩澤之女",
+    "note": "詞根 Elun（星穹）接陰性後綴 -ara",
+    "weight": 3
+   },
+   {
+    "g": "Elunlin",
+    "meaning": "星穹＋歌詠之女",
+    "note": "詞根 Elun（星穹）接陰性後綴 -lin",
+    "weight": 4
+   },
+   {
+    "g": "Bremiel",
+    "meaning": "山嵐＋…之女",
+    "note": "詞根 Brem（山嵐）接陰性後綴 -iel",
+    "weight": 2
+   },
+   {
+    "g": "Bremith",
+    "meaning": "山嵐＋微光之女",
+    "note": "詞根 Brem（山嵐）接陰性後綴 -ith",
+    "weight": 3
+   },
+   {
+    "g": "Bremnel",
+    "meaning": "山嵐＋溪畔之女",
+    "note": "詞根 Brem（山嵐）接陰性後綴 -nel",
+    "weight": 4
+   },
+   {
+    "g": "Cyrwen",
+    "meaning": "環光＋皎白之女",
+    "note": "詞根 Cyr（環光）接陰性後綴 -wen",
+    "weight": 2
+   },
+   {
+    "g": "Cyrara",
+    "meaning": "環光＋恩澤之女",
+    "note": "詞根 Cyr（環光）接陰性後綴 -ara",
+    "weight": 3
+   },
+   {
+    "g": "Cyrlin",
+    "meaning": "環光＋歌詠之女",
+    "note": "詞根 Cyr（環光）接陰性後綴 -lin",
+    "weight": 4
+   },
+   {
+    "g": "Daeliel",
+    "meaning": "霞光＋…之女",
+    "note": "詞根 Dael（霞光）接陰性後綴 -iel",
+    "weight": 2
+   },
+   {
+    "g": "Daelith",
+    "meaning": "霞光＋微光之女",
+    "note": "詞根 Dael（霞光）接陰性後綴 -ith",
+    "weight": 3
+   },
+   {
+    "g": "Daelnel",
+    "meaning": "霞光＋溪畔之女",
+    "note": "詞根 Dael（霞光）接陰性後綴 -nel",
+    "weight": 4
+   },
+   {
+    "g": "Vaelwen",
+    "meaning": "帆影＋皎白之女",
+    "note": "詞根 Vael（帆影）接陰性後綴 -wen",
+    "weight": 2
+   },
+   {
+    "g": "Vaelara",
+    "meaning": "帆影＋恩澤之女",
+    "note": "詞根 Vael（帆影）接陰性後綴 -ara",
+    "weight": 3
+   },
+   {
+    "g": "Vaellin",
+    "meaning": "帆影＋歌詠之女",
+    "note": "詞根 Vael（帆影）接陰性後綴 -lin",
+    "weight": 4
+   },
+   {
+    "g": "Niriel",
+    "meaning": "清泉＋…之女",
+    "note": "詞根 Nir（清泉）接陰性後綴 -iel",
+    "weight": 2
+   },
+   {
+    "g": "Nirith",
+    "meaning": "清泉＋微光之女",
+    "note": "詞根 Nir（清泉）接陰性後綴 -ith",
+    "weight": 3
+   },
+   {
+    "g": "Nirnel",
+    "meaning": "清泉＋溪畔之女",
+    "note": "詞根 Nir（清泉）接陰性後綴 -nel",
+    "weight": 4
+   },
+   {
+    "g": "Rellwen",
+    "meaning": "雨簾＋皎白之女",
+    "note": "詞根 Rell（雨簾）接陰性後綴 -wen",
+    "weight": 2
+   },
+   {
+    "g": "Rellara",
+    "meaning": "雨簾＋恩澤之女",
+    "note": "詞根 Rell（雨簾）接陰性後綴 -ara",
+    "weight": 3
+   },
+   {
+    "g": "Relllin",
+    "meaning": "雨簾＋歌詠之女",
+    "note": "詞根 Rell（雨簾）接陰性後綴 -lin",
+    "weight": 4
+   },
+   {
+    "g": "Saeliel",
+    "meaning": "智泉＋…之女",
+    "note": "詞根 Sael（智泉）接陰性後綴 -iel",
+    "weight": 2
+   },
+   {
+    "g": "Saelith",
+    "meaning": "智泉＋微光之女",
+    "note": "詞根 Sael（智泉）接陰性後綴 -ith",
+    "weight": 3
+   },
+   {
+    "g": "Saelnel",
+    "meaning": "智泉＋溪畔之女",
+    "note": "詞根 Sael（智泉）接陰性後綴 -nel",
+    "weight": 4
+   },
+   {
+    "g": "Yrenwen",
+    "meaning": "碧湖＋皎白之女",
+    "note": "詞根 Yren（碧湖）接陰性後綴 -wen",
+    "weight": 2
+   },
+   {
+    "g": "Yrenara",
+    "meaning": "碧湖＋恩澤之女",
+    "note": "詞根 Yren（碧湖）接陰性後綴 -ara",
+    "weight": 3
+   },
+   {
+    "g": "Yrenlin",
+    "meaning": "碧湖＋歌詠之女",
+    "note": "詞根 Yren（碧湖）接陰性後綴 -lin",
+    "weight": 4
+   },
+   {
+    "g": "Yreniel",
+    "meaning": "碧湖＋…之女",
+    "note": "詞根 Yren（碧湖）接陰性後綴 -iel",
+    "weight": 2
+   }
+  ],
+  "u": [
+   {
+    "g": "Aelin",
+    "meaning": "晨曦，直取詞根加中性母音收尾",
+    "note": "無性別後綴，直取詞根，男女皆可用",
+    "weight": 5
+   },
+   {
+    "g": "Firael",
+    "meaning": "星光，詞根加開放雙母音收尾",
+    "note": "收尾雙母音 ael 不屬陰陽任一後綴系統，故為中性",
+    "weight": 4
+   },
+   {
+    "g": "Lumir",
+    "meaning": "輝光，直取詞根加流音收尾",
+    "note": "無性別後綴，僅以流音 r 收尾，不帶性別標記",
+    "weight": 5
+   },
+   {
+    "g": "Serai",
+    "meaning": "微風，詞根加雙母音收尾",
+    "note": "收尾 ai 為開放雙母音，非性別後綴，男女皆可用",
+    "weight": 6
+   },
+   {
+    "g": "Thalen",
+    "meaning": "海潮，直取詞根加鼻音收尾",
+    "note": "無性別後綴，鼻音 n 收尾在本包陰陽兩系皆未專屬",
+    "weight": 4
+   },
+   {
+    "g": "Sylvae",
+    "meaning": "木靈，詞根加開放母音收尾",
+    "note": "收尾 ae 為中性雙母音，不接陰陽後綴",
+    "weight": 5
+   },
+   {
+    "g": "Naeril",
+    "meaning": "溪流，直取詞根加輕音節收尾",
+    "note": "無性別後綴，il 收尾不屬任一性別詞綴",
+    "weight": 6
+   },
+   {
+    "g": "Corael",
+    "meaning": "林間，詞根加雙母音收尾",
+    "note": "收尾 ael 為中性收音，男女皆可用",
+    "weight": 3
+   },
+   {
+    "g": "Ithrae",
+    "meaning": "月華，直取詞根加開放母音收尾",
+    "note": "無性別後綴，直取詞根，屬中性構詞",
+    "weight": 4
+   },
+   {
+    "g": "Raelan",
+    "meaning": "晨露，詞根加鼻音收尾",
+    "note": "an 收尾非本包陰陽後綴，故為中性",
+    "weight": 5
+   },
+   {
+    "g": "Miril",
+    "meaning": "奇珍，直取詞根加輕音節收尾",
+    "note": "無性別後綴，直取詞根，男女皆可用",
+    "weight": 4
+   },
+   {
+    "g": "Vethai",
+    "meaning": "誓言，詞根加雙母音收尾",
+    "note": "收尾 ai 為中性雙母音，不帶性別標記",
+    "weight": 3
+   },
+   {
+    "g": "Taelis",
+    "meaning": "蒼穹，直取詞根加輕音節收尾",
+    "note": "無性別後綴，is 收尾不屬陰陽任一詞綴系統，男女皆可用",
+    "weight": 3
+   },
+   {
+    "g": "Nimae",
+    "meaning": "雪光，詞根加開放雙母音收尾",
+    "note": "收尾 ae 為中性雙母音，不接陰陽後綴",
+    "weight": 4
+   },
+   {
+    "g": "Alarai",
+    "meaning": "金曦，詞根加雙母音收尾",
+    "note": "收尾 ai 為開放雙母音，非性別後綴，男女皆可用",
+    "weight": 3
+   },
+   {
+    "g": "Elunir",
+    "meaning": "星穹，直取詞根加流音收尾",
+    "note": "無性別後綴，僅以流音 r 收尾，不帶性別標記",
+    "weight": 2
+   },
+   {
+    "g": "Bremai",
+    "meaning": "山嵐，詞根加雙母音收尾",
+    "note": "收尾 ai 為中性雙母音，不帶性別標記",
+    "weight": 3
+   },
+   {
+    "g": "Cyren",
+    "meaning": "環光，直取詞根加鼻音收尾",
+    "note": "無性別後綴，鼻音 n 收尾在本包陰陽兩系皆未專屬",
+    "weight": 4
+   },
+   {
+    "g": "Vaelis",
+    "meaning": "帆影，直取詞根加輕音節收尾",
+    "note": "無性別後綴，is 收尾為中性收音，男女皆可用",
+    "weight": 2
+   },
+   {
+    "g": "Nirael",
+    "meaning": "清泉，詞根加雙母音收尾",
+    "note": "收尾 ael 為中性雙母音，不屬任一性別詞綴",
+    "weight": 3
+   }
+  ]
+ },
+ "name_order": "gs"
+}

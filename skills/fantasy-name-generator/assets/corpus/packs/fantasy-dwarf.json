@@ -1,0 +1,1409 @@
+{
+  "id": "fantasy-dwarf",
+  "region": "奇幻",
+  "era": "矮人",
+  "label": "奇幻‧矮人",
+  "note": "適用於高奇幻／TRPG 場景的矮人角色命名。部分給名取自公有領域北歐神話文獻，其餘為依同一音韻風格原創構詞。",
+  "corpus_note": "音韻風格模擬北歐（古諾斯語）語感：硬子音（k／g／th／br／gr／st 等子音叢）、短促母音、少雙母音，予人堅硬剛毅之感，呼應矮人「石」「鐵」「鍛造」的文化意象。男性給名中 12 筆直接取自《詩體埃達．女先知的預言》（Völuspá）附錄矮人名錄 dvergatal，此文獻屬公有領域古北歐詩歌，其矮人名清單亦是後世奇幻作品（含《哈比人》）廣泛借用的公共語料庫。本包僅收錄 dvergatal 中「未」被托爾金《哈比人》十三矮人採用的名字（如 Thorin、Dwalin、Balin、Fili、Kili、Dori、Nori、Ori、Oin、Gloin、Bifur、Bofur、Bombur 因高度識別性連結至該受版權角色群，予以排除不收），避免和該著作角色群产生聯想。其餘給名和全部女性給名、氏族姓氏，皆為本包依上述北歐音韻風格自建詞根、後綴原創組合，非沿用任何神話或作品原文人名。矮人神話文獻本身極少記載女性矮人名，故女性給名部分完全為原創風格化構詞，此為資料包信心相對較低之處。",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "license_note": "語料整理自公開統計和文獻，本站的涵義標注、時代分包和編輯著作採 CC BY 4.0 授權，引用請註明出處。",
+  "rules": {
+    "naming": {
+      "note": "矮人採父名制、氏族名雙軌：正式場合稱「本名、氏族名」（氏族名多為家傳鍛造／礦業意象複合詞，世代沿用，類似人類姓氏但更強調工藝傳承而非血緣頭銜）；熟人之間亦可能以「本名、『…之子／之女』」稱呼以示對父輩的敬重。"
+    }
+  },
+  "surnames": [
+    {
+      "s": "Ironforge",
+      "meaning": "鐵爐",
+      "weight": 3
+    },
+    {
+      "s": "Stonebeard",
+      "meaning": "石鬚",
+      "weight": 4
+    },
+    {
+      "s": "Battlehammer",
+      "meaning": "戰鎚",
+      "weight": 5
+    },
+    {
+      "s": "Deepdelve",
+      "meaning": "深掘",
+      "weight": 6
+    },
+    {
+      "s": "Goldvein",
+      "meaning": "金脈",
+      "weight": 7
+    },
+    {
+      "s": "Copperfist",
+      "meaning": "銅拳",
+      "weight": 3
+    },
+    {
+      "s": "Hearthstone",
+      "meaning": "爐石",
+      "weight": 4
+    },
+    {
+      "s": "Anvilheart",
+      "meaning": "砧心",
+      "weight": 5
+    },
+    {
+      "s": "Darkforge",
+      "meaning": "暗爐",
+      "weight": 6
+    },
+    {
+      "s": "Stoutshield",
+      "meaning": "壯盾",
+      "weight": 7
+    },
+    {
+      "s": "Emberbeard",
+      "meaning": "焰鬚",
+      "weight": 3
+    },
+    {
+      "s": "Graniteaxe",
+      "meaning": "花崗斧",
+      "weight": 4
+    },
+    {
+      "s": "Silvermine",
+      "meaning": "銀礦",
+      "weight": 5
+    },
+    {
+      "s": "Boulderfall",
+      "meaning": "巨石墜",
+      "weight": 6
+    },
+    {
+      "s": "Steelgrip",
+      "meaning": "鋼握",
+      "weight": 7
+    },
+    {
+      "s": "Mountainhold",
+      "meaning": "山守",
+      "weight": 3
+    },
+    {
+      "s": "Oreheart",
+      "meaning": "礦心",
+      "weight": 4
+    },
+    {
+      "s": "Brightanvil",
+      "meaning": "亮砧",
+      "weight": 5
+    },
+    {
+      "s": "Thunderforge",
+      "meaning": "雷爐",
+      "weight": 6
+    },
+    {
+      "s": "Stronghelm",
+      "meaning": "堅盔",
+      "weight": 7
+    },
+    {
+      "s": "Deepstone",
+      "meaning": "深石",
+      "weight": 3
+    },
+    {
+      "s": "Blackiron",
+      "meaning": "黑鐵",
+      "weight": 4
+    },
+    {
+      "s": "Hammerfall",
+      "meaning": "鎚落",
+      "weight": 5
+    },
+    {
+      "s": "Rockbound",
+      "meaning": "岩束",
+      "weight": 6
+    },
+    {
+      "s": "Coalbeard",
+      "meaning": "煤鬚",
+      "weight": 7
+    },
+    {
+      "s": "Forgeheart",
+      "meaning": "爐心",
+      "weight": 3
+    },
+    {
+      "s": "Stonewall",
+      "meaning": "石牆",
+      "weight": 4
+    },
+    {
+      "s": "Ironvein",
+      "meaning": "鐵脈",
+      "weight": 5
+    },
+    {
+      "s": "Grimstone",
+      "meaning": "峻石",
+      "weight": 6
+    },
+    {
+      "s": "Battleforge",
+      "meaning": "戰爐",
+      "weight": 7
+    },
+    {
+      "s": "Underhold",
+      "meaning": "地底守",
+      "weight": 3
+    },
+    {
+      "s": "Goldbeard",
+      "meaning": "金鬚",
+      "weight": 4
+    },
+    {
+      "s": "Stonefist",
+      "meaning": "石拳",
+      "weight": 5
+    },
+    {
+      "s": "Deepforge",
+      "meaning": "深爐",
+      "weight": 6
+    },
+    {
+      "s": "Ironhold",
+      "meaning": "鐵守",
+      "weight": 7
+    }
+  ],
+  "given": {
+    "m": [
+      {
+        "g": "Nyi",
+        "meaning": "新月",
+        "note": "《詩體埃達．女先知的預言》矮人名錄（dvergatal）",
+        "weight": 6
+      },
+      {
+        "g": "Nidi",
+        "meaning": "虧月",
+        "note": "dvergatal 公有領域矮人名",
+        "weight": 6
+      },
+      {
+        "g": "Nordri",
+        "meaning": "北方",
+        "note": "dvergatal 公有領域矮人名，四方位矮人之一",
+        "weight": 6
+      },
+      {
+        "g": "Sudri",
+        "meaning": "南方",
+        "note": "dvergatal 公有領域矮人名，四方位矮人之一",
+        "weight": 6
+      },
+      {
+        "g": "Austri",
+        "meaning": "東方",
+        "note": "dvergatal 公有領域矮人名，四方位矮人之一",
+        "weight": 6
+      },
+      {
+        "g": "Vestri",
+        "meaning": "西方",
+        "note": "dvergatal 公有領域矮人名，四方位矮人之一",
+        "weight": 6
+      },
+      {
+        "g": "Althjof",
+        "meaning": "大盜",
+        "note": "dvergatal 公有領域矮人名",
+        "weight": 6
+      },
+      {
+        "g": "Dvalin",
+        "meaning": "沉睡者",
+        "note": "dvergatal 公有領域矮人名，亦見於古北歐傳說中著名工匠矮人",
+        "weight": 6
+      },
+      {
+        "g": "Nar",
+        "meaning": "屍屬／狹窄",
+        "note": "dvergatal 公有領域矮人名",
+        "weight": 6
+      },
+      {
+        "g": "Bivor",
+        "meaning": "顫抖者",
+        "note": "dvergatal 公有領域矮人名",
+        "weight": 6
+      },
+      {
+        "g": "Frar",
+        "meaning": "迅捷",
+        "note": "dvergatal 公有領域矮人名",
+        "weight": 6
+      },
+      {
+        "g": "Eikinskjaldi",
+        "meaning": "橡木盾",
+        "note": "dvergatal 公有領域矮人名",
+        "weight": 6
+      },
+      {
+        "g": "Thundin",
+        "meaning": "雷鳴＋…之子",
+        "weight": 3
+      },
+      {
+        "g": "Grimir",
+        "meaning": "面具／堅毅＋…者",
+        "weight": 4
+      },
+      {
+        "g": "Branur",
+        "meaning": "烈焰＋…之族",
+        "weight": 5
+      },
+      {
+        "g": "Durnok",
+        "meaning": "堅固＋硬朗之稱",
+        "weight": 6
+      },
+      {
+        "g": "Balar",
+        "meaning": "強大＋堅定者",
+        "weight": 7
+      },
+      {
+        "g": "Kazin",
+        "meaning": "礦脈＋…之子",
+        "weight": 3
+      },
+      {
+        "g": "Dorir",
+        "meaning": "門扉＋…者",
+        "weight": 4
+      },
+      {
+        "g": "Morur",
+        "meaning": "黝黑＋…之族",
+        "weight": 5
+      },
+      {
+        "g": "Grunok",
+        "meaning": "地底＋硬朗之稱",
+        "weight": 6
+      },
+      {
+        "g": "Stokar",
+        "meaning": "石塊＋堅定者",
+        "weight": 7
+      },
+      {
+        "g": "Brokin",
+        "meaning": "鍛爐＋…之子",
+        "weight": 3
+      },
+      {
+        "g": "Haldnir",
+        "meaning": "持守＋…者",
+        "weight": 4
+      },
+      {
+        "g": "Vorur",
+        "meaning": "誓言＋…之族",
+        "weight": 5
+      },
+      {
+        "g": "Kragok",
+        "meaning": "岩脊＋硬朗之稱",
+        "weight": 6
+      },
+      {
+        "g": "Thrundar",
+        "meaning": "雷霆＋堅定者",
+        "weight": 7
+      },
+      {
+        "g": "Gormin",
+        "meaning": "戰盔＋…之子",
+        "weight": 3
+      },
+      {
+        "g": "Skorir",
+        "meaning": "刻痕＋…者",
+        "weight": 4
+      },
+      {
+        "g": "Orikur",
+        "meaning": "礦石＋…之族",
+        "weight": 5
+      },
+      {
+        "g": "Brukok",
+        "meaning": "橋樑＋硬朗之稱",
+        "weight": 6
+      },
+      {
+        "g": "Hrolfar",
+        "meaning": "著名之狼＋堅定者",
+        "weight": 7
+      },
+      {
+        "g": "Valdrin",
+        "meaning": "統御＋…之子",
+        "weight": 3
+      },
+      {
+        "g": "Bryndir",
+        "meaning": "胸甲＋…者",
+        "weight": 4
+      },
+      {
+        "g": "Thokur",
+        "meaning": "重擊＋…之族",
+        "weight": 5
+      },
+      {
+        "g": "Garnok",
+        "meaning": "紗線／織工＋硬朗之稱",
+        "weight": 6
+      },
+      {
+        "g": "Holmar",
+        "meaning": "島礁＋堅定者",
+        "weight": 7
+      },
+      {
+        "g": "Steinin",
+        "meaning": "磐石＋…之子",
+        "weight": 3
+      },
+      {
+        "g": "Brandir",
+        "meaning": "烙印＋…者",
+        "weight": 4
+      },
+      {
+        "g": "Gildur",
+        "meaning": "黃金＋…之族",
+        "weight": 5
+      },
+      {
+        "g": "Krumok",
+        "meaning": "彎曲有力＋硬朗之稱",
+        "weight": 6
+      },
+      {
+        "g": "Dvorar",
+        "meaning": "矮小堅實＋堅定者",
+        "weight": 7
+      },
+      {
+        "g": "Ornin",
+        "meaning": "鷹＋…之子",
+        "weight": 3
+      },
+      {
+        "g": "Borkir",
+        "meaning": "樹皮／盾牌＋…者",
+        "weight": 4
+      },
+      {
+        "g": "Hristur",
+        "meaning": "震動者＋…之族",
+        "weight": 5
+      },
+      {
+        "g": "Smidok",
+        "meaning": "鍛工＋硬朗之稱",
+        "weight": 6
+      },
+      {
+        "g": "Volundar",
+        "meaning": "巧匠＋堅定者",
+        "weight": 7
+      },
+      {
+        "g": "Brogarin",
+        "meaning": "石環＋…之子",
+        "weight": 3
+      },
+      {
+        "g": "Thrainir",
+        "meaning": "堅忍＋…者",
+        "weight": 4
+      },
+      {
+        "g": "Dagorur",
+        "meaning": "戰役＋…之族",
+        "weight": 5
+      },
+      {
+        "g": "Nordok",
+        "meaning": "北地＋硬朗之稱",
+        "weight": 6
+      },
+      {
+        "g": "Ulfrar",
+        "meaning": "狼＋堅定者",
+        "weight": 7
+      },
+      {
+        "g": "Thundur",
+        "meaning": "雷鳴＋…之族",
+        "weight": 2
+      },
+      {
+        "g": "Grimok",
+        "meaning": "面具／堅毅＋硬朗之稱",
+        "weight": 3
+      },
+      {
+        "g": "Branar",
+        "meaning": "烈焰＋堅定者",
+        "weight": 4
+      },
+      {
+        "g": "Durnin",
+        "meaning": "堅固＋…之子",
+        "weight": 5
+      },
+      {
+        "g": "Balir",
+        "meaning": "強大＋…者",
+        "weight": 2
+      },
+      {
+        "g": "Kazur",
+        "meaning": "礦脈＋…之族",
+        "weight": 3
+      },
+      {
+        "g": "Dorok",
+        "meaning": "門扉＋硬朗之稱",
+        "weight": 4
+      },
+      {
+        "g": "Morar",
+        "meaning": "黝黑＋堅定者",
+        "weight": 5
+      },
+      {
+        "g": "Grunin",
+        "meaning": "地底＋…之子",
+        "weight": 2
+      },
+      {
+        "g": "Stokir",
+        "meaning": "石塊＋…者",
+        "weight": 3
+      },
+      {
+        "g": "Kharin",
+        "meaning": "花崗＋…之子",
+        "note": "原創詞根 Khar（花崗）＋陽性後綴 -in（…之子）",
+        "weight": 2
+      },
+      {
+        "g": "Kharir",
+        "meaning": "花崗＋…者",
+        "note": "原創詞根 Khar（花崗）＋陽性後綴 -ir（…者）",
+        "weight": 3
+      },
+      {
+        "g": "Kharur",
+        "meaning": "花崗＋…之族",
+        "note": "原創詞根 Khar（花崗）＋陽性後綴 -ur（…之族）",
+        "weight": 4
+      },
+      {
+        "g": "Kharok",
+        "meaning": "花崗＋硬朗之稱",
+        "note": "原創詞根 Khar（花崗）＋陽性後綴 -ok（硬朗之稱）",
+        "weight": 2
+      },
+      {
+        "g": "Kharar",
+        "meaning": "花崗＋堅定者",
+        "note": "原創詞根 Khar（花崗）＋陽性後綴 -ar（堅定者）",
+        "weight": 3
+      },
+      {
+        "g": "Torgin",
+        "meaning": "岩門＋…之子",
+        "note": "原創詞根 Torg（岩門）＋陽性後綴 -in（…之子）",
+        "weight": 4
+      },
+      {
+        "g": "Torgir",
+        "meaning": "岩門＋…者",
+        "note": "原創詞根 Torg（岩門）＋陽性後綴 -ir（…者）",
+        "weight": 2
+      },
+      {
+        "g": "Torgur",
+        "meaning": "岩門＋…之族",
+        "note": "原創詞根 Torg（岩門）＋陽性後綴 -ur（…之族）",
+        "weight": 3
+      },
+      {
+        "g": "Torgok",
+        "meaning": "岩門＋硬朗之稱",
+        "note": "原創詞根 Torg（岩門）＋陽性後綴 -ok（硬朗之稱）",
+        "weight": 4
+      },
+      {
+        "g": "Torgar",
+        "meaning": "岩門＋堅定者",
+        "note": "原創詞根 Torg（岩門）＋陽性後綴 -ar（堅定者）",
+        "weight": 2
+      },
+      {
+        "g": "Skarnin",
+        "meaning": "礦岩＋…之子",
+        "note": "原創詞根 Skarn（礦岩）＋陽性後綴 -in（…之子）",
+        "weight": 3
+      },
+      {
+        "g": "Skarnir",
+        "meaning": "礦岩＋…者",
+        "note": "原創詞根 Skarn（礦岩）＋陽性後綴 -ir（…者）",
+        "weight": 4
+      },
+      {
+        "g": "Skarnur",
+        "meaning": "礦岩＋…之族",
+        "note": "原創詞根 Skarn（礦岩）＋陽性後綴 -ur（…之族）",
+        "weight": 2
+      },
+      {
+        "g": "Skarnok",
+        "meaning": "礦岩＋硬朗之稱",
+        "note": "原創詞根 Skarn（礦岩）＋陽性後綴 -ok（硬朗之稱）",
+        "weight": 3
+      },
+      {
+        "g": "Skarnar",
+        "meaning": "礦岩＋堅定者",
+        "note": "原創詞根 Skarn（礦岩）＋陽性後綴 -ar（堅定者）",
+        "weight": 4
+      },
+      {
+        "g": "Vrakin",
+        "meaning": "碎岩＋…之子",
+        "note": "原創詞根 Vrak（碎岩）＋陽性後綴 -in（…之子）",
+        "weight": 2
+      },
+      {
+        "g": "Vrakir",
+        "meaning": "碎岩＋…者",
+        "note": "原創詞根 Vrak（碎岩）＋陽性後綴 -ir（…者）",
+        "weight": 3
+      },
+      {
+        "g": "Vrakur",
+        "meaning": "碎岩＋…之族",
+        "note": "原創詞根 Vrak（碎岩）＋陽性後綴 -ur（…之族）",
+        "weight": 4
+      },
+      {
+        "g": "Vrakok",
+        "meaning": "碎岩＋硬朗之稱",
+        "note": "原創詞根 Vrak（碎岩）＋陽性後綴 -ok（硬朗之稱）",
+        "weight": 2
+      },
+      {
+        "g": "Vrakar",
+        "meaning": "碎岩＋堅定者",
+        "note": "原創詞根 Vrak（碎岩）＋陽性後綴 -ar（堅定者）",
+        "weight": 3
+      },
+      {
+        "g": "Brontin",
+        "meaning": "雷石＋…之子",
+        "note": "原創詞根 Bront（雷石）＋陽性後綴 -in（…之子）",
+        "weight": 4
+      },
+      {
+        "g": "Brontir",
+        "meaning": "雷石＋…者",
+        "note": "原創詞根 Bront（雷石）＋陽性後綴 -ir（…者）",
+        "weight": 2
+      },
+      {
+        "g": "Brontur",
+        "meaning": "雷石＋…之族",
+        "note": "原創詞根 Bront（雷石）＋陽性後綴 -ur（…之族）",
+        "weight": 3
+      },
+      {
+        "g": "Brontok",
+        "meaning": "雷石＋硬朗之稱",
+        "note": "原創詞根 Bront（雷石）＋陽性後綴 -ok（硬朗之稱）",
+        "weight": 4
+      },
+      {
+        "g": "Brontar",
+        "meaning": "雷石＋堅定者",
+        "note": "原創詞根 Bront（雷石）＋陽性後綴 -ar（堅定者）",
+        "weight": 2
+      },
+      {
+        "g": "Marnin",
+        "meaning": "礦坑＋…之子",
+        "note": "原創詞根 Marn（礦坑）＋陽性後綴 -in（…之子）",
+        "weight": 3
+      },
+      {
+        "g": "Marnir",
+        "meaning": "礦坑＋…者",
+        "note": "原創詞根 Marn（礦坑）＋陽性後綴 -ir（…者）",
+        "weight": 4
+      },
+      {
+        "g": "Marnur",
+        "meaning": "礦坑＋…之族",
+        "note": "原創詞根 Marn（礦坑）＋陽性後綴 -ur（…之族）",
+        "weight": 2
+      },
+      {
+        "g": "Marnok",
+        "meaning": "礦坑＋硬朗之稱",
+        "note": "原創詞根 Marn（礦坑）＋陽性後綴 -ok（硬朗之稱）",
+        "weight": 3
+      },
+      {
+        "g": "Marnar",
+        "meaning": "礦坑＋堅定者",
+        "note": "原創詞根 Marn（礦坑）＋陽性後綴 -ar（堅定者）",
+        "weight": 4
+      },
+      {
+        "g": "Helkin",
+        "meaning": "熔渣＋…之子",
+        "note": "原創詞根 Helk（熔渣）＋陽性後綴 -in（…之子）",
+        "weight": 2
+      },
+      {
+        "g": "Helkir",
+        "meaning": "熔渣＋…者",
+        "note": "原創詞根 Helk（熔渣）＋陽性後綴 -ir（…者）",
+        "weight": 3
+      },
+      {
+        "g": "Helkur",
+        "meaning": "熔渣＋…之族",
+        "note": "原創詞根 Helk（熔渣）＋陽性後綴 -ur（…之族）",
+        "weight": 4
+      },
+      {
+        "g": "Helkok",
+        "meaning": "熔渣＋硬朗之稱",
+        "note": "原創詞根 Helk（熔渣）＋陽性後綴 -ok（硬朗之稱）",
+        "weight": 2
+      },
+      {
+        "g": "Helkar",
+        "meaning": "熔渣＋堅定者",
+        "note": "原創詞根 Helk（熔渣）＋陽性後綴 -ar（堅定者）",
+        "weight": 3
+      },
+      {
+        "g": "Stromin",
+        "meaning": "熔流＋…之子",
+        "note": "原創詞根 Strom（熔流）＋陽性後綴 -in（…之子）",
+        "weight": 4
+      },
+      {
+        "g": "Stromir",
+        "meaning": "熔流＋…者",
+        "note": "原創詞根 Strom（熔流）＋陽性後綴 -ir（…者）",
+        "weight": 2
+      },
+      {
+        "g": "Stromur",
+        "meaning": "熔流＋…之族",
+        "note": "原創詞根 Strom（熔流）＋陽性後綴 -ur（…之族）",
+        "weight": 3
+      }
+    ],
+    "f": [
+      {
+        "g": "Thunddis",
+        "meaning": "雷鳴＋…之女神",
+        "weight": 3
+      },
+      {
+        "g": "Grimhild",
+        "meaning": "面具／堅毅＋…之戰婦",
+        "weight": 4
+      },
+      {
+        "g": "Branveig",
+        "meaning": "烈焰＋…之力",
+        "weight": 5
+      },
+      {
+        "g": "Durnrun",
+        "meaning": "堅固＋…之秘紋",
+        "weight": 6
+      },
+      {
+        "g": "Balgerd",
+        "meaning": "強大＋…之守護",
+        "weight": 7
+      },
+      {
+        "g": "Kazdis",
+        "meaning": "礦脈＋…之女神",
+        "weight": 3
+      },
+      {
+        "g": "Dorhild",
+        "meaning": "門扉＋…之戰婦",
+        "weight": 4
+      },
+      {
+        "g": "Morveig",
+        "meaning": "黝黑＋…之力",
+        "weight": 5
+      },
+      {
+        "g": "Grunrun",
+        "meaning": "地底＋…之秘紋",
+        "weight": 6
+      },
+      {
+        "g": "Stokgerd",
+        "meaning": "石塊＋…之守護",
+        "weight": 7
+      },
+      {
+        "g": "Brokdis",
+        "meaning": "鍛爐＋…之女神",
+        "weight": 3
+      },
+      {
+        "g": "Haldnhild",
+        "meaning": "持守＋…之戰婦",
+        "weight": 4
+      },
+      {
+        "g": "Vorveig",
+        "meaning": "誓言＋…之力",
+        "weight": 5
+      },
+      {
+        "g": "Kragrun",
+        "meaning": "岩脊＋…之秘紋",
+        "weight": 6
+      },
+      {
+        "g": "Thrundgerd",
+        "meaning": "雷霆＋…之守護",
+        "weight": 7
+      },
+      {
+        "g": "Gormdis",
+        "meaning": "戰盔＋…之女神",
+        "weight": 3
+      },
+      {
+        "g": "Skorhild",
+        "meaning": "刻痕＋…之戰婦",
+        "weight": 4
+      },
+      {
+        "g": "Orikveig",
+        "meaning": "礦石＋…之力",
+        "weight": 5
+      },
+      {
+        "g": "Brukrun",
+        "meaning": "橋樑＋…之秘紋",
+        "weight": 6
+      },
+      {
+        "g": "Hrolfgerd",
+        "meaning": "著名之狼＋…之守護",
+        "weight": 7
+      },
+      {
+        "g": "Valdrdis",
+        "meaning": "統御＋…之女神",
+        "weight": 3
+      },
+      {
+        "g": "Bryndhild",
+        "meaning": "胸甲＋…之戰婦",
+        "weight": 4
+      },
+      {
+        "g": "Thokveig",
+        "meaning": "重擊＋…之力",
+        "weight": 5
+      },
+      {
+        "g": "Garnrun",
+        "meaning": "紗線／織工＋…之秘紋",
+        "weight": 6
+      },
+      {
+        "g": "Holmgerd",
+        "meaning": "島礁＋…之守護",
+        "weight": 7
+      },
+      {
+        "g": "Steindis",
+        "meaning": "磐石＋…之女神",
+        "weight": 3
+      },
+      {
+        "g": "Brandhild",
+        "meaning": "烙印＋…之戰婦",
+        "weight": 4
+      },
+      {
+        "g": "Gildveig",
+        "meaning": "黃金＋…之力",
+        "weight": 5
+      },
+      {
+        "g": "Krumrun",
+        "meaning": "彎曲有力＋…之秘紋",
+        "weight": 6
+      },
+      {
+        "g": "Dvorgerd",
+        "meaning": "矮小堅實＋…之守護",
+        "weight": 7
+      },
+      {
+        "g": "Orndis",
+        "meaning": "鷹＋…之女神",
+        "weight": 3
+      },
+      {
+        "g": "Borkhild",
+        "meaning": "樹皮／盾牌＋…之戰婦",
+        "weight": 4
+      },
+      {
+        "g": "Hristveig",
+        "meaning": "震動者＋…之力",
+        "weight": 5
+      },
+      {
+        "g": "Smidrun",
+        "meaning": "鍛工＋…之秘紋",
+        "weight": 6
+      },
+      {
+        "g": "Volundgerd",
+        "meaning": "巧匠＋…之守護",
+        "weight": 7
+      },
+      {
+        "g": "Brogardis",
+        "meaning": "石環＋…之女神",
+        "weight": 3
+      },
+      {
+        "g": "Thrainhild",
+        "meaning": "堅忍＋…之戰婦",
+        "weight": 4
+      },
+      {
+        "g": "Dagorveig",
+        "meaning": "戰役＋…之力",
+        "weight": 5
+      },
+      {
+        "g": "Nordrun",
+        "meaning": "北地＋…之秘紋",
+        "weight": 6
+      },
+      {
+        "g": "Ulfrgerd",
+        "meaning": "狼＋…之守護",
+        "weight": 7
+      },
+      {
+        "g": "Thundveig",
+        "meaning": "雷鳴＋…之力",
+        "weight": 2
+      },
+      {
+        "g": "Grimrun",
+        "meaning": "面具／堅毅＋…之秘紋",
+        "weight": 3
+      },
+      {
+        "g": "Brangerd",
+        "meaning": "烈焰＋…之守護",
+        "weight": 4
+      },
+      {
+        "g": "Durndis",
+        "meaning": "堅固＋…之女神",
+        "weight": 5
+      },
+      {
+        "g": "Balhild",
+        "meaning": "強大＋…之戰婦",
+        "weight": 2
+      },
+      {
+        "g": "Kazveig",
+        "meaning": "礦脈＋…之力",
+        "weight": 3
+      },
+      {
+        "g": "Dorrun",
+        "meaning": "門扉＋…之秘紋",
+        "weight": 4
+      },
+      {
+        "g": "Morgerd",
+        "meaning": "黝黑＋…之守護",
+        "weight": 5
+      },
+      {
+        "g": "Grundis",
+        "meaning": "地底＋…之女神",
+        "weight": 2
+      },
+      {
+        "g": "Stokhild",
+        "meaning": "石塊＋…之戰婦",
+        "weight": 3
+      },
+      {
+        "g": "Brokveig",
+        "meaning": "鍛爐＋…之力",
+        "weight": 4
+      },
+      {
+        "g": "Haldnrun",
+        "meaning": "持守＋…之秘紋",
+        "weight": 5
+      },
+      {
+        "g": "Vorgerd",
+        "meaning": "誓言＋…之守護",
+        "weight": 2
+      },
+      {
+        "g": "Kragdis",
+        "meaning": "岩脊＋…之女神",
+        "weight": 3
+      },
+      {
+        "g": "Thrundhild",
+        "meaning": "雷霆＋…之戰婦",
+        "weight": 4
+      },
+      {
+        "g": "Gormveig",
+        "meaning": "戰盔＋…之力",
+        "weight": 5
+      },
+      {
+        "g": "Skorrun",
+        "meaning": "刻痕＋…之秘紋",
+        "weight": 2
+      },
+      {
+        "g": "Orikgerd",
+        "meaning": "礦石＋…之守護",
+        "weight": 3
+      },
+      {
+        "g": "Brukdis",
+        "meaning": "橋樑＋…之女神",
+        "weight": 4
+      },
+      {
+        "g": "Hrolfhild",
+        "meaning": "著名之狼＋…之戰婦",
+        "weight": 5
+      },
+      {
+        "g": "Valdrveig",
+        "meaning": "統御＋…之力",
+        "weight": 2
+      },
+      {
+        "g": "Bryndrun",
+        "meaning": "胸甲＋…之秘紋",
+        "weight": 3
+      },
+      {
+        "g": "Khardis",
+        "meaning": "花崗＋…之女神",
+        "note": "原創詞根 Khar（花崗）＋陰性後綴 -dis（…之女神）",
+        "weight": 2
+      },
+      {
+        "g": "Kharhild",
+        "meaning": "花崗＋…之戰婦",
+        "note": "原創詞根 Khar（花崗）＋陰性後綴 -hild（…之戰婦）",
+        "weight": 3
+      },
+      {
+        "g": "Kharveig",
+        "meaning": "花崗＋…之力",
+        "note": "原創詞根 Khar（花崗）＋陰性後綴 -veig（…之力）",
+        "weight": 4
+      },
+      {
+        "g": "Kharrun",
+        "meaning": "花崗＋…之秘紋",
+        "note": "原創詞根 Khar（花崗）＋陰性後綴 -run（…之秘紋）",
+        "weight": 2
+      },
+      {
+        "g": "Khargerd",
+        "meaning": "花崗＋…之守護",
+        "note": "原創詞根 Khar（花崗）＋陰性後綴 -gerd（…之守護）",
+        "weight": 3
+      },
+      {
+        "g": "Torgdis",
+        "meaning": "岩門＋…之女神",
+        "note": "原創詞根 Torg（岩門）＋陰性後綴 -dis（…之女神）",
+        "weight": 4
+      },
+      {
+        "g": "Torghild",
+        "meaning": "岩門＋…之戰婦",
+        "note": "原創詞根 Torg（岩門）＋陰性後綴 -hild（…之戰婦）",
+        "weight": 2
+      },
+      {
+        "g": "Torgveig",
+        "meaning": "岩門＋…之力",
+        "note": "原創詞根 Torg（岩門）＋陰性後綴 -veig（…之力）",
+        "weight": 3
+      },
+      {
+        "g": "Torgrun",
+        "meaning": "岩門＋…之秘紋",
+        "note": "原創詞根 Torg（岩門）＋陰性後綴 -run（…之秘紋）",
+        "weight": 4
+      },
+      {
+        "g": "Torggerd",
+        "meaning": "岩門＋…之守護",
+        "note": "原創詞根 Torg（岩門）＋陰性後綴 -gerd（…之守護）",
+        "weight": 2
+      },
+      {
+        "g": "Skarndis",
+        "meaning": "礦岩＋…之女神",
+        "note": "原創詞根 Skarn（礦岩）＋陰性後綴 -dis（…之女神）",
+        "weight": 3
+      },
+      {
+        "g": "Skarnhild",
+        "meaning": "礦岩＋…之戰婦",
+        "note": "原創詞根 Skarn（礦岩）＋陰性後綴 -hild（…之戰婦）",
+        "weight": 4
+      },
+      {
+        "g": "Skarnveig",
+        "meaning": "礦岩＋…之力",
+        "note": "原創詞根 Skarn（礦岩）＋陰性後綴 -veig（…之力）",
+        "weight": 2
+      },
+      {
+        "g": "Skarnrun",
+        "meaning": "礦岩＋…之秘紋",
+        "note": "原創詞根 Skarn（礦岩）＋陰性後綴 -run（…之秘紋）",
+        "weight": 3
+      },
+      {
+        "g": "Skarngerd",
+        "meaning": "礦岩＋…之守護",
+        "note": "原創詞根 Skarn（礦岩）＋陰性後綴 -gerd（…之守護）",
+        "weight": 4
+      },
+      {
+        "g": "Vrakdis",
+        "meaning": "碎岩＋…之女神",
+        "note": "原創詞根 Vrak（碎岩）＋陰性後綴 -dis（…之女神）",
+        "weight": 2
+      },
+      {
+        "g": "Vrakhild",
+        "meaning": "碎岩＋…之戰婦",
+        "note": "原創詞根 Vrak（碎岩）＋陰性後綴 -hild（…之戰婦）",
+        "weight": 3
+      },
+      {
+        "g": "Vrakveig",
+        "meaning": "碎岩＋…之力",
+        "note": "原創詞根 Vrak（碎岩）＋陰性後綴 -veig（…之力）",
+        "weight": 4
+      },
+      {
+        "g": "Vrakrun",
+        "meaning": "碎岩＋…之秘紋",
+        "note": "原創詞根 Vrak（碎岩）＋陰性後綴 -run（…之秘紋）",
+        "weight": 2
+      },
+      {
+        "g": "Vrakgerd",
+        "meaning": "碎岩＋…之守護",
+        "note": "原創詞根 Vrak（碎岩）＋陰性後綴 -gerd（…之守護）",
+        "weight": 3
+      },
+      {
+        "g": "Brontdis",
+        "meaning": "雷石＋…之女神",
+        "note": "原創詞根 Bront（雷石）＋陰性後綴 -dis（…之女神）",
+        "weight": 4
+      },
+      {
+        "g": "Bronthild",
+        "meaning": "雷石＋…之戰婦",
+        "note": "原創詞根 Bront（雷石）＋陰性後綴 -hild（…之戰婦）",
+        "weight": 2
+      },
+      {
+        "g": "Brontveig",
+        "meaning": "雷石＋…之力",
+        "note": "原創詞根 Bront（雷石）＋陰性後綴 -veig（…之力）",
+        "weight": 3
+      },
+      {
+        "g": "Brontrun",
+        "meaning": "雷石＋…之秘紋",
+        "note": "原創詞根 Bront（雷石）＋陰性後綴 -run（…之秘紋）",
+        "weight": 4
+      },
+      {
+        "g": "Brontgerd",
+        "meaning": "雷石＋…之守護",
+        "note": "原創詞根 Bront（雷石）＋陰性後綴 -gerd（…之守護）",
+        "weight": 2
+      },
+      {
+        "g": "Marndis",
+        "meaning": "礦坑＋…之女神",
+        "note": "原創詞根 Marn（礦坑）＋陰性後綴 -dis（…之女神）",
+        "weight": 3
+      },
+      {
+        "g": "Marnhild",
+        "meaning": "礦坑＋…之戰婦",
+        "note": "原創詞根 Marn（礦坑）＋陰性後綴 -hild（…之戰婦）",
+        "weight": 4
+      },
+      {
+        "g": "Marnveig",
+        "meaning": "礦坑＋…之力",
+        "note": "原創詞根 Marn（礦坑）＋陰性後綴 -veig（…之力）",
+        "weight": 2
+      },
+      {
+        "g": "Marnrun",
+        "meaning": "礦坑＋…之秘紋",
+        "note": "原創詞根 Marn（礦坑）＋陰性後綴 -run（…之秘紋）",
+        "weight": 3
+      },
+      {
+        "g": "Marngerd",
+        "meaning": "礦坑＋…之守護",
+        "note": "原創詞根 Marn（礦坑）＋陰性後綴 -gerd（…之守護）",
+        "weight": 4
+      },
+      {
+        "g": "Helkdis",
+        "meaning": "熔渣＋…之女神",
+        "note": "原創詞根 Helk（熔渣）＋陰性後綴 -dis（…之女神）",
+        "weight": 2
+      },
+      {
+        "g": "Helkhild",
+        "meaning": "熔渣＋…之戰婦",
+        "note": "原創詞根 Helk（熔渣）＋陰性後綴 -hild（…之戰婦）",
+        "weight": 3
+      },
+      {
+        "g": "Helkveig",
+        "meaning": "熔渣＋…之力",
+        "note": "原創詞根 Helk（熔渣）＋陰性後綴 -veig（…之力）",
+        "weight": 4
+      },
+      {
+        "g": "Helkrun",
+        "meaning": "熔渣＋…之秘紋",
+        "note": "原創詞根 Helk（熔渣）＋陰性後綴 -run（…之秘紋）",
+        "weight": 2
+      },
+      {
+        "g": "Helkgerd",
+        "meaning": "熔渣＋…之守護",
+        "note": "原創詞根 Helk（熔渣）＋陰性後綴 -gerd（…之守護）",
+        "weight": 3
+      },
+      {
+        "g": "Stromdis",
+        "meaning": "熔流＋…之女神",
+        "note": "原創詞根 Strom（熔流）＋陰性後綴 -dis（…之女神）",
+        "weight": 4
+      },
+      {
+        "g": "Stromhild",
+        "meaning": "熔流＋…之戰婦",
+        "note": "原創詞根 Strom（熔流）＋陰性後綴 -hild（…之戰婦）",
+        "weight": 2
+      },
+      {
+        "g": "Stromveig",
+        "meaning": "熔流＋…之力",
+        "note": "原創詞根 Strom（熔流）＋陰性後綴 -veig（…之力）",
+        "weight": 3
+      }
+    ],
+    "u": [
+      {
+        "g": "Kazgrun",
+        "meaning": "礦脈＋地底",
+        "note": "雙詞根直接複合，不接陰陽性後綴，仿 dvergatal 無性別標記名風格",
+        "weight": 5
+      },
+      {
+        "g": "Steinbrok",
+        "meaning": "磐石＋鍛爐",
+        "note": "兩個中性詞根複合，無性別後綴",
+        "weight": 4
+      },
+      {
+        "g": "Durnkrag",
+        "meaning": "堅固＋岩脊",
+        "note": "雙詞根複合，收尾為詞根本身而非性別詞綴",
+        "weight": 5
+      },
+      {
+        "g": "Morstok",
+        "meaning": "黝黑＋石塊",
+        "note": "無性別後綴，直取兩個詞根複合",
+        "weight": 6
+      },
+      {
+        "g": "Thundgrim",
+        "meaning": "雷鳴＋堅毅",
+        "note": "雙詞根複合，兩根皆無性別傾向",
+        "weight": 4
+      },
+      {
+        "g": "Brangorm",
+        "meaning": "烈焰＋戰盔",
+        "note": "無性別後綴，鍛戰意象詞根直接複合",
+        "weight": 5
+      },
+      {
+        "g": "Vorstein",
+        "meaning": "誓言＋磐石",
+        "note": "雙詞根複合，不接陰陽任一後綴系統",
+        "weight": 6
+      },
+      {
+        "g": "Skorbal",
+        "meaning": "刻痕＋強大",
+        "note": "無性別後綴，直取詞根複合",
+        "weight": 3
+      },
+      {
+        "g": "Gildorn",
+        "meaning": "黃金＋鷹",
+        "note": "雙詞根複合，收尾非性別詞綴",
+        "weight": 4
+      },
+      {
+        "g": "Hristkaz",
+        "meaning": "震動者＋礦脈",
+        "note": "無性別後綴，兩個中性詞根複合",
+        "weight": 5
+      },
+      {
+        "g": "Krumvor",
+        "meaning": "彎曲有力＋誓言",
+        "note": "雙詞根複合，無陰陽性標記",
+        "weight": 3
+      },
+      {
+        "g": "Nordbran",
+        "meaning": "北地＋烈焰",
+        "note": "無性別後綴，直取兩個詞根複合",
+        "weight": 4
+      },
+      {
+        "g": "Khartorg",
+        "meaning": "花崗＋岩門",
+        "note": "雙詞根直接複合，不接任何陰陽性後綴，故為中性",
+        "weight": 2
+      },
+      {
+        "g": "Skarnvrak",
+        "meaning": "礦岩＋碎岩",
+        "note": "雙詞根直接複合，不接任何陰陽性後綴，故為中性",
+        "weight": 3
+      },
+      {
+        "g": "Brontmarn",
+        "meaning": "雷石＋礦坑",
+        "note": "雙詞根直接複合，不接任何陰陽性後綴，故為中性",
+        "weight": 4
+      },
+      {
+        "g": "Helkstrom",
+        "meaning": "熔渣＋熔流",
+        "note": "雙詞根直接複合，不接任何陰陽性後綴，故為中性",
+        "weight": 2
+      },
+      {
+        "g": "Torgskarn",
+        "meaning": "岩門＋礦岩",
+        "note": "雙詞根直接複合，不接任何陰陽性後綴，故為中性",
+        "weight": 3
+      },
+      {
+        "g": "Vrakbront",
+        "meaning": "碎岩＋雷石",
+        "note": "雙詞根直接複合，不接任何陰陽性後綴，故為中性",
+        "weight": 4
+      },
+      {
+        "g": "Marnhelk",
+        "meaning": "礦坑＋熔渣",
+        "note": "雙詞根直接複合，不接任何陰陽性後綴，故為中性",
+        "weight": 2
+      },
+      {
+        "g": "Stromkhar",
+        "meaning": "熔流＋花崗",
+        "note": "雙詞根直接複合，不接任何陰陽性後綴，故為中性",
+        "weight": 3
+      }
+    ]
+  },
+  "name_order": "gs"
+}

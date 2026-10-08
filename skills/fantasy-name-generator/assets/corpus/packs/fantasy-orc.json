@@ -1,0 +1,1382 @@
+{
+ "id": "fantasy-orc",
+ "region": "奇幻",
+ "era": "獸人",
+ "label": "奇幻‧獸人／半獸人",
+ "note": "適用於高奇幻／TRPG 場景的獸人（含半獸人）角色命名，全數為原創構詞組合。",
+ "corpus_note": "音韻風格參考主流奇幻作品對「獸人語」的一貫塑造規律：短促喉音和塞音密集（k、g、th、gr、kr、zh 等）、單音節詞根為主、避免流音和開放母音，予人粗獷、兇悍、非人化的聽感。語意場集中於「戰鬥」「傷害」「野性生物」「地形」等具體意象，鮮少抽象詞根，反映部落口語文化而非典雅書面語。全部詞根和最終名字均為本包原創組合，未收錄任何既有奇幻作品（如 D&D 官方設定、《魔戒》半獸人）之角色專有名字，並已核對常見獸人角色名稱清單排除巧合重複。氏族名沿用同一意象系統（身體特徵／戰鬥意象複合詞，如「血牙」「碎顱」），同為原創。",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "license_note": "語料整理自公開統計和文獻，本站的涵義標注、時代分包和編輯著作採 CC BY 4.0 授權，引用請註明出處。",
+ "rules": {
+  "naming": {
+   "note": "獸人社會以部落／氏族為單位而非個體血緣姓氏，「氏族名」代表所屬部落圖騰或該部落引以為傲的戰績意象，個人需透過戰鬥或狩獵功勳取得使用資格，未立功者僅稱本名。半獸人（人類與獸人混血）常同時保留獸人本名與人類社群給予的稱呼，視所處社群而定。"
+  }
+ },
+ "surnames": [
+  {
+   "s": "Bloodfang",
+   "meaning": "血牙",
+   "weight": 3
+  },
+  {
+   "s": "Ironjaw",
+   "meaning": "鐵顎",
+   "weight": 4
+  },
+  {
+   "s": "Skullcrusher",
+   "meaning": "碎顱",
+   "weight": 5
+  },
+  {
+   "s": "Blackmaw",
+   "meaning": "黑吻",
+   "weight": 6
+  },
+  {
+   "s": "Gorewound",
+   "meaning": "血創",
+   "weight": 7
+  },
+  {
+   "s": "Stonefist",
+   "meaning": "石拳",
+   "weight": 3
+  },
+  {
+   "s": "Ragetusk",
+   "meaning": "怒獠",
+   "weight": 4
+  },
+  {
+   "s": "Deathgrip",
+   "meaning": "死握",
+   "weight": 5
+  },
+  {
+   "s": "Mudclaw",
+   "meaning": "泥爪",
+   "weight": 6
+  },
+  {
+   "s": "Warhide",
+   "meaning": "戰皮",
+   "weight": 7
+  },
+  {
+   "s": "Bonecrusher",
+   "meaning": "碎骨",
+   "weight": 3
+  },
+  {
+   "s": "Firehowl",
+   "meaning": "焰嚎",
+   "weight": 4
+  },
+  {
+   "s": "Grimhorn",
+   "meaning": "峻角",
+   "weight": 5
+  },
+  {
+   "s": "Shadowfang",
+   "meaning": "影牙",
+   "weight": 6
+  },
+  {
+   "s": "Bloodaxe",
+   "meaning": "血斧",
+   "weight": 7
+  },
+  {
+   "s": "Nightprowl",
+   "meaning": "夜獵",
+   "weight": 3
+  },
+  {
+   "s": "Skinflayer",
+   "meaning": "剝皮",
+   "weight": 4
+  },
+  {
+   "s": "Wargrunt",
+   "meaning": "戰吼",
+   "weight": 5
+  },
+  {
+   "s": "Thornhide",
+   "meaning": "荊皮",
+   "weight": 6
+  },
+  {
+   "s": "Rustfang",
+   "meaning": "鏽牙",
+   "weight": 7
+  },
+  {
+   "s": "Mireclaw",
+   "meaning": "沼爪",
+   "weight": 3
+  },
+  {
+   "s": "Crushbone",
+   "meaning": "壓骨",
+   "weight": 4
+  },
+  {
+   "s": "Dreadmaw",
+   "meaning": "懼吻",
+   "weight": 5
+  },
+  {
+   "s": "Ashtusk",
+   "meaning": "灰獠",
+   "weight": 6
+  },
+  {
+   "s": "Blightfist",
+   "meaning": "疫拳",
+   "weight": 7
+  },
+  {
+   "s": "Gnawbone",
+   "meaning": "啃骨",
+   "weight": 3
+  },
+  {
+   "s": "Stormclaw",
+   "meaning": "風暴爪",
+   "weight": 4
+  },
+  {
+   "s": "Battlescar",
+   "meaning": "戰疤",
+   "weight": 5
+  },
+  {
+   "s": "Filthgrin",
+   "meaning": "污咧",
+   "weight": 6
+  },
+  {
+   "s": "Ragehowl",
+   "meaning": "怒嚎",
+   "weight": 7
+  },
+  {
+   "s": "Blackblood",
+   "meaning": "黑血",
+   "weight": 3
+  },
+  {
+   "s": "Grimjaw",
+   "meaning": "峻顎",
+   "weight": 4
+  }
+ ],
+ "given": {
+  "m": [
+   {
+    "g": "Grakash",
+    "meaning": "咆哮＋…者",
+    "weight": 3
+   },
+   {
+    "g": "Mogub",
+    "meaning": "蠻力＋…之王／頭領",
+    "weight": 4
+   },
+   {
+    "g": "Thokok",
+    "meaning": "重擊＋粗獷之稱",
+    "weight": 5
+   },
+   {
+    "g": "Uzgdur",
+    "meaning": "獠牙＋…之族",
+    "weight": 6
+   },
+   {
+    "g": "Kruggash",
+    "meaning": "碎裂＋猛烈之稱",
+    "weight": 7
+   },
+   {
+    "g": "Nazash",
+    "meaning": "憎恨＋…者",
+    "weight": 3
+   },
+   {
+    "g": "Gorbub",
+    "meaning": "巨拳＋…之王／頭領",
+    "weight": 4
+   },
+   {
+    "g": "Skarok",
+    "meaning": "傷疤＋粗獷之稱",
+    "weight": 5
+   },
+   {
+    "g": "Rulkdur",
+    "meaning": "嗜血＋…之族",
+    "weight": 6
+   },
+   {
+    "g": "Dushgash",
+    "meaning": "黑暗＋猛烈之稱",
+    "weight": 7
+   },
+   {
+    "g": "Gutzash",
+    "meaning": "內臟／兇猛＋…者",
+    "weight": 3
+   },
+   {
+    "g": "Brakub",
+    "meaning": "斷裂＋…之王／頭領",
+    "weight": 4
+   },
+   {
+    "g": "Mazgok",
+    "meaning": "鋼鐵＋粗獷之稱",
+    "weight": 5
+   },
+   {
+    "g": "Thragdur",
+    "meaning": "狂暴＋…之族",
+    "weight": 6
+   },
+   {
+    "g": "Kulgash",
+    "meaning": "殺戮＋猛烈之稱",
+    "weight": 7
+   },
+   {
+    "g": "Vorgash",
+    "meaning": "狼群＋…者",
+    "weight": 3
+   },
+   {
+    "g": "Haskub",
+    "meaning": "乾裂＋…之王／頭領",
+    "weight": 4
+   },
+   {
+    "g": "Groshok",
+    "meaning": "踐踏＋粗獷之稱",
+    "weight": 5
+   },
+   {
+    "g": "Nukdur",
+    "meaning": "啃咬＋…之族",
+    "weight": 6
+   },
+   {
+    "g": "Zuggash",
+    "meaning": "拖行／苦力＋猛烈之稱",
+    "weight": 7
+   },
+   {
+    "g": "Bokash",
+    "meaning": "公豬＋…者",
+    "weight": 3
+   },
+   {
+    "g": "Drakub",
+    "meaning": "龍息＋…之王／頭領",
+    "weight": 4
+   },
+   {
+    "g": "Shakok",
+    "meaning": "震顫＋粗獷之稱",
+    "weight": 5
+   },
+   {
+    "g": "Ghardur",
+    "meaning": "焦土＋…之族",
+    "weight": 6
+   },
+   {
+    "g": "Morggash",
+    "meaning": "死亡＋猛烈之稱",
+    "weight": 7
+   },
+   {
+    "g": "Krunash",
+    "meaning": "頭骨＋…者",
+    "weight": 3
+   },
+   {
+    "g": "Azakub",
+    "meaning": "烈日＋…之王／頭領",
+    "weight": 4
+   },
+   {
+    "g": "Thulgok",
+    "meaning": "石錘＋粗獷之稱",
+    "weight": 5
+   },
+   {
+    "g": "Vokdur",
+    "meaning": "嘶吼＋…之族",
+    "weight": 6
+   },
+   {
+    "g": "Raghgash",
+    "meaning": "撕裂＋猛烈之稱",
+    "weight": 7
+   },
+   {
+    "g": "Bruzash",
+    "meaning": "燒灼＋…者",
+    "weight": 3
+   },
+   {
+    "g": "Krukub",
+    "meaning": "烏鴉＋…之王／頭領",
+    "weight": 4
+   },
+   {
+    "g": "Daghok",
+    "meaning": "匕刃＋粗獷之稱",
+    "weight": 5
+   },
+   {
+    "g": "Nurgdur",
+    "meaning": "泥沼＋…之族",
+    "weight": 6
+   },
+   {
+    "g": "Zhakgash",
+    "meaning": "閃電＋猛烈之稱",
+    "weight": 7
+   },
+   {
+    "g": "Orkathash",
+    "meaning": "戰嚎＋…者",
+    "weight": 3
+   },
+   {
+    "g": "Brutgub",
+    "meaning": "蠻橫＋…之王／頭領",
+    "weight": 4
+   },
+   {
+    "g": "Gnashok",
+    "meaning": "磨牙＋粗獷之稱",
+    "weight": 5
+   },
+   {
+    "g": "Skulgdur",
+    "meaning": "陰影＋…之族",
+    "weight": 6
+   },
+   {
+    "g": "Murghgash",
+    "meaning": "沼澤＋猛烈之稱",
+    "weight": 7
+   },
+   {
+    "g": "Grakok",
+    "meaning": "咆哮＋粗獷之稱",
+    "weight": 2
+   },
+   {
+    "g": "Mogdur",
+    "meaning": "蠻力＋…之族",
+    "weight": 3
+   },
+   {
+    "g": "Thokgash",
+    "meaning": "重擊＋猛烈之稱",
+    "weight": 4
+   },
+   {
+    "g": "Uzgash",
+    "meaning": "獠牙＋…者",
+    "weight": 5
+   },
+   {
+    "g": "Krugub",
+    "meaning": "碎裂＋…之王／頭領",
+    "weight": 2
+   },
+   {
+    "g": "Nazok",
+    "meaning": "憎恨＋粗獷之稱",
+    "weight": 3
+   },
+   {
+    "g": "Gorbdur",
+    "meaning": "巨拳＋…之族",
+    "weight": 4
+   },
+   {
+    "g": "Skargash",
+    "meaning": "傷疤＋猛烈之稱",
+    "weight": 5
+   },
+   {
+    "g": "Rulkash",
+    "meaning": "嗜血＋…者",
+    "weight": 2
+   },
+   {
+    "g": "Dushub",
+    "meaning": "黑暗＋…之王／頭領",
+    "weight": 3
+   },
+   {
+    "g": "Gutzok",
+    "meaning": "內臟／兇猛＋粗獷之稱",
+    "weight": 4
+   },
+   {
+    "g": "Brakdur",
+    "meaning": "斷裂＋…之族",
+    "weight": 5
+   },
+   {
+    "g": "Mazggash",
+    "meaning": "鋼鐵＋猛烈之稱",
+    "weight": 2
+   },
+   {
+    "g": "Thragash",
+    "meaning": "狂暴＋…者",
+    "weight": 3
+   },
+   {
+    "g": "Kulub",
+    "meaning": "殺戮＋…之王／頭領",
+    "weight": 4
+   },
+   {
+    "g": "Vorgok",
+    "meaning": "狼群＋粗獷之稱",
+    "weight": 5
+   },
+   {
+    "g": "Haskdur",
+    "meaning": "乾裂＋…之族",
+    "weight": 2
+   },
+   {
+    "g": "Groshgash",
+    "meaning": "踐踏＋猛烈之稱",
+    "weight": 3
+   },
+   {
+    "g": "Nukash",
+    "meaning": "啃咬＋…者",
+    "weight": 4
+   },
+   {
+    "g": "Zugub",
+    "meaning": "拖行／苦力＋…之王／頭領",
+    "weight": 5
+   },
+   {
+    "g": "Bokok",
+    "meaning": "公豬＋粗獷之稱",
+    "weight": 2
+   },
+   {
+    "g": "Drakdur",
+    "meaning": "龍息＋…之族",
+    "weight": 3
+   },
+   {
+    "g": "Zogash",
+    "meaning": "怒火＋…者",
+    "note": "新詞根 Zog（怒火）接陽性後綴 ash，表施動者",
+    "weight": 2
+   },
+   {
+    "g": "Zogub",
+    "meaning": "怒火＋…之王／頭領",
+    "note": "新詞根 Zog（怒火）接陽性後綴 ub，表頭領尊稱",
+    "weight": 3
+   },
+   {
+    "g": "Zogok",
+    "meaning": "怒火＋粗獷之稱",
+    "note": "新詞根 Zog（怒火）接陽性後綴 ok，表粗獷渾名",
+    "weight": 4
+   },
+   {
+    "g": "Zogdur",
+    "meaning": "怒火＋…之族",
+    "note": "新詞根 Zog（怒火）接陽性後綴 dur，表血族歸屬",
+    "weight": 2
+   },
+   {
+    "g": "Khargash",
+    "meaning": "鐵蹄＋…者",
+    "note": "新詞根 Kharg（鐵蹄）接陽性後綴 ash，表施動者",
+    "weight": 3
+   },
+   {
+    "g": "Khargub",
+    "meaning": "鐵蹄＋…之王／頭領",
+    "note": "新詞根 Kharg（鐵蹄）接陽性後綴 ub，表頭領尊稱",
+    "weight": 4
+   },
+   {
+    "g": "Khargok",
+    "meaning": "鐵蹄＋粗獷之稱",
+    "note": "新詞根 Kharg（鐵蹄）接陽性後綴 ok，表粗獷渾名",
+    "weight": 2
+   },
+   {
+    "g": "Khargdur",
+    "meaning": "鐵蹄＋…之族",
+    "note": "新詞根 Kharg（鐵蹄）接陽性後綴 dur，表血族歸屬",
+    "weight": 3
+   },
+   {
+    "g": "Grumash",
+    "meaning": "雷鳴＋…者",
+    "note": "新詞根 Grum（雷鳴）接陽性後綴 ash，表施動者",
+    "weight": 4
+   },
+   {
+    "g": "Grumub",
+    "meaning": "雷鳴＋…之王／頭領",
+    "note": "新詞根 Grum（雷鳴）接陽性後綴 ub，表頭領尊稱",
+    "weight": 2
+   },
+   {
+    "g": "Grumok",
+    "meaning": "雷鳴＋粗獷之稱",
+    "note": "新詞根 Grum（雷鳴）接陽性後綴 ok，表粗獷渾名",
+    "weight": 3
+   },
+   {
+    "g": "Grumdur",
+    "meaning": "雷鳴＋…之族",
+    "note": "新詞根 Grum（雷鳴）接陽性後綴 dur，表血族歸屬",
+    "weight": 4
+   },
+   {
+    "g": "Snagash",
+    "meaning": "鉤爪＋…者",
+    "note": "新詞根 Snag（鉤爪）接陽性後綴 ash，表施動者",
+    "weight": 2
+   },
+   {
+    "g": "Snagub",
+    "meaning": "鉤爪＋…之王／頭領",
+    "note": "新詞根 Snag（鉤爪）接陽性後綴 ub，表頭領尊稱",
+    "weight": 3
+   },
+   {
+    "g": "Snagok",
+    "meaning": "鉤爪＋粗獷之稱",
+    "note": "新詞根 Snag（鉤爪）接陽性後綴 ok，表粗獷渾名",
+    "weight": 4
+   },
+   {
+    "g": "Snagdur",
+    "meaning": "鉤爪＋…之族",
+    "note": "新詞根 Snag（鉤爪）接陽性後綴 dur，表血族歸屬",
+    "weight": 2
+   },
+   {
+    "g": "Urkash",
+    "meaning": "嚎風＋…者",
+    "note": "新詞根 Urk（嚎風）接陽性後綴 ash，表施動者",
+    "weight": 3
+   },
+   {
+    "g": "Urkub",
+    "meaning": "嚎風＋…之王／頭領",
+    "note": "新詞根 Urk（嚎風）接陽性後綴 ub，表頭領尊稱",
+    "weight": 4
+   },
+   {
+    "g": "Urkok",
+    "meaning": "嚎風＋粗獷之稱",
+    "note": "新詞根 Urk（嚎風）接陽性後綴 ok，表粗獷渾名",
+    "weight": 2
+   },
+   {
+    "g": "Urkdur",
+    "meaning": "嚎風＋…之族",
+    "note": "新詞根 Urk（嚎風）接陽性後綴 dur，表血族歸屬",
+    "weight": 3
+   },
+   {
+    "g": "Bolgash",
+    "meaning": "巨錘＋…者",
+    "note": "新詞根 Bolg（巨錘）接陽性後綴 ash，表施動者",
+    "weight": 4
+   },
+   {
+    "g": "Bolgub",
+    "meaning": "巨錘＋…之王／頭領",
+    "note": "新詞根 Bolg（巨錘）接陽性後綴 ub，表頭領尊稱",
+    "weight": 2
+   },
+   {
+    "g": "Bolgok",
+    "meaning": "巨錘＋粗獷之稱",
+    "note": "新詞根 Bolg（巨錘）接陽性後綴 ok，表粗獷渾名",
+    "weight": 3
+   },
+   {
+    "g": "Bolgdur",
+    "meaning": "巨錘＋…之族",
+    "note": "新詞根 Bolg（巨錘）接陽性後綴 dur，表血族歸屬",
+    "weight": 4
+   },
+   {
+    "g": "Trokash",
+    "meaning": "裂岩＋…者",
+    "note": "新詞根 Trok（裂岩）接陽性後綴 ash，表施動者",
+    "weight": 2
+   },
+   {
+    "g": "Trokub",
+    "meaning": "裂岩＋…之王／頭領",
+    "note": "新詞根 Trok（裂岩）接陽性後綴 ub，表頭領尊稱",
+    "weight": 3
+   },
+   {
+    "g": "Trokok",
+    "meaning": "裂岩＋粗獷之稱",
+    "note": "新詞根 Trok（裂岩）接陽性後綴 ok，表粗獷渾名",
+    "weight": 4
+   },
+   {
+    "g": "Trokdur",
+    "meaning": "裂岩＋…之族",
+    "note": "新詞根 Trok（裂岩）接陽性後綴 dur，表血族歸屬",
+    "weight": 2
+   },
+   {
+    "g": "Ghazash",
+    "meaning": "戰旗＋…者",
+    "note": "新詞根 Ghaz（戰旗）接陽性後綴 ash，表施動者",
+    "weight": 3
+   },
+   {
+    "g": "Ghazok",
+    "meaning": "戰旗＋粗獷之稱",
+    "note": "新詞根 Ghaz（戰旗）接陽性後綴 ok，表粗獷渾名",
+    "weight": 4
+   },
+   {
+    "g": "Ghazdur",
+    "meaning": "戰旗＋…之族",
+    "note": "新詞根 Ghaz（戰旗）接陽性後綴 dur，表血族歸屬",
+    "weight": 2
+   },
+   {
+    "g": "Drogash",
+    "meaning": "猛襲＋…者",
+    "note": "新詞根 Drog（猛襲）接陽性後綴 ash，表施動者",
+    "weight": 3
+   },
+   {
+    "g": "Drogub",
+    "meaning": "猛襲＋…之王／頭領",
+    "note": "新詞根 Drog（猛襲）接陽性後綴 ub，表頭領尊稱",
+    "weight": 4
+   },
+   {
+    "g": "Drogok",
+    "meaning": "猛襲＋粗獷之稱",
+    "note": "新詞根 Drog（猛襲）接陽性後綴 ok，表粗獷渾名",
+    "weight": 2
+   },
+   {
+    "g": "Drogdur",
+    "meaning": "猛襲＋…之族",
+    "note": "新詞根 Drog（猛襲）接陽性後綴 dur，表血族歸屬",
+    "weight": 3
+   },
+   {
+    "g": "Narkash",
+    "meaning": "毒牙＋…者",
+    "note": "新詞根 Nark（毒牙）接陽性後綴 ash，表施動者",
+    "weight": 4
+   },
+   {
+    "g": "Narkub",
+    "meaning": "毒牙＋…之王／頭領",
+    "note": "新詞根 Nark（毒牙）接陽性後綴 ub，表頭領尊稱",
+    "weight": 2
+   },
+   {
+    "g": "Narkok",
+    "meaning": "毒牙＋粗獷之稱",
+    "note": "新詞根 Nark（毒牙）接陽性後綴 ok，表粗獷渾名",
+    "weight": 3
+   }
+  ],
+  "f": [
+   {
+    "g": "Grakka",
+    "meaning": "咆哮＋…女",
+    "weight": 3
+   },
+   {
+    "g": "Mogsha",
+    "meaning": "蠻力＋…之母／女首領",
+    "weight": 4
+   },
+   {
+    "g": "Thokga",
+    "meaning": "重擊＋堅毅之女",
+    "weight": 5
+   },
+   {
+    "g": "Uzgna",
+    "meaning": "獠牙＋…女獸",
+    "weight": 6
+   },
+   {
+    "g": "Krugra",
+    "meaning": "碎裂＋嘶吼之女",
+    "weight": 7
+   },
+   {
+    "g": "Nazka",
+    "meaning": "憎恨＋…女",
+    "weight": 3
+   },
+   {
+    "g": "Gorbsha",
+    "meaning": "巨拳＋…之母／女首領",
+    "weight": 4
+   },
+   {
+    "g": "Skarga",
+    "meaning": "傷疤＋堅毅之女",
+    "weight": 5
+   },
+   {
+    "g": "Rulkna",
+    "meaning": "嗜血＋…女獸",
+    "weight": 6
+   },
+   {
+    "g": "Dushra",
+    "meaning": "黑暗＋嘶吼之女",
+    "weight": 7
+   },
+   {
+    "g": "Gutzka",
+    "meaning": "內臟／兇猛＋…女",
+    "weight": 3
+   },
+   {
+    "g": "Braksha",
+    "meaning": "斷裂＋…之母／女首領",
+    "weight": 4
+   },
+   {
+    "g": "Mazgga",
+    "meaning": "鋼鐵＋堅毅之女",
+    "weight": 5
+   },
+   {
+    "g": "Thragna",
+    "meaning": "狂暴＋…女獸",
+    "weight": 6
+   },
+   {
+    "g": "Kulra",
+    "meaning": "殺戮＋嘶吼之女",
+    "weight": 7
+   },
+   {
+    "g": "Vorgka",
+    "meaning": "狼群＋…女",
+    "weight": 3
+   },
+   {
+    "g": "Hasksha",
+    "meaning": "乾裂＋…之母／女首領",
+    "weight": 4
+   },
+   {
+    "g": "Groshga",
+    "meaning": "踐踏＋堅毅之女",
+    "weight": 5
+   },
+   {
+    "g": "Nukna",
+    "meaning": "啃咬＋…女獸",
+    "weight": 6
+   },
+   {
+    "g": "Zugra",
+    "meaning": "拖行／苦力＋嘶吼之女",
+    "weight": 7
+   },
+   {
+    "g": "Bokka",
+    "meaning": "公豬＋…女",
+    "weight": 3
+   },
+   {
+    "g": "Draksha",
+    "meaning": "龍息＋…之母／女首領",
+    "weight": 4
+   },
+   {
+    "g": "Shakga",
+    "meaning": "震顫＋堅毅之女",
+    "weight": 5
+   },
+   {
+    "g": "Gharna",
+    "meaning": "焦土＋…女獸",
+    "weight": 6
+   },
+   {
+    "g": "Morgra",
+    "meaning": "死亡＋嘶吼之女",
+    "weight": 7
+   },
+   {
+    "g": "Krunka",
+    "meaning": "頭骨＋…女",
+    "weight": 3
+   },
+   {
+    "g": "Azaksha",
+    "meaning": "烈日＋…之母／女首領",
+    "weight": 4
+   },
+   {
+    "g": "Thulgga",
+    "meaning": "石錘＋堅毅之女",
+    "weight": 5
+   },
+   {
+    "g": "Vokna",
+    "meaning": "嘶吼＋…女獸",
+    "weight": 6
+   },
+   {
+    "g": "Raghra",
+    "meaning": "撕裂＋嘶吼之女",
+    "weight": 7
+   },
+   {
+    "g": "Bruzka",
+    "meaning": "燒灼＋…女",
+    "weight": 3
+   },
+   {
+    "g": "Kruksha",
+    "meaning": "烏鴉＋…之母／女首領",
+    "weight": 4
+   },
+   {
+    "g": "Daghga",
+    "meaning": "匕刃＋堅毅之女",
+    "weight": 5
+   },
+   {
+    "g": "Nurgna",
+    "meaning": "泥沼＋…女獸",
+    "weight": 6
+   },
+   {
+    "g": "Zhakra",
+    "meaning": "閃電＋嘶吼之女",
+    "weight": 7
+   },
+   {
+    "g": "Orkathka",
+    "meaning": "戰嚎＋…女",
+    "weight": 3
+   },
+   {
+    "g": "Brutgsha",
+    "meaning": "蠻橫＋…之母／女首領",
+    "weight": 4
+   },
+   {
+    "g": "Gnashga",
+    "meaning": "磨牙＋堅毅之女",
+    "weight": 5
+   },
+   {
+    "g": "Skulgna",
+    "meaning": "陰影＋…女獸",
+    "weight": 6
+   },
+   {
+    "g": "Murghra",
+    "meaning": "沼澤＋嘶吼之女",
+    "weight": 7
+   },
+   {
+    "g": "Grakga",
+    "meaning": "咆哮＋堅毅之女",
+    "weight": 2
+   },
+   {
+    "g": "Mogna",
+    "meaning": "蠻力＋…女獸",
+    "weight": 3
+   },
+   {
+    "g": "Thokra",
+    "meaning": "重擊＋嘶吼之女",
+    "weight": 4
+   },
+   {
+    "g": "Uzgka",
+    "meaning": "獠牙＋…女",
+    "weight": 5
+   },
+   {
+    "g": "Krugsha",
+    "meaning": "碎裂＋…之母／女首領",
+    "weight": 2
+   },
+   {
+    "g": "Nazga",
+    "meaning": "憎恨＋堅毅之女",
+    "weight": 3
+   },
+   {
+    "g": "Gorbna",
+    "meaning": "巨拳＋…女獸",
+    "weight": 4
+   },
+   {
+    "g": "Skarra",
+    "meaning": "傷疤＋嘶吼之女",
+    "weight": 5
+   },
+   {
+    "g": "Rulkka",
+    "meaning": "嗜血＋…女",
+    "weight": 2
+   },
+   {
+    "g": "Dushsha",
+    "meaning": "黑暗＋…之母／女首領",
+    "weight": 3
+   },
+   {
+    "g": "Gutzga",
+    "meaning": "內臟／兇猛＋堅毅之女",
+    "weight": 4
+   },
+   {
+    "g": "Brakna",
+    "meaning": "斷裂＋…女獸",
+    "weight": 5
+   },
+   {
+    "g": "Mazgra",
+    "meaning": "鋼鐵＋嘶吼之女",
+    "weight": 2
+   },
+   {
+    "g": "Thragka",
+    "meaning": "狂暴＋…女",
+    "weight": 3
+   },
+   {
+    "g": "Kulsha",
+    "meaning": "殺戮＋…之母／女首領",
+    "weight": 4
+   },
+   {
+    "g": "Vorgga",
+    "meaning": "狼群＋堅毅之女",
+    "weight": 5
+   },
+   {
+    "g": "Haskna",
+    "meaning": "乾裂＋…女獸",
+    "weight": 2
+   },
+   {
+    "g": "Groshra",
+    "meaning": "踐踏＋嘶吼之女",
+    "weight": 3
+   },
+   {
+    "g": "Nukka",
+    "meaning": "啃咬＋…女",
+    "weight": 4
+   },
+   {
+    "g": "Zugsha",
+    "meaning": "拖行／苦力＋…之母／女首領",
+    "weight": 5
+   },
+   {
+    "g": "Bokga",
+    "meaning": "公豬＋堅毅之女",
+    "weight": 2
+   },
+   {
+    "g": "Drakna",
+    "meaning": "龍息＋…女獸",
+    "weight": 3
+   },
+   {
+    "g": "Zogka",
+    "meaning": "怒火＋…女",
+    "note": "新詞根 Zog（怒火）接陰性後綴 ka，表女性名",
+    "weight": 2
+   },
+   {
+    "g": "Zogsha",
+    "meaning": "怒火＋…之母／女首領",
+    "note": "新詞根 Zog（怒火）接陰性後綴 sha，表女首領尊稱",
+    "weight": 3
+   },
+   {
+    "g": "Zogga",
+    "meaning": "怒火＋堅毅之女",
+    "note": "新詞根 Zog（怒火）接陰性後綴 ga，表堅毅女性",
+    "weight": 4
+   },
+   {
+    "g": "Zogna",
+    "meaning": "怒火＋…女獸",
+    "note": "新詞根 Zog（怒火）接陰性後綴 na，表野性女名",
+    "weight": 2
+   },
+   {
+    "g": "Khargka",
+    "meaning": "鐵蹄＋…女",
+    "note": "新詞根 Kharg（鐵蹄）接陰性後綴 ka，表女性名",
+    "weight": 3
+   },
+   {
+    "g": "Khargsha",
+    "meaning": "鐵蹄＋…之母／女首領",
+    "note": "新詞根 Kharg（鐵蹄）接陰性後綴 sha，表女首領尊稱",
+    "weight": 4
+   },
+   {
+    "g": "Khargga",
+    "meaning": "鐵蹄＋堅毅之女",
+    "note": "新詞根 Kharg（鐵蹄）接陰性後綴 ga，表堅毅女性",
+    "weight": 2
+   },
+   {
+    "g": "Khargna",
+    "meaning": "鐵蹄＋…女獸",
+    "note": "新詞根 Kharg（鐵蹄）接陰性後綴 na，表野性女名",
+    "weight": 3
+   },
+   {
+    "g": "Grumka",
+    "meaning": "雷鳴＋…女",
+    "note": "新詞根 Grum（雷鳴）接陰性後綴 ka，表女性名",
+    "weight": 4
+   },
+   {
+    "g": "Grumsha",
+    "meaning": "雷鳴＋…之母／女首領",
+    "note": "新詞根 Grum（雷鳴）接陰性後綴 sha，表女首領尊稱",
+    "weight": 2
+   },
+   {
+    "g": "Grumga",
+    "meaning": "雷鳴＋堅毅之女",
+    "note": "新詞根 Grum（雷鳴）接陰性後綴 ga，表堅毅女性",
+    "weight": 3
+   },
+   {
+    "g": "Grumna",
+    "meaning": "雷鳴＋…女獸",
+    "note": "新詞根 Grum（雷鳴）接陰性後綴 na，表野性女名",
+    "weight": 4
+   },
+   {
+    "g": "Snagka",
+    "meaning": "鉤爪＋…女",
+    "note": "新詞根 Snag（鉤爪）接陰性後綴 ka，表女性名",
+    "weight": 2
+   },
+   {
+    "g": "Snagsha",
+    "meaning": "鉤爪＋…之母／女首領",
+    "note": "新詞根 Snag（鉤爪）接陰性後綴 sha，表女首領尊稱",
+    "weight": 3
+   },
+   {
+    "g": "Snagga",
+    "meaning": "鉤爪＋堅毅之女",
+    "note": "新詞根 Snag（鉤爪）接陰性後綴 ga，表堅毅女性",
+    "weight": 4
+   },
+   {
+    "g": "Snagna",
+    "meaning": "鉤爪＋…女獸",
+    "note": "新詞根 Snag（鉤爪）接陰性後綴 na，表野性女名",
+    "weight": 2
+   },
+   {
+    "g": "Urkka",
+    "meaning": "嚎風＋…女",
+    "note": "新詞根 Urk（嚎風）接陰性後綴 ka，表女性名",
+    "weight": 3
+   },
+   {
+    "g": "Urksha",
+    "meaning": "嚎風＋…之母／女首領",
+    "note": "新詞根 Urk（嚎風）接陰性後綴 sha，表女首領尊稱",
+    "weight": 4
+   },
+   {
+    "g": "Urkga",
+    "meaning": "嚎風＋堅毅之女",
+    "note": "新詞根 Urk（嚎風）接陰性後綴 ga，表堅毅女性",
+    "weight": 2
+   },
+   {
+    "g": "Urkna",
+    "meaning": "嚎風＋…女獸",
+    "note": "新詞根 Urk（嚎風）接陰性後綴 na，表野性女名",
+    "weight": 3
+   },
+   {
+    "g": "Bolgka",
+    "meaning": "巨錘＋…女",
+    "note": "新詞根 Bolg（巨錘）接陰性後綴 ka，表女性名",
+    "weight": 4
+   },
+   {
+    "g": "Bolgsha",
+    "meaning": "巨錘＋…之母／女首領",
+    "note": "新詞根 Bolg（巨錘）接陰性後綴 sha，表女首領尊稱",
+    "weight": 2
+   },
+   {
+    "g": "Bolgga",
+    "meaning": "巨錘＋堅毅之女",
+    "note": "新詞根 Bolg（巨錘）接陰性後綴 ga，表堅毅女性",
+    "weight": 3
+   },
+   {
+    "g": "Bolgna",
+    "meaning": "巨錘＋…女獸",
+    "note": "新詞根 Bolg（巨錘）接陰性後綴 na，表野性女名",
+    "weight": 4
+   },
+   {
+    "g": "Trokka",
+    "meaning": "裂岩＋…女",
+    "note": "新詞根 Trok（裂岩）接陰性後綴 ka，表女性名",
+    "weight": 2
+   },
+   {
+    "g": "Troksha",
+    "meaning": "裂岩＋…之母／女首領",
+    "note": "新詞根 Trok（裂岩）接陰性後綴 sha，表女首領尊稱",
+    "weight": 3
+   },
+   {
+    "g": "Trokga",
+    "meaning": "裂岩＋堅毅之女",
+    "note": "新詞根 Trok（裂岩）接陰性後綴 ga，表堅毅女性",
+    "weight": 4
+   },
+   {
+    "g": "Trokna",
+    "meaning": "裂岩＋…女獸",
+    "note": "新詞根 Trok（裂岩）接陰性後綴 na，表野性女名",
+    "weight": 2
+   },
+   {
+    "g": "Ghazka",
+    "meaning": "戰旗＋…女",
+    "note": "新詞根 Ghaz（戰旗）接陰性後綴 ka，表女性名",
+    "weight": 3
+   },
+   {
+    "g": "Ghazsha",
+    "meaning": "戰旗＋…之母／女首領",
+    "note": "新詞根 Ghaz（戰旗）接陰性後綴 sha，表女首領尊稱",
+    "weight": 4
+   },
+   {
+    "g": "Ghazna",
+    "meaning": "戰旗＋…女獸",
+    "note": "新詞根 Ghaz（戰旗）接陰性後綴 na，表野性女名",
+    "weight": 2
+   },
+   {
+    "g": "Drogka",
+    "meaning": "猛襲＋…女",
+    "note": "新詞根 Drog（猛襲）接陰性後綴 ka，表女性名",
+    "weight": 3
+   },
+   {
+    "g": "Drogsha",
+    "meaning": "猛襲＋…之母／女首領",
+    "note": "新詞根 Drog（猛襲）接陰性後綴 sha，表女首領尊稱",
+    "weight": 4
+   },
+   {
+    "g": "Drogga",
+    "meaning": "猛襲＋堅毅之女",
+    "note": "新詞根 Drog（猛襲）接陰性後綴 ga，表堅毅女性",
+    "weight": 2
+   },
+   {
+    "g": "Drogna",
+    "meaning": "猛襲＋…女獸",
+    "note": "新詞根 Drog（猛襲）接陰性後綴 na，表野性女名",
+    "weight": 3
+   },
+   {
+    "g": "Narkka",
+    "meaning": "毒牙＋…女",
+    "note": "新詞根 Nark（毒牙）接陰性後綴 ka，表女性名",
+    "weight": 4
+   },
+   {
+    "g": "Narksha",
+    "meaning": "毒牙＋…之母／女首領",
+    "note": "新詞根 Nark（毒牙）接陰性後綴 sha，表女首領尊稱",
+    "weight": 2
+   },
+   {
+    "g": "Narkga",
+    "meaning": "毒牙＋堅毅之女",
+    "note": "新詞根 Nark（毒牙）接陰性後綴 ga，表堅毅女性",
+    "weight": 3
+   }
+  ],
+  "u": [
+   {
+    "g": "Grakthok",
+    "meaning": "咆哮＋重擊",
+    "note": "雙詞根直接複合，不接陰陽性後綴，獸人戰名常以功勳意象直呼",
+    "weight": 5
+   },
+   {
+    "g": "Mogskar",
+    "meaning": "蠻力＋傷疤",
+    "note": "無性別後綴，兩個中性詞根複合",
+    "weight": 4
+   },
+   {
+    "g": "Uzgnaz",
+    "meaning": "獠牙＋憎恨",
+    "note": "雙詞根複合，收尾為詞根本身而非性別詞綴",
+    "weight": 5
+   },
+   {
+    "g": "Krugdush",
+    "meaning": "碎裂＋黑暗",
+    "note": "無性別後綴，直取兩個詞根複合",
+    "weight": 6
+   },
+   {
+    "g": "Thragmog",
+    "meaning": "狂暴＋蠻力",
+    "note": "雙詞根複合，兩根皆無性別傾向",
+    "weight": 4
+   },
+   {
+    "g": "Skarvorg",
+    "meaning": "傷疤＋狼群",
+    "note": "無性別後綴，戰鬥意象詞根直接複合",
+    "weight": 5
+   },
+   {
+    "g": "Dushkrun",
+    "meaning": "黑暗＋頭骨",
+    "note": "雙詞根複合，不接陰陽任一後綴系統",
+    "weight": 6
+   },
+   {
+    "g": "Gorbrak",
+    "meaning": "巨拳＋斷裂",
+    "note": "無性別後綴，直取詞根複合",
+    "weight": 3
+   },
+   {
+    "g": "Kulzhak",
+    "meaning": "殺戮＋閃電",
+    "note": "雙詞根複合，收尾非性別詞綴",
+    "weight": 4
+   },
+   {
+    "g": "Mazgbok",
+    "meaning": "鋼鐵＋公豬",
+    "note": "無性別後綴，兩個中性詞根複合",
+    "weight": 5
+   },
+   {
+    "g": "Nukthul",
+    "meaning": "啃咬＋石錘",
+    "note": "雙詞根複合，無陰陽性標記",
+    "weight": 3
+   },
+   {
+    "g": "Vokragh",
+    "meaning": "嘶吼＋撕裂",
+    "note": "無性別後綴，直取兩個詞根複合",
+    "weight": 4
+   },
+   {
+    "g": "Zogtrok",
+    "meaning": "怒火＋裂岩",
+    "note": "雙詞根直接複合，不接陰陽性後綴，故為中性戰名",
+    "weight": 2
+   },
+   {
+    "g": "Khargdrog",
+    "meaning": "鐵蹄＋猛襲",
+    "note": "雙詞根直接複合，不接陰陽性後綴，故為中性戰名",
+    "weight": 3
+   },
+   {
+    "g": "Grumnark",
+    "meaning": "雷鳴＋毒牙",
+    "note": "雙詞根直接複合，不接陰陽性後綴，故為中性戰名",
+    "weight": 4
+   },
+   {
+    "g": "Snagurk",
+    "meaning": "鉤爪＋嚎風",
+    "note": "雙詞根直接複合，不接陰陽性後綴，故為中性戰名",
+    "weight": 2
+   },
+   {
+    "g": "Bolgghaz",
+    "meaning": "巨錘＋戰旗",
+    "note": "雙詞根直接複合，不接陰陽性後綴，故為中性戰名",
+    "weight": 3
+   },
+   {
+    "g": "Trokgrum",
+    "meaning": "裂岩＋雷鳴",
+    "note": "雙詞根直接複合，不接陰陽性後綴，故為中性戰名",
+    "weight": 4
+   },
+   {
+    "g": "Narkbolg",
+    "meaning": "毒牙＋巨錘",
+    "note": "雙詞根直接複合，不接陰陽性後綴，故為中性戰名",
+    "weight": 2
+   },
+   {
+    "g": "Ghazkharg",
+    "meaning": "戰旗＋鐵蹄",
+    "note": "雙詞根直接複合，不接陰陽性後綴，故為中性戰名",
+    "weight": 3
+   }
+  ]
+ },
+ "name_order": "gs"
+}
