@@ -40,6 +40,11 @@ RED='\033[0;31m'; YELLOW='\033[1;33m'; GRAY='\033[0;90m'; RESET='\033[0m'
 GREP="${GREP:-grep}"
 export LC_ALL=C.UTF-8
 
+# PCRE's \p{Han} is a Unicode script property and also matches CJK
+# punctuation such as 。、「」 (Script=Hani). CJK-Latin spacing rules only
+# apply next to actual Han characters, never full-width punctuation.
+HAN='(?=\p{Han})\P{P}'
+
 ERRORS=0
 WARNINGS=0
 FINDINGS=''
@@ -138,13 +143,13 @@ lint_file() {
     report ERROR final-de "$label" "$work" '的[，。]'
 
     # Missing space between Han and alphanumerics.
-    report ERROR cjk-spacing "$label" "$work" '\p{Han}[A-Za-z0-9]|[A-Za-z0-9]\p{Han}'
+    report ERROR cjk-spacing "$label" "$work" "$HAN[A-Za-z0-9]|[A-Za-z0-9]$HAN"
 
     # Half-width punctuation touching Han characters.
-    report ERROR halfwidth-punct "$label" "$work" '\p{Han}[,.;:!?()]|[,;:!?(]\p{Han}|\)\p{Han}'
+    report ERROR halfwidth-punct "$label" "$work" "$HAN[,.;:!?()]|[,;:!?(]$HAN|\)$HAN"
 
     # Reduplicated words (疊字). Some are legitimate (謝謝, 爸爸).
-    report WARN reduplication "$label" "$work" '(\p{Han})\1'
+    report WARN reduplication "$label" "$work" "($HAN)\\1"
 
     # Non-Taiwan terminology.
     local entry
