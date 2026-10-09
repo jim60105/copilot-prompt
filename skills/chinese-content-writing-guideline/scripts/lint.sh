@@ -110,6 +110,21 @@ TERMS=(
     '代碼片段=程式碼片段' '關鍵字=保留字' '克隆=複製' '創建=建立'
 )
 
+# Word-for-word calques of English phrases (see the No Calques section of
+# the skill). High-confidence coinages that no Taiwan reader uses are hard
+# errors; words that also exist in legitimate senses (落地 as a physical
+# landing, 回填 in earthworks, 深潛 for scuba diving) are warnings.
+CALQUES=(
+    'ERROR 折入=納入、併入、融入'
+    'ERROR 可行動的=具體可行'
+    'ERROR 槓桿化=善用'
+    'WARN 賦能=賦權'
+    'WARN 拉齊=對齊'
+    'WARN 落地=完成、上路、實現'
+    'WARN 回填=補填'
+    'WARN 深潛=深入研究'
+)
+
 lint_file() {
     local label="$1" src="$2"
     local work
@@ -135,6 +150,13 @@ lint_file() {
     local entry
     for entry in "${TERMS[@]}"; do
         report WARN "terminology→${entry#*=}" "$label" "$work" "${entry%%=*}"
+    done
+
+    # Calques of English phrases.
+    local level
+    for entry in "${CALQUES[@]}"; do
+        level=${entry%% *}; entry=${entry#* }
+        report "$level" "calque→${entry#*=}" "$label" "$work" "${entry%%=*}"
     done
 
     # English terms repeated in prose. Capitalised words are skipped as

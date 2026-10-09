@@ -2,6 +2,7 @@
 name: chinese-content-writing-guideline
 description: >-
   Language-specific guidelines for producing high-quality Traditional Chinese (zh-TW) content: script, full-width punctuation, spacing, forms of address, grammar constraints, and Taiwan terminology.
+  Includes the no-calque rule against literal translations of English phrasal verbs such as 折入 for fold in.
   Use when writing any kind of Chinese content. Including blog posts, notes, technical articles, technical writing, chitchat, social media posts, etc., even when you are just sending a text message.
   Also use when reviewing or editing existing Chinese content for language and terminology compliance.
   Always apply `writing-style-guideline` alongside this skill for structure, tone, rhetorical constraints, and banned phrases.
@@ -39,6 +40,22 @@ Switching between an English term and its translation makes readers wonder wheth
 
 When an English term appears multiple times, check for a common zh-TW translation or abbreviation. If found, present the original term with its Chinese equivalent the first time, then use only the Chinese version thereafter. This rule does not apply to proper nouns, including personal names.
 
+## No Calques of English Phrases
+
+Translating an English phrase word-for-word produces a Chinese coinage that no Taiwan reader uses: readers must decode the English source phrase to understand the word, and most such coinages are simply wrong. NEVER calque an English phrasal verb or idiom; translate the meaning with a natural Chinese verb.
+
+- fold in ≠ 折入. Write 納入, 併入, or 融入 by context: 將使用者回饋納入計畫, not 將回饋折入計畫. In recipes, fold in = 拌入. In mathematics, fold (folding-based validation) = 摺疊. Note 折 ≠ fold in Traditional Chinese — folding paper is 摺 — so even the literal calque reads wrong.
+- backfill ≠ 回填. Write 補填.
+- align ≠ 拉齊. Write 對齊.
+- empower ≠ 賦能. Write 賦權 or rephrase with 讓…能夠.
+- land (a project) ≠ 落地. Write 成真, 執行落地 → 完成, 上路, or 實現.
+- actionable ≠ 可行動的. Write 具體可行 or 可立即執行.
+- leverage ≠ 槓桿化. Write 善用.
+- deep dive ≠ 深潛. Write 深入研究 or 深入探討.
+- touch base ≠ 碰基地. Write 聯繫.
+
+When an English phrase has no standard Chinese term, translate the meaning in a short clause or keep the English term; NEVER coin a character-by-character translation.
+
 ## Review Checklist
 
 Run the review checklist and linter of `writing-style-guideline` first. Then run this skill's linter:
@@ -49,7 +66,7 @@ Run the review checklist and linter of `writing-style-guideline` first. Then run
 some-command | <skill-dir>/scripts/lint.sh -
 ```
 
-It reports 「您」, sentence-final 「的，」「的。」, missing CJK–alphanumeric spacing, half-width punctuation next to Chinese characters as `ERROR`; reduplicated words, mainland terminology (with the Taiwan replacement in the rule name), and lowercase English terms that appear more than once as `WARN`. Code blocks, inline code, URLs, and link definitions are skipped. Legitimate reduplication such as 謝謝 and terms in other senses (對象 as a partner) are expected warnings. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`.
+It reports 「您」, sentence-final 「的，」「的。」, missing CJK–alphanumeric spacing, half-width punctuation next to Chinese characters, and high-confidence calques such as 折入 as `ERROR`; reduplicated words, mainland terminology (with the Taiwan replacement in the rule name), ambiguous calques, and lowercase English terms that appear more than once as `WARN`. Code blocks, inline code, URLs, and link definitions are skipped. Legitimate reduplication such as 謝謝 and terms in other senses (對象 as a partner, 落地 as a physical landing, 回填 in earthworks) are expected warnings. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`.
 
 Then verify every item below:
 
@@ -58,6 +75,7 @@ Then verify every item below:
 3. Does any clause end with 「的」 right before 「，」 or 「。」? Rewrite if yes.
 4. Is there English term appears multiple times?
 5. Are Taiwan terminology mappings applied?
+6. Any calque of an English phrase, such as 折入? Check the No Calques table.
 
 ## Reference: Terminology Mappings
 
