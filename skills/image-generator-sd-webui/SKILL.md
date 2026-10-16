@@ -11,7 +11,7 @@ metadata:
 
 ## Overview
 
-Drive a Stable Diffusion WebUI / Forge server through its REST API to enumerate available resources, run `txt2img`, poll progress, and interrupt jobs. All scripts under `scripts/` are thin `curl` wrappers; they print JSON or extracted fields to stdout so the agent can pipe / parse them.
+Drive a Stable Diffusion WebUI / Forge server through its REST API to enumerate available resources, run `txt2img`, poll progress, and interrupt jobs. Shell entrypoints under `scripts/` share one `curl` client. Generation file mode uses a Python 3 helper to decode and validate PNG files and save metadata, returning only a compact path manifest.
 
 ## Server connection
 
@@ -36,7 +36,7 @@ scripts/probe.sh
 1. **Probe** — Verify the server is reachable (`scripts/probe.sh`). On failure, ask the user for the correct URL / credentials.
 2. **Enumerate & choose** — List the resources to pick (models, modules, samplers, schedulers, styles) and ask the user to choose. Capture their choice **verbatim** in the API's English `name` / `title` / `model_name` — sd-webui matches exactly, do not translate or rename.
 3. **Prompt** — Obtain the positive prompt, negative prompt, and any extra params (steps, CFG, size). See "Prompt engineering" for sourcing these.
-4. **Generate** — Call `scripts/generate.sh` with a request JSON. It returns a JSON object containing the base64 PNG image and the generation `info`.
+4. **Generate** — Call `scripts/generate.sh` with a request JSON file and `--output-dir` pointing to an absolute directory under the caller's session staging directory. It saves images and metadata locally and returns a compact path manifest.
 5. **(Optional) Track progress** — While generation is running (in another shell / background), call `scripts/progress.sh` to print `progress` (0–1), `eta_relative`, and `state`.
 6. **(Optional) Cancel** — Call `scripts/cancel.sh` to interrupt the current job.
 
@@ -64,15 +64,19 @@ After listing, present the options to the user (use `ask_user` with an enum if t
 1. Build a JSON request. Required field: `prompt`. Recommended: `negative_prompt`, `steps`, `cfg_scale`, `width`, `height`, `sampler_name`, `scheduler`, `styles` (array of style names), and `override_settings.sd_model_checkpoint` (model title) / `override_settings.forge_additional_modules` (array of module names, Forge only). See `references/txt2img-parameters.md` for every field.
 2. Run:
    ```bash
-   scripts/generate.sh request.json > result.json
-   # or pipe:
-   cat request.json | scripts/generate.sh - > result.json
+   scripts/generate.sh "/absolute/session/request.json" --output-dir "/absolute/session/generated"
    ```
-3. Extract the image (base64 PNG):
-   ```bash
-   jq -r '.images[0]' result.json | base64 -d > out.png
+3. Read the compact stdout manifest:
+   ```json
+   {"image_paths":["/absolute/session/generated/generation.ABC1234567/image-0001.png"],"metadata_path":"/absolute/session/generated/generation.ABC1234567/metadata.json"}
    ```
-4. The `info` field is a JSON string with `seed`, `all_prompts`, `sampler_name`, etc. — parse with `jq -r '.info | fromjson'`.
+4. Use every `image_paths` entry as an absolute path for subsequent file processing or delivery. Read `metadata_path` only when generation details are needed. Metadata contains all API response fields except `images`, preserving `info` unchanged (normally a JSON-encoded string).
+
+File mode requires Python 3 in addition to curl and jq. It saves every returned image, including grids, in response order. Each invocation creates a private, uniquely named batch subdirectory, so repeated or concurrent calls do not overwrite files. Paths containing spaces are supported. Supply the output directory explicitly for the current session; never derive it from process-global `SESSION_ID` or `TMPDIR`. Keep prompts inside the request file, not shell arguments. No shell redirection or custom HTTP client is needed.
+
+Failures exit nonzero without a success manifest. Failed batches are removed; if cleanup fails, stderr identifies the retained partial-output directory. Interruptions via SIGINT/SIGTERM also attempt cleanup; SIGKILL cannot run cleanup. Successful files remain until the caller cleans its staging directory after delivery. The caller must check exit status before using the manifest.
+
+For existing integrations, omitting `--output-dir` retains the legacy full API JSON stdout response, including base64 images. Stdin requests (`-`) work in either mode. Use file mode for agent-facing delivery to avoid placing base64 in model context.
 
 **Important behaviour notes:**
 
