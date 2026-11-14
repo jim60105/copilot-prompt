@@ -24,8 +24,19 @@ Automate version bumping with semantic versioning and structured changelog manag
 4. Confirm that no old changelog entries will be removed — this is critical for maintaining project history integrity.
 
 5. Aggregate and format commit messages into a structured changelog entry following the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) specification in English. **NEVER REMOVE OLD CHANGELOG ENTRIES.**
-**NEVER REMOVE OLD CHANGELOG ENTRIES.**
-**NEVER REMOVE OLD CHANGELOG ENTRIES.**
+   **NEVER REMOVE OLD CHANGELOG ENTRIES.**
+   **NEVER REMOVE OLD CHANGELOG ENTRIES.**
+
+   **Rewrite for users and deployers, not developers.** The new entry is not a commit log; it MUST be authored from the perspective of people who install, configure, operate, or use the project. Do not describe how the code changed internally.
+
+   - Describe **observable behavior and impact**: what a user can now do, what stopped breaking, what behaves differently.
+   - Name **what the user touches**: UI surfaces, CLI flags, config keys, environment variables, API endpoints, output formats, upgrade/migration steps.
+   - **Omit internal detail**: refactors, renames of private symbols, file/module moves, test or CI changes, linter/formatting changes, dependency version bumps that have no user-visible effect.
+   - Keep a dependency bump only when it changes behavior the user can feel (security fix, performance, dropped platform support) — then say that effect, not the package version.
+   - Call out anything a deployer MUST act on: breaking changes, required migrations, new required configuration, minimum runtime/platform versions, deprecations with removal timelines.
+   - Prefer plain end-user language over domain or implementation jargon; keep technical terms only where they are the accurate name of a user-facing concept.
+
+   **Scope: new entries only.** This rewrite rule applies exclusively to the version entry being created. NEVER rewrite, reword, or "improve" the content of previously released version sections — historical text MUST be preserved verbatim.
 
 6. **MANDATORY: After updating the changelog, you MUST ensure the following structure, or the process is considered a CRITICAL FAILURE:**
    - All version sections MUST be in strict reverse-chronological order: `Unreleased`, then newest version, then older versions.
@@ -82,6 +93,8 @@ Use categories only if applicable — omit empty sections.
 
 ### Writing Style
 - Write from the user's perspective, not a commit log.
+- Audience is **users and deployers**: describe behavior, impact, and required actions; skip internal implementation detail.
+- Rewriting applies **only to the entry you are creating** — never edit released version sections.
 - Focus on "what changed and why it matters."
 - Example: `- Added: Dark-mode toggle in the settings panel.`
 - Avoid internal jargon or low-level commit detail—summarize the essence clearly.
