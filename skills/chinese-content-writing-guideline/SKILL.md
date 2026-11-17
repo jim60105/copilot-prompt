@@ -2,7 +2,7 @@
 name: chinese-content-writing-guideline
 description: >-
   Language-specific guidelines for producing high-quality Traditional Chinese (zh-TW) content: script, full-width punctuation, spacing, forms of address, grammar constraints, and Taiwan terminology.
-  Includes collocation checks for verb–object, verb–noun part of speech, and classifier–noun mismatches, and the no-calque rule against literal translations of English phrasal verbs such as 折入 for fold in.
+  Includes collocation checks for verb–object, verb–noun part of speech, and classifier–noun mismatches, the no-calque rule against literal translations of English phrasal verbs such as 折入 for fold in, and the no-coined-nouns rule for concepts that already have a zh-TW name.
   Use when writing any kind of Chinese content. Including blog posts, notes, technical articles, technical writing, chitchat, social media posts, etc., even when you are just sending a text message.
   Also use when reviewing or editing existing Chinese content for language and terminology compliance.
   Always apply `writing-style-guideline` alongside this skill for structure, tone, rhetorical constraints, and banned phrases.
@@ -64,7 +64,6 @@ A noun in a verb slot, or a verb in a noun slot, makes the sentence claim an act
 - 優先這個任務 → 優先處理這個任務
 - 重點這個問題 → 聚焦這個問題
 - 做一個確認 → 確認
-- 全族的碰面處 → 族人碰面的地方
 
 ### Classifier and Noun
 
@@ -121,6 +120,14 @@ Translating an English phrase word-for-word produces a Chinese coinage that no T
 
 When an English phrase has no standard Chinese term, translate the meaning in a short clause or keep the English term; NEVER coin a character-by-character translation.
 
+## No Coined Nouns
+
+A new Chinese noun for a concept that already has a name splits the vocabulary. Readers cannot look the term up, and the next writer invents a different one. Check the field's common usage and the terminology mapping at the end of this skill before using a new noun; `chinese-traditional-conversion` holds the NAER tables for cross-strait terms. Use the established term when one exists. When none exists, keep the English term or describe the thing in a short clause instead of assembling a noun from literal pieces.
+
+- 全族的碰面處 → 族人碰面的地方
+
+This rule does not cover proper nouns, product names, or names invented for a fictional world, where a new name is the point.
+
 ## Review Checklist
 
 Run the review checklist and linter of `writing-style-guideline` first. Then run this skill's linter:
@@ -131,7 +138,7 @@ Run the review checklist and linter of `writing-style-guideline` first. Then run
 some-command | <skill-dir>/scripts/lint.sh -
 ```
 
-It reports 「您」, sentence-final 「的，」「的。」, missing CJK–alphanumeric spacing, half-width punctuation next to Chinese characters, and high-confidence calques such as 折入 as `ERROR`; reduplicated words, mainland terminology (with the Taiwan replacement in the rule name), ambiguous calques, collocation mismatches such as 一條訊息 and 吃記憶體, and lowercase English terms that appear more than once as `WARN`. Code blocks, inline code, URLs, and link definitions are skipped. Legitimate reduplication such as 謝謝, terms in other senses (對象 as a partner, 落地 as a physical landing, 回填 in earthworks), and classifiers in other senses are expected warnings. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`.
+It reports 「您」, sentence-final 「的，」「的。」, missing CJK–alphanumeric spacing, half-width punctuation next to Chinese characters, and high-confidence calques such as 折入 as `ERROR`; reduplicated words, mainland terminology (with the Taiwan replacement in the rule name), ambiguous calques, collocation mismatches such as 一條訊息 and 吃記憶體, and lowercase English terms that appear more than once as `WARN`. Code blocks, inline code, URLs, and link definitions are skipped. Legitimate reduplication such as 謝謝, terms in other senses (對象 as a partner, 落地 as a physical landing, 回填 in earthworks), and classifiers in other senses are expected warnings. Coined nouns are not machine-detectable and need the manual pass. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`.
 
 Then verify every item below:
 
@@ -143,6 +150,7 @@ Then verify every item below:
 6. Any calque of an English phrase, such as 折入? Check the No Calques table.
 7. Does every verb fit its object, every noun sit in the right part of speech, and every classifier fit its noun? Check the Collocation section.
 8. Does any line compress by dropping a subject, a connective, or the content of an event? Read it aloud and repair every place where you had to infer the relation.
+9. Is any noun invented for a concept that already has a zh-TW name? Check the No Coined Nouns section.
 
 ## Reference: Terminology Mappings
 
