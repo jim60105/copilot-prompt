@@ -2,7 +2,7 @@
 name: chinese-content-writing-guideline
 description: >-
   Language-specific guidelines for producing high-quality Traditional Chinese (zh-TW) content: script, full-width punctuation, spacing, forms of address, grammar constraints, and Taiwan terminology.
-  Includes the no-calque rule against literal translations of English phrasal verbs such as 折入 for fold in.
+  Includes collocation checks for verb–object, verb–noun part of speech, and classifier–noun mismatches, and the no-calque rule against literal translations of English phrasal verbs such as 折入 for fold in.
   Use when writing any kind of Chinese content. Including blog posts, notes, technical articles, technical writing, chitchat, social media posts, etc., even when you are just sending a text message.
   Also use when reviewing or editing existing Chinese content for language and terminology compliance.
   Always apply `writing-style-guideline` alongside this skill for structure, tone, rhetorical constraints, and banned phrases.
@@ -33,6 +33,59 @@ The 「是…的」 tail and reduplicated words soften a statement into speech-l
 
 - **Sentence-final 的**: never end a clause with 「的」 immediately before 「，」 or 「。」 (the 「是…的」 emphatic tail). Rewrite as a plain declarative, drop the 的, or fold the 的-phrase into the clause so it no longer lands on the boundary.
 - Avoid reduplicated words (疊字)
+
+## Collocation
+
+A grammatical sentence can still pair words that never occur together in natural Chinese. The reader has to decode the phrase, and the result reads as translated. The subsections below check verb–object, verb–noun, and classifier–noun pairings separately.
+
+### Verb and Object
+
+The verb must name what actually happens to the object. Test: if the verb's everyday object is concrete (hands, paper, a tabletop, food, feet) but the sentence's object is abstract, the pairing is wrong. A verb that takes the wrong argument, or a clause whose noun phrase has no verb, fails the same test.
+
+- 來去村子 → 進出村子（村子的動作是進出，不是來去）
+- 架上從不鎖 → 架上從不上鎖（鎖需要對象，架上不是被鎖的東西）
+- 發表會都在這裡 → 發表會都在這裡舉行（發表會是名詞，句子缺動詞）
+- 板材都在這裡做 → 弓、箭在這裡做，木板在這裡備好（板材是材料，被做的是成品）
+- 信按收件的地方分堆 → 信按寄往的地方分堆（分堆的依據是寄往，不是收件）
+- 甜味留在木頭上 → 甜味滲進木頭裡（留在表面與滲進材料是兩件事）
+- 攤開缺口 → 列出缺口
+- 吃記憶體 → 佔用記憶體
+- 塞進 JSON → 寫進 JSON
+- 餵給 block → 傳給 block
+
+The same test catches calques of English verb–object pairs. 打開一張工單 → 建立工單, 舉起一個問題 → 提出問題, 遞送價值 → 帶來價值.
+
+### Verb and Noun
+
+A noun in a verb slot, or a verb in a noun slot, makes the sentence claim an action that the chosen word cannot carry. Chinese verbs and nouns share many forms, so spell check passes; the near-homographs below are the common failures.
+
+- 數據反應了延遲 → 數據反映了延遲（反映是動詞，反應是名詞）
+- 這會障礙進度 → 這會阻礙進度（障礙是名詞，阻礙是動詞）
+- 優先這個任務 → 優先處理這個任務
+- 重點這個問題 → 聚焦這個問題
+- 做一個確認 → 確認
+- 全族的碰面處 → 族人碰面的地方
+
+### Classifier and Noun
+
+個 works as a fallback, but most nouns have their own classifier. Pair each noun with the dedicated one; using 個 for everything marks the text as translated.
+
+| 名詞 | 量詞 | 例 |
+| --- | --- | --- |
+| 建議、功能、需求、風險 | 項 | 一項建議 |
+| 系統、流程、工具、方案 | 套 | 一套系統 |
+| 文件、報告、合約 | 份 | 一份報告 |
+| 訊息、公告、指令 | 則 | 一則訊息 |
+| 程式、手機 | 支 | 一支程式 |
+| 產品、App | 款 | 一款 App |
+| 汽車 | 輛 | 一輛汽車 |
+| 會議、演講、比賽 | 場 | 一場會議 |
+| 資料、紀錄、款項 | 筆 | 一筆資料 |
+| 缺口 | 道 | 一道缺口 |
+| 香草、花 | 束 | 一束香草 |
+| 池、湖 | 座、池 | 一池淺水、幾座池子 |
+
+一個 stays correct for nouns without a dedicated classifier, such as 錯誤, 問題, and 想法.
 
 ## English Terms
 
@@ -66,7 +119,7 @@ Run the review checklist and linter of `writing-style-guideline` first. Then run
 some-command | <skill-dir>/scripts/lint.sh -
 ```
 
-It reports 「您」, sentence-final 「的，」「的。」, missing CJK–alphanumeric spacing, half-width punctuation next to Chinese characters, and high-confidence calques such as 折入 as `ERROR`; reduplicated words, mainland terminology (with the Taiwan replacement in the rule name), ambiguous calques, and lowercase English terms that appear more than once as `WARN`. Code blocks, inline code, URLs, and link definitions are skipped. Legitimate reduplication such as 謝謝 and terms in other senses (對象 as a partner, 落地 as a physical landing, 回填 in earthworks) are expected warnings. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`.
+It reports 「您」, sentence-final 「的，」「的。」, missing CJK–alphanumeric spacing, half-width punctuation next to Chinese characters, and high-confidence calques such as 折入 as `ERROR`; reduplicated words, mainland terminology (with the Taiwan replacement in the rule name), ambiguous calques, collocation mismatches such as 一條訊息 and 吃記憶體, and lowercase English terms that appear more than once as `WARN`. Code blocks, inline code, URLs, and link definitions are skipped. Legitimate reduplication such as 謝謝, terms in other senses (對象 as a partner, 落地 as a physical landing, 回填 in earthworks), and classifiers in other senses are expected warnings. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`.
 
 Then verify every item below:
 
@@ -76,6 +129,7 @@ Then verify every item below:
 4. Is there English term appears multiple times?
 5. Are Taiwan terminology mappings applied?
 6. Any calque of an English phrase, such as 折入? Check the No Calques table.
+7. Does every verb fit its object, every noun sit in the right part of speech, and every classifier fit its noun? Check the Collocation section.
 
 ## Reference: Terminology Mappings
 

@@ -130,6 +130,29 @@ CALQUES=(
     'WARN 深潛=深入研究'
 )
 
+# Word pairings that do not occur in natural zh-TW (see the Collocation
+# section of the skill). Classifiers and some verbs are valid with other
+# nouns, so these are warnings rather than errors.
+COLLOCATIONS=(
+    'WARN 一條訊息=一則訊息'
+    'WARN 一個訊息=一則訊息'
+    'WARN 一個建議=一項建議'
+    'WARN 一個功能=一項功能'
+    'WARN 一個系統=一套系統'
+    'WARN 一個報告=一份報告'
+    'WARN 一個文件=一份文件'
+    'WARN 一個會議=一場會議'
+    'WARN 一個汽車=一輛汽車'
+    'WARN 一個程式=一支程式'
+    'WARN 幾窪池子=幾座池子'
+    'WARN 幾串.{0,4}香草=幾束香草'
+    'WARN 吃記憶體=佔用記憶體'
+    'WARN 塞進 ?(JSON|陣列|物件|欄位)=寫進'
+    'WARN 餵給=傳給'
+    'WARN 架上從不鎖=架上從不上鎖'
+    'WARN 來去村子=進出村子'
+)
+
 lint_file() {
     local label="$1" src="$2"
     local work
@@ -162,6 +185,12 @@ lint_file() {
     for entry in "${CALQUES[@]}"; do
         level=${entry%% *}; entry=${entry#* }
         report "$level" "calque→${entry#*=}" "$label" "$work" "${entry%%=*}"
+    done
+
+    # Collocation mismatches.
+    for entry in "${COLLOCATIONS[@]}"; do
+        level=${entry%% *}; entry=${entry#* }
+        report "$level" "collocation→${entry#*=}" "$label" "$work" "${entry%%=*}"
     done
 
     # English terms repeated in prose. Capitalised words are skipped as

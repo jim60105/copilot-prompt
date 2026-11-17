@@ -86,7 +86,7 @@ Hedges, staged pondering, mirror metaphors, and claims of discomfort perform an 
 - Avoid hedging phrases like 「可以說」「某種程度上」「在多數情況下」 ("arguably", "to some extent", "in most cases"); replace with conditional qualifications
 - Avoid saying things like 「我想了很久」 「我停下來想了一下」 「停下來很久」 ("I thought about this for a long time", "I paused to think"), or "being dissected" / "reading an autopsy report."
 - Avoid using 「鏡子」 ("mirror") or related concepts to describe feelings or things. Only use it when referring to an actual mirror.
-- **Never use physical-action verbs with abstract objects.** Test: if the verb's everyday object is a concrete thing (hands, a tabletop, paper, food, feet) but the sentence's object is abstract, it violates this rule; rewrite with a verb that states the mechanism. Examples: 攤開缺口→列出缺口；接住錯誤→捕捉錯誤；抹平速度→速度算出接近 0；吃記憶體→佔用記憶體；塞進 JSON→寫進 JSON；餵給 block→傳給 block；踩過的坑→發生過的問題；假裝有→宣稱有。
+- **Never use a word that does not collocate with the word it governs.** Test each pairing separately. A verb whose everyday object is concrete (hands, a tabletop, paper, food, feet) cannot take an abstract object: 攤開缺口→列出缺口, 接住錯誤→捕捉錯誤, 吃記憶體→佔用記憶體, grasp the concept→understand the concept. A noun in a verb slot (「優先這個任務」), a verb in a noun slot, and a classifier from another noun class (「一個系統」) fail the same test. Rewrite with the word that names the actual mechanism; the zh-TW substitutions and the classifier table live in the Collocation section of `chinese-content-writing-guideline`.
 - Avoid saying that this topic makes you feel uncomfortable, uneasy, or slightly offended, especially when discussing subjects such as cybersecurity, attacks, AI, ethics, philosophy, and psychology.
 - Avoid using 「先講結論」 「先說清楚」 「先說背景」 「先說結論」 ("let me start with the conclusion", "first, some background") or similar phrases that indicate a "start with..." structured explanation.
 - Utilize fewer metaphors and focus more on describing the facts.
@@ -128,6 +128,6 @@ Then verify every item:
 3. Does each key claim have evidence? Downgrade unsupported claims to hypotheses.
 4. Are there unsourced strong assertions? Rewrite to conditional qualifications.
 5. Are sentences overlong? Split into short sentences with clear subject-verb-object structure.
-6. For every verb, is its object concrete or abstract? A physical-action verb with an abstract object must be rewritten as a literal statement.
+6. Does every word collocate with the word it governs? Check verb–object, verb–noun part of speech, and classifier–noun pairings; a pairing that joins different semantic fields must be rewritten with the word that names the actual mechanism.
 7. Does any paragraph pad one point into three parallel items, or lean on a metaphor where the fact would do? The linter cannot see these.
 8. Did you also run the review checklist and linter of the language-specific skill (e.g. `chinese-content-writing-guideline`)?
