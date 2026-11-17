@@ -87,6 +87,18 @@ A noun in a verb slot, or a verb in a noun slot, makes the sentence claim an act
 
 一個 stays correct for nouns without a dedicated classifier, such as 錯誤, 問題, and 想法.
 
+## Compression
+
+AI-drafted Chinese deletes what the reader needs: the subject, the connective, and the concrete content of an event. The line stays grammatical and short, and the reader has to reconstruct the missing relation. A human writing the same fact unfolds it.
+
+- Keep one subject per predicate chain. 「讓旅人有地方歇息、睡覺，也能安靜地練劍」 changes subject from the inn to the guest mid-clause.
+- Unfold stacked modifiers：一個靠黑水潭淬火的鐵匠村 → 一座鐵匠村，村裡的鐵都用黑水潭的水淬火。
+- Do not date a state change with an event adverbial：黑髮在一場火之後剪短 → 有回爐火燒到她的頭髮，索性剪短。
+- Name the content instead of a placeholder（發生的事、各種、瑣事）：say what was observed, listed, or reported.
+- Use the everyday verb, not the report noun：當熱源 → 借她的窯火加熱；一併零售 → 也擺在牆上一起賣。
+- Commas do not state relations. Write the connective, or split the sentence, whenever two clauses are joined only by 「，」 and the reader must supply 因為、但、所以、之後。
+- Every clause needs a predicate it can attach to. A bare adjective or noun between commas（句子短、熱心又務實）is a list item; it belongs only beside a clause that carries the verb.
+
 ## English Terms
 
 Switching between an English term and its translation makes readers wonder whether they are two different things; introducing the pairing once and then sticking to the Chinese keeps one name per concept.
@@ -130,6 +142,7 @@ Then verify every item below:
 5. Are Taiwan terminology mappings applied?
 6. Any calque of an English phrase, such as 折入? Check the No Calques table.
 7. Does every verb fit its object, every noun sit in the right part of speech, and every classifier fit its noun? Check the Collocation section.
+8. Does any line compress by dropping a subject, a connective, or the content of an event? Read it aloud and repair every place where you had to infer the relation.
 
 ## Reference: Terminology Mappings
 

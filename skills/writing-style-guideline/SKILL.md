@@ -52,7 +52,7 @@ These principles keep every claim checkable by the reader.
 1. **Facts First**: All judgments must rest on verifiable data, case studies, or explicit logic. No vague attributions like 「研究指出」 or 「資料顯示」 ("studies show", "data suggests")
 2. **Direct Statement**: Prefer neutral, verifiable declarative and conditional sentences
 3. **De-templated Rhythm**: Avoid mechanical three-point structures and symmetrical parallelism
-4. **Clear Communication**: One point per sentence. Break long sentences with commas or semicolons
+4. **Clear Communication**: One point per sentence and one main clause per predicate chain. A comma is not a connective. When two clauses are joined only by 「，」 and the reader must supply the relation（因為、但、所以、之後）, write the connective or split the sentence.
 
 ## Hard Constraints
 
