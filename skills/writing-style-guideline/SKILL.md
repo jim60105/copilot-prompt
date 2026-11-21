@@ -38,6 +38,18 @@ Readers decide within the first paragraph whether to keep reading, so the conclu
 - Use markdown reference-style links for external sources only, not for internal links. Each reference link should appear only once in the article.
 - Format all reference-style links using markdown so they display as "links." Use the webpage title (curl fetch it!) as the link text for each reference-style link.
 
+## Dialogue and Quoted Speech
+
+The inverted pyramid governs exposition, not a character talking. Quoted speech follows speech prosody, so an answer and its reason form one turn instead of a conclusion sentence followed by evidence.
+
+- Never open a spoken reply with a one-word sentence closed by a full stop, then the explanation (`「想。⋯」`, `「會。⋯」`, "Yes. ...", "No. ..."). The full stop is written punctuation; in speech the answer rides on a particle, an interjection, or continues straight into the reason: `「想啊，不過⋯」`, `「哪有，⋯」`, "Sure, though ...".
+- Do not echo the question's polarity. When the question is 「會不會…」 or "Would you...", the reply must not begin with 會／不會 or "Yes"/"No" as a stamp on the asker's wording. Answer inside the speaker's own sentence.
+- Do not give every reply the same three beats of answer, detail, general rule. A character who closes each turn with a maxim reads as a lecturer, not as a person in a conversation.
+- Do not pre-load the question. When the asker's line already states the answer (「⋯是踏昏的意思嗎？」), the reply can only confirm it. Leave the question open so the answer carries information.
+- Different speakers need different syntax, not different vocabulary alone. If every character uses the same sentence rhythm, the reader hears one writer behind every mask.
+
+Two cases keep a short answer. A fill-in-the-blank question such as a name's meaning or a count takes the answer as a bare word. A deliberately blunt character may answer short when a particle or a retort carries the voice (`「膩啊。怎麼不膩。」`). The defect is the bare predicate plus full stop used as a template, not brevity itself.
+
 ## Tone and Style
 
 - Friendly yet professional; approachable expert, not academic
@@ -108,6 +120,8 @@ Apply these transformations when a restricted pattern appears:
 - Tricolon parallelism → consolidate into one prose paragraph
 - Rhetorical question → declarative problem-and-answer format
 - Em-dash → extract into independent sentence or conditional qualification
+- Bare answer plus full stop (`「收。⋯」`) → carry the answer on a particle or continue into the reason (`「收喔，新鮮的⋯」`), or drop the answer and state the fact
+- Reply that closes with a general rule → cut the rule unless the character is deliberately lecturing
 
 ## Review Checklist
 
@@ -130,4 +144,5 @@ Then verify every item:
 5. Are sentences overlong? Split into short sentences with clear subject-verb-object structure.
 6. Does every word collocate with the word it governs? Check verb–object, verb–noun part of speech, and classifier–noun pairings; a pairing that joins different semantic fields must be rewritten with the word that names the actual mechanism.
 7. Does any paragraph pad one point into three parallel items, or lean on a metaphor where the fact would do? The linter cannot see these.
-8. Did you also run the review checklist and linter of the language-specific skill (e.g. `chinese-content-writing-guideline`)?
+8. Does any quoted reply open with a one-word sentence plus a full stop, echo the question's polarity, or close with a maxim? Rewrite the template cases; keep a bare word only when the question asks for a term or the particle carries the character.
+9. Did you also run the review checklist and linter of the language-specific skill (e.g. `chinese-content-writing-guideline`)?

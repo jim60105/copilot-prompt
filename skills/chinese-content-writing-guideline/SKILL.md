@@ -34,6 +34,16 @@ The 「是…的」 tail and reduplicated words soften a statement into speech-l
 - **Sentence-final 的**: never end a clause with 「的」 immediately before 「，」 or 「。」 (the 「是…的」 emphatic tail). Rewrite as a plain declarative, drop the 的, or fold the 的-phrase into the clause so it no longer lands on the boundary.
 - Avoid reduplicated words (疊字)
 
+## Spoken Register
+
+Written Chinese closes a complete thought with 。; speech carries the same answer on one breath. A reply built as a bare predicate plus 。 reads as an article answering an interview question, not as a person talking.
+
+- Never answer a question with a one-word sentence closed by 。: 「是。」「對。」「收。」「不會。」「沒有。」 Speak it with a particle or an interjection (「是啊」「對喔」「收啦」「哪有」「嗯，不會」), or go straight into the content.
+- Do not mirror the question's verb. A 「會不會…」 question does not license 「會。」 as the first sentence; answer inside the speaker's own sentence.
+- Do not use a noun or a count as a heading. 「三件。協調各行會的利益⋯」 and 「火候。大一分，藥性散掉⋯」 split one sentence into a label and a list. Fold the heading in: 「我這邊管三件事，協調各行會的利益⋯」.
+- Do not close every spoken turn with a general rule. 「人餓一兩天還撐得住，沒鹽吃上三天，腿先軟。」 is an essay's closing line, not a shopkeeper's second sentence in a row.
+- A definition question keeps its bare answer. 「杜斯克瓦爾克爾，是踏昏的意思嗎？」 takes 「踏昏。」 because the reply fills a blank. A retort with a particle or a question of its own is speech too: 「膩啊。怎麼不膩。」「哪有那麼玄。」
+
 ## Collocation
 
 A grammatical sentence can still pair words that never occur together in natural Chinese. The reader has to decode the phrase, and the result reads as translated. The subsections below check verb–object, verb–noun, and classifier–noun pairings separately.
@@ -138,7 +148,7 @@ Run the review checklist and linter of `writing-style-guideline` first. Then run
 some-command | <skill-dir>/scripts/lint.sh -
 ```
 
-It reports 「您」, sentence-final 「的，」「的。」, missing CJK–alphanumeric spacing, half-width punctuation next to Chinese characters, and high-confidence calques such as 折入 as `ERROR`; reduplicated words, mainland terminology (with the Taiwan replacement in the rule name), ambiguous calques, collocation mismatches such as 一條訊息 and 吃記憶體, and lowercase English terms that appear more than once as `WARN`. Code blocks, inline code, URLs, and link definitions are skipped. Legitimate reduplication such as 謝謝, terms in other senses (對象 as a partner, 落地 as a physical landing, 回填 in earthworks), and classifiers in other senses are expected warnings. Coined nouns are not machine-detectable and need the manual pass. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`.
+It reports 「您」, sentence-final 「的，」「的。」, missing CJK–alphanumeric spacing, half-width punctuation next to Chinese characters, and high-confidence calques such as 折入 as `ERROR`; reduplicated words, bare answers such as 「是。」 and 「收。」, mainland terminology (with the Taiwan replacement in the rule name), ambiguous calques, collocation mismatches such as 一條訊息 and 吃記憶體, and lowercase English terms that appear more than once as `WARN`. Code blocks, inline code, URLs, and link definitions are skipped. Legitimate reduplication such as 謝謝, terms in other senses (對象 as a partner, 落地 as a physical landing, 回填 in earthworks), classifiers in other senses, and a bare answer to a definition or count question are expected warnings. Coined nouns are not machine-detectable and need the manual pass. The script needs GNU grep with PCRE support; on macOS set `GREP=ggrep`.
 
 Then verify every item below:
 
@@ -151,6 +161,8 @@ Then verify every item below:
 7. Does every verb fit its object, every noun sit in the right part of speech, and every classifier fit its noun? Check the Collocation section.
 8. Does any line compress by dropping a subject, a connective, or the content of an event? Read it aloud and repair every place where you had to infer the relation.
 9. Is any noun invented for a concept that already has a zh-TW name? Check the No Coined Nouns section.
+10. Does any spoken reply open with a bare predicate and a full stop (「是。」「對。」「會。」「收。」)? Rewrite with a particle, an interjection, or a direct continuation.
+11. Does any spoken turn open with a noun heading or end with a general rule? Fold the heading into the sentence and cut the rule.
 
 ## Reference: Terminology Mappings
 

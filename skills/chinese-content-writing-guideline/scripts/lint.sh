@@ -174,6 +174,11 @@ lint_file() {
     # Reduplicated words (疊字). Some are legitimate (謝謝, 爸爸).
     report WARN reduplication "$label" "$work" "($HAN)\\1"
 
+    # Bare answer: a predicate closed by 。 as the whole reply (see the
+    # Spoken Register section). Valid for a fill-in-the-blank answer and as
+    # deliberate characterization, so this is a warning.
+    report WARN bare-answer "$label" "$work" '「(?:是|對|會|能|想|有|沒有|不會|不用|可以|收|喜歡|算)。'
+
     # Non-Taiwan terminology.
     local entry
     for entry in "${TERMS[@]}"; do
