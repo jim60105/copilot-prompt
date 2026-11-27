@@ -27,7 +27,7 @@ Automate version bumping with semantic versioning and structured changelog manag
    **NEVER REMOVE OLD CHANGELOG ENTRIES.**
    **NEVER REMOVE OLD CHANGELOG ENTRIES.**
 
-   **Rewrite for users and deployers, not developers.** The new entry is not a commit log; it MUST be authored from the perspective of people who install, configure, operate, or use the project. Do not describe how the code changed internally.
+   **Rewrite unreleased changelogs for users and deployers, not developers.** The new entry is not a commit log; it MUST be authored from the perspective of people who install, configure, operate, or use the project. Do not describe how the code changed internally.
 
    - Describe **observable behavior and impact**: what a user can now do, what stopped breaking, what behaves differently.
    - Name **what the user touches**: UI surfaces, CLI flags, config keys, environment variables, API endpoints, output formats, upgrade/migration steps.
